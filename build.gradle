@@ -1,5 +1,15 @@
 plugins {
+    id "com.palantir.jacoco-coverage" version "0.4.0"
+    id "com.palantir.jacoco-full-report" version "0.4.0"
     id 'java'
+}
+
+jacocoCoverage {
+    // Enforce minimum code coverage of 70% for every Java file.
+    fileThreshold 0.7
+
+    // Whitelist files named MyClass.java from coverage requirements.
+    // fileThreshold 0.0, "MyClass.java"
 }
 
 version '1.0-SNAPSHOT'
@@ -13,3 +23,4 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
+
