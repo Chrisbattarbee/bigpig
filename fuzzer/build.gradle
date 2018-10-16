@@ -3,8 +3,8 @@ plugins {
     id 'application'
 }
 
-group 'test'
-version '1.0-SNAPSHOT'
+group 'fuzzer'
+version '0.0.1'
 
 sourceCompatibility = 1.8
 
@@ -25,4 +25,25 @@ run.doFirst {
     // Get the full path of the agent JAR and set the javaagent
     def agentPath = configurations.compile.find { it.absolutePath.contains 'agent' }.absolutePath
     jvmArgs "-javaagent:$agentPath"
+}
+
+jar {
+    manifest {
+        attributes  'Implementation-Title': 'Gradle Quickstart',
+                    'Implementation-Version': version,
+                    'Main-Class': 'Numbers.Num'
+    }
+}
+
+
+//create a single Jar with all dependencies
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Jar File Example',
+                'Implementation-Version': version,
+                'Main-Class': 'Numbers.Num'
+    }
+    baseName = project.name + '-bigboi'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
 }
