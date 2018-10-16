@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'test'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+mainClassName = 'Numbers.Num'
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'com.github.ggavriil:javan-warty-pig:master-SNAPSHOT'
+    compile 'com.squareup:javapoet:1.11.1'
+}
+
+run.doFirst {
+    // Get the full path of the agent JAR and set the javaagent
+    def agentPath = configurations.compile.find { it.absolutePath.contains 'agent' }.absolutePath
+    jvmArgs "-javaagent:$agentPath"
+}
