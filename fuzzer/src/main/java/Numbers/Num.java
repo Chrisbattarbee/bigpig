@@ -27,6 +27,7 @@ public class Num {
         Set<Integer> seenPathHashes = Collections.newSetFromMap(new ConcurrentHashMap<>());
         // Create a fuzzer from configuration (which is created with a builder)
         Fuzzer fuzzer = new Fuzzer(Fuzzer.Config.builder().
+                        invoker(new Invoker.WithExecutorService(Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors()))).
                 // Let the fuzzer know to fuzz the isNum method
                         method(getDeclaredMethod(Num.class, "toString", String.class)).
                 // We need to give the fuzzer a parameter provider. Here, we just use the suggested one.
