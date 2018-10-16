@@ -12,7 +12,8 @@ RUN ./java-bootstrap.sh
 RUN rm java-bootstrap.sh
 
 # Install Fuzzer bundle
-
 RUN wget https://s3.eu-west-2.amazonaws.com/buildkite-software/fuzzer-bigboi-latest.jar
 RUN mv fuzzer-bigboi-latest.jar /usr/lib/
-
+RUN wget https://s3.eu-west-2.amazonaws.com/buildkite-software/fuzzer
+RUN chmod +x fuzzer
+RUN mv fuzzer /usr/bin/
