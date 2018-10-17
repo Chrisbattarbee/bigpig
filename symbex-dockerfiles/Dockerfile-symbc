@@ -1,0 +1,68 @@
+FROM ubuntu:14.04
+
+#############################################################################
+# Setup base image 
+#############################################################################
+RUN \
+  apt-get update -y && \
+  apt-get install software-properties-common -y && \
+  echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
+  add-apt-repository ppa:webupd8team/java -y && \
+  apt-get update -y && \
+  apt-get install -y oracle-java8-installer \
+                ant \
+                maven \
+                git \
+                junit \
+                build-essential \
+                python \
+                antlr3 \
+                && \
+  rm -rf /var/lib/apt/lists/* && \
+  rm -rf /var/cache/oracle-jdk8-installer
+
+#############################################################################
+# Environment 
+#############################################################################
+
+# set java env
+ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
+ENV JUNIT_HOME /usr/share/java
+
+RUN mkdir /project
+ENV PROJ_DIR /project
+
+#############################################################################
+# Dependencies 
+#############################################################################
+
+# Install jpf-core
+WORKDIR ${PROJ_DIR}
+RUN git clone https://github.com/javapathfinder/jpf-core.git
+
+WORKDIR ${PROJ_DIR}/jpf-core
+RUN git checkout JPF-8.0
+RUN ant
+#Could run ant test here but it takes a long time 
+
+# Set up jpf conf and jconstraints
+RUN mkdir /root/.jpf
+RUN echo "jpf-core = ${PROJ_DIR}/jpf-core" >> /root/.jpf/site.properties
+RUN echo "jpf-symbc = ${PROJ_DIR}/jpf-symbc" >> /root/.jpf/site.properties
+RUN echo "extensions=\${jpf-core}, \${jpf-symbc}" >> /root/.jpf/site.properties
+
+#############################################################################
+# Install Symbc
+#############################################################################
+
+WORKDIR ${PROJ_DIR}
+RUN git clone https://github.com/MeKot/jpf-symbc.git
+WORKDIR ${PROJ_DIR}/jpf-symbc
+RUN ant
+
+#############################################################################
+# My small configs
+#############################################################################
+
+RUN echo "alias c=clear" >> ~/.bash_aliases
+RUN echo "alias q=exit" >> ~/.bash_aliases
