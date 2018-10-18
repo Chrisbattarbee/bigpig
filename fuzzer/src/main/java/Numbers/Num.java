@@ -10,16 +10,7 @@ import java.util.concurrent.*;
 
 public class Num {
 
-    private static Method getDeclaredMethod(Class c, String methodName, Class<?>... classes) {
-        try {
-            return c.getDeclaredMethod(methodName, classes);
-        } catch (NoSuchMethodException e) {
-            System.out.println("No such method moron");
-            return null;
-        }
-    }
-
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         TestWriter testWriter = new TestWriter.JUnit4(new TestWriter.Config("Numbers.NumTest"));
 
@@ -29,7 +20,7 @@ public class Num {
         Fuzzer fuzzer = new Fuzzer(Fuzzer.Config.builder().
                         invoker(new Invoker.WithExecutorService(Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors()))).
                 // Let the fuzzer know to fuzz the isNum method
-                        method(getDeclaredMethod(Num.class, "toString", String.class)).
+                        method(Num.class.getDeclaredMethod( "toString", String.class)).
                 // We need to give the fuzzer a parameter provider. Here, we just use the suggested one.
                         params(ParamProvider.suggested(String.class)).
                 // Let's print out the parameter and result of each unique path
