@@ -20,6 +20,5 @@ RUN mv fuzzer-agent-latest.jar /usr/lib/
 
 RUN wget https://s3.eu-west-2.amazonaws.com/buildkite-software/fuzzer
 RUN chmod +x fuzzer
-RUN mv fuzzer /usr/bin/
 
-CMD fuzzer
+ENTRYPOINT ./fuzzer
