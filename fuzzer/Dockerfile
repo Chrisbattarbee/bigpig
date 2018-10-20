@@ -12,13 +12,11 @@ RUN ./java-bootstrap.sh
 RUN rm java-bootstrap.sh
 
 # Install Fuzzer bundle
-RUN wget https://s3.eu-west-2.amazonaws.com/buildkite-software/fuzzer-bigboi-latest.jar
-RUN mv fuzzer-bigboi-latest.jar /usr/lib/
+COPY build/libs/fuzzer-bigboi.jar /usr/lib/fuzzer-bigboi-latest.jar
 
-RUN wget https://s3.eu-west-2.amazonaws.com/buildkite-software/fuzzer-agent-latest.jar
-RUN mv fuzzer-agent-latest.jar /usr/lib/
+ADD https://jitpack.io/com/github/ggavriil/javan-warty-pig/agent/master-SNAPSHOT/agent-master-SNAPSHOT.jar /usr/lib/fuzzer-agent-latest.jar
 
-RUN wget https://s3.eu-west-2.amazonaws.com/buildkite-software/fuzzer
+COPY fuzzer fuzzer
 RUN chmod +x fuzzer
 
 ENTRYPOINT ./fuzzer
