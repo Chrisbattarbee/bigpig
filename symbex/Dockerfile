@@ -38,17 +38,8 @@ RUN echo "extensions=\${jpf-core}" >> /root/.jpf/site.properties
 
 RUN cp ${PROJ_DIR}/src/examples/Main.java /mnt
 RUN mkdir /mnt/build
-RUN javac -d /mnt/build /mnt/Main.java
 
-## TESTING THE IMAGE
-
-RUN ls /mnt
-RUN ls /mnt/build
-
-RUN echo ${PROJ_DIR}
-RUN ls ${PROJ_DIR}
-
-ENTRYPOINT .${PROJ_DIR}bin/jpf PROJ_DIR/Std.jpf
+ENTRYPOINT javac -d /mnt/build /mnt/*.java && .${PROJ_DIR}bin/jpf ${PROJ_DIR}/Std.jpf
 
 #############################################################################
 # My small configs
