@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="gov.nasa.jpf.test.mc.basic.CGReorderTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-10-23T18:35:19" hostname="boombox" time="0.319">
+  <properties/>
+  <testcase name="testReorder" classname="gov.nasa.jpf.test.mc.basic.CGReorderTest" time="0.255"/>
+  <testcase name="testReverse" classname="gov.nasa.jpf.test.mc.basic.CGReorderTest" time="0.063"/>
+  <system-out><![CDATA[  running jpf with args: +listener=.test.mc.basic.CGReorderTest$ReorderListener
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.CGReorderTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+reorder choices
+replacing: gov.nasa.jpf.vm.choice.DoubleChoiceFromList[id="verifyDoubleList([D)",isCascaded:false,1.0,2.0,3.0,4.0]
+with: gov.nasa.jpf.vm.choice.DoubleChoiceFromList[id="verifyDoubleList([D)",isCascaded:false,4.0,3.0,2.0,1.0]
+4.0
+3.0
+2.0
+1.0
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +listener=.test.mc.basic.CGReorderTest$ReverseListener
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.CGReorderTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+reverse choice enumeration order
+4
+3
+2
+1
+0
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

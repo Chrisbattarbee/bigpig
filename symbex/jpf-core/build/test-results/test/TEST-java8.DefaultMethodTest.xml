@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="java8.DefaultMethodTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2018-10-23T18:34:53" hostname="boombox" time="0.503">
+  <properties/>
+  <testcase name="testInterfacePeer" classname="java8.DefaultMethodTest" time="0.253"/>
+  <testcase name="testSingleMethod" classname="java8.DefaultMethodTest" time="0.058"/>
+  <testcase name="testInheritedDefaultMethod" classname="java8.DefaultMethodTest" time="0.061"/>
+  <testcase name="testExplicitDelegation" classname="java8.DefaultMethodTest" time="0.05"/>
+  <testcase name="testMostSpecificImplementationResolution" classname="java8.DefaultMethodTest" time="0.045"/>
+  <testcase name="testOverloadedDefaults" classname="java8.DefaultMethodTest" time="0.034"/>
+  <system-out><![CDATA[  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+java8.DefaultMethodTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:34
+this is native G1.foo()
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:34
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+java8.DefaultMethodTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:34
+42
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:34
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+java8.DefaultMethodTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:34
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:34
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+java8.DefaultMethodTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:34
+45
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:34
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+java8.DefaultMethodTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:34
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:34
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+java8.DefaultMethodTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:34
+this is E1.foo(String,String)
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:34
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

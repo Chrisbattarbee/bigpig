@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="gov.nasa.jpf.test.mc.basic.NullTrackerTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2018-10-23T18:35:25" hostname="boombox" time="0.56">
+  <properties/>
+  <testcase name="testGetAfterIntraMethodReturn" classname="gov.nasa.jpf.test.mc.basic.NullTrackerTest" time="0.279"/>
+  <testcase name="testHashMapGet" classname="gov.nasa.jpf.test.mc.basic.NullTrackerTest" time="0.055"/>
+  <testcase name="testGetAfterIntraPut" classname="gov.nasa.jpf.test.mc.basic.NullTrackerTest" time="0.055"/>
+  <testcase name="testCallAfterIntraPut" classname="gov.nasa.jpf.test.mc.basic.NullTrackerTest" time="0.041"/>
+  <testcase name="testGetAfterInterMethodReturn" classname="gov.nasa.jpf.test.mc.basic.NullTrackerTest" time="0.039"/>
+  <testcase name="testMissingCtorInit" classname="gov.nasa.jpf.test.mc.basic.NullTrackerTest" time="0.045"/>
+  <testcase name="testGetAfterASTORE" classname="gov.nasa.jpf.test.mc.basic.NullTrackerTest" time="0.045"/>
+  <system-out><![CDATA[  running jpf with args: +listener=.listener.NullTracker
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.NullTrackerTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+now accessing testObject
+
+====================================================== error 1
+gov.nasa.jpf.vm.NoUncaughtExceptionsProperty
+java.lang.NullPointerException: referencing field 'd' on null object
+	at gov.nasa.jpf.test.mc.basic.NullTrackerTest.accessReturnedObject(NullTrackerTest.java:62)
+	at gov.nasa.jpf.test.mc.basic.NullTrackerTest.testGetAfterIntraMethodReturn(NullTrackerTest.java:79)
+	at java.lang.reflect.Method.invoke(gov.nasa.jpf.vm.JPF_java_lang_reflect_Method)
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:648)
+
+
+====================================================== snapshot #1
+thread java.lang.Thread:{id:0,name:main,status:RUNNING,priority:5,isDaemon:false,lockCount:0,suspendCount:0}
+  call stack:
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:650)
+
+
+====================================================== NullTracker #1
+null value set by: 
+    instruction: [0004] astore_1
+      for local: o
+      in method: gov.nasa.jpf.test.mc.basic.NullTrackerTest.accessReturnedObject() (NullTrackerTest.java:60)
+    executed by: main (id=0)
+set by: 
+    instruction: [0001] areturn
+      of method: gov.nasa.jpf.test.mc.basic.NullTrackerTest.getTestObject() (NullTrackerTest.java:56)
+     for object: gov.nasa.jpf.test.mc.basic.NullTrackerTest@16b
+      called by: gov.nasa.jpf.test.mc.basic.NullTrackerTest.accessReturnedObject() (NullTrackerTest.java:60)
+    executed by: main (id=0)
+
+====================================================== results
+error #1: gov.nasa.jpf.vm.NoUncaughtExceptionsProperty "java.lang.NullPointerException: referencing field ..."
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +listener=.listener.NullTracker
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.NullTrackerTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+
+====================================================== error 1
+gov.nasa.jpf.vm.NoUncaughtExceptionsProperty
+java.lang.NullPointerException: Calling 'foo()V' on null object
+	at gov.nasa.jpf.test.mc.basic.NullTrackerTest.testHashMapGet(NullTrackerTest.java:128)
+	at java.lang.reflect.Method.invoke(gov.nasa.jpf.vm.JPF_java_lang_reflect_Method)
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:648)
+
+
+====================================================== snapshot #1
+thread java.lang.Thread:{id:0,name:main,status:RUNNING,priority:5,isDaemon:false,lockCount:0,suspendCount:0}
+  call stack:
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:650)
+
+
+====================================================== NullTracker #1
+null value set by: 
+    instruction: [0018] astore_1
+      for local: o
+      in method: gov.nasa.jpf.test.mc.basic.NullTrackerTest.testHashMapGet() (NullTrackerTest.java:127)
+    executed by: main (id=0)
+set by: 
+    instruction: [000b] areturn
+      of method: gov.nasa.jpf.test.mc.basic.NullTrackerTest.lookupTestObject(String) (NullTrackerTest.java:121)
+     for object: gov.nasa.jpf.test.mc.basic.NullTrackerTest@16b
+      called by: gov.nasa.jpf.test.mc.basic.NullTrackerTest.testHashMapGet() (NullTrackerTest.java:127)
+    executed by: main (id=0)
+set by: 
+    instruction: [0016] areturn
+      of method: java.util.HashMap.get(Object) (HashMap.java:557)
+     for object: java.util.HashMap@172
+      called by: gov.nasa.jpf.test.mc.basic.NullTrackerTest.lookupTestObject(String) (NullTrackerTest.java:121)
+    executed by: main (id=0)
+
+====================================================== results
+error #1: gov.nasa.jpf.vm.NoUncaughtExceptionsProperty "java.lang.NullPointerException: Calling 'foo()V' o..."
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +listener=.listener.NullTracker
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.NullTrackerTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+
+====================================================== error 1
+gov.nasa.jpf.vm.NoUncaughtExceptionsProperty
+java.lang.NullPointerException: referencing field 'd' on null object
+	at gov.nasa.jpf.test.mc.basic.NullTrackerTest.testGetAfterIntraPut(NullTrackerTest.java:95)
+	at java.lang.reflect.Method.invoke(gov.nasa.jpf.vm.JPF_java_lang_reflect_Method)
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:648)
+
+
+====================================================== snapshot #1
+thread java.lang.Thread:{id:0,name:main,status:RUNNING,priority:5,isDaemon:false,lockCount:0,suspendCount:0}
+  call stack:
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:650)
+
+
+====================================================== NullTracker #1
+null value set by: 
+    instruction: [0014] putfield gov.nasa.jpf.test.mc.basic.NullTrackerTest.o
+      for field: gov.nasa.jpf.test.mc.basic.NullTrackerTest.o
+      in method: gov.nasa.jpf.test.mc.basic.NullTrackerTest.testGetAfterIntraPut() (NullTrackerTest.java:93)
+    executed by: main (id=0)
+
+====================================================== results
+error #1: gov.nasa.jpf.vm.NoUncaughtExceptionsProperty "java.lang.NullPointerException: referencing field ..."
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +listener=.listener.NullTracker
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.NullTrackerTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+
+====================================================== error 1
+gov.nasa.jpf.vm.NoUncaughtExceptionsProperty
+java.lang.NullPointerException: Calling 'foo()V' on null object
+	at gov.nasa.jpf.test.mc.basic.NullTrackerTest.testCallAfterIntraPut(NullTrackerTest.java:104)
+	at java.lang.reflect.Method.invoke(gov.nasa.jpf.vm.JPF_java_lang_reflect_Method)
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:648)
+
+
+====================================================== snapshot #1
+thread java.lang.Thread:{id:0,name:main,status:RUNNING,priority:5,isDaemon:false,lockCount:0,suspendCount:0}
+  call stack:
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:650)
+
+
+====================================================== NullTracker #1
+null value set by: 
+    instruction: [0014] putfield gov.nasa.jpf.test.mc.basic.NullTrackerTest.o
+      for field: gov.nasa.jpf.test.mc.basic.NullTrackerTest.o
+      in method: gov.nasa.jpf.test.mc.basic.NullTrackerTest.testCallAfterIntraPut() (NullTrackerTest.java:102)
+    executed by: main (id=0)
+
+====================================================== results
+error #1: gov.nasa.jpf.vm.NoUncaughtExceptionsProperty "java.lang.NullPointerException: Calling 'foo()V' o..."
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +listener=.listener.NullTracker
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.NullTrackerTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+now accessing testObject
+
+====================================================== error 1
+gov.nasa.jpf.vm.NoUncaughtExceptionsProperty
+java.lang.NullPointerException: referencing field 'd' on null object
+	at gov.nasa.jpf.test.mc.basic.NullTrackerTest.accessObject(NullTrackerTest.java:67)
+	at gov.nasa.jpf.test.mc.basic.NullTrackerTest.createAndAccessObject(NullTrackerTest.java:72)
+	at gov.nasa.jpf.test.mc.basic.NullTrackerTest.testGetAfterInterMethodReturn(NullTrackerTest.java:86)
+	at java.lang.reflect.Method.invoke(gov.nasa.jpf.vm.JPF_java_lang_reflect_Method)
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:648)
+
+
+====================================================== snapshot #1
+thread java.lang.Thread:{id:0,name:main,status:RUNNING,priority:5,isDaemon:false,lockCount:0,suspendCount:0}
+  call stack:
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:650)
+
+
+====================================================== NullTracker #1
+null value set by: 
+    instruction: [0004] astore_1
+      for local: o
+      in method: gov.nasa.jpf.test.mc.basic.NullTrackerTest.createAndAccessObject() (NullTrackerTest.java:71)
+    executed by: main (id=0)
+set by: 
+    instruction: [0001] areturn
+      of method: gov.nasa.jpf.test.mc.basic.NullTrackerTest.getTestObject() (NullTrackerTest.java:56)
+     for object: gov.nasa.jpf.test.mc.basic.NullTrackerTest@16b
+      called by: gov.nasa.jpf.test.mc.basic.NullTrackerTest.createAndAccessObject() (NullTrackerTest.java:71)
+    executed by: main (id=0)
+
+====================================================== results
+error #1: gov.nasa.jpf.vm.NoUncaughtExceptionsProperty "java.lang.NullPointerException: referencing field ..."
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +listener=.listener.NullTracker
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.NullTrackerTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+
+====================================================== error 1
+gov.nasa.jpf.vm.NoUncaughtExceptionsProperty
+java.lang.NullPointerException: Calling 'length()I' on null object
+	at gov.nasa.jpf.test.mc.basic.NullTrackerTest$TestObject.getDLength(NullTrackerTest.java:45)
+	at gov.nasa.jpf.test.mc.basic.NullTrackerTest.testMissingCtorInit(NullTrackerTest.java:150)
+	at java.lang.reflect.Method.invoke(gov.nasa.jpf.vm.JPF_java_lang_reflect_Method)
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:648)
+
+
+====================================================== snapshot #1
+thread java.lang.Thread:{id:0,name:main,status:RUNNING,priority:5,isDaemon:false,lockCount:0,suspendCount:0}
+  call stack:
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:650)
+
+
+====================================================== NullTracker #1
+null value set by: 
+   missing init: gov.nasa.jpf.test.mc.basic.NullTrackerTest$TestObject.<init>() (NullTrackerTest.java:38)
+     for object: gov.nasa.jpf.test.mc.basic.NullTrackerTest$TestObject@190
+      called by: gov.nasa.jpf.test.mc.basic.NullTrackerTest.createTestObject() (NullTrackerTest.java:135)
+    executed by: main (id=0)
+
+====================================================== results
+error #1: gov.nasa.jpf.vm.NoUncaughtExceptionsProperty "java.lang.NullPointerException: Calling 'length()I..."
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +listener=.listener.NullTracker
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.NullTrackerTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+
+====================================================== error 1
+gov.nasa.jpf.vm.NoUncaughtExceptionsProperty
+java.lang.NullPointerException: Calling 'foo()V' on null object
+	at gov.nasa.jpf.test.mc.basic.NullTrackerTest.testGetAfterASTORE(NullTrackerTest.java:113)
+	at java.lang.reflect.Method.invoke(gov.nasa.jpf.vm.JPF_java_lang_reflect_Method)
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:648)
+
+
+====================================================== snapshot #1
+thread java.lang.Thread:{id:0,name:main,status:RUNNING,priority:5,isDaemon:false,lockCount:0,suspendCount:0}
+  call stack:
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:650)
+
+
+====================================================== NullTracker #1
+null value set by: 
+    instruction: [0013] astore_1
+      for local: myObj
+      in method: gov.nasa.jpf.test.mc.basic.NullTrackerTest.testGetAfterASTORE() (NullTrackerTest.java:111)
+    executed by: main (id=0)
+
+====================================================== results
+error #1: gov.nasa.jpf.vm.NoUncaughtExceptionsProperty "java.lang.NullPointerException: Calling 'foo()V' o..."
+
+====================================================== search finished: 23/10/18 19:35
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

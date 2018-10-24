@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="gov.nasa.jpf.test.mc.data.TimeModelTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-10-23T18:35:45" hostname="boombox" time="0.323">
+  <properties/>
+  <testcase name="testSystemTime" classname="gov.nasa.jpf.test.mc.data.TimeModelTest" time="0.259"/>
+  <testcase name="testPathTime" classname="gov.nasa.jpf.test.mc.data.TimeModelTest" time="0.064"/>
+  <system-out><![CDATA[  running jpf with args: +vm.time.class=.vm.SystemTime
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.data.TimeModelTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+t1 = 1540319745968
+  t2 = 1540319745984
+    t3 = 1540319745986
+    t3 = 1540319745988
+  t2 = 1540319745990
+    t3 = 1540319745991
+    t3 = 1540319745993
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +vm.time.class=.vm.ConstInsnPathTime
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.data.TimeModelTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+t1 = 3227
+  t2 = 3251
+    t3 = 3283
+    t3 = 3283
+  t2 = 3251
+    t3 = 3296
+    t3 = 3296
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

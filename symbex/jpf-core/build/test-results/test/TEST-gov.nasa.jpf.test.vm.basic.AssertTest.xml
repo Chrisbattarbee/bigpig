@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="gov.nasa.jpf.test.vm.basic.AssertTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2018-10-23T18:36:03" hostname="boombox" time="0.611">
+  <properties/>
+  <testcase name="testAssertionViolation" classname="gov.nasa.jpf.test.vm.basic.AssertTest" time="0.262"/>
+  <testcase name="testNoAssertionViolation" classname="gov.nasa.jpf.test.vm.basic.AssertTest" time="0.06"/>
+  <testcase name="testSetDefaultAssertionStatus" classname="gov.nasa.jpf.test.vm.basic.AssertTest" time="0.078"/>
+  <testcase name="testSetClassAssertionStatus1" classname="gov.nasa.jpf.test.vm.basic.AssertTest" time="0.041"/>
+  <testcase name="testSetClassAssertionStatus2" classname="gov.nasa.jpf.test.vm.basic.AssertTest" time="0.066"/>
+  <testcase name="testSetPackageAssertionStatus" classname="gov.nasa.jpf.test.vm.basic.AssertTest" time="0.05"/>
+  <testcase name="testClearAssertionStatus" classname="gov.nasa.jpf.test.vm.basic.AssertTest" time="0.053"/>
+  <system-out><![CDATA[  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AssertTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== error 1
+gov.nasa.jpf.vm.NoUncaughtExceptionsProperty
+java.lang.AssertionError: oops, assertion failed
+	at gov.nasa.jpf.test.vm.basic.AssertTest.testAssertionViolation(AssertTest.java:37)
+	at java.lang.reflect.Method.invoke(gov.nasa.jpf.vm.JPF_java_lang_reflect_Method)
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:648)
+
+
+====================================================== snapshot #1
+thread java.lang.Thread:{id:0,name:main,status:RUNNING,priority:5,isDaemon:false,lockCount:0,suspendCount:0}
+  call stack:
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:650)
+
+
+====================================================== results
+error #1: gov.nasa.jpf.vm.NoUncaughtExceptionsProperty "java.lang.AssertionError: oops, assertion failed  ..."
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args: +vm.disable_assertions=*AssertTest
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AssertTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AssertTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.<init>()V
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.<init>(Ljava/lang/ClassLoader;)V
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AssertTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== error 1
+gov.nasa.jpf.vm.NoUncaughtExceptionsProperty
+java.lang.AssertionError: oops, assertion failed
+	at gov.nasa.jpf.test.vm.basic.AssertTest.testSetClassAssertionStatus1(AssertTest.java:66)
+	at java.lang.reflect.Method.invoke(gov.nasa.jpf.vm.JPF_java_lang_reflect_Method)
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:648)
+
+
+====================================================== snapshot #1
+thread java.lang.Thread:{id:0,name:main,status:RUNNING,priority:5,isDaemon:false,lockCount:0,suspendCount:0}
+  call stack:
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:650)
+
+
+====================================================== results
+error #1: gov.nasa.jpf.vm.NoUncaughtExceptionsProperty "java.lang.AssertionError: oops, assertion failed  ..."
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AssertTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.<init>()V
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.<init>(Ljava/lang/ClassLoader;)V
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AssertTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.<init>()V
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.<init>(Ljava/lang/ClassLoader;)V
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args: +vm.disable_assertions=*
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AssertTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.<init>()V
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.<init>(Ljava/lang/ClassLoader;)V
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

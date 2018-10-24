@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class gov.nasa.jpf.test.mc.basic.AttrsTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class gov.nasa.jpf.test.mc.basic.AttrsTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/gov.nasa.jpf.test.mc.basic.html">gov.nasa.jpf.test.mc.basic</a> &gt; AttrsTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">13</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.787s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testArrayPropagation</td>
+<td class="success">0.281s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testArraycopy</td>
+<td class="success">0.043s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testBacktrack</td>
+<td class="success">0.027s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testDoublePropagation</td>
+<td class="success">0.059s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testExplicitArrayRef</td>
+<td class="success">0.032s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testExplicitRef</td>
+<td class="success">0.038s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testIntAttrList</td>
+<td class="success">0.048s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testIntPropagation</td>
+<td class="success">0.039s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testInteger</td>
+<td class="success">0.033s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testInvokeListener</td>
+<td class="success">0.049s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testListenerMixedLongAttrLists</td>
+<td class="success">0.042s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testNativeMethod</td>
+<td class="success">0.053s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testObjectAttr</td>
+<td class="success">0.043s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+@ a2[0] : 42
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+@ 'result' attribute: 6
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +listener=.test.mc.basic.AttrsTest$DoubleListener
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+listener setting 'd' attr = &lt;an AttrType&gt;
+'r' attribute: null
+@ 'r' attribute after assignment: 42
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +listener=.test.mc.basic.AttrsTest$InvokeListener
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+listener notified of: goNative(), attributes= 1,2,3
+@ 'result' attribute: 6
+listener notified of: goModel(), attributes= 1,2,3
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+object attr = 42
+object attr = 42
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +listener=.test.mc.basic.AttrsTest$IntListener
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+'i' attribute set to: &lt;an AttrType&gt;
+'i' attribute after Verify.setLocalAttribute(&quot;i&quot;,42): 42
+'j' AttrType attribute: null
+'j' attribute after assignment: 42
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+@ 'myArray[5]' attribute before set: 0
+@ 'myArray[5]' attribute after set: 42
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+@ 'iDouble' attribute before set: 0
+@ 'iDouble' attribute after set: 42
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+[0] = -42
+[1] = 42
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +listener=.test.mc.basic.AttrsTest$MixedAttrTypeListener
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+--- pre-exec foo() invoke interception, setting arg attrs
+   operand attrs:
+42
+foo-arg
+--- post-exec foo() invoke interception
+42
+foo-arg
+  removing 42
+foo-arg
+--- pre-exec foo() return interception
+  got 'x' attributes
+foo-arg
+  setting lreturn operand attrs
+returned
+foo-arg
+--- post-exec foo() return interception
+returned
+foo-arg
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+false
+42
+-1
+true
+42
+-1
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 4.8</a> at 23-Oct-2018 19:37:05</p>
+</div>
+</div>
+</body>
+</html>

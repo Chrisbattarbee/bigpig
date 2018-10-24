@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="gov.nasa.jpf.test.java.lang.StringTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2018-10-23T18:36:44" hostname="boombox" time="0.856">
+  <properties/>
+  <testcase name="testEndsWith" classname="gov.nasa.jpf.test.java.lang.StringTest" time="0.267"/>
+  <testcase name="testNullChar" classname="gov.nasa.jpf.test.java.lang.StringTest" time="0.054"/>
+  <testcase name="testTrim" classname="gov.nasa.jpf.test.java.lang.StringTest" time="0.048"/>
+  <testcase name="testConstructors" classname="gov.nasa.jpf.test.java.lang.StringTest" time="0.098"/>
+  <testcase name="testCompareTo" classname="gov.nasa.jpf.test.java.lang.StringTest" time="0.045"/>
+  <testcase name="testToCharArray" classname="gov.nasa.jpf.test.java.lang.StringTest" time="0.043"/>
+  <testcase name="testMethods" classname="gov.nasa.jpf.test.java.lang.StringTest" time="0.096"/>
+  <testcase name="testReplace" classname="gov.nasa.jpf.test.java.lang.StringTest" time="0.045"/>
+  <testcase name="testContentEquals" classname="gov.nasa.jpf.test.java.lang.StringTest" time="0.034"/>
+  <testcase name="testEquals" classname="gov.nasa.jpf.test.java.lang.StringTest" time="0.028"/>
+  <testcase name="testIntern" classname="gov.nasa.jpf.test.java.lang.StringTest" time="0.035"/>
+  <testcase name="testIndexOf" classname="gov.nasa.jpf.test.java.lang.StringTest" time="0.028"/>
+  <testcase name="testStartsWith" classname="gov.nasa.jpf.test.java.lang.StringTest" time="0.03"/>
+  <system-out><![CDATA[  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.StringTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.StringTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.StringTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.StringTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.StringTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.StringTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.StringTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+3.141592653589793
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.StringTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.StringTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.StringTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.StringTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.StringTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.StringTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

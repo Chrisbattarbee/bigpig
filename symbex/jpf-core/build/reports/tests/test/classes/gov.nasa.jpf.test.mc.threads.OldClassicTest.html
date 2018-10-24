@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class gov.nasa.jpf.test.mc.threads.OldClassicTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class gov.nasa.jpf.test.mc.threads.OldClassicTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/gov.nasa.jpf.test.mc.threads.html">gov.nasa.jpf.test.mc.threads</a> &gt; OldClassicTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">2</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.385s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testBFSHeuristic</td>
+<td class="success">0.317s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testDFSearch</td>
+<td class="success">0.068s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>  running jpf with args: +search.class=gov.nasa.jpf.search.heuristic.BFSHeuristic
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.threads.OldClassicTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+
+====================================================== error 1
+gov.nasa.jpf.vm.NotDeadlockedProperty
+deadlock encountered:
+  thread gov.nasa.jpf.test.mc.threads.OldClassicTest$FirstTask:{id:1,name:Thread-1,status:WAITING,priority:5,isDaemon:false,lockCount:1,suspendCount:0}
+  thread gov.nasa.jpf.test.mc.threads.OldClassicTest$SecondTask:{id:2,name:Thread-2,status:WAITING,priority:5,isDaemon:false,lockCount:1,suspendCount:0}
+
+
+====================================================== snapshot #1
+thread gov.nasa.jpf.test.mc.threads.OldClassicTest$FirstTask:{id:1,name:Thread-1,status:WAITING,priority:5,isDaemon:false,lockCount:1,suspendCount:0}
+  waiting on: gov.nasa.jpf.test.mc.threads.OldClassicTest$Event@184
+  call stack:
+	at java.lang.Object.wait(Object.java)
+	at gov.nasa.jpf.test.mc.threads.OldClassicTest$Event.wait_for_event(OldClassicTest.java:38)
+	at gov.nasa.jpf.test.mc.threads.OldClassicTest$FirstTask.run(OldClassicTest.java:62)
+
+thread gov.nasa.jpf.test.mc.threads.OldClassicTest$SecondTask:{id:2,name:Thread-2,status:WAITING,priority:5,isDaemon:false,lockCount:1,suspendCount:0}
+  waiting on: gov.nasa.jpf.test.mc.threads.OldClassicTest$Event@185
+  call stack:
+	at java.lang.Object.wait(Object.java)
+	at gov.nasa.jpf.test.mc.threads.OldClassicTest$Event.wait_for_event(OldClassicTest.java:38)
+	at gov.nasa.jpf.test.mc.threads.OldClassicTest$SecondTask.run(OldClassicTest.java:89)
+
+
+====================================================== results
+error #1: gov.nasa.jpf.vm.NotDeadlockedProperty &quot;deadlock encountered:   thread gov.nasa.jpf.test.m...&quot;
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.threads.OldClassicTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+
+====================================================== error 1
+gov.nasa.jpf.vm.NotDeadlockedProperty
+deadlock encountered:
+  thread gov.nasa.jpf.test.mc.threads.OldClassicTest$FirstTask:{id:1,name:Thread-1,status:WAITING,priority:5,isDaemon:false,lockCount:1,suspendCount:0}
+  thread gov.nasa.jpf.test.mc.threads.OldClassicTest$SecondTask:{id:2,name:Thread-2,status:WAITING,priority:5,isDaemon:false,lockCount:1,suspendCount:0}
+
+
+====================================================== snapshot #1
+thread gov.nasa.jpf.test.mc.threads.OldClassicTest$FirstTask:{id:1,name:Thread-1,status:WAITING,priority:5,isDaemon:false,lockCount:1,suspendCount:0}
+  waiting on: gov.nasa.jpf.test.mc.threads.OldClassicTest$Event@182
+  call stack:
+	at java.lang.Object.wait(Object.java)
+	at gov.nasa.jpf.test.mc.threads.OldClassicTest$Event.wait_for_event(OldClassicTest.java:38)
+	at gov.nasa.jpf.test.mc.threads.OldClassicTest$FirstTask.run(OldClassicTest.java:62)
+
+thread gov.nasa.jpf.test.mc.threads.OldClassicTest$SecondTask:{id:2,name:Thread-2,status:WAITING,priority:5,isDaemon:false,lockCount:1,suspendCount:0}
+  waiting on: gov.nasa.jpf.test.mc.threads.OldClassicTest$Event@183
+  call stack:
+	at java.lang.Object.wait(Object.java)
+	at gov.nasa.jpf.test.mc.threads.OldClassicTest$Event.wait_for_event(OldClassicTest.java:38)
+	at gov.nasa.jpf.test.mc.threads.OldClassicTest$SecondTask.run(OldClassicTest.java:89)
+
+
+====================================================== results
+error #1: gov.nasa.jpf.vm.NotDeadlockedProperty &quot;deadlock encountered:   thread gov.nasa.jpf.test.m...&quot;
+
+====================================================== search finished: 23/10/18 19:35
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 4.8</a> at 23-Oct-2018 19:37:05</p>
+</div>
+</div>
+</body>
+</html>

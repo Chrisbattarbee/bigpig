@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="gov.nasa.jpf.test.mc.basic.CGRemoverTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2018-10-23T18:35:26" hostname="boombox" time="0.355">
+  <properties/>
+  <testcase name="testSyncBody" classname="gov.nasa.jpf.test.mc.basic.CGRemoverTest" time="0.248"/>
+  <testcase name="testSyncCall" classname="gov.nasa.jpf.test.mc.basic.CGRemoverTest" time="0.052"/>
+  <testcase name="testSyncLocation" classname="gov.nasa.jpf.test.mc.basic.CGRemoverTest" time="0.054"/>
+  <system-out><![CDATA[  running jpf with args: +listener=.listener.CGRemover,.test.mc.basic.CGRemoverTest$R1Listener +log.info=gov.nasa.jpf.CGRemover +cgrm.sync.cg_class=gov.nasa.jpf.vm.ThreadChoiceGenerator +cgrm.sync.method_bodies=gov.nasa.jpf.test.mc.basic.CGRemoverTest$R1.run(),gov.nasa.jpf.test.mc.basic.CGRemoverTest.testSyncBody()
+[INFO] added category: sync
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.CGRemoverTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+[INFO] removed CG: gov.nasa.jpf.vm.choice.ThreadChoiceFromSet {id:"LOCK" ,0/2,isCascaded:false}
+[INFO] removed CG: gov.nasa.jpf.vm.choice.ThreadChoiceFromSet {id:"LOCK" ,0/2,isCascaded:false}
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +listener=.listener.CGRemover,.test.mc.basic.CGRemoverTest$R1Listener +log.info=gov.nasa.jpf.CGRemover +cgrm.sync.cg_class=gov.nasa.jpf.vm.ThreadChoiceGenerator +cgrm.sync.method_calls=gov.nasa.jpf.test.mc.basic.CGRemoverTest$R1.getData()
+[INFO] added category: sync
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.CGRemoverTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+[INFO] removed CG: gov.nasa.jpf.vm.choice.ThreadChoiceFromSet {id:"LOCK" ,0/2,isCascaded:false}
+[INFO] removed CG: gov.nasa.jpf.vm.choice.ThreadChoiceFromSet {id:"LOCK" ,0/2,isCascaded:false}
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +listener=.listener.CGRemover,.test.mc.basic.CGRemoverTest$R1Listener +log.info=gov.nasa.jpf.CGRemover +cgrm.sync.cg_class=gov.nasa.jpf.vm.ThreadChoiceGenerator +cgrm.sync.locations=CGRemoverTest.java:45,CGRemoverTest.java:75
+[INFO] added category: sync
+[WARNING] no insns for location: CGRemoverTest\.java:45 in class: gov.nasa.jpf.test.mc.basic.CGRemoverTest
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.CGRemoverTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+[WARNING] no insns for location: CGRemoverTest\.java:75 in class: gov.nasa.jpf.test.mc.basic.CGRemoverTest$R1
+[INFO] removed CG: gov.nasa.jpf.vm.choice.ThreadChoiceFromSet {id:"LOCK" ,0/2,isCascaded:false}
+[INFO] removed CG: gov.nasa.jpf.vm.choice.ThreadChoiceFromSet {id:"LOCK" ,0/2,isCascaded:false}
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

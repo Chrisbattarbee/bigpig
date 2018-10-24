@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="gov.nasa.jpf.test.basic.TestJPFMainTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-10-23T18:35:07" hostname="boombox" time="0.272">
+  <properties/>
+  <testcase name="ensureCompatibility" classname="gov.nasa.jpf.test.basic.TestJPFMainTest" time="0.272"/>
+  <system-out><![CDATA[  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.basic.TestJPFMainTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+incrementing test counter
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

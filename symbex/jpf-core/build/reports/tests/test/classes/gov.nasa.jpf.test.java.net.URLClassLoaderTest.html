@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class gov.nasa.jpf.test.java.net.URLClassLoaderTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class gov.nasa.jpf.test.java.net.URLClassLoaderTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/gov.nasa.jpf.test.java.net.html">gov.nasa.jpf.test.java.net</a> &gt; URLClassLoaderTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">20</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">1.131s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testClassResolution</td>
+<td class="success">0.061s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testConstructorEmptyURLs</td>
+<td class="success">0.045s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testConstructorParent</td>
+<td class="success">0.036s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testConstructor_NullPointerException</td>
+<td class="success">0.038s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testFindLoadedClass</td>
+<td class="success">0.024s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testFindResource</td>
+<td class="success">0.049s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testFindResources</td>
+<td class="success">0.040s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testFindSystemClass</td>
+<td class="success">0.045s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testFindSystemClass_ClassNotFoundException</td>
+<td class="success">0.066s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetPackage</td>
+<td class="success">0.054s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetPackages</td>
+<td class="success">0.309s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetURLs</td>
+<td class="success">0.046s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testLoadClass_ClassNotFoundException</td>
+<td class="success">0.063s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testLoadClass_ClassNotFoundException2</td>
+<td class="success">0.046s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testLoadClass_NoClassDefFoundError</td>
+<td class="success">0.028s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testNewInstance1</td>
+<td class="success">0.033s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testNewInstance2</td>
+<td class="success">0.037s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testNonSystemLoaderLoadClass</td>
+<td class="success">0.034s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testSystemLoaderLoadClass</td>
+<td class="success">0.037s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testThrownException</td>
+<td class="success">0.040s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.net.URLClassLoaderTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;()V
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;(Ljava/lang/ClassLoader;)V
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.net.URLClassLoaderTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;()V
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;(Ljava/lang/ClassLoader;)V
+
+====================================================== error 1
+gov.nasa.jpf.vm.NoUncaughtExceptionsProperty
+java.lang.ClassNotFoundException: java.lang.Does_Not_Exist
+	at java.net.URLClassLoader.findClass(gov.nasa.jpf.vm.JPF_java_net_URLClassLoader)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:175)
+	at gov.nasa.jpf.test.java.net.URLClassLoaderTest.testLoadClass_ClassNotFoundException(URLClassLoaderTest.java:118)
+	at java.lang.reflect.Method.invoke(gov.nasa.jpf.vm.JPF_java_lang_reflect_Method)
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:648)
+
+
+====================================================== snapshot #1
+thread java.lang.Thread:{id:0,name:main,status:RUNNING,priority:5,isDaemon:false,lockCount:0,suspendCount:0}
+  call stack:
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:650)
+
+
+====================================================== results
+error #1: gov.nasa.jpf.vm.NoUncaughtExceptionsProperty &quot;java.lang.ClassNotFoundException: java.lang.Does_N...&quot;
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.net.URLClassLoaderTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;()V
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;(Ljava/lang/ClassLoader;)V
+
+====================================================== error 1
+gov.nasa.jpf.vm.NoUncaughtExceptionsProperty
+java.lang.ClassNotFoundException: class not found: classloader_specific_tests.Class1
+	at java.lang.ClassLoader.findSystemClass(gov.nasa.jpf.vm.JPF_java_lang_ClassLoader)
+	at gov.nasa.jpf.test.java.net.URLClassLoaderTest$TestClassLoader.delegateTofindSystemClass(URLClassLoaderTest.java:59)
+	at gov.nasa.jpf.test.java.net.URLClassLoaderTest.testFindSystemClass_ClassNotFoundException(URLClassLoaderTest.java:443)
+	at java.lang.reflect.Method.invoke(gov.nasa.jpf.vm.JPF_java_lang_reflect_Method)
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:648)
+
+
+====================================================== snapshot #1
+thread java.lang.Thread:{id:0,name:main,status:RUNNING,priority:5,isDaemon:false,lockCount:0,suspendCount:0}
+  call stack:
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:650)
+
+
+====================================================== results
+error #1: gov.nasa.jpf.vm.NoUncaughtExceptionsProperty &quot;java.lang.ClassNotFoundException: class not found:...&quot;
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.net.URLClassLoaderTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;()V
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;(Ljava/lang/ClassLoader;)V
+
+====================================================== error 1
+gov.nasa.jpf.vm.NoUncaughtExceptionsProperty
+java.lang.ClassNotFoundException: java.lang.Class.class
+	at java.net.URLClassLoader.findClass(gov.nasa.jpf.vm.JPF_java_net_URLClassLoader)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:175)
+	at gov.nasa.jpf.test.java.net.URLClassLoaderTest.testLoadClass_ClassNotFoundException2(URLClassLoaderTest.java:127)
+	at java.lang.reflect.Method.invoke(gov.nasa.jpf.vm.JPF_java_lang_reflect_Method)
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:648)
+
+
+====================================================== snapshot #1
+thread java.lang.Thread:{id:0,name:main,status:RUNNING,priority:5,isDaemon:false,lockCount:0,suspendCount:0}
+  call stack:
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:650)
+
+
+====================================================== results
+error #1: gov.nasa.jpf.vm.NoUncaughtExceptionsProperty &quot;java.lang.ClassNotFoundException: java.lang.Class....&quot;
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.net.URLClassLoaderTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;()V
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;(Ljava/lang/ClassLoader;)V
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.net.URLClassLoaderTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;()V
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;(Ljava/lang/ClassLoader;)V
+
+====================================================== error 1
+gov.nasa.jpf.vm.NoUncaughtExceptionsProperty
+java.lang.NullPointerException: array length of null object
+	at java.net.URLClassLoader.addURLs(URLClassLoader.java:49)
+	at java.net.URLClassLoader.&lt;init&gt;(URLClassLoader.java:40)
+	at gov.nasa.jpf.test.java.net.URLClassLoaderTest.testConstructor_NullPointerException(URLClassLoaderTest.java:76)
+	at java.lang.reflect.Method.invoke(gov.nasa.jpf.vm.JPF_java_lang_reflect_Method)
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:648)
+
+
+====================================================== snapshot #1
+thread java.lang.Thread:{id:0,name:main,status:RUNNING,priority:5,isDaemon:false,lockCount:0,suspendCount:0}
+  call stack:
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:650)
+
+
+====================================================== results
+error #1: gov.nasa.jpf.vm.NoUncaughtExceptionsProperty &quot;java.lang.NullPointerException: array length of nu...&quot;
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.net.URLClassLoaderTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;()V
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;(Ljava/lang/ClassLoader;)V
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.net.URLClassLoaderTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;()V
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;(Ljava/lang/ClassLoader;)V
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.net.URLClassLoaderTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;()V
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;(Ljava/lang/ClassLoader;)V
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.net.URLClassLoaderTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;()V
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;(Ljava/lang/ClassLoader;)V
+[WARNING] unknown classpath element: /x/y/z/
+[WARNING] unknown classpath element: /a/b/c/
+[WARNING] unknown classpath element: /a/b/c/
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.net.URLClassLoaderTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;()V
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;(Ljava/lang/ClassLoader;)V
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.net.URLClassLoaderTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;()V
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;(Ljava/lang/ClassLoader;)V
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.net.URLClassLoaderTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;()V
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;(Ljava/lang/ClassLoader;)V
+Class1 now causing ArithmeticException
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.net.URLClassLoaderTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;()V
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;(Ljava/lang/ClassLoader;)V
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.net.URLClassLoaderTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;()V
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;(Ljava/lang/ClassLoader;)V
+
+====================================================== error 1
+gov.nasa.jpf.vm.NoUncaughtExceptionsProperty
+java.lang.NoClassDefFoundError: IllegalName: java/lang/Class
+	at java.lang.ClassLoader.findSystemClass(gov.nasa.jpf.vm.JPF_java_lang_ClassLoader)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:172)
+	at gov.nasa.jpf.test.java.net.URLClassLoaderTest.testLoadClass_NoClassDefFoundError(URLClassLoaderTest.java:109)
+	at java.lang.reflect.Method.invoke(gov.nasa.jpf.vm.JPF_java_lang_reflect_Method)
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:648)
+
+
+====================================================== snapshot #1
+thread java.lang.Thread:{id:0,name:main,status:RUNNING,priority:5,isDaemon:false,lockCount:0,suspendCount:0}
+  call stack:
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:650)
+
+
+====================================================== results
+error #1: gov.nasa.jpf.vm.NoUncaughtExceptionsProperty &quot;java.lang.NoClassDefFoundError: IllegalName: java/...&quot;
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.net.URLClassLoaderTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;()V
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;(Ljava/lang/ClassLoader;)V
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.net.URLClassLoaderTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;()V
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;(Ljava/lang/ClassLoader;)V
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.net.URLClassLoaderTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;()V
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;(Ljava/lang/ClassLoader;)V
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.net.URLClassLoaderTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;()V
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;(Ljava/lang/ClassLoader;)V
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.net.URLClassLoaderTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;()V
+[WARNING] orphan NativePeer method: java.net.URLClassLoader.&lt;init&gt;(Ljava/lang/ClassLoader;)V
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 4.8</a> at 23-Oct-2018 19:37:05</p>
+</div>
+</div>
+</body>
+</html>

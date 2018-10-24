@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="gov.nasa.jpf.test.java.concurrent.ExchangerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-10-23T18:36:33" hostname="boombox" time="0.33">
+  <properties/>
+  <testcase name="testTimeoutExchange" classname="gov.nasa.jpf.test.java.concurrent.ExchangerTest" time="0.33"/>
+  <system-out><![CDATA[  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.concurrent.ExchangerTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+M now exchanging..
+M got exception: java.util.concurrent.TimeoutException
+T now exchanging..
+T got exception: java.util.concurrent.TimeoutException
+T now exchanging..
+M got: hi
+T got: there
+T got: there
+M got: hi
+T now exchanging..
+M got exception: java.util.concurrent.TimeoutException
+M got exception: java.util.concurrent.TimeoutException
+M got: hi
+T got: there
+T got: there
+T got exception: java.util.concurrent.TimeoutException
+M got exception: java.util.concurrent.TimeoutException
+M got exception: java.util.concurrent.TimeoutException
+M got: hi
+T got: there
+M got: hi
+T got exception: java.util.concurrent.TimeoutException
+T now exchanging..
+M now exchanging..
+T got exception: java.util.concurrent.TimeoutException
+M now exchanging..
+M now exchanging..
+T got exception: java.util.concurrent.TimeoutException
+M now exchanging..
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

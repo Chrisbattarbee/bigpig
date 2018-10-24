@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="gov.nasa.jpf.test.java.concurrent.ExecutorServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-10-23T18:36:27" hostname="boombox" time="0.335">
+  <properties/>
+  <testcase name="testShutdown" classname="gov.nasa.jpf.test.java.concurrent.ExecutorServiceTest" time="0.335"/>
+  <system-out><![CDATA[  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.concurrent.ExecutorServiceTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+run
+run
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="gov.nasa.jpf.test.java.lang.ClassTest" tests="31" skipped="0" failures="0" errors="0" timestamp="2018-10-23T18:36:40" hostname="boombox" time="1.298">
+  <properties/>
+  <testcase name="getDeclaringClassTest" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.238"/>
+  <testcase name="testAsSubclass" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.058"/>
+  <testcase name="testGetClass" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.042"/>
+  <testcase name="localClassEnclosingClassTest" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.046"/>
+  <testcase name="testClassField" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.037"/>
+  <testcase name="isSyntheticTest" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.035"/>
+  <testcase name="getEnclosingConstructor" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.038"/>
+  <testcase name="testIsAssignableFrom" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.033"/>
+  <testcase name="testInstanceOf" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.028"/>
+  <testcase name="isMemberClassTest" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.037"/>
+  <testcase name="getDeclaredAnnotationsTest" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.032"/>
+  <testcase name="testClassForName" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.027"/>
+  <testcase name="testIsAnnotationPresent" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.033"/>
+  <testcase name="testMethods" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.039"/>
+  <testcase name="testIdentity" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.042"/>
+  <testcase name="testGetEnclosingClassExist" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.055"/>
+  <testcase name="testClassForNameInit" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.037"/>
+  <testcase name="testNewInstance" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.033"/>
+  <testcase name="isLocalClassTest" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.029"/>
+  <testcase name="isAnonymousClassTest" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.024"/>
+  <testcase name="getResourceTest" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.046"/>
+  <testcase name="testNewInstanceFailAbstract" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.046"/>
+  <testcase name="testGetEnclosingClassNotExist" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.024"/>
+  <testcase name="getCanonicalNameTest" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.026"/>
+  <testcase name="getAnnotationsTest" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.022"/>
+  <testcase name="isEnumTest" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.022"/>
+  <testcase name="testNewInstanceFailAccess" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.029"/>
+  <testcase name="testIsAnnotation" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.034"/>
+  <testcase name="getEnclosingMethod" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.036"/>
+  <testcase name="testInterfaces" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.035"/>
+  <testcase name="testClassForNameException" classname="gov.nasa.jpf.test.java.lang.ClassTest" time="0.028"/>
+  <system-out><![CDATA[  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+loaded gov.nasa.jpf.test.java.lang.ClassTest
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+ClassTest$X initialized
+Class.forName() returned
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+new instance: gov.nasa.jpf.test.java.lang.ClassTest@43698
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== error 1
+gov.nasa.jpf.vm.NoUncaughtExceptionsProperty
+java.lang.InstantiationException
+	at java.lang.Class.newInstance(gov.nasa.jpf.vm.JPF_java_lang_Class)
+	at gov.nasa.jpf.test.java.lang.ClassTest.testNewInstanceFailAbstract(ClassTest.java:186)
+	at java.lang.reflect.Method.invoke(gov.nasa.jpf.vm.JPF_java_lang_reflect_Method)
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:648)
+
+
+====================================================== snapshot #1
+thread java.lang.Thread:{id:0,name:main,status:RUNNING,priority:5,isDaemon:false,lockCount:0,suspendCount:0}
+  call stack:
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:650)
+
+
+====================================================== results
+error #1: gov.nasa.jpf.vm.NoUncaughtExceptionsProperty "java.lang.InstantiationException  at java.lang.Cla..."
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== error 1
+gov.nasa.jpf.vm.NoUncaughtExceptionsProperty
+java.lang.IllegalAccessException: cannot access non-public member of class gov.nasa.jpf.test.java.lang.ClassTest$InAccessible
+	at java.lang.Class.newInstance(gov.nasa.jpf.vm.JPF_java_lang_Class)
+	at gov.nasa.jpf.test.java.lang.ClassTest.testNewInstanceFailAccess(ClassTest.java:175)
+	at java.lang.reflect.Method.invoke(gov.nasa.jpf.vm.JPF_java_lang_reflect_Method)
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:648)
+
+
+====================================================== snapshot #1
+thread java.lang.Thread:{id:0,name:main,status:RUNNING,priority:5,isDaemon:false,lockCount:0,suspendCount:0}
+  call stack:
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:650)
+
+
+====================================================== results
+error #1: gov.nasa.jpf.vm.NoUncaughtExceptionsProperty "java.lang.IllegalAccessException: cannot access no..."
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.lang.ClassTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== error 1
+gov.nasa.jpf.vm.NoUncaughtExceptionsProperty
+java.lang.ClassNotFoundException: class not found: x.y.NonExisting
+	at java.lang.Class.forName(gov.nasa.jpf.vm.JPF_java_lang_Class)
+	at gov.nasa.jpf.test.java.lang.ClassTest.testClassForNameException(ClassTest.java:82)
+	at java.lang.reflect.Method.invoke(gov.nasa.jpf.vm.JPF_java_lang_reflect_Method)
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:648)
+
+
+====================================================== snapshot #1
+thread java.lang.Thread:{id:0,name:main,status:RUNNING,priority:5,isDaemon:false,lockCount:0,suspendCount:0}
+  call stack:
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:650)
+
+
+====================================================== results
+error #1: gov.nasa.jpf.vm.NoUncaughtExceptionsProperty "java.lang.ClassNotFoundException: class not found:..."
+
+====================================================== search finished: 23/10/18 19:36
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

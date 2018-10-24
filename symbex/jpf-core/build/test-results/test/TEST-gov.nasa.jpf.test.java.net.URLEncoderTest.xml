@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="gov.nasa.jpf.test.java.net.URLEncoderTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-10-23T18:36:37" hostname="boombox" time="0.355">
+  <properties/>
+  <testcase name="testEncodeCycle" classname="gov.nasa.jpf.test.java.net.URLEncoderTest" time="0.278"/>
+  <testcase name="testEncodingException" classname="gov.nasa.jpf.test.java.net.URLEncoderTest" time="0.076"/>
+  <system-out><![CDATA[  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.net.URLEncoderTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+original: < what a mess >
+encoded:  %3C+what+a+mess+%3E
+decoded:  < what a mess >
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.java.net.URLEncoderTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+original: < what a mess >
+rightfully throws java.io.UnsupportedEncodingException: wrgsGrff
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

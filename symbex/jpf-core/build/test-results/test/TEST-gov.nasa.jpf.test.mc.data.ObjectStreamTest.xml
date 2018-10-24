@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="gov.nasa.jpf.test.mc.data.ObjectStreamTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2018-10-23T18:35:48" hostname="boombox" time="0.534">
+  <properties/>
+  <testcase name="testWriteReadArrayList" classname="gov.nasa.jpf.test.mc.data.ObjectStreamTest" time="0.258"/>
+  <testcase name="testWriteReadString" classname="gov.nasa.jpf.test.mc.data.ObjectStreamTest" time="0.051"/>
+  <testcase name="tsetWriteReadObjectWithMultiDimArray" classname="gov.nasa.jpf.test.mc.data.ObjectStreamTest" time="0.053"/>
+  <testcase name="testWriteReadInheritedClass" classname="gov.nasa.jpf.test.mc.data.ObjectStreamTest" time="0.05"/>
+  <testcase name="testWriteReadInteger" classname="gov.nasa.jpf.test.mc.data.ObjectStreamTest" time="0.043"/>
+  <testcase name="testWriteReadTransientField" classname="gov.nasa.jpf.test.mc.data.ObjectStreamTest" time="0.039"/>
+  <testcase name="testReadWriteObjectWithReference" classname="gov.nasa.jpf.test.mc.data.ObjectStreamTest" time="0.04"/>
+  <system-out><![CDATA[  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.data.ObjectStreamTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.data.ObjectStreamTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +jpf-core.native_classpath+=;${jpf-core}/build/tests
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.data.ObjectStreamTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +jpf-core.native_classpath+=;${jpf-core}/build/tests
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.data.ObjectStreamTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.data.ObjectStreamTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +jpf-core.native_classpath+=;${jpf-core}/build/tests
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.data.ObjectStreamTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +jpf-core.native_classpath+=;${jpf-core}/build/tests
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.data.ObjectStreamTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

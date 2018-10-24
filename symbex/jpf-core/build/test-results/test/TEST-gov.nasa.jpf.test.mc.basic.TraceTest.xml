@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="gov.nasa.jpf.test.mc.basic.TraceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2018-10-23T18:35:20" hostname="boombox" time="0.695">
+  <properties/>
+  <testcase name="testDepth" classname="gov.nasa.jpf.test.mc.basic.TraceTest" time="0.324"/>
+  <testcase name="testErrorTrace" classname="gov.nasa.jpf.test.mc.basic.TraceTest" time="0.298"/>
+  <testcase name="testPartialTrace" classname="gov.nasa.jpf.test.mc.basic.TraceTest" time="0.073"/>
+  <system-out><![CDATA[  running jpf with args: +listener=.listener.TraceStorer +trace.file=trace +trace.depth=3 +search.depth_limit=3 gov.nasa.jpf.test.mc.basic.TraceTest baz
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.TraceTest.runTestMethod("gov.nasa.jpf.test.mc.basic.TraceTest","baz")
+
+====================================================== search started: 23/10/18 19:35
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +listener=.listener.ChoiceSelector +choice.use_trace=trace +search.depth_limit=3 gov.nasa.jpf.test.mc.basic.TraceTest baz
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.TraceTest.runTestMethod("gov.nasa.jpf.test.mc.basic.TraceTest","baz")
+
+====================================================== search started: 23/10/18 19:35
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+--- creating trace
+  running jpf with args: +listener=.listener.TraceStorer +trace.file=trace
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.TraceTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+0,0,0,false,0
+0,0,0,false,1
+0,0,0,false,2
+0,0,0,false,3
+0,0,0,true,0
+0,0,0,true,1
+0,0,0,true,2
+0,0,0,true,3
+0,0,1,false,0
+0,0,1,false,1
+0,0,1,false,2
+0,0,1,false,3
+0,0,1,true,0
+0,0,1,true,1
+0,0,1,true,2
+0,0,1,true,3
+0,0,2,false,0
+0,0,2,false,1
+0,0,2,false,2
+0,0,2,false,3
+0,0,2,true,0
+0,0,2,true,1
+0,0,2,true,2
+0,0,2,true,3
+0,0,3,false,0
+0,0,3,false,1
+0,0,3,false,2
+0,0,3,false,3
+0,0,3,true,0
+0,0,3,true,1
+0,0,3,true,2
+0,0,3,true,3
+0,0,4,false,0
+0,0,4,false,1
+0,0,4,false,2
+0,0,4,false,3
+0,0,4,true,0
+0,0,4,true,1
+0,0,4,true,2
+0,0,4,true,3
+0,0,5,false,0
+0,0,5,false,1
+0,0,5,false,2
+0,0,5,false,3
+0,0,5,true,0
+0,0,5,true,1
+0,0,5,true,2
+0,0,5,true,3
+0,1,0,false,0
+0,1,0,false,1
+0,1,0,false,2
+0,1,0,false,3
+0,1,0,true,0
+0,1,0,true,1
+0,1,0,true,2
+0,1,0,true,3
+0,1,1,false,0
+0,1,1,false,1
+0,1,1,false,2
+0,1,1,false,3
+0,1,1,true,0
+0,1,1,true,1
+0,1,1,true,2
+0,1,1,true,3
+0,1,2,false,0
+0,1,2,false,1
+0,1,2,false,2
+0,1,2,false,3
+0,1,2,true,0
+0,1,2,true,1
+0,1,2,true,2
+0,1,2,true,3
+
+====================================================== error 1
+gov.nasa.jpf.vm.NoUncaughtExceptionsProperty
+java.lang.AssertionError
+	at gov.nasa.jpf.test.mc.basic.TraceTest.bar(TraceTest.java:92)
+	at java.lang.reflect.Method.invoke(gov.nasa.jpf.vm.JPF_java_lang_reflect_Method)
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:648)
+
+
+====================================================== snapshot #1
+thread java.lang.Thread:{id:0,name:main,status:RUNNING,priority:5,isDaemon:false,lockCount:0,suspendCount:0}
+  call stack:
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:650)
+
+
+====================================================== results
+error #1: gov.nasa.jpf.vm.NoUncaughtExceptionsProperty "java.lang.AssertionError  at gov.nasa.jpf.test.mc...."
+
+====================================================== search finished: 23/10/18 19:35
+--- replaying trace
+  running jpf with args: +listener=.listener.ChoiceSelector +choice.use_trace=trace
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.TraceTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+0,1,2,true,3
+
+====================================================== error 1
+gov.nasa.jpf.vm.NoUncaughtExceptionsProperty
+java.lang.AssertionError
+	at gov.nasa.jpf.test.mc.basic.TraceTest.bar(TraceTest.java:92)
+	at java.lang.reflect.Method.invoke(gov.nasa.jpf.vm.JPF_java_lang_reflect_Method)
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:648)
+
+
+====================================================== snapshot #1
+thread java.lang.Thread:{id:0,name:main,status:RUNNING,priority:5,isDaemon:false,lockCount:0,suspendCount:0}
+  call stack:
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:650)
+
+
+====================================================== results
+error #1: gov.nasa.jpf.vm.NoUncaughtExceptionsProperty "java.lang.AssertionError  at gov.nasa.jpf.test.mc...."
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.TraceTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+pre-trace choice: 0,100
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +listener=.listener.ChoiceSelector +choice.use_trace=trace
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.TraceTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+pre-trace choice: 0,100
+post-trace choice: 0,100,0
+post-trace choice: 0,100,1
+post-trace choice: 0,100,2
+post-trace choice: 0,100,3
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

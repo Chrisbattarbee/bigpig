@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="gov.nasa.jpf.test.mc.threads.AtomicTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2018-10-23T18:35:34" hostname="boombox" time="0.384">
+  <properties/>
+  <testcase name="testDataCG" classname="gov.nasa.jpf.test.mc.threads.AtomicTest" time="0.265"/>
+  <testcase name="testNoRace" classname="gov.nasa.jpf.test.mc.threads.AtomicTest" time="0.067"/>
+  <testcase name="testBlockedInAtomic" classname="gov.nasa.jpf.test.mc.threads.AtomicTest" time="0.052"/>
+  <system-out><![CDATA[  running jpf with args: +cg.enable_atomic
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.threads.AtomicTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +cg.enable_atomic
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.threads.AtomicTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+enter atomic section in main
+exit atomic section in main
+  enter run in Thread-0
+  exit run in Thread-0
+  enter run in Thread-0
+  exit run in Thread-0
+  exit run in Thread-0
+  exit run in Thread-0
+  exit run in Thread-0
+  exit run in Thread-0
+  exit run in Thread-0
+  exit run in Thread-0
+  exit run in Thread-0
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +cg.enable_atomic
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.threads.AtomicTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+main going atomic, holding r lock
+main waiting on r
+
+====================================================== error 1
+gov.nasa.jpf.vm.NotDeadlockedProperty
+blocked in atomic section:
+  ATOMIC thread java.lang.Thread:{id:0,name:main,status:WAITING,priority:5,isDaemon:false,lockCount:1,suspendCount:0}
+  thread java.lang.Thread:{id:1,name:Thread-1,status:RUNNING,priority:5,isDaemon:false,lockCount:0,suspendCount:0}
+
+
+====================================================== snapshot #1
+thread java.lang.Thread:{id:0,name:main,status:WAITING,priority:5,isDaemon:false,lockCount:1,suspendCount:0}
+  waiting on: gov.nasa.jpf.test.mc.threads.AtomicTest$3@184
+  call stack:
+	at java.lang.Object.wait(Object.java)
+	at gov.nasa.jpf.test.mc.threads.AtomicTest.testBlockedInAtomic(AtomicTest.java:105)
+	at java.lang.reflect.Method.invoke(Method.java)
+	at gov.nasa.jpf.util.test.TestJPF.runTestMethod(TestJPF.java:648)
+
+thread java.lang.Thread:{id:1,name:Thread-1,status:RUNNING,priority:5,isDaemon:false,lockCount:0,suspendCount:0}
+  call stack:
+
+
+====================================================== results
+error #1: gov.nasa.jpf.vm.NotDeadlockedProperty "blocked in atomic section:   ATOMIC thread java.la..."
+
+====================================================== search finished: 23/10/18 19:35
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

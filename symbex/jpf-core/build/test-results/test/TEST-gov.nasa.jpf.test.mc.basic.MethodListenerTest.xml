@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="gov.nasa.jpf.test.mc.basic.MethodListenerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-10-23T18:35:19" hostname="boombox" time="0.297">
+  <properties/>
+  <testcase name="testException" classname="gov.nasa.jpf.test.mc.basic.MethodListenerTest" time="0.245"/>
+  <testcase name="testBasicInvocation" classname="gov.nasa.jpf.test.mc.basic.MethodListenerTest" time="0.051"/>
+  <system-out><![CDATA[  running jpf with args: +listener=gov.nasa.jpf.test.mc.basic.MethodListenerTest$Listener +_start=testException
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.MethodListenerTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+> testException
+  > baz
+    > blowUp
+X java.lang.RuntimeException
+    < blowUp
+  < baz
+< testException
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +listener=gov.nasa.jpf.test.mc.basic.MethodListenerTest$Listener +_start=testBasicInvocation
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.MethodListenerTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+> testBasicInvocation
+  > foo
+    > bar
+    < bar
+  < foo
+< testBasicInvocation
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

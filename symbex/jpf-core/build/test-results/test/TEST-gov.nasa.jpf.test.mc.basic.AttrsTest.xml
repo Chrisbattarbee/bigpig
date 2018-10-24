@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="gov.nasa.jpf.test.mc.basic.AttrsTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2018-10-23T18:35:27" hostname="boombox" time="0.788">
+  <properties/>
+  <testcase name="testArrayPropagation" classname="gov.nasa.jpf.test.mc.basic.AttrsTest" time="0.281"/>
+  <testcase name="testNativeMethod" classname="gov.nasa.jpf.test.mc.basic.AttrsTest" time="0.053"/>
+  <testcase name="testDoublePropagation" classname="gov.nasa.jpf.test.mc.basic.AttrsTest" time="0.059"/>
+  <testcase name="testArraycopy" classname="gov.nasa.jpf.test.mc.basic.AttrsTest" time="0.043"/>
+  <testcase name="testInvokeListener" classname="gov.nasa.jpf.test.mc.basic.AttrsTest" time="0.049"/>
+  <testcase name="testObjectAttr" classname="gov.nasa.jpf.test.mc.basic.AttrsTest" time="0.043"/>
+  <testcase name="testIntPropagation" classname="gov.nasa.jpf.test.mc.basic.AttrsTest" time="0.039"/>
+  <testcase name="testExplicitArrayRef" classname="gov.nasa.jpf.test.mc.basic.AttrsTest" time="0.032"/>
+  <testcase name="testExplicitRef" classname="gov.nasa.jpf.test.mc.basic.AttrsTest" time="0.038"/>
+  <testcase name="testIntAttrList" classname="gov.nasa.jpf.test.mc.basic.AttrsTest" time="0.048"/>
+  <testcase name="testListenerMixedLongAttrLists" classname="gov.nasa.jpf.test.mc.basic.AttrsTest" time="0.042"/>
+  <testcase name="testInteger" classname="gov.nasa.jpf.test.mc.basic.AttrsTest" time="0.033"/>
+  <testcase name="testBacktrack" classname="gov.nasa.jpf.test.mc.basic.AttrsTest" time="0.027"/>
+  <system-out><![CDATA[  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+@ a2[0] : 42
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+@ 'result' attribute: 6
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +listener=.test.mc.basic.AttrsTest$DoubleListener
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+listener setting 'd' attr = <an AttrType>
+'r' attribute: null
+@ 'r' attribute after assignment: 42
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +listener=.test.mc.basic.AttrsTest$InvokeListener
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+listener notified of: goNative(), attributes= 1,2,3
+@ 'result' attribute: 6
+listener notified of: goModel(), attributes= 1,2,3
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+object attr = 42
+object attr = 42
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +listener=.test.mc.basic.AttrsTest$IntListener
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+'i' attribute set to: <an AttrType>
+'i' attribute after Verify.setLocalAttribute("i",42): 42
+'j' AttrType attribute: null
+'j' attribute after assignment: 42
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+@ 'myArray[5]' attribute before set: 0
+@ 'myArray[5]' attribute after set: 42
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+@ 'iDouble' attribute before set: 0
+@ 'iDouble' attribute after set: 42
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+[0] = -42
+[1] = 42
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args: +listener=.test.mc.basic.AttrsTest$MixedAttrTypeListener
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+--- pre-exec foo() invoke interception, setting arg attrs
+   operand attrs:
+42
+foo-arg
+--- post-exec foo() invoke interception
+42
+foo-arg
+  removing 42
+foo-arg
+--- pre-exec foo() return interception
+  got 'x' attributes
+foo-arg
+  setting lreturn operand attrs
+returned
+foo-arg
+--- post-exec foo() return interception
+returned
+foo-arg
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.mc.basic.AttrsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:35
+false
+42
+-1
+true
+42
+-1
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:35
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="gov.nasa.jpf.test.vm.basic.ArrayTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2018-10-23T18:36:07" hostname="boombox" time="0.586">
+  <properties/>
+  <testcase name="testCharArray" classname="gov.nasa.jpf.test.vm.basic.ArrayTest" time="0.245"/>
+  <testcase name="testArrayStoreExceptionArraycopy" classname="gov.nasa.jpf.test.vm.basic.ArrayTest" time="0.061"/>
+  <testcase name="testAoBX" classname="gov.nasa.jpf.test.vm.basic.ArrayTest" time="0.049"/>
+  <testcase name="testArrayCopy" classname="gov.nasa.jpf.test.vm.basic.ArrayTest" time="0.046"/>
+  <testcase name="test2DStringArray" classname="gov.nasa.jpf.test.vm.basic.ArrayTest" time="0.038"/>
+  <testcase name="testArrayStoreException" classname="gov.nasa.jpf.test.vm.basic.ArrayTest" time="0.037"/>
+  <testcase name="testIntArray" classname="gov.nasa.jpf.test.vm.basic.ArrayTest" time="0.045"/>
+  <testcase name="test2DArray" classname="gov.nasa.jpf.test.vm.basic.ArrayTest" time="0.033"/>
+  <testcase name="testStringArray" classname="gov.nasa.jpf.test.vm.basic.ArrayTest" time="0.031"/>
+  <system-out><![CDATA[  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.ArrayTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.ArrayTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.ArrayTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.ArrayTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.ArrayTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.ArrayTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.ArrayTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.ArrayTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.ArrayTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

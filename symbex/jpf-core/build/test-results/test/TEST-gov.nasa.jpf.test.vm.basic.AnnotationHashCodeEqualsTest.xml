@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest" tests="24" skipped="0" failures="0" errors="0" timestamp="2018-10-23T18:36:01" hostname="boombox" time="1.075">
+  <properties/>
+  <testcase name="testEnumConstsAttributeHashCodeEquals" classname="gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest" time="0.29"/>
+  <testcase name="testBooleanAttributeHashCodeEquals" classname="gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest" time="0.054"/>
+  <testcase name="testLongArrayAttributeHashCodeEquals" classname="gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest" time="0.052"/>
+  <testcase name="testDoubleAttributeHashCodeEquals" classname="gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest" time="0.04"/>
+  <testcase name="testBooleanArrayAttributeHashCodeEquals" classname="gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest" time="0.041"/>
+  <testcase name="testDoubleArrayAttributeHashCodeEquals" classname="gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest" time="0.046"/>
+  <testcase name="testByteArrayAttributeHashCodeEquals" classname="gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest" time="0.032"/>
+  <testcase name="testFloatAttributeHashCodeEquals" classname="gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest" time="0.045"/>
+  <testcase name="testAnnotationArrayAttributeHashCodeEquals" classname="gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest" time="0.044"/>
+  <testcase name="testShortAttributeHashCodeEquals" classname="gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest" time="0.029"/>
+  <testcase name="testCharArrayAttributeHashCodeEquals" classname="gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest" time="0.03"/>
+  <testcase name="testFloatArrayAttributeHashCodeEquals" classname="gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest" time="0.032"/>
+  <testcase name="testIntAttributeHashCodeEquals" classname="gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest" time="0.039"/>
+  <testcase name="testStringArrayAttributeHashCodeEquals" classname="gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest" time="0.032"/>
+  <testcase name="testByteAttributeHashCodeEquals" classname="gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest" time="0.037"/>
+  <testcase name="testLongAttributeHashCodeEquals" classname="gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest" time="0.033"/>
+  <testcase name="testStringAttributeHashCodeEquals" classname="gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest" time="0.027"/>
+  <testcase name="testClassAttributeHashCodeEquals" classname="gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest" time="0.024"/>
+  <testcase name="testCharAttributeHashCodeEquals" classname="gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest" time="0.022"/>
+  <testcase name="testClassArrayAttributeHashCodeEquals" classname="gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest" time="0.023"/>
+  <testcase name="testShortArrayAttributeHashCodeEquals" classname="gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest" time="0.031"/>
+  <testcase name="testIntArrayAttributeHashCodeEquals" classname="gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest" time="0.023"/>
+  <testcase name="testEnumConstsArrayAttributeHashCodeEquals" classname="gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest" time="0.023"/>
+  <testcase name="testAnnotationAttributeHashCodeEquals" classname="gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest" time="0.023"/>
+  <system-out><![CDATA[  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+  running jpf with args:
+JavaPathfinder core system v8.0 (rev 28c066f86c2cd268b8c9b9959161e3d07c6146c6) - (C) 2005-2014 United States Government. All rights reserved.
+
+
+====================================================== system under test
+gov.nasa.jpf.test.vm.basic.AnnotationHashCodeEqualsTest.runTestMethod()
+
+====================================================== search started: 23/10/18 19:36
+
+====================================================== results
+no errors detected
+
+====================================================== search finished: 23/10/18 19:36
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
