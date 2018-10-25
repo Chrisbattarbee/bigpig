@@ -2,7 +2,10 @@
 
 cd /usr/lib/jpf/
 javac -d /mnt/build /mnt/*.java 
-./jpf-core/bin/jpf Std.jpf
+# ./jpf-core/bin/jpf jpf-core/Std.jpf
 
-./jpf-core/bin/jpf jdart/src/examples/features/simple/test_baz.jpf
+#java -XshowSettings:properties 
+
+cd jdart
+./../jpf-core/bin/jpf src/examples/features/simple/test_baz.jpf
 
