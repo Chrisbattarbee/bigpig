@@ -1,0 +1,6 @@
+/home/admin/IdeaProjects/jconstraints-z3/src/main/java/gov/nasa/jpf/constraints/solvers/nativez3/NativeZ3ExpressionGenerator.java
+/home/admin/IdeaProjects/jconstraints-z3/src/main/java/gov/nasa/jpf/constraints/solvers/nativez3/NativeZ3SolverProviderLegacy.java
+/home/admin/IdeaProjects/jconstraints-z3/src/main/java/gov/nasa/jpf/constraints/solvers/nativez3/NativeZ3SolverContext.java
+/home/admin/IdeaProjects/jconstraints-z3/src/main/java/gov/nasa/jpf/constraints/solvers/nativez3/NativeZ3SolverProvider.java
+/home/admin/IdeaProjects/jconstraints-z3/src/main/java/gov/nasa/jpf/constraints/solvers/nativez3/NativeZ3TojConstraintConverter.java
+/home/admin/IdeaProjects/jconstraints-z3/src/main/java/gov/nasa/jpf/constraints/solvers/nativez3/NativeZ3Solver.java

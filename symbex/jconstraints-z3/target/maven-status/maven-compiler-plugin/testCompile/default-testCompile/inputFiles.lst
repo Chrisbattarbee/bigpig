@@ -1,0 +1,8 @@
+/home/admin/IdeaProjects/jconstraints-z3/src/test/java/gov/nasa/jpf/constraints/solver/QuantifierEliminationTest.java
+/home/admin/IdeaProjects/jconstraints-z3/src/test/java/gov/nasa/jpf/constraints/expressions/ModuloTestZ3.java
+/home/admin/IdeaProjects/jconstraints-z3/src/test/java/gov/nasa/jpf/constraints/expressions/ExpressionZ3Test.java
+/home/admin/IdeaProjects/jconstraints-z3/src/test/java/gov/nasa/jpf/constraints/expressions/ContextTest.java
+/home/admin/IdeaProjects/jconstraints-z3/src/test/java/gov/nasa/jpf/constraints/solver/ExpressionConversionTest.java
+/home/admin/IdeaProjects/jconstraints-z3/src/test/java/gov/nasa/jpf/constraints/expressions/IntegerTest.java
+/home/admin/IdeaProjects/jconstraints-z3/src/test/java/gov/nasa/jpf/constraints/expressions/ExpressionZ3BVTest.java
+/home/admin/IdeaProjects/jconstraints-z3/src/test/java/gov/nasa/jpf/constraints/expressions/TrigonometricTest.java
