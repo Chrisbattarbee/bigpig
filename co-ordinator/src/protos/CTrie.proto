@@ -1,7 +1,9 @@
 syntax = 'proto3';
 option java_package = 'protos.CTrie';
+option java_outer_classname = "CTrie";
 
-service CTrie {
+
+service CTrieService {
   rpc size (sizeRequest) returns (sizeResponse) {}
   rpc isEmpty(isEmptyRequest) returns (isEmptyResponse) {}
   rpc containsKey(isEmptyRequest) returns (isEmptyResponse) {}
