@@ -1,0 +1,11 @@
+service CTrie {
+  rpc size (sizeRequest) returns (sizeResponse) {}
+}
+
+message sizeResponse {
+  int32 size = 1;
+}
+
+message sizeRequest {
+
+}
