@@ -1,26 +1,26 @@
+import com.google.protobuf.RpcChannel;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import protos.CTrie.CTrieProto;
 
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 
+
+
 public class CTrie<K extends Serializable, V extends Serializable> implements Map {
 
-    private final ManagedChannel channel;
-    private final CTrieBlockingStub blockingStub;
-    private final CTrieStub asyncStub;
+    public static final String HOST_NAME = "co-ordinator";
 
-    /** Construct client for accessing RouteGuide server using the existing channel. */
-    private CTrie(ManagedChannelBuilder<?> channelBuilder) {
-        channel = channelBuilder.build();
-        blockingStub = RouteGuideGrpc.newBlockingStub(channel);
-        asyncStub = RouteGuideGrpc.newStub(channel);
-    }
+
+    private final ManagedChannel channel;
+    private final CTrieProto.CTrieService.BlockingInterface blockingStub;
 
     public CTrie() {
-        this(ManagedChannelBuilder.forAddress("", 444).usePlaintext());
+        channel = ManagedChannelBuilder.forAddress(HOST_NAME, 444).usePlaintext().build();
+        CTrieProto.CTrieService.newBlockingStub(channel);
     }
 
     @Override
