@@ -15,4 +15,7 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     implementation 'com.github.romix:java-concurrent-hash-trie-map:master-SNAPSHOT'
+    implementation 'io.grpc:grpc-netty-shaded:1.15.1'
+    implementation 'io.grpc:grpc-protobuf:1.15.1'
+    implementation 'io.grpc:grpc-stub:1.15.1'
 }
