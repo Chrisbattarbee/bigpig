@@ -10075,6 +10075,1019 @@ public final class CTrieProto {
 
   }
 
+  /**
+   * Protobuf service {@code CTrieService}
+   */
+  public static abstract class CTrieService
+      implements com.google.protobuf.Service {
+    protected CTrieService() {}
+
+    public interface Interface {
+      /**
+       * <code>rpc size(.sizeRequest) returns (.sizeResponse);</code>
+       */
+      public abstract void size(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.sizeRequest request,
+          com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.sizeResponse> done);
+
+      /**
+       * <code>rpc isEmpty(.isEmptyRequest) returns (.isEmptyResponse);</code>
+       */
+      public abstract void isEmpty(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.isEmptyRequest request,
+          com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.isEmptyResponse> done);
+
+      /**
+       * <code>rpc containsKey(.isEmptyRequest) returns (.isEmptyResponse);</code>
+       */
+      public abstract void containsKey(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.isEmptyRequest request,
+          com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.isEmptyResponse> done);
+
+      /**
+       * <code>rpc containsValue(.containsValueRequest) returns (.containsValueResponse);</code>
+       */
+      public abstract void containsValue(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.containsValueRequest request,
+          com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.containsValueResponse> done);
+
+      /**
+       * <code>rpc get(.getRequest) returns (.getResponse);</code>
+       */
+      public abstract void get(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.getRequest request,
+          com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.getResponse> done);
+
+      /**
+       * <code>rpc put(.putRequest) returns (.getResponse);</code>
+       */
+      public abstract void put(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.putRequest request,
+          com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.getResponse> done);
+
+      /**
+       * <code>rpc remove(.removeRequest) returns (.removeResponse);</code>
+       */
+      public abstract void remove(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.removeRequest request,
+          com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.removeResponse> done);
+
+      /**
+       * <code>rpc putAll(.putAllRequest) returns (.putAllResponse);</code>
+       */
+      public abstract void putAll(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.putAllRequest request,
+          com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.putAllResponse> done);
+
+      /**
+       * <code>rpc clear(.clearRequest) returns (.clearResponse);</code>
+       */
+      public abstract void clear(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.clearRequest request,
+          com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.clearResponse> done);
+
+      /**
+       * <code>rpc keySet(.keySetRequest) returns (.keySetResponse);</code>
+       */
+      public abstract void keySet(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.keySetRequest request,
+          com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.keySetResponse> done);
+
+      /**
+       * <code>rpc values(.valuesRequest) returns (.valuesResponse);</code>
+       */
+      public abstract void values(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.valuesRequest request,
+          com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.valuesResponse> done);
+
+      /**
+       * <code>rpc entrySet(.entrySetRequest) returns (.entrySetRequest);</code>
+       */
+      public abstract void entrySet(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.entrySetRequest request,
+          com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.entrySetRequest> done);
+
+    }
+
+    public static com.google.protobuf.Service newReflectiveService(
+        final Interface impl) {
+      return new CTrieService() {
+        @java.lang.Override
+        public  void size(
+            com.google.protobuf.RpcController controller,
+            protos.CTrie.CTrieProto.sizeRequest request,
+            com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.sizeResponse> done) {
+          impl.size(controller, request, done);
+        }
+
+        @java.lang.Override
+        public  void isEmpty(
+            com.google.protobuf.RpcController controller,
+            protos.CTrie.CTrieProto.isEmptyRequest request,
+            com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.isEmptyResponse> done) {
+          impl.isEmpty(controller, request, done);
+        }
+
+        @java.lang.Override
+        public  void containsKey(
+            com.google.protobuf.RpcController controller,
+            protos.CTrie.CTrieProto.isEmptyRequest request,
+            com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.isEmptyResponse> done) {
+          impl.containsKey(controller, request, done);
+        }
+
+        @java.lang.Override
+        public  void containsValue(
+            com.google.protobuf.RpcController controller,
+            protos.CTrie.CTrieProto.containsValueRequest request,
+            com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.containsValueResponse> done) {
+          impl.containsValue(controller, request, done);
+        }
+
+        @java.lang.Override
+        public  void get(
+            com.google.protobuf.RpcController controller,
+            protos.CTrie.CTrieProto.getRequest request,
+            com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.getResponse> done) {
+          impl.get(controller, request, done);
+        }
+
+        @java.lang.Override
+        public  void put(
+            com.google.protobuf.RpcController controller,
+            protos.CTrie.CTrieProto.putRequest request,
+            com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.getResponse> done) {
+          impl.put(controller, request, done);
+        }
+
+        @java.lang.Override
+        public  void remove(
+            com.google.protobuf.RpcController controller,
+            protos.CTrie.CTrieProto.removeRequest request,
+            com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.removeResponse> done) {
+          impl.remove(controller, request, done);
+        }
+
+        @java.lang.Override
+        public  void putAll(
+            com.google.protobuf.RpcController controller,
+            protos.CTrie.CTrieProto.putAllRequest request,
+            com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.putAllResponse> done) {
+          impl.putAll(controller, request, done);
+        }
+
+        @java.lang.Override
+        public  void clear(
+            com.google.protobuf.RpcController controller,
+            protos.CTrie.CTrieProto.clearRequest request,
+            com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.clearResponse> done) {
+          impl.clear(controller, request, done);
+        }
+
+        @java.lang.Override
+        public  void keySet(
+            com.google.protobuf.RpcController controller,
+            protos.CTrie.CTrieProto.keySetRequest request,
+            com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.keySetResponse> done) {
+          impl.keySet(controller, request, done);
+        }
+
+        @java.lang.Override
+        public  void values(
+            com.google.protobuf.RpcController controller,
+            protos.CTrie.CTrieProto.valuesRequest request,
+            com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.valuesResponse> done) {
+          impl.values(controller, request, done);
+        }
+
+        @java.lang.Override
+        public  void entrySet(
+            com.google.protobuf.RpcController controller,
+            protos.CTrie.CTrieProto.entrySetRequest request,
+            com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.entrySetRequest> done) {
+          impl.entrySet(controller, request, done);
+        }
+
+      };
+    }
+
+    public static com.google.protobuf.BlockingService
+        newReflectiveBlockingService(final BlockingInterface impl) {
+      return new com.google.protobuf.BlockingService() {
+        public final com.google.protobuf.Descriptors.ServiceDescriptor
+            getDescriptorForType() {
+          return getDescriptor();
+        }
+
+        public final com.google.protobuf.Message callBlockingMethod(
+            com.google.protobuf.Descriptors.MethodDescriptor method,
+            com.google.protobuf.RpcController controller,
+            com.google.protobuf.Message request)
+            throws com.google.protobuf.ServiceException {
+          if (method.getService() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+              "Service.callBlockingMethod() given method descriptor for " +
+              "wrong service type.");
+          }
+          switch(method.getIndex()) {
+            case 0:
+              return impl.size(controller, (protos.CTrie.CTrieProto.sizeRequest)request);
+            case 1:
+              return impl.isEmpty(controller, (protos.CTrie.CTrieProto.isEmptyRequest)request);
+            case 2:
+              return impl.containsKey(controller, (protos.CTrie.CTrieProto.isEmptyRequest)request);
+            case 3:
+              return impl.containsValue(controller, (protos.CTrie.CTrieProto.containsValueRequest)request);
+            case 4:
+              return impl.get(controller, (protos.CTrie.CTrieProto.getRequest)request);
+            case 5:
+              return impl.put(controller, (protos.CTrie.CTrieProto.putRequest)request);
+            case 6:
+              return impl.remove(controller, (protos.CTrie.CTrieProto.removeRequest)request);
+            case 7:
+              return impl.putAll(controller, (protos.CTrie.CTrieProto.putAllRequest)request);
+            case 8:
+              return impl.clear(controller, (protos.CTrie.CTrieProto.clearRequest)request);
+            case 9:
+              return impl.keySet(controller, (protos.CTrie.CTrieProto.keySetRequest)request);
+            case 10:
+              return impl.values(controller, (protos.CTrie.CTrieProto.valuesRequest)request);
+            case 11:
+              return impl.entrySet(controller, (protos.CTrie.CTrieProto.entrySetRequest)request);
+            default:
+              throw new java.lang.AssertionError("Can't get here.");
+          }
+        }
+
+        public final com.google.protobuf.Message
+            getRequestPrototype(
+            com.google.protobuf.Descriptors.MethodDescriptor method) {
+          if (method.getService() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+              "Service.getRequestPrototype() given method " +
+              "descriptor for wrong service type.");
+          }
+          switch(method.getIndex()) {
+            case 0:
+              return protos.CTrie.CTrieProto.sizeRequest.getDefaultInstance();
+            case 1:
+              return protos.CTrie.CTrieProto.isEmptyRequest.getDefaultInstance();
+            case 2:
+              return protos.CTrie.CTrieProto.isEmptyRequest.getDefaultInstance();
+            case 3:
+              return protos.CTrie.CTrieProto.containsValueRequest.getDefaultInstance();
+            case 4:
+              return protos.CTrie.CTrieProto.getRequest.getDefaultInstance();
+            case 5:
+              return protos.CTrie.CTrieProto.putRequest.getDefaultInstance();
+            case 6:
+              return protos.CTrie.CTrieProto.removeRequest.getDefaultInstance();
+            case 7:
+              return protos.CTrie.CTrieProto.putAllRequest.getDefaultInstance();
+            case 8:
+              return protos.CTrie.CTrieProto.clearRequest.getDefaultInstance();
+            case 9:
+              return protos.CTrie.CTrieProto.keySetRequest.getDefaultInstance();
+            case 10:
+              return protos.CTrie.CTrieProto.valuesRequest.getDefaultInstance();
+            case 11:
+              return protos.CTrie.CTrieProto.entrySetRequest.getDefaultInstance();
+            default:
+              throw new java.lang.AssertionError("Can't get here.");
+          }
+        }
+
+        public final com.google.protobuf.Message
+            getResponsePrototype(
+            com.google.protobuf.Descriptors.MethodDescriptor method) {
+          if (method.getService() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+              "Service.getResponsePrototype() given method " +
+              "descriptor for wrong service type.");
+          }
+          switch(method.getIndex()) {
+            case 0:
+              return protos.CTrie.CTrieProto.sizeResponse.getDefaultInstance();
+            case 1:
+              return protos.CTrie.CTrieProto.isEmptyResponse.getDefaultInstance();
+            case 2:
+              return protos.CTrie.CTrieProto.isEmptyResponse.getDefaultInstance();
+            case 3:
+              return protos.CTrie.CTrieProto.containsValueResponse.getDefaultInstance();
+            case 4:
+              return protos.CTrie.CTrieProto.getResponse.getDefaultInstance();
+            case 5:
+              return protos.CTrie.CTrieProto.getResponse.getDefaultInstance();
+            case 6:
+              return protos.CTrie.CTrieProto.removeResponse.getDefaultInstance();
+            case 7:
+              return protos.CTrie.CTrieProto.putAllResponse.getDefaultInstance();
+            case 8:
+              return protos.CTrie.CTrieProto.clearResponse.getDefaultInstance();
+            case 9:
+              return protos.CTrie.CTrieProto.keySetResponse.getDefaultInstance();
+            case 10:
+              return protos.CTrie.CTrieProto.valuesResponse.getDefaultInstance();
+            case 11:
+              return protos.CTrie.CTrieProto.entrySetRequest.getDefaultInstance();
+            default:
+              throw new java.lang.AssertionError("Can't get here.");
+          }
+        }
+
+      };
+    }
+
+    /**
+     * <code>rpc size(.sizeRequest) returns (.sizeResponse);</code>
+     */
+    public abstract void size(
+        com.google.protobuf.RpcController controller,
+        protos.CTrie.CTrieProto.sizeRequest request,
+        com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.sizeResponse> done);
+
+    /**
+     * <code>rpc isEmpty(.isEmptyRequest) returns (.isEmptyResponse);</code>
+     */
+    public abstract void isEmpty(
+        com.google.protobuf.RpcController controller,
+        protos.CTrie.CTrieProto.isEmptyRequest request,
+        com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.isEmptyResponse> done);
+
+    /**
+     * <code>rpc containsKey(.isEmptyRequest) returns (.isEmptyResponse);</code>
+     */
+    public abstract void containsKey(
+        com.google.protobuf.RpcController controller,
+        protos.CTrie.CTrieProto.isEmptyRequest request,
+        com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.isEmptyResponse> done);
+
+    /**
+     * <code>rpc containsValue(.containsValueRequest) returns (.containsValueResponse);</code>
+     */
+    public abstract void containsValue(
+        com.google.protobuf.RpcController controller,
+        protos.CTrie.CTrieProto.containsValueRequest request,
+        com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.containsValueResponse> done);
+
+    /**
+     * <code>rpc get(.getRequest) returns (.getResponse);</code>
+     */
+    public abstract void get(
+        com.google.protobuf.RpcController controller,
+        protos.CTrie.CTrieProto.getRequest request,
+        com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.getResponse> done);
+
+    /**
+     * <code>rpc put(.putRequest) returns (.getResponse);</code>
+     */
+    public abstract void put(
+        com.google.protobuf.RpcController controller,
+        protos.CTrie.CTrieProto.putRequest request,
+        com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.getResponse> done);
+
+    /**
+     * <code>rpc remove(.removeRequest) returns (.removeResponse);</code>
+     */
+    public abstract void remove(
+        com.google.protobuf.RpcController controller,
+        protos.CTrie.CTrieProto.removeRequest request,
+        com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.removeResponse> done);
+
+    /**
+     * <code>rpc putAll(.putAllRequest) returns (.putAllResponse);</code>
+     */
+    public abstract void putAll(
+        com.google.protobuf.RpcController controller,
+        protos.CTrie.CTrieProto.putAllRequest request,
+        com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.putAllResponse> done);
+
+    /**
+     * <code>rpc clear(.clearRequest) returns (.clearResponse);</code>
+     */
+    public abstract void clear(
+        com.google.protobuf.RpcController controller,
+        protos.CTrie.CTrieProto.clearRequest request,
+        com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.clearResponse> done);
+
+    /**
+     * <code>rpc keySet(.keySetRequest) returns (.keySetResponse);</code>
+     */
+    public abstract void keySet(
+        com.google.protobuf.RpcController controller,
+        protos.CTrie.CTrieProto.keySetRequest request,
+        com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.keySetResponse> done);
+
+    /**
+     * <code>rpc values(.valuesRequest) returns (.valuesResponse);</code>
+     */
+    public abstract void values(
+        com.google.protobuf.RpcController controller,
+        protos.CTrie.CTrieProto.valuesRequest request,
+        com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.valuesResponse> done);
+
+    /**
+     * <code>rpc entrySet(.entrySetRequest) returns (.entrySetRequest);</code>
+     */
+    public abstract void entrySet(
+        com.google.protobuf.RpcController controller,
+        protos.CTrie.CTrieProto.entrySetRequest request,
+        com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.entrySetRequest> done);
+
+    public static final
+        com.google.protobuf.Descriptors.ServiceDescriptor
+        getDescriptor() {
+      return protos.CTrie.CTrieProto.getDescriptor().getServices().get(0);
+    }
+    public final com.google.protobuf.Descriptors.ServiceDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public final void callMethod(
+        com.google.protobuf.Descriptors.MethodDescriptor method,
+        com.google.protobuf.RpcController controller,
+        com.google.protobuf.Message request,
+        com.google.protobuf.RpcCallback<
+          com.google.protobuf.Message> done) {
+      if (method.getService() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "Service.callMethod() given method descriptor for wrong " +
+          "service type.");
+      }
+      switch(method.getIndex()) {
+        case 0:
+          this.size(controller, (protos.CTrie.CTrieProto.sizeRequest)request,
+            com.google.protobuf.RpcUtil.<protos.CTrie.CTrieProto.sizeResponse>specializeCallback(
+              done));
+          return;
+        case 1:
+          this.isEmpty(controller, (protos.CTrie.CTrieProto.isEmptyRequest)request,
+            com.google.protobuf.RpcUtil.<protos.CTrie.CTrieProto.isEmptyResponse>specializeCallback(
+              done));
+          return;
+        case 2:
+          this.containsKey(controller, (protos.CTrie.CTrieProto.isEmptyRequest)request,
+            com.google.protobuf.RpcUtil.<protos.CTrie.CTrieProto.isEmptyResponse>specializeCallback(
+              done));
+          return;
+        case 3:
+          this.containsValue(controller, (protos.CTrie.CTrieProto.containsValueRequest)request,
+            com.google.protobuf.RpcUtil.<protos.CTrie.CTrieProto.containsValueResponse>specializeCallback(
+              done));
+          return;
+        case 4:
+          this.get(controller, (protos.CTrie.CTrieProto.getRequest)request,
+            com.google.protobuf.RpcUtil.<protos.CTrie.CTrieProto.getResponse>specializeCallback(
+              done));
+          return;
+        case 5:
+          this.put(controller, (protos.CTrie.CTrieProto.putRequest)request,
+            com.google.protobuf.RpcUtil.<protos.CTrie.CTrieProto.getResponse>specializeCallback(
+              done));
+          return;
+        case 6:
+          this.remove(controller, (protos.CTrie.CTrieProto.removeRequest)request,
+            com.google.protobuf.RpcUtil.<protos.CTrie.CTrieProto.removeResponse>specializeCallback(
+              done));
+          return;
+        case 7:
+          this.putAll(controller, (protos.CTrie.CTrieProto.putAllRequest)request,
+            com.google.protobuf.RpcUtil.<protos.CTrie.CTrieProto.putAllResponse>specializeCallback(
+              done));
+          return;
+        case 8:
+          this.clear(controller, (protos.CTrie.CTrieProto.clearRequest)request,
+            com.google.protobuf.RpcUtil.<protos.CTrie.CTrieProto.clearResponse>specializeCallback(
+              done));
+          return;
+        case 9:
+          this.keySet(controller, (protos.CTrie.CTrieProto.keySetRequest)request,
+            com.google.protobuf.RpcUtil.<protos.CTrie.CTrieProto.keySetResponse>specializeCallback(
+              done));
+          return;
+        case 10:
+          this.values(controller, (protos.CTrie.CTrieProto.valuesRequest)request,
+            com.google.protobuf.RpcUtil.<protos.CTrie.CTrieProto.valuesResponse>specializeCallback(
+              done));
+          return;
+        case 11:
+          this.entrySet(controller, (protos.CTrie.CTrieProto.entrySetRequest)request,
+            com.google.protobuf.RpcUtil.<protos.CTrie.CTrieProto.entrySetRequest>specializeCallback(
+              done));
+          return;
+        default:
+          throw new java.lang.AssertionError("Can't get here.");
+      }
+    }
+
+    public final com.google.protobuf.Message
+        getRequestPrototype(
+        com.google.protobuf.Descriptors.MethodDescriptor method) {
+      if (method.getService() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "Service.getRequestPrototype() given method " +
+          "descriptor for wrong service type.");
+      }
+      switch(method.getIndex()) {
+        case 0:
+          return protos.CTrie.CTrieProto.sizeRequest.getDefaultInstance();
+        case 1:
+          return protos.CTrie.CTrieProto.isEmptyRequest.getDefaultInstance();
+        case 2:
+          return protos.CTrie.CTrieProto.isEmptyRequest.getDefaultInstance();
+        case 3:
+          return protos.CTrie.CTrieProto.containsValueRequest.getDefaultInstance();
+        case 4:
+          return protos.CTrie.CTrieProto.getRequest.getDefaultInstance();
+        case 5:
+          return protos.CTrie.CTrieProto.putRequest.getDefaultInstance();
+        case 6:
+          return protos.CTrie.CTrieProto.removeRequest.getDefaultInstance();
+        case 7:
+          return protos.CTrie.CTrieProto.putAllRequest.getDefaultInstance();
+        case 8:
+          return protos.CTrie.CTrieProto.clearRequest.getDefaultInstance();
+        case 9:
+          return protos.CTrie.CTrieProto.keySetRequest.getDefaultInstance();
+        case 10:
+          return protos.CTrie.CTrieProto.valuesRequest.getDefaultInstance();
+        case 11:
+          return protos.CTrie.CTrieProto.entrySetRequest.getDefaultInstance();
+        default:
+          throw new java.lang.AssertionError("Can't get here.");
+      }
+    }
+
+    public final com.google.protobuf.Message
+        getResponsePrototype(
+        com.google.protobuf.Descriptors.MethodDescriptor method) {
+      if (method.getService() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "Service.getResponsePrototype() given method " +
+          "descriptor for wrong service type.");
+      }
+      switch(method.getIndex()) {
+        case 0:
+          return protos.CTrie.CTrieProto.sizeResponse.getDefaultInstance();
+        case 1:
+          return protos.CTrie.CTrieProto.isEmptyResponse.getDefaultInstance();
+        case 2:
+          return protos.CTrie.CTrieProto.isEmptyResponse.getDefaultInstance();
+        case 3:
+          return protos.CTrie.CTrieProto.containsValueResponse.getDefaultInstance();
+        case 4:
+          return protos.CTrie.CTrieProto.getResponse.getDefaultInstance();
+        case 5:
+          return protos.CTrie.CTrieProto.getResponse.getDefaultInstance();
+        case 6:
+          return protos.CTrie.CTrieProto.removeResponse.getDefaultInstance();
+        case 7:
+          return protos.CTrie.CTrieProto.putAllResponse.getDefaultInstance();
+        case 8:
+          return protos.CTrie.CTrieProto.clearResponse.getDefaultInstance();
+        case 9:
+          return protos.CTrie.CTrieProto.keySetResponse.getDefaultInstance();
+        case 10:
+          return protos.CTrie.CTrieProto.valuesResponse.getDefaultInstance();
+        case 11:
+          return protos.CTrie.CTrieProto.entrySetRequest.getDefaultInstance();
+        default:
+          throw new java.lang.AssertionError("Can't get here.");
+      }
+    }
+
+    public static Stub newStub(
+        com.google.protobuf.RpcChannel channel) {
+      return new Stub(channel);
+    }
+
+    public static final class Stub extends protos.CTrie.CTrieProto.CTrieService implements Interface {
+      private Stub(com.google.protobuf.RpcChannel channel) {
+        this.channel = channel;
+      }
+
+      private final com.google.protobuf.RpcChannel channel;
+
+      public com.google.protobuf.RpcChannel getChannel() {
+        return channel;
+      }
+
+      public  void size(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.sizeRequest request,
+          com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.sizeResponse> done) {
+        channel.callMethod(
+          getDescriptor().getMethods().get(0),
+          controller,
+          request,
+          protos.CTrie.CTrieProto.sizeResponse.getDefaultInstance(),
+          com.google.protobuf.RpcUtil.generalizeCallback(
+            done,
+            protos.CTrie.CTrieProto.sizeResponse.class,
+            protos.CTrie.CTrieProto.sizeResponse.getDefaultInstance()));
+      }
+
+      public  void isEmpty(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.isEmptyRequest request,
+          com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.isEmptyResponse> done) {
+        channel.callMethod(
+          getDescriptor().getMethods().get(1),
+          controller,
+          request,
+          protos.CTrie.CTrieProto.isEmptyResponse.getDefaultInstance(),
+          com.google.protobuf.RpcUtil.generalizeCallback(
+            done,
+            protos.CTrie.CTrieProto.isEmptyResponse.class,
+            protos.CTrie.CTrieProto.isEmptyResponse.getDefaultInstance()));
+      }
+
+      public  void containsKey(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.isEmptyRequest request,
+          com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.isEmptyResponse> done) {
+        channel.callMethod(
+          getDescriptor().getMethods().get(2),
+          controller,
+          request,
+          protos.CTrie.CTrieProto.isEmptyResponse.getDefaultInstance(),
+          com.google.protobuf.RpcUtil.generalizeCallback(
+            done,
+            protos.CTrie.CTrieProto.isEmptyResponse.class,
+            protos.CTrie.CTrieProto.isEmptyResponse.getDefaultInstance()));
+      }
+
+      public  void containsValue(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.containsValueRequest request,
+          com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.containsValueResponse> done) {
+        channel.callMethod(
+          getDescriptor().getMethods().get(3),
+          controller,
+          request,
+          protos.CTrie.CTrieProto.containsValueResponse.getDefaultInstance(),
+          com.google.protobuf.RpcUtil.generalizeCallback(
+            done,
+            protos.CTrie.CTrieProto.containsValueResponse.class,
+            protos.CTrie.CTrieProto.containsValueResponse.getDefaultInstance()));
+      }
+
+      public  void get(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.getRequest request,
+          com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.getResponse> done) {
+        channel.callMethod(
+          getDescriptor().getMethods().get(4),
+          controller,
+          request,
+          protos.CTrie.CTrieProto.getResponse.getDefaultInstance(),
+          com.google.protobuf.RpcUtil.generalizeCallback(
+            done,
+            protos.CTrie.CTrieProto.getResponse.class,
+            protos.CTrie.CTrieProto.getResponse.getDefaultInstance()));
+      }
+
+      public  void put(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.putRequest request,
+          com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.getResponse> done) {
+        channel.callMethod(
+          getDescriptor().getMethods().get(5),
+          controller,
+          request,
+          protos.CTrie.CTrieProto.getResponse.getDefaultInstance(),
+          com.google.protobuf.RpcUtil.generalizeCallback(
+            done,
+            protos.CTrie.CTrieProto.getResponse.class,
+            protos.CTrie.CTrieProto.getResponse.getDefaultInstance()));
+      }
+
+      public  void remove(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.removeRequest request,
+          com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.removeResponse> done) {
+        channel.callMethod(
+          getDescriptor().getMethods().get(6),
+          controller,
+          request,
+          protos.CTrie.CTrieProto.removeResponse.getDefaultInstance(),
+          com.google.protobuf.RpcUtil.generalizeCallback(
+            done,
+            protos.CTrie.CTrieProto.removeResponse.class,
+            protos.CTrie.CTrieProto.removeResponse.getDefaultInstance()));
+      }
+
+      public  void putAll(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.putAllRequest request,
+          com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.putAllResponse> done) {
+        channel.callMethod(
+          getDescriptor().getMethods().get(7),
+          controller,
+          request,
+          protos.CTrie.CTrieProto.putAllResponse.getDefaultInstance(),
+          com.google.protobuf.RpcUtil.generalizeCallback(
+            done,
+            protos.CTrie.CTrieProto.putAllResponse.class,
+            protos.CTrie.CTrieProto.putAllResponse.getDefaultInstance()));
+      }
+
+      public  void clear(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.clearRequest request,
+          com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.clearResponse> done) {
+        channel.callMethod(
+          getDescriptor().getMethods().get(8),
+          controller,
+          request,
+          protos.CTrie.CTrieProto.clearResponse.getDefaultInstance(),
+          com.google.protobuf.RpcUtil.generalizeCallback(
+            done,
+            protos.CTrie.CTrieProto.clearResponse.class,
+            protos.CTrie.CTrieProto.clearResponse.getDefaultInstance()));
+      }
+
+      public  void keySet(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.keySetRequest request,
+          com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.keySetResponse> done) {
+        channel.callMethod(
+          getDescriptor().getMethods().get(9),
+          controller,
+          request,
+          protos.CTrie.CTrieProto.keySetResponse.getDefaultInstance(),
+          com.google.protobuf.RpcUtil.generalizeCallback(
+            done,
+            protos.CTrie.CTrieProto.keySetResponse.class,
+            protos.CTrie.CTrieProto.keySetResponse.getDefaultInstance()));
+      }
+
+      public  void values(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.valuesRequest request,
+          com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.valuesResponse> done) {
+        channel.callMethod(
+          getDescriptor().getMethods().get(10),
+          controller,
+          request,
+          protos.CTrie.CTrieProto.valuesResponse.getDefaultInstance(),
+          com.google.protobuf.RpcUtil.generalizeCallback(
+            done,
+            protos.CTrie.CTrieProto.valuesResponse.class,
+            protos.CTrie.CTrieProto.valuesResponse.getDefaultInstance()));
+      }
+
+      public  void entrySet(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.entrySetRequest request,
+          com.google.protobuf.RpcCallback<protos.CTrie.CTrieProto.entrySetRequest> done) {
+        channel.callMethod(
+          getDescriptor().getMethods().get(11),
+          controller,
+          request,
+          protos.CTrie.CTrieProto.entrySetRequest.getDefaultInstance(),
+          com.google.protobuf.RpcUtil.generalizeCallback(
+            done,
+            protos.CTrie.CTrieProto.entrySetRequest.class,
+            protos.CTrie.CTrieProto.entrySetRequest.getDefaultInstance()));
+      }
+    }
+
+    public static BlockingInterface newBlockingStub(
+        com.google.protobuf.BlockingRpcChannel channel) {
+      return new BlockingStub(channel);
+    }
+
+    public interface BlockingInterface {
+      public protos.CTrie.CTrieProto.sizeResponse size(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.sizeRequest request)
+          throws com.google.protobuf.ServiceException;
+
+      public protos.CTrie.CTrieProto.isEmptyResponse isEmpty(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.isEmptyRequest request)
+          throws com.google.protobuf.ServiceException;
+
+      public protos.CTrie.CTrieProto.isEmptyResponse containsKey(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.isEmptyRequest request)
+          throws com.google.protobuf.ServiceException;
+
+      public protos.CTrie.CTrieProto.containsValueResponse containsValue(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.containsValueRequest request)
+          throws com.google.protobuf.ServiceException;
+
+      public protos.CTrie.CTrieProto.getResponse get(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.getRequest request)
+          throws com.google.protobuf.ServiceException;
+
+      public protos.CTrie.CTrieProto.getResponse put(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.putRequest request)
+          throws com.google.protobuf.ServiceException;
+
+      public protos.CTrie.CTrieProto.removeResponse remove(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.removeRequest request)
+          throws com.google.protobuf.ServiceException;
+
+      public protos.CTrie.CTrieProto.putAllResponse putAll(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.putAllRequest request)
+          throws com.google.protobuf.ServiceException;
+
+      public protos.CTrie.CTrieProto.clearResponse clear(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.clearRequest request)
+          throws com.google.protobuf.ServiceException;
+
+      public protos.CTrie.CTrieProto.keySetResponse keySet(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.keySetRequest request)
+          throws com.google.protobuf.ServiceException;
+
+      public protos.CTrie.CTrieProto.valuesResponse values(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.valuesRequest request)
+          throws com.google.protobuf.ServiceException;
+
+      public protos.CTrie.CTrieProto.entrySetRequest entrySet(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.entrySetRequest request)
+          throws com.google.protobuf.ServiceException;
+    }
+
+    private static final class BlockingStub implements BlockingInterface {
+      private BlockingStub(com.google.protobuf.BlockingRpcChannel channel) {
+        this.channel = channel;
+      }
+
+      private final com.google.protobuf.BlockingRpcChannel channel;
+
+      public protos.CTrie.CTrieProto.sizeResponse size(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.sizeRequest request)
+          throws com.google.protobuf.ServiceException {
+        return (protos.CTrie.CTrieProto.sizeResponse) channel.callBlockingMethod(
+          getDescriptor().getMethods().get(0),
+          controller,
+          request,
+          protos.CTrie.CTrieProto.sizeResponse.getDefaultInstance());
+      }
+
+
+      public protos.CTrie.CTrieProto.isEmptyResponse isEmpty(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.isEmptyRequest request)
+          throws com.google.protobuf.ServiceException {
+        return (protos.CTrie.CTrieProto.isEmptyResponse) channel.callBlockingMethod(
+          getDescriptor().getMethods().get(1),
+          controller,
+          request,
+          protos.CTrie.CTrieProto.isEmptyResponse.getDefaultInstance());
+      }
+
+
+      public protos.CTrie.CTrieProto.isEmptyResponse containsKey(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.isEmptyRequest request)
+          throws com.google.protobuf.ServiceException {
+        return (protos.CTrie.CTrieProto.isEmptyResponse) channel.callBlockingMethod(
+          getDescriptor().getMethods().get(2),
+          controller,
+          request,
+          protos.CTrie.CTrieProto.isEmptyResponse.getDefaultInstance());
+      }
+
+
+      public protos.CTrie.CTrieProto.containsValueResponse containsValue(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.containsValueRequest request)
+          throws com.google.protobuf.ServiceException {
+        return (protos.CTrie.CTrieProto.containsValueResponse) channel.callBlockingMethod(
+          getDescriptor().getMethods().get(3),
+          controller,
+          request,
+          protos.CTrie.CTrieProto.containsValueResponse.getDefaultInstance());
+      }
+
+
+      public protos.CTrie.CTrieProto.getResponse get(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.getRequest request)
+          throws com.google.protobuf.ServiceException {
+        return (protos.CTrie.CTrieProto.getResponse) channel.callBlockingMethod(
+          getDescriptor().getMethods().get(4),
+          controller,
+          request,
+          protos.CTrie.CTrieProto.getResponse.getDefaultInstance());
+      }
+
+
+      public protos.CTrie.CTrieProto.getResponse put(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.putRequest request)
+          throws com.google.protobuf.ServiceException {
+        return (protos.CTrie.CTrieProto.getResponse) channel.callBlockingMethod(
+          getDescriptor().getMethods().get(5),
+          controller,
+          request,
+          protos.CTrie.CTrieProto.getResponse.getDefaultInstance());
+      }
+
+
+      public protos.CTrie.CTrieProto.removeResponse remove(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.removeRequest request)
+          throws com.google.protobuf.ServiceException {
+        return (protos.CTrie.CTrieProto.removeResponse) channel.callBlockingMethod(
+          getDescriptor().getMethods().get(6),
+          controller,
+          request,
+          protos.CTrie.CTrieProto.removeResponse.getDefaultInstance());
+      }
+
+
+      public protos.CTrie.CTrieProto.putAllResponse putAll(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.putAllRequest request)
+          throws com.google.protobuf.ServiceException {
+        return (protos.CTrie.CTrieProto.putAllResponse) channel.callBlockingMethod(
+          getDescriptor().getMethods().get(7),
+          controller,
+          request,
+          protos.CTrie.CTrieProto.putAllResponse.getDefaultInstance());
+      }
+
+
+      public protos.CTrie.CTrieProto.clearResponse clear(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.clearRequest request)
+          throws com.google.protobuf.ServiceException {
+        return (protos.CTrie.CTrieProto.clearResponse) channel.callBlockingMethod(
+          getDescriptor().getMethods().get(8),
+          controller,
+          request,
+          protos.CTrie.CTrieProto.clearResponse.getDefaultInstance());
+      }
+
+
+      public protos.CTrie.CTrieProto.keySetResponse keySet(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.keySetRequest request)
+          throws com.google.protobuf.ServiceException {
+        return (protos.CTrie.CTrieProto.keySetResponse) channel.callBlockingMethod(
+          getDescriptor().getMethods().get(9),
+          controller,
+          request,
+          protos.CTrie.CTrieProto.keySetResponse.getDefaultInstance());
+      }
+
+
+      public protos.CTrie.CTrieProto.valuesResponse values(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.valuesRequest request)
+          throws com.google.protobuf.ServiceException {
+        return (protos.CTrie.CTrieProto.valuesResponse) channel.callBlockingMethod(
+          getDescriptor().getMethods().get(10),
+          controller,
+          request,
+          protos.CTrie.CTrieProto.valuesResponse.getDefaultInstance());
+      }
+
+
+      public protos.CTrie.CTrieProto.entrySetRequest entrySet(
+          com.google.protobuf.RpcController controller,
+          protos.CTrie.CTrieProto.entrySetRequest request)
+          throws com.google.protobuf.ServiceException {
+        return (protos.CTrie.CTrieProto.entrySetRequest) channel.callBlockingMethod(
+          getDescriptor().getMethods().get(11),
+          controller,
+          request,
+          protos.CTrie.CTrieProto.entrySetRequest.getDefaultInstance());
+      }
+
+    }
+
+    // @@protoc_insertion_point(class_scope:CTrieService)
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_sizeRequest_descriptor;
   private static final 
@@ -10228,7 +11241,7 @@ public final class CTrieProto {
       "Request\032\017.keySetResponse\"\000\022+\n\006values\022\016.v" +
       "aluesRequest\032\017.valuesResponse\"\000\0220\n\010entry" +
       "Set\022\020.entrySetRequest\032\020.entrySetRequest\"" +
-      "\000B\032\n\014protos.CTrieB\nCTrieProtob\006proto3"
+      "\000B\035\n\014protos.CTrieB\nCTrieProto\210\001\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
