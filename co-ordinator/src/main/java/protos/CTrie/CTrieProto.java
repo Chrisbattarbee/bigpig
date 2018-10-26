@@ -3,8 +3,8 @@
 
 package protos.CTrie;
 
-public final class CTrie {
-  private CTrie() {}
+public final class CTrieProto {
+  private CTrieProto() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -77,15 +77,15 @@ public final class CTrie {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protos.CTrie.CTrie.internal_static_sizeRequest_descriptor;
+      return protos.CTrie.CTrieProto.internal_static_sizeRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protos.CTrie.CTrie.internal_static_sizeRequest_fieldAccessorTable
+      return protos.CTrie.CTrieProto.internal_static_sizeRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protos.CTrie.CTrie.sizeRequest.class, protos.CTrie.CTrie.sizeRequest.Builder.class);
+              protos.CTrie.CTrieProto.sizeRequest.class, protos.CTrie.CTrieProto.sizeRequest.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -121,10 +121,10 @@ public final class CTrie {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protos.CTrie.CTrie.sizeRequest)) {
+      if (!(obj instanceof protos.CTrie.CTrieProto.sizeRequest)) {
         return super.equals(obj);
       }
-      protos.CTrie.CTrie.sizeRequest other = (protos.CTrie.CTrie.sizeRequest) obj;
+      protos.CTrie.CTrieProto.sizeRequest other = (protos.CTrie.CTrieProto.sizeRequest) obj;
 
       boolean result = true;
       result = result && unknownFields.equals(other.unknownFields);
@@ -143,69 +143,69 @@ public final class CTrie {
       return hash;
     }
 
-    public static protos.CTrie.CTrie.sizeRequest parseFrom(
+    public static protos.CTrie.CTrieProto.sizeRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.sizeRequest parseFrom(
+    public static protos.CTrie.CTrieProto.sizeRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.sizeRequest parseFrom(
+    public static protos.CTrie.CTrieProto.sizeRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.sizeRequest parseFrom(
+    public static protos.CTrie.CTrieProto.sizeRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.sizeRequest parseFrom(byte[] data)
+    public static protos.CTrie.CTrieProto.sizeRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.sizeRequest parseFrom(
+    public static protos.CTrie.CTrieProto.sizeRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.sizeRequest parseFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.sizeRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.sizeRequest parseFrom(
+    public static protos.CTrie.CTrieProto.sizeRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.sizeRequest parseDelimitedFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.sizeRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.sizeRequest parseDelimitedFrom(
+    public static protos.CTrie.CTrieProto.sizeRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.sizeRequest parseFrom(
+    public static protos.CTrie.CTrieProto.sizeRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.sizeRequest parseFrom(
+    public static protos.CTrie.CTrieProto.sizeRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -218,7 +218,7 @@ public final class CTrie {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protos.CTrie.CTrie.sizeRequest prototype) {
+    public static Builder newBuilder(protos.CTrie.CTrieProto.sizeRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -239,21 +239,21 @@ public final class CTrie {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:sizeRequest)
-        protos.CTrie.CTrie.sizeRequestOrBuilder {
+        protos.CTrie.CTrieProto.sizeRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protos.CTrie.CTrie.internal_static_sizeRequest_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_sizeRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protos.CTrie.CTrie.internal_static_sizeRequest_fieldAccessorTable
+        return protos.CTrie.CTrieProto.internal_static_sizeRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protos.CTrie.CTrie.sizeRequest.class, protos.CTrie.CTrie.sizeRequest.Builder.class);
+                protos.CTrie.CTrieProto.sizeRequest.class, protos.CTrie.CTrieProto.sizeRequest.Builder.class);
       }
 
-      // Construct using protos.CTrie.CTrie.sizeRequest.newBuilder()
+      // Construct using protos.CTrie.CTrieProto.sizeRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -277,17 +277,17 @@ public final class CTrie {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protos.CTrie.CTrie.internal_static_sizeRequest_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_sizeRequest_descriptor;
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.sizeRequest getDefaultInstanceForType() {
-        return protos.CTrie.CTrie.sizeRequest.getDefaultInstance();
+      public protos.CTrie.CTrieProto.sizeRequest getDefaultInstanceForType() {
+        return protos.CTrie.CTrieProto.sizeRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.sizeRequest build() {
-        protos.CTrie.CTrie.sizeRequest result = buildPartial();
+      public protos.CTrie.CTrieProto.sizeRequest build() {
+        protos.CTrie.CTrieProto.sizeRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -295,8 +295,8 @@ public final class CTrie {
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.sizeRequest buildPartial() {
-        protos.CTrie.CTrie.sizeRequest result = new protos.CTrie.CTrie.sizeRequest(this);
+      public protos.CTrie.CTrieProto.sizeRequest buildPartial() {
+        protos.CTrie.CTrieProto.sizeRequest result = new protos.CTrie.CTrieProto.sizeRequest(this);
         onBuilt();
         return result;
       }
@@ -335,16 +335,16 @@ public final class CTrie {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protos.CTrie.CTrie.sizeRequest) {
-          return mergeFrom((protos.CTrie.CTrie.sizeRequest)other);
+        if (other instanceof protos.CTrie.CTrieProto.sizeRequest) {
+          return mergeFrom((protos.CTrie.CTrieProto.sizeRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protos.CTrie.CTrie.sizeRequest other) {
-        if (other == protos.CTrie.CTrie.sizeRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(protos.CTrie.CTrieProto.sizeRequest other) {
+        if (other == protos.CTrie.CTrieProto.sizeRequest.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -360,11 +360,11 @@ public final class CTrie {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protos.CTrie.CTrie.sizeRequest parsedMessage = null;
+        protos.CTrie.CTrieProto.sizeRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protos.CTrie.CTrie.sizeRequest) e.getUnfinishedMessage();
+          parsedMessage = (protos.CTrie.CTrieProto.sizeRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -390,12 +390,12 @@ public final class CTrie {
     }
 
     // @@protoc_insertion_point(class_scope:sizeRequest)
-    private static final protos.CTrie.CTrie.sizeRequest DEFAULT_INSTANCE;
+    private static final protos.CTrie.CTrieProto.sizeRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protos.CTrie.CTrie.sizeRequest();
+      DEFAULT_INSTANCE = new protos.CTrie.CTrieProto.sizeRequest();
     }
 
-    public static protos.CTrie.CTrie.sizeRequest getDefaultInstance() {
+    public static protos.CTrie.CTrieProto.sizeRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -420,7 +420,7 @@ public final class CTrie {
     }
 
     @java.lang.Override
-    public protos.CTrie.CTrie.sizeRequest getDefaultInstanceForType() {
+    public protos.CTrie.CTrieProto.sizeRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -501,15 +501,15 @@ public final class CTrie {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protos.CTrie.CTrie.internal_static_sizeResponse_descriptor;
+      return protos.CTrie.CTrieProto.internal_static_sizeResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protos.CTrie.CTrie.internal_static_sizeResponse_fieldAccessorTable
+      return protos.CTrie.CTrieProto.internal_static_sizeResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protos.CTrie.CTrie.sizeResponse.class, protos.CTrie.CTrie.sizeResponse.Builder.class);
+              protos.CTrie.CTrieProto.sizeResponse.class, protos.CTrie.CTrieProto.sizeResponse.Builder.class);
     }
 
     public static final int SIZE_FIELD_NUMBER = 1;
@@ -561,10 +561,10 @@ public final class CTrie {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protos.CTrie.CTrie.sizeResponse)) {
+      if (!(obj instanceof protos.CTrie.CTrieProto.sizeResponse)) {
         return super.equals(obj);
       }
-      protos.CTrie.CTrie.sizeResponse other = (protos.CTrie.CTrie.sizeResponse) obj;
+      protos.CTrie.CTrieProto.sizeResponse other = (protos.CTrie.CTrieProto.sizeResponse) obj;
 
       boolean result = true;
       result = result && (getSize()
@@ -587,69 +587,69 @@ public final class CTrie {
       return hash;
     }
 
-    public static protos.CTrie.CTrie.sizeResponse parseFrom(
+    public static protos.CTrie.CTrieProto.sizeResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.sizeResponse parseFrom(
+    public static protos.CTrie.CTrieProto.sizeResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.sizeResponse parseFrom(
+    public static protos.CTrie.CTrieProto.sizeResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.sizeResponse parseFrom(
+    public static protos.CTrie.CTrieProto.sizeResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.sizeResponse parseFrom(byte[] data)
+    public static protos.CTrie.CTrieProto.sizeResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.sizeResponse parseFrom(
+    public static protos.CTrie.CTrieProto.sizeResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.sizeResponse parseFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.sizeResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.sizeResponse parseFrom(
+    public static protos.CTrie.CTrieProto.sizeResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.sizeResponse parseDelimitedFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.sizeResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.sizeResponse parseDelimitedFrom(
+    public static protos.CTrie.CTrieProto.sizeResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.sizeResponse parseFrom(
+    public static protos.CTrie.CTrieProto.sizeResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.sizeResponse parseFrom(
+    public static protos.CTrie.CTrieProto.sizeResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -662,7 +662,7 @@ public final class CTrie {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protos.CTrie.CTrie.sizeResponse prototype) {
+    public static Builder newBuilder(protos.CTrie.CTrieProto.sizeResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -683,21 +683,21 @@ public final class CTrie {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:sizeResponse)
-        protos.CTrie.CTrie.sizeResponseOrBuilder {
+        protos.CTrie.CTrieProto.sizeResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protos.CTrie.CTrie.internal_static_sizeResponse_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_sizeResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protos.CTrie.CTrie.internal_static_sizeResponse_fieldAccessorTable
+        return protos.CTrie.CTrieProto.internal_static_sizeResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protos.CTrie.CTrie.sizeResponse.class, protos.CTrie.CTrie.sizeResponse.Builder.class);
+                protos.CTrie.CTrieProto.sizeResponse.class, protos.CTrie.CTrieProto.sizeResponse.Builder.class);
       }
 
-      // Construct using protos.CTrie.CTrie.sizeResponse.newBuilder()
+      // Construct using protos.CTrie.CTrieProto.sizeResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -723,17 +723,17 @@ public final class CTrie {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protos.CTrie.CTrie.internal_static_sizeResponse_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_sizeResponse_descriptor;
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.sizeResponse getDefaultInstanceForType() {
-        return protos.CTrie.CTrie.sizeResponse.getDefaultInstance();
+      public protos.CTrie.CTrieProto.sizeResponse getDefaultInstanceForType() {
+        return protos.CTrie.CTrieProto.sizeResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.sizeResponse build() {
-        protos.CTrie.CTrie.sizeResponse result = buildPartial();
+      public protos.CTrie.CTrieProto.sizeResponse build() {
+        protos.CTrie.CTrieProto.sizeResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -741,8 +741,8 @@ public final class CTrie {
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.sizeResponse buildPartial() {
-        protos.CTrie.CTrie.sizeResponse result = new protos.CTrie.CTrie.sizeResponse(this);
+      public protos.CTrie.CTrieProto.sizeResponse buildPartial() {
+        protos.CTrie.CTrieProto.sizeResponse result = new protos.CTrie.CTrieProto.sizeResponse(this);
         result.size_ = size_;
         onBuilt();
         return result;
@@ -782,16 +782,16 @@ public final class CTrie {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protos.CTrie.CTrie.sizeResponse) {
-          return mergeFrom((protos.CTrie.CTrie.sizeResponse)other);
+        if (other instanceof protos.CTrie.CTrieProto.sizeResponse) {
+          return mergeFrom((protos.CTrie.CTrieProto.sizeResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protos.CTrie.CTrie.sizeResponse other) {
-        if (other == protos.CTrie.CTrie.sizeResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(protos.CTrie.CTrieProto.sizeResponse other) {
+        if (other == protos.CTrie.CTrieProto.sizeResponse.getDefaultInstance()) return this;
         if (other.getSize() != 0) {
           setSize(other.getSize());
         }
@@ -810,11 +810,11 @@ public final class CTrie {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protos.CTrie.CTrie.sizeResponse parsedMessage = null;
+        protos.CTrie.CTrieProto.sizeResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protos.CTrie.CTrie.sizeResponse) e.getUnfinishedMessage();
+          parsedMessage = (protos.CTrie.CTrieProto.sizeResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -866,12 +866,12 @@ public final class CTrie {
     }
 
     // @@protoc_insertion_point(class_scope:sizeResponse)
-    private static final protos.CTrie.CTrie.sizeResponse DEFAULT_INSTANCE;
+    private static final protos.CTrie.CTrieProto.sizeResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protos.CTrie.CTrie.sizeResponse();
+      DEFAULT_INSTANCE = new protos.CTrie.CTrieProto.sizeResponse();
     }
 
-    public static protos.CTrie.CTrie.sizeResponse getDefaultInstance() {
+    public static protos.CTrie.CTrieProto.sizeResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -896,7 +896,7 @@ public final class CTrie {
     }
 
     @java.lang.Override
-    public protos.CTrie.CTrie.sizeResponse getDefaultInstanceForType() {
+    public protos.CTrie.CTrieProto.sizeResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -965,15 +965,15 @@ public final class CTrie {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protos.CTrie.CTrie.internal_static_isEmptyRequest_descriptor;
+      return protos.CTrie.CTrieProto.internal_static_isEmptyRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protos.CTrie.CTrie.internal_static_isEmptyRequest_fieldAccessorTable
+      return protos.CTrie.CTrieProto.internal_static_isEmptyRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protos.CTrie.CTrie.isEmptyRequest.class, protos.CTrie.CTrie.isEmptyRequest.Builder.class);
+              protos.CTrie.CTrieProto.isEmptyRequest.class, protos.CTrie.CTrieProto.isEmptyRequest.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1009,10 +1009,10 @@ public final class CTrie {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protos.CTrie.CTrie.isEmptyRequest)) {
+      if (!(obj instanceof protos.CTrie.CTrieProto.isEmptyRequest)) {
         return super.equals(obj);
       }
-      protos.CTrie.CTrie.isEmptyRequest other = (protos.CTrie.CTrie.isEmptyRequest) obj;
+      protos.CTrie.CTrieProto.isEmptyRequest other = (protos.CTrie.CTrieProto.isEmptyRequest) obj;
 
       boolean result = true;
       result = result && unknownFields.equals(other.unknownFields);
@@ -1031,69 +1031,69 @@ public final class CTrie {
       return hash;
     }
 
-    public static protos.CTrie.CTrie.isEmptyRequest parseFrom(
+    public static protos.CTrie.CTrieProto.isEmptyRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.isEmptyRequest parseFrom(
+    public static protos.CTrie.CTrieProto.isEmptyRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.isEmptyRequest parseFrom(
+    public static protos.CTrie.CTrieProto.isEmptyRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.isEmptyRequest parseFrom(
+    public static protos.CTrie.CTrieProto.isEmptyRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.isEmptyRequest parseFrom(byte[] data)
+    public static protos.CTrie.CTrieProto.isEmptyRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.isEmptyRequest parseFrom(
+    public static protos.CTrie.CTrieProto.isEmptyRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.isEmptyRequest parseFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.isEmptyRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.isEmptyRequest parseFrom(
+    public static protos.CTrie.CTrieProto.isEmptyRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.isEmptyRequest parseDelimitedFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.isEmptyRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.isEmptyRequest parseDelimitedFrom(
+    public static protos.CTrie.CTrieProto.isEmptyRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.isEmptyRequest parseFrom(
+    public static protos.CTrie.CTrieProto.isEmptyRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.isEmptyRequest parseFrom(
+    public static protos.CTrie.CTrieProto.isEmptyRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1106,7 +1106,7 @@ public final class CTrie {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protos.CTrie.CTrie.isEmptyRequest prototype) {
+    public static Builder newBuilder(protos.CTrie.CTrieProto.isEmptyRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1127,21 +1127,21 @@ public final class CTrie {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:isEmptyRequest)
-        protos.CTrie.CTrie.isEmptyRequestOrBuilder {
+        protos.CTrie.CTrieProto.isEmptyRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protos.CTrie.CTrie.internal_static_isEmptyRequest_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_isEmptyRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protos.CTrie.CTrie.internal_static_isEmptyRequest_fieldAccessorTable
+        return protos.CTrie.CTrieProto.internal_static_isEmptyRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protos.CTrie.CTrie.isEmptyRequest.class, protos.CTrie.CTrie.isEmptyRequest.Builder.class);
+                protos.CTrie.CTrieProto.isEmptyRequest.class, protos.CTrie.CTrieProto.isEmptyRequest.Builder.class);
       }
 
-      // Construct using protos.CTrie.CTrie.isEmptyRequest.newBuilder()
+      // Construct using protos.CTrie.CTrieProto.isEmptyRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1165,17 +1165,17 @@ public final class CTrie {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protos.CTrie.CTrie.internal_static_isEmptyRequest_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_isEmptyRequest_descriptor;
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.isEmptyRequest getDefaultInstanceForType() {
-        return protos.CTrie.CTrie.isEmptyRequest.getDefaultInstance();
+      public protos.CTrie.CTrieProto.isEmptyRequest getDefaultInstanceForType() {
+        return protos.CTrie.CTrieProto.isEmptyRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.isEmptyRequest build() {
-        protos.CTrie.CTrie.isEmptyRequest result = buildPartial();
+      public protos.CTrie.CTrieProto.isEmptyRequest build() {
+        protos.CTrie.CTrieProto.isEmptyRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1183,8 +1183,8 @@ public final class CTrie {
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.isEmptyRequest buildPartial() {
-        protos.CTrie.CTrie.isEmptyRequest result = new protos.CTrie.CTrie.isEmptyRequest(this);
+      public protos.CTrie.CTrieProto.isEmptyRequest buildPartial() {
+        protos.CTrie.CTrieProto.isEmptyRequest result = new protos.CTrie.CTrieProto.isEmptyRequest(this);
         onBuilt();
         return result;
       }
@@ -1223,16 +1223,16 @@ public final class CTrie {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protos.CTrie.CTrie.isEmptyRequest) {
-          return mergeFrom((protos.CTrie.CTrie.isEmptyRequest)other);
+        if (other instanceof protos.CTrie.CTrieProto.isEmptyRequest) {
+          return mergeFrom((protos.CTrie.CTrieProto.isEmptyRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protos.CTrie.CTrie.isEmptyRequest other) {
-        if (other == protos.CTrie.CTrie.isEmptyRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(protos.CTrie.CTrieProto.isEmptyRequest other) {
+        if (other == protos.CTrie.CTrieProto.isEmptyRequest.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1248,11 +1248,11 @@ public final class CTrie {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protos.CTrie.CTrie.isEmptyRequest parsedMessage = null;
+        protos.CTrie.CTrieProto.isEmptyRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protos.CTrie.CTrie.isEmptyRequest) e.getUnfinishedMessage();
+          parsedMessage = (protos.CTrie.CTrieProto.isEmptyRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1278,12 +1278,12 @@ public final class CTrie {
     }
 
     // @@protoc_insertion_point(class_scope:isEmptyRequest)
-    private static final protos.CTrie.CTrie.isEmptyRequest DEFAULT_INSTANCE;
+    private static final protos.CTrie.CTrieProto.isEmptyRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protos.CTrie.CTrie.isEmptyRequest();
+      DEFAULT_INSTANCE = new protos.CTrie.CTrieProto.isEmptyRequest();
     }
 
-    public static protos.CTrie.CTrie.isEmptyRequest getDefaultInstance() {
+    public static protos.CTrie.CTrieProto.isEmptyRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1308,7 +1308,7 @@ public final class CTrie {
     }
 
     @java.lang.Override
-    public protos.CTrie.CTrie.isEmptyRequest getDefaultInstanceForType() {
+    public protos.CTrie.CTrieProto.isEmptyRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1389,15 +1389,15 @@ public final class CTrie {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protos.CTrie.CTrie.internal_static_isEmptyResponse_descriptor;
+      return protos.CTrie.CTrieProto.internal_static_isEmptyResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protos.CTrie.CTrie.internal_static_isEmptyResponse_fieldAccessorTable
+      return protos.CTrie.CTrieProto.internal_static_isEmptyResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protos.CTrie.CTrie.isEmptyResponse.class, protos.CTrie.CTrie.isEmptyResponse.Builder.class);
+              protos.CTrie.CTrieProto.isEmptyResponse.class, protos.CTrie.CTrieProto.isEmptyResponse.Builder.class);
     }
 
     public static final int ISEMPTY_FIELD_NUMBER = 1;
@@ -1449,10 +1449,10 @@ public final class CTrie {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protos.CTrie.CTrie.isEmptyResponse)) {
+      if (!(obj instanceof protos.CTrie.CTrieProto.isEmptyResponse)) {
         return super.equals(obj);
       }
-      protos.CTrie.CTrie.isEmptyResponse other = (protos.CTrie.CTrie.isEmptyResponse) obj;
+      protos.CTrie.CTrieProto.isEmptyResponse other = (protos.CTrie.CTrieProto.isEmptyResponse) obj;
 
       boolean result = true;
       result = result && (getIsEmpty()
@@ -1476,69 +1476,69 @@ public final class CTrie {
       return hash;
     }
 
-    public static protos.CTrie.CTrie.isEmptyResponse parseFrom(
+    public static protos.CTrie.CTrieProto.isEmptyResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.isEmptyResponse parseFrom(
+    public static protos.CTrie.CTrieProto.isEmptyResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.isEmptyResponse parseFrom(
+    public static protos.CTrie.CTrieProto.isEmptyResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.isEmptyResponse parseFrom(
+    public static protos.CTrie.CTrieProto.isEmptyResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.isEmptyResponse parseFrom(byte[] data)
+    public static protos.CTrie.CTrieProto.isEmptyResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.isEmptyResponse parseFrom(
+    public static protos.CTrie.CTrieProto.isEmptyResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.isEmptyResponse parseFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.isEmptyResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.isEmptyResponse parseFrom(
+    public static protos.CTrie.CTrieProto.isEmptyResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.isEmptyResponse parseDelimitedFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.isEmptyResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.isEmptyResponse parseDelimitedFrom(
+    public static protos.CTrie.CTrieProto.isEmptyResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.isEmptyResponse parseFrom(
+    public static protos.CTrie.CTrieProto.isEmptyResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.isEmptyResponse parseFrom(
+    public static protos.CTrie.CTrieProto.isEmptyResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1551,7 +1551,7 @@ public final class CTrie {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protos.CTrie.CTrie.isEmptyResponse prototype) {
+    public static Builder newBuilder(protos.CTrie.CTrieProto.isEmptyResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1572,21 +1572,21 @@ public final class CTrie {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:isEmptyResponse)
-        protos.CTrie.CTrie.isEmptyResponseOrBuilder {
+        protos.CTrie.CTrieProto.isEmptyResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protos.CTrie.CTrie.internal_static_isEmptyResponse_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_isEmptyResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protos.CTrie.CTrie.internal_static_isEmptyResponse_fieldAccessorTable
+        return protos.CTrie.CTrieProto.internal_static_isEmptyResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protos.CTrie.CTrie.isEmptyResponse.class, protos.CTrie.CTrie.isEmptyResponse.Builder.class);
+                protos.CTrie.CTrieProto.isEmptyResponse.class, protos.CTrie.CTrieProto.isEmptyResponse.Builder.class);
       }
 
-      // Construct using protos.CTrie.CTrie.isEmptyResponse.newBuilder()
+      // Construct using protos.CTrie.CTrieProto.isEmptyResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1612,17 +1612,17 @@ public final class CTrie {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protos.CTrie.CTrie.internal_static_isEmptyResponse_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_isEmptyResponse_descriptor;
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.isEmptyResponse getDefaultInstanceForType() {
-        return protos.CTrie.CTrie.isEmptyResponse.getDefaultInstance();
+      public protos.CTrie.CTrieProto.isEmptyResponse getDefaultInstanceForType() {
+        return protos.CTrie.CTrieProto.isEmptyResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.isEmptyResponse build() {
-        protos.CTrie.CTrie.isEmptyResponse result = buildPartial();
+      public protos.CTrie.CTrieProto.isEmptyResponse build() {
+        protos.CTrie.CTrieProto.isEmptyResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1630,8 +1630,8 @@ public final class CTrie {
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.isEmptyResponse buildPartial() {
-        protos.CTrie.CTrie.isEmptyResponse result = new protos.CTrie.CTrie.isEmptyResponse(this);
+      public protos.CTrie.CTrieProto.isEmptyResponse buildPartial() {
+        protos.CTrie.CTrieProto.isEmptyResponse result = new protos.CTrie.CTrieProto.isEmptyResponse(this);
         result.isEmpty_ = isEmpty_;
         onBuilt();
         return result;
@@ -1671,16 +1671,16 @@ public final class CTrie {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protos.CTrie.CTrie.isEmptyResponse) {
-          return mergeFrom((protos.CTrie.CTrie.isEmptyResponse)other);
+        if (other instanceof protos.CTrie.CTrieProto.isEmptyResponse) {
+          return mergeFrom((protos.CTrie.CTrieProto.isEmptyResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protos.CTrie.CTrie.isEmptyResponse other) {
-        if (other == protos.CTrie.CTrie.isEmptyResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(protos.CTrie.CTrieProto.isEmptyResponse other) {
+        if (other == protos.CTrie.CTrieProto.isEmptyResponse.getDefaultInstance()) return this;
         if (other.getIsEmpty() != false) {
           setIsEmpty(other.getIsEmpty());
         }
@@ -1699,11 +1699,11 @@ public final class CTrie {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protos.CTrie.CTrie.isEmptyResponse parsedMessage = null;
+        protos.CTrie.CTrieProto.isEmptyResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protos.CTrie.CTrie.isEmptyResponse) e.getUnfinishedMessage();
+          parsedMessage = (protos.CTrie.CTrieProto.isEmptyResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1755,12 +1755,12 @@ public final class CTrie {
     }
 
     // @@protoc_insertion_point(class_scope:isEmptyResponse)
-    private static final protos.CTrie.CTrie.isEmptyResponse DEFAULT_INSTANCE;
+    private static final protos.CTrie.CTrieProto.isEmptyResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protos.CTrie.CTrie.isEmptyResponse();
+      DEFAULT_INSTANCE = new protos.CTrie.CTrieProto.isEmptyResponse();
     }
 
-    public static protos.CTrie.CTrie.isEmptyResponse getDefaultInstance() {
+    public static protos.CTrie.CTrieProto.isEmptyResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1785,7 +1785,7 @@ public final class CTrie {
     }
 
     @java.lang.Override
-    public protos.CTrie.CTrie.isEmptyResponse getDefaultInstanceForType() {
+    public protos.CTrie.CTrieProto.isEmptyResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1866,15 +1866,15 @@ public final class CTrie {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protos.CTrie.CTrie.internal_static_containsValueRequest_descriptor;
+      return protos.CTrie.CTrieProto.internal_static_containsValueRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protos.CTrie.CTrie.internal_static_containsValueRequest_fieldAccessorTable
+      return protos.CTrie.CTrieProto.internal_static_containsValueRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protos.CTrie.CTrie.containsValueRequest.class, protos.CTrie.CTrie.containsValueRequest.Builder.class);
+              protos.CTrie.CTrieProto.containsValueRequest.class, protos.CTrie.CTrieProto.containsValueRequest.Builder.class);
     }
 
     public static final int SERIALIZEDOBJECT_FIELD_NUMBER = 1;
@@ -1926,10 +1926,10 @@ public final class CTrie {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protos.CTrie.CTrie.containsValueRequest)) {
+      if (!(obj instanceof protos.CTrie.CTrieProto.containsValueRequest)) {
         return super.equals(obj);
       }
-      protos.CTrie.CTrie.containsValueRequest other = (protos.CTrie.CTrie.containsValueRequest) obj;
+      protos.CTrie.CTrieProto.containsValueRequest other = (protos.CTrie.CTrieProto.containsValueRequest) obj;
 
       boolean result = true;
       result = result && getSerializedObject()
@@ -1952,69 +1952,69 @@ public final class CTrie {
       return hash;
     }
 
-    public static protos.CTrie.CTrie.containsValueRequest parseFrom(
+    public static protos.CTrie.CTrieProto.containsValueRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.containsValueRequest parseFrom(
+    public static protos.CTrie.CTrieProto.containsValueRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.containsValueRequest parseFrom(
+    public static protos.CTrie.CTrieProto.containsValueRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.containsValueRequest parseFrom(
+    public static protos.CTrie.CTrieProto.containsValueRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.containsValueRequest parseFrom(byte[] data)
+    public static protos.CTrie.CTrieProto.containsValueRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.containsValueRequest parseFrom(
+    public static protos.CTrie.CTrieProto.containsValueRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.containsValueRequest parseFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.containsValueRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.containsValueRequest parseFrom(
+    public static protos.CTrie.CTrieProto.containsValueRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.containsValueRequest parseDelimitedFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.containsValueRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.containsValueRequest parseDelimitedFrom(
+    public static protos.CTrie.CTrieProto.containsValueRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.containsValueRequest parseFrom(
+    public static protos.CTrie.CTrieProto.containsValueRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.containsValueRequest parseFrom(
+    public static protos.CTrie.CTrieProto.containsValueRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2027,7 +2027,7 @@ public final class CTrie {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protos.CTrie.CTrie.containsValueRequest prototype) {
+    public static Builder newBuilder(protos.CTrie.CTrieProto.containsValueRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2048,21 +2048,21 @@ public final class CTrie {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:containsValueRequest)
-        protos.CTrie.CTrie.containsValueRequestOrBuilder {
+        protos.CTrie.CTrieProto.containsValueRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protos.CTrie.CTrie.internal_static_containsValueRequest_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_containsValueRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protos.CTrie.CTrie.internal_static_containsValueRequest_fieldAccessorTable
+        return protos.CTrie.CTrieProto.internal_static_containsValueRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protos.CTrie.CTrie.containsValueRequest.class, protos.CTrie.CTrie.containsValueRequest.Builder.class);
+                protos.CTrie.CTrieProto.containsValueRequest.class, protos.CTrie.CTrieProto.containsValueRequest.Builder.class);
       }
 
-      // Construct using protos.CTrie.CTrie.containsValueRequest.newBuilder()
+      // Construct using protos.CTrie.CTrieProto.containsValueRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2088,17 +2088,17 @@ public final class CTrie {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protos.CTrie.CTrie.internal_static_containsValueRequest_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_containsValueRequest_descriptor;
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.containsValueRequest getDefaultInstanceForType() {
-        return protos.CTrie.CTrie.containsValueRequest.getDefaultInstance();
+      public protos.CTrie.CTrieProto.containsValueRequest getDefaultInstanceForType() {
+        return protos.CTrie.CTrieProto.containsValueRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.containsValueRequest build() {
-        protos.CTrie.CTrie.containsValueRequest result = buildPartial();
+      public protos.CTrie.CTrieProto.containsValueRequest build() {
+        protos.CTrie.CTrieProto.containsValueRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2106,8 +2106,8 @@ public final class CTrie {
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.containsValueRequest buildPartial() {
-        protos.CTrie.CTrie.containsValueRequest result = new protos.CTrie.CTrie.containsValueRequest(this);
+      public protos.CTrie.CTrieProto.containsValueRequest buildPartial() {
+        protos.CTrie.CTrieProto.containsValueRequest result = new protos.CTrie.CTrieProto.containsValueRequest(this);
         result.serializedObject_ = serializedObject_;
         onBuilt();
         return result;
@@ -2147,16 +2147,16 @@ public final class CTrie {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protos.CTrie.CTrie.containsValueRequest) {
-          return mergeFrom((protos.CTrie.CTrie.containsValueRequest)other);
+        if (other instanceof protos.CTrie.CTrieProto.containsValueRequest) {
+          return mergeFrom((protos.CTrie.CTrieProto.containsValueRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protos.CTrie.CTrie.containsValueRequest other) {
-        if (other == protos.CTrie.CTrie.containsValueRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(protos.CTrie.CTrieProto.containsValueRequest other) {
+        if (other == protos.CTrie.CTrieProto.containsValueRequest.getDefaultInstance()) return this;
         if (other.getSerializedObject() != com.google.protobuf.ByteString.EMPTY) {
           setSerializedObject(other.getSerializedObject());
         }
@@ -2175,11 +2175,11 @@ public final class CTrie {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protos.CTrie.CTrie.containsValueRequest parsedMessage = null;
+        protos.CTrie.CTrieProto.containsValueRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protos.CTrie.CTrie.containsValueRequest) e.getUnfinishedMessage();
+          parsedMessage = (protos.CTrie.CTrieProto.containsValueRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2234,12 +2234,12 @@ public final class CTrie {
     }
 
     // @@protoc_insertion_point(class_scope:containsValueRequest)
-    private static final protos.CTrie.CTrie.containsValueRequest DEFAULT_INSTANCE;
+    private static final protos.CTrie.CTrieProto.containsValueRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protos.CTrie.CTrie.containsValueRequest();
+      DEFAULT_INSTANCE = new protos.CTrie.CTrieProto.containsValueRequest();
     }
 
-    public static protos.CTrie.CTrie.containsValueRequest getDefaultInstance() {
+    public static protos.CTrie.CTrieProto.containsValueRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2264,7 +2264,7 @@ public final class CTrie {
     }
 
     @java.lang.Override
-    public protos.CTrie.CTrie.containsValueRequest getDefaultInstanceForType() {
+    public protos.CTrie.CTrieProto.containsValueRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2345,15 +2345,15 @@ public final class CTrie {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protos.CTrie.CTrie.internal_static_containsValueResponse_descriptor;
+      return protos.CTrie.CTrieProto.internal_static_containsValueResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protos.CTrie.CTrie.internal_static_containsValueResponse_fieldAccessorTable
+      return protos.CTrie.CTrieProto.internal_static_containsValueResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protos.CTrie.CTrie.containsValueResponse.class, protos.CTrie.CTrie.containsValueResponse.Builder.class);
+              protos.CTrie.CTrieProto.containsValueResponse.class, protos.CTrie.CTrieProto.containsValueResponse.Builder.class);
     }
 
     public static final int CONTAINSVALUE_FIELD_NUMBER = 1;
@@ -2405,10 +2405,10 @@ public final class CTrie {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protos.CTrie.CTrie.containsValueResponse)) {
+      if (!(obj instanceof protos.CTrie.CTrieProto.containsValueResponse)) {
         return super.equals(obj);
       }
-      protos.CTrie.CTrie.containsValueResponse other = (protos.CTrie.CTrie.containsValueResponse) obj;
+      protos.CTrie.CTrieProto.containsValueResponse other = (protos.CTrie.CTrieProto.containsValueResponse) obj;
 
       boolean result = true;
       result = result && (getContainsValue()
@@ -2432,69 +2432,69 @@ public final class CTrie {
       return hash;
     }
 
-    public static protos.CTrie.CTrie.containsValueResponse parseFrom(
+    public static protos.CTrie.CTrieProto.containsValueResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.containsValueResponse parseFrom(
+    public static protos.CTrie.CTrieProto.containsValueResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.containsValueResponse parseFrom(
+    public static protos.CTrie.CTrieProto.containsValueResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.containsValueResponse parseFrom(
+    public static protos.CTrie.CTrieProto.containsValueResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.containsValueResponse parseFrom(byte[] data)
+    public static protos.CTrie.CTrieProto.containsValueResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.containsValueResponse parseFrom(
+    public static protos.CTrie.CTrieProto.containsValueResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.containsValueResponse parseFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.containsValueResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.containsValueResponse parseFrom(
+    public static protos.CTrie.CTrieProto.containsValueResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.containsValueResponse parseDelimitedFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.containsValueResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.containsValueResponse parseDelimitedFrom(
+    public static protos.CTrie.CTrieProto.containsValueResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.containsValueResponse parseFrom(
+    public static protos.CTrie.CTrieProto.containsValueResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.containsValueResponse parseFrom(
+    public static protos.CTrie.CTrieProto.containsValueResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2507,7 +2507,7 @@ public final class CTrie {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protos.CTrie.CTrie.containsValueResponse prototype) {
+    public static Builder newBuilder(protos.CTrie.CTrieProto.containsValueResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2528,21 +2528,21 @@ public final class CTrie {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:containsValueResponse)
-        protos.CTrie.CTrie.containsValueResponseOrBuilder {
+        protos.CTrie.CTrieProto.containsValueResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protos.CTrie.CTrie.internal_static_containsValueResponse_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_containsValueResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protos.CTrie.CTrie.internal_static_containsValueResponse_fieldAccessorTable
+        return protos.CTrie.CTrieProto.internal_static_containsValueResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protos.CTrie.CTrie.containsValueResponse.class, protos.CTrie.CTrie.containsValueResponse.Builder.class);
+                protos.CTrie.CTrieProto.containsValueResponse.class, protos.CTrie.CTrieProto.containsValueResponse.Builder.class);
       }
 
-      // Construct using protos.CTrie.CTrie.containsValueResponse.newBuilder()
+      // Construct using protos.CTrie.CTrieProto.containsValueResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2568,17 +2568,17 @@ public final class CTrie {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protos.CTrie.CTrie.internal_static_containsValueResponse_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_containsValueResponse_descriptor;
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.containsValueResponse getDefaultInstanceForType() {
-        return protos.CTrie.CTrie.containsValueResponse.getDefaultInstance();
+      public protos.CTrie.CTrieProto.containsValueResponse getDefaultInstanceForType() {
+        return protos.CTrie.CTrieProto.containsValueResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.containsValueResponse build() {
-        protos.CTrie.CTrie.containsValueResponse result = buildPartial();
+      public protos.CTrie.CTrieProto.containsValueResponse build() {
+        protos.CTrie.CTrieProto.containsValueResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2586,8 +2586,8 @@ public final class CTrie {
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.containsValueResponse buildPartial() {
-        protos.CTrie.CTrie.containsValueResponse result = new protos.CTrie.CTrie.containsValueResponse(this);
+      public protos.CTrie.CTrieProto.containsValueResponse buildPartial() {
+        protos.CTrie.CTrieProto.containsValueResponse result = new protos.CTrie.CTrieProto.containsValueResponse(this);
         result.containsValue_ = containsValue_;
         onBuilt();
         return result;
@@ -2627,16 +2627,16 @@ public final class CTrie {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protos.CTrie.CTrie.containsValueResponse) {
-          return mergeFrom((protos.CTrie.CTrie.containsValueResponse)other);
+        if (other instanceof protos.CTrie.CTrieProto.containsValueResponse) {
+          return mergeFrom((protos.CTrie.CTrieProto.containsValueResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protos.CTrie.CTrie.containsValueResponse other) {
-        if (other == protos.CTrie.CTrie.containsValueResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(protos.CTrie.CTrieProto.containsValueResponse other) {
+        if (other == protos.CTrie.CTrieProto.containsValueResponse.getDefaultInstance()) return this;
         if (other.getContainsValue() != false) {
           setContainsValue(other.getContainsValue());
         }
@@ -2655,11 +2655,11 @@ public final class CTrie {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protos.CTrie.CTrie.containsValueResponse parsedMessage = null;
+        protos.CTrie.CTrieProto.containsValueResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protos.CTrie.CTrie.containsValueResponse) e.getUnfinishedMessage();
+          parsedMessage = (protos.CTrie.CTrieProto.containsValueResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2711,12 +2711,12 @@ public final class CTrie {
     }
 
     // @@protoc_insertion_point(class_scope:containsValueResponse)
-    private static final protos.CTrie.CTrie.containsValueResponse DEFAULT_INSTANCE;
+    private static final protos.CTrie.CTrieProto.containsValueResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protos.CTrie.CTrie.containsValueResponse();
+      DEFAULT_INSTANCE = new protos.CTrie.CTrieProto.containsValueResponse();
     }
 
-    public static protos.CTrie.CTrie.containsValueResponse getDefaultInstance() {
+    public static protos.CTrie.CTrieProto.containsValueResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2741,7 +2741,7 @@ public final class CTrie {
     }
 
     @java.lang.Override
-    public protos.CTrie.CTrie.containsValueResponse getDefaultInstanceForType() {
+    public protos.CTrie.CTrieProto.containsValueResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2822,15 +2822,15 @@ public final class CTrie {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protos.CTrie.CTrie.internal_static_getRequest_descriptor;
+      return protos.CTrie.CTrieProto.internal_static_getRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protos.CTrie.CTrie.internal_static_getRequest_fieldAccessorTable
+      return protos.CTrie.CTrieProto.internal_static_getRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protos.CTrie.CTrie.getRequest.class, protos.CTrie.CTrie.getRequest.Builder.class);
+              protos.CTrie.CTrieProto.getRequest.class, protos.CTrie.CTrieProto.getRequest.Builder.class);
     }
 
     public static final int SERIALIZEDOBJECT_FIELD_NUMBER = 1;
@@ -2882,10 +2882,10 @@ public final class CTrie {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protos.CTrie.CTrie.getRequest)) {
+      if (!(obj instanceof protos.CTrie.CTrieProto.getRequest)) {
         return super.equals(obj);
       }
-      protos.CTrie.CTrie.getRequest other = (protos.CTrie.CTrie.getRequest) obj;
+      protos.CTrie.CTrieProto.getRequest other = (protos.CTrie.CTrieProto.getRequest) obj;
 
       boolean result = true;
       result = result && getSerializedObject()
@@ -2908,69 +2908,69 @@ public final class CTrie {
       return hash;
     }
 
-    public static protos.CTrie.CTrie.getRequest parseFrom(
+    public static protos.CTrie.CTrieProto.getRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.getRequest parseFrom(
+    public static protos.CTrie.CTrieProto.getRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.getRequest parseFrom(
+    public static protos.CTrie.CTrieProto.getRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.getRequest parseFrom(
+    public static protos.CTrie.CTrieProto.getRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.getRequest parseFrom(byte[] data)
+    public static protos.CTrie.CTrieProto.getRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.getRequest parseFrom(
+    public static protos.CTrie.CTrieProto.getRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.getRequest parseFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.getRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.getRequest parseFrom(
+    public static protos.CTrie.CTrieProto.getRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.getRequest parseDelimitedFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.getRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.getRequest parseDelimitedFrom(
+    public static protos.CTrie.CTrieProto.getRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.getRequest parseFrom(
+    public static protos.CTrie.CTrieProto.getRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.getRequest parseFrom(
+    public static protos.CTrie.CTrieProto.getRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2983,7 +2983,7 @@ public final class CTrie {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protos.CTrie.CTrie.getRequest prototype) {
+    public static Builder newBuilder(protos.CTrie.CTrieProto.getRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3004,21 +3004,21 @@ public final class CTrie {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:getRequest)
-        protos.CTrie.CTrie.getRequestOrBuilder {
+        protos.CTrie.CTrieProto.getRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protos.CTrie.CTrie.internal_static_getRequest_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_getRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protos.CTrie.CTrie.internal_static_getRequest_fieldAccessorTable
+        return protos.CTrie.CTrieProto.internal_static_getRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protos.CTrie.CTrie.getRequest.class, protos.CTrie.CTrie.getRequest.Builder.class);
+                protos.CTrie.CTrieProto.getRequest.class, protos.CTrie.CTrieProto.getRequest.Builder.class);
       }
 
-      // Construct using protos.CTrie.CTrie.getRequest.newBuilder()
+      // Construct using protos.CTrie.CTrieProto.getRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3044,17 +3044,17 @@ public final class CTrie {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protos.CTrie.CTrie.internal_static_getRequest_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_getRequest_descriptor;
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.getRequest getDefaultInstanceForType() {
-        return protos.CTrie.CTrie.getRequest.getDefaultInstance();
+      public protos.CTrie.CTrieProto.getRequest getDefaultInstanceForType() {
+        return protos.CTrie.CTrieProto.getRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.getRequest build() {
-        protos.CTrie.CTrie.getRequest result = buildPartial();
+      public protos.CTrie.CTrieProto.getRequest build() {
+        protos.CTrie.CTrieProto.getRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3062,8 +3062,8 @@ public final class CTrie {
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.getRequest buildPartial() {
-        protos.CTrie.CTrie.getRequest result = new protos.CTrie.CTrie.getRequest(this);
+      public protos.CTrie.CTrieProto.getRequest buildPartial() {
+        protos.CTrie.CTrieProto.getRequest result = new protos.CTrie.CTrieProto.getRequest(this);
         result.serializedObject_ = serializedObject_;
         onBuilt();
         return result;
@@ -3103,16 +3103,16 @@ public final class CTrie {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protos.CTrie.CTrie.getRequest) {
-          return mergeFrom((protos.CTrie.CTrie.getRequest)other);
+        if (other instanceof protos.CTrie.CTrieProto.getRequest) {
+          return mergeFrom((protos.CTrie.CTrieProto.getRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protos.CTrie.CTrie.getRequest other) {
-        if (other == protos.CTrie.CTrie.getRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(protos.CTrie.CTrieProto.getRequest other) {
+        if (other == protos.CTrie.CTrieProto.getRequest.getDefaultInstance()) return this;
         if (other.getSerializedObject() != com.google.protobuf.ByteString.EMPTY) {
           setSerializedObject(other.getSerializedObject());
         }
@@ -3131,11 +3131,11 @@ public final class CTrie {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protos.CTrie.CTrie.getRequest parsedMessage = null;
+        protos.CTrie.CTrieProto.getRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protos.CTrie.CTrie.getRequest) e.getUnfinishedMessage();
+          parsedMessage = (protos.CTrie.CTrieProto.getRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3190,12 +3190,12 @@ public final class CTrie {
     }
 
     // @@protoc_insertion_point(class_scope:getRequest)
-    private static final protos.CTrie.CTrie.getRequest DEFAULT_INSTANCE;
+    private static final protos.CTrie.CTrieProto.getRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protos.CTrie.CTrie.getRequest();
+      DEFAULT_INSTANCE = new protos.CTrie.CTrieProto.getRequest();
     }
 
-    public static protos.CTrie.CTrie.getRequest getDefaultInstance() {
+    public static protos.CTrie.CTrieProto.getRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3220,7 +3220,7 @@ public final class CTrie {
     }
 
     @java.lang.Override
-    public protos.CTrie.CTrie.getRequest getDefaultInstanceForType() {
+    public protos.CTrie.CTrieProto.getRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3301,15 +3301,15 @@ public final class CTrie {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protos.CTrie.CTrie.internal_static_getResponse_descriptor;
+      return protos.CTrie.CTrieProto.internal_static_getResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protos.CTrie.CTrie.internal_static_getResponse_fieldAccessorTable
+      return protos.CTrie.CTrieProto.internal_static_getResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protos.CTrie.CTrie.getResponse.class, protos.CTrie.CTrie.getResponse.Builder.class);
+              protos.CTrie.CTrieProto.getResponse.class, protos.CTrie.CTrieProto.getResponse.Builder.class);
     }
 
     public static final int SERIALIZEDOBJECT_FIELD_NUMBER = 1;
@@ -3361,10 +3361,10 @@ public final class CTrie {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protos.CTrie.CTrie.getResponse)) {
+      if (!(obj instanceof protos.CTrie.CTrieProto.getResponse)) {
         return super.equals(obj);
       }
-      protos.CTrie.CTrie.getResponse other = (protos.CTrie.CTrie.getResponse) obj;
+      protos.CTrie.CTrieProto.getResponse other = (protos.CTrie.CTrieProto.getResponse) obj;
 
       boolean result = true;
       result = result && getSerializedObject()
@@ -3387,69 +3387,69 @@ public final class CTrie {
       return hash;
     }
 
-    public static protos.CTrie.CTrie.getResponse parseFrom(
+    public static protos.CTrie.CTrieProto.getResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.getResponse parseFrom(
+    public static protos.CTrie.CTrieProto.getResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.getResponse parseFrom(
+    public static protos.CTrie.CTrieProto.getResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.getResponse parseFrom(
+    public static protos.CTrie.CTrieProto.getResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.getResponse parseFrom(byte[] data)
+    public static protos.CTrie.CTrieProto.getResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.getResponse parseFrom(
+    public static protos.CTrie.CTrieProto.getResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.getResponse parseFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.getResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.getResponse parseFrom(
+    public static protos.CTrie.CTrieProto.getResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.getResponse parseDelimitedFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.getResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.getResponse parseDelimitedFrom(
+    public static protos.CTrie.CTrieProto.getResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.getResponse parseFrom(
+    public static protos.CTrie.CTrieProto.getResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.getResponse parseFrom(
+    public static protos.CTrie.CTrieProto.getResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3462,7 +3462,7 @@ public final class CTrie {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protos.CTrie.CTrie.getResponse prototype) {
+    public static Builder newBuilder(protos.CTrie.CTrieProto.getResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3483,21 +3483,21 @@ public final class CTrie {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:getResponse)
-        protos.CTrie.CTrie.getResponseOrBuilder {
+        protos.CTrie.CTrieProto.getResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protos.CTrie.CTrie.internal_static_getResponse_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_getResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protos.CTrie.CTrie.internal_static_getResponse_fieldAccessorTable
+        return protos.CTrie.CTrieProto.internal_static_getResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protos.CTrie.CTrie.getResponse.class, protos.CTrie.CTrie.getResponse.Builder.class);
+                protos.CTrie.CTrieProto.getResponse.class, protos.CTrie.CTrieProto.getResponse.Builder.class);
       }
 
-      // Construct using protos.CTrie.CTrie.getResponse.newBuilder()
+      // Construct using protos.CTrie.CTrieProto.getResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3523,17 +3523,17 @@ public final class CTrie {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protos.CTrie.CTrie.internal_static_getResponse_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_getResponse_descriptor;
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.getResponse getDefaultInstanceForType() {
-        return protos.CTrie.CTrie.getResponse.getDefaultInstance();
+      public protos.CTrie.CTrieProto.getResponse getDefaultInstanceForType() {
+        return protos.CTrie.CTrieProto.getResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.getResponse build() {
-        protos.CTrie.CTrie.getResponse result = buildPartial();
+      public protos.CTrie.CTrieProto.getResponse build() {
+        protos.CTrie.CTrieProto.getResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3541,8 +3541,8 @@ public final class CTrie {
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.getResponse buildPartial() {
-        protos.CTrie.CTrie.getResponse result = new protos.CTrie.CTrie.getResponse(this);
+      public protos.CTrie.CTrieProto.getResponse buildPartial() {
+        protos.CTrie.CTrieProto.getResponse result = new protos.CTrie.CTrieProto.getResponse(this);
         result.serializedObject_ = serializedObject_;
         onBuilt();
         return result;
@@ -3582,16 +3582,16 @@ public final class CTrie {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protos.CTrie.CTrie.getResponse) {
-          return mergeFrom((protos.CTrie.CTrie.getResponse)other);
+        if (other instanceof protos.CTrie.CTrieProto.getResponse) {
+          return mergeFrom((protos.CTrie.CTrieProto.getResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protos.CTrie.CTrie.getResponse other) {
-        if (other == protos.CTrie.CTrie.getResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(protos.CTrie.CTrieProto.getResponse other) {
+        if (other == protos.CTrie.CTrieProto.getResponse.getDefaultInstance()) return this;
         if (other.getSerializedObject() != com.google.protobuf.ByteString.EMPTY) {
           setSerializedObject(other.getSerializedObject());
         }
@@ -3610,11 +3610,11 @@ public final class CTrie {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protos.CTrie.CTrie.getResponse parsedMessage = null;
+        protos.CTrie.CTrieProto.getResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protos.CTrie.CTrie.getResponse) e.getUnfinishedMessage();
+          parsedMessage = (protos.CTrie.CTrieProto.getResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3669,12 +3669,12 @@ public final class CTrie {
     }
 
     // @@protoc_insertion_point(class_scope:getResponse)
-    private static final protos.CTrie.CTrie.getResponse DEFAULT_INSTANCE;
+    private static final protos.CTrie.CTrieProto.getResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protos.CTrie.CTrie.getResponse();
+      DEFAULT_INSTANCE = new protos.CTrie.CTrieProto.getResponse();
     }
 
-    public static protos.CTrie.CTrie.getResponse getDefaultInstance() {
+    public static protos.CTrie.CTrieProto.getResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3699,7 +3699,7 @@ public final class CTrie {
     }
 
     @java.lang.Override
-    public protos.CTrie.CTrie.getResponse getDefaultInstanceForType() {
+    public protos.CTrie.CTrieProto.getResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3791,15 +3791,15 @@ public final class CTrie {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protos.CTrie.CTrie.internal_static_putRequest_descriptor;
+      return protos.CTrie.CTrieProto.internal_static_putRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protos.CTrie.CTrie.internal_static_putRequest_fieldAccessorTable
+      return protos.CTrie.CTrieProto.internal_static_putRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protos.CTrie.CTrie.putRequest.class, protos.CTrie.CTrie.putRequest.Builder.class);
+              protos.CTrie.CTrieProto.putRequest.class, protos.CTrie.CTrieProto.putRequest.Builder.class);
     }
 
     public static final int SERIALIZEDKEYOBJECT_FIELD_NUMBER = 1;
@@ -3867,10 +3867,10 @@ public final class CTrie {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protos.CTrie.CTrie.putRequest)) {
+      if (!(obj instanceof protos.CTrie.CTrieProto.putRequest)) {
         return super.equals(obj);
       }
-      protos.CTrie.CTrie.putRequest other = (protos.CTrie.CTrie.putRequest) obj;
+      protos.CTrie.CTrieProto.putRequest other = (protos.CTrie.CTrieProto.putRequest) obj;
 
       boolean result = true;
       result = result && getSerializedKeyObject()
@@ -3897,69 +3897,69 @@ public final class CTrie {
       return hash;
     }
 
-    public static protos.CTrie.CTrie.putRequest parseFrom(
+    public static protos.CTrie.CTrieProto.putRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.putRequest parseFrom(
+    public static protos.CTrie.CTrieProto.putRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.putRequest parseFrom(
+    public static protos.CTrie.CTrieProto.putRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.putRequest parseFrom(
+    public static protos.CTrie.CTrieProto.putRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.putRequest parseFrom(byte[] data)
+    public static protos.CTrie.CTrieProto.putRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.putRequest parseFrom(
+    public static protos.CTrie.CTrieProto.putRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.putRequest parseFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.putRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.putRequest parseFrom(
+    public static protos.CTrie.CTrieProto.putRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.putRequest parseDelimitedFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.putRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.putRequest parseDelimitedFrom(
+    public static protos.CTrie.CTrieProto.putRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.putRequest parseFrom(
+    public static protos.CTrie.CTrieProto.putRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.putRequest parseFrom(
+    public static protos.CTrie.CTrieProto.putRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3972,7 +3972,7 @@ public final class CTrie {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protos.CTrie.CTrie.putRequest prototype) {
+    public static Builder newBuilder(protos.CTrie.CTrieProto.putRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3993,21 +3993,21 @@ public final class CTrie {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:putRequest)
-        protos.CTrie.CTrie.putRequestOrBuilder {
+        protos.CTrie.CTrieProto.putRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protos.CTrie.CTrie.internal_static_putRequest_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_putRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protos.CTrie.CTrie.internal_static_putRequest_fieldAccessorTable
+        return protos.CTrie.CTrieProto.internal_static_putRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protos.CTrie.CTrie.putRequest.class, protos.CTrie.CTrie.putRequest.Builder.class);
+                protos.CTrie.CTrieProto.putRequest.class, protos.CTrie.CTrieProto.putRequest.Builder.class);
       }
 
-      // Construct using protos.CTrie.CTrie.putRequest.newBuilder()
+      // Construct using protos.CTrie.CTrieProto.putRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -4035,17 +4035,17 @@ public final class CTrie {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protos.CTrie.CTrie.internal_static_putRequest_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_putRequest_descriptor;
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.putRequest getDefaultInstanceForType() {
-        return protos.CTrie.CTrie.putRequest.getDefaultInstance();
+      public protos.CTrie.CTrieProto.putRequest getDefaultInstanceForType() {
+        return protos.CTrie.CTrieProto.putRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.putRequest build() {
-        protos.CTrie.CTrie.putRequest result = buildPartial();
+      public protos.CTrie.CTrieProto.putRequest build() {
+        protos.CTrie.CTrieProto.putRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -4053,8 +4053,8 @@ public final class CTrie {
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.putRequest buildPartial() {
-        protos.CTrie.CTrie.putRequest result = new protos.CTrie.CTrie.putRequest(this);
+      public protos.CTrie.CTrieProto.putRequest buildPartial() {
+        protos.CTrie.CTrieProto.putRequest result = new protos.CTrie.CTrieProto.putRequest(this);
         result.serializedKeyObject_ = serializedKeyObject_;
         result.serializedValueObject_ = serializedValueObject_;
         onBuilt();
@@ -4095,16 +4095,16 @@ public final class CTrie {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protos.CTrie.CTrie.putRequest) {
-          return mergeFrom((protos.CTrie.CTrie.putRequest)other);
+        if (other instanceof protos.CTrie.CTrieProto.putRequest) {
+          return mergeFrom((protos.CTrie.CTrieProto.putRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protos.CTrie.CTrie.putRequest other) {
-        if (other == protos.CTrie.CTrie.putRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(protos.CTrie.CTrieProto.putRequest other) {
+        if (other == protos.CTrie.CTrieProto.putRequest.getDefaultInstance()) return this;
         if (other.getSerializedKeyObject() != com.google.protobuf.ByteString.EMPTY) {
           setSerializedKeyObject(other.getSerializedKeyObject());
         }
@@ -4126,11 +4126,11 @@ public final class CTrie {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protos.CTrie.CTrie.putRequest parsedMessage = null;
+        protos.CTrie.CTrieProto.putRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protos.CTrie.CTrie.putRequest) e.getUnfinishedMessage();
+          parsedMessage = (protos.CTrie.CTrieProto.putRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -4214,12 +4214,12 @@ public final class CTrie {
     }
 
     // @@protoc_insertion_point(class_scope:putRequest)
-    private static final protos.CTrie.CTrie.putRequest DEFAULT_INSTANCE;
+    private static final protos.CTrie.CTrieProto.putRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protos.CTrie.CTrie.putRequest();
+      DEFAULT_INSTANCE = new protos.CTrie.CTrieProto.putRequest();
     }
 
-    public static protos.CTrie.CTrie.putRequest getDefaultInstance() {
+    public static protos.CTrie.CTrieProto.putRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4244,7 +4244,7 @@ public final class CTrie {
     }
 
     @java.lang.Override
-    public protos.CTrie.CTrie.putRequest getDefaultInstanceForType() {
+    public protos.CTrie.CTrieProto.putRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4325,15 +4325,15 @@ public final class CTrie {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protos.CTrie.CTrie.internal_static_putResponse_descriptor;
+      return protos.CTrie.CTrieProto.internal_static_putResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protos.CTrie.CTrie.internal_static_putResponse_fieldAccessorTable
+      return protos.CTrie.CTrieProto.internal_static_putResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protos.CTrie.CTrie.putResponse.class, protos.CTrie.CTrie.putResponse.Builder.class);
+              protos.CTrie.CTrieProto.putResponse.class, protos.CTrie.CTrieProto.putResponse.Builder.class);
     }
 
     public static final int SERIALIZEDVALUEOBJECT_FIELD_NUMBER = 1;
@@ -4385,10 +4385,10 @@ public final class CTrie {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protos.CTrie.CTrie.putResponse)) {
+      if (!(obj instanceof protos.CTrie.CTrieProto.putResponse)) {
         return super.equals(obj);
       }
-      protos.CTrie.CTrie.putResponse other = (protos.CTrie.CTrie.putResponse) obj;
+      protos.CTrie.CTrieProto.putResponse other = (protos.CTrie.CTrieProto.putResponse) obj;
 
       boolean result = true;
       result = result && getSerializedValueObject()
@@ -4411,69 +4411,69 @@ public final class CTrie {
       return hash;
     }
 
-    public static protos.CTrie.CTrie.putResponse parseFrom(
+    public static protos.CTrie.CTrieProto.putResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.putResponse parseFrom(
+    public static protos.CTrie.CTrieProto.putResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.putResponse parseFrom(
+    public static protos.CTrie.CTrieProto.putResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.putResponse parseFrom(
+    public static protos.CTrie.CTrieProto.putResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.putResponse parseFrom(byte[] data)
+    public static protos.CTrie.CTrieProto.putResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.putResponse parseFrom(
+    public static protos.CTrie.CTrieProto.putResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.putResponse parseFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.putResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.putResponse parseFrom(
+    public static protos.CTrie.CTrieProto.putResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.putResponse parseDelimitedFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.putResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.putResponse parseDelimitedFrom(
+    public static protos.CTrie.CTrieProto.putResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.putResponse parseFrom(
+    public static protos.CTrie.CTrieProto.putResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.putResponse parseFrom(
+    public static protos.CTrie.CTrieProto.putResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4486,7 +4486,7 @@ public final class CTrie {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protos.CTrie.CTrie.putResponse prototype) {
+    public static Builder newBuilder(protos.CTrie.CTrieProto.putResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -4507,21 +4507,21 @@ public final class CTrie {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:putResponse)
-        protos.CTrie.CTrie.putResponseOrBuilder {
+        protos.CTrie.CTrieProto.putResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protos.CTrie.CTrie.internal_static_putResponse_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_putResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protos.CTrie.CTrie.internal_static_putResponse_fieldAccessorTable
+        return protos.CTrie.CTrieProto.internal_static_putResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protos.CTrie.CTrie.putResponse.class, protos.CTrie.CTrie.putResponse.Builder.class);
+                protos.CTrie.CTrieProto.putResponse.class, protos.CTrie.CTrieProto.putResponse.Builder.class);
       }
 
-      // Construct using protos.CTrie.CTrie.putResponse.newBuilder()
+      // Construct using protos.CTrie.CTrieProto.putResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -4547,17 +4547,17 @@ public final class CTrie {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protos.CTrie.CTrie.internal_static_putResponse_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_putResponse_descriptor;
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.putResponse getDefaultInstanceForType() {
-        return protos.CTrie.CTrie.putResponse.getDefaultInstance();
+      public protos.CTrie.CTrieProto.putResponse getDefaultInstanceForType() {
+        return protos.CTrie.CTrieProto.putResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.putResponse build() {
-        protos.CTrie.CTrie.putResponse result = buildPartial();
+      public protos.CTrie.CTrieProto.putResponse build() {
+        protos.CTrie.CTrieProto.putResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -4565,8 +4565,8 @@ public final class CTrie {
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.putResponse buildPartial() {
-        protos.CTrie.CTrie.putResponse result = new protos.CTrie.CTrie.putResponse(this);
+      public protos.CTrie.CTrieProto.putResponse buildPartial() {
+        protos.CTrie.CTrieProto.putResponse result = new protos.CTrie.CTrieProto.putResponse(this);
         result.serializedValueObject_ = serializedValueObject_;
         onBuilt();
         return result;
@@ -4606,16 +4606,16 @@ public final class CTrie {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protos.CTrie.CTrie.putResponse) {
-          return mergeFrom((protos.CTrie.CTrie.putResponse)other);
+        if (other instanceof protos.CTrie.CTrieProto.putResponse) {
+          return mergeFrom((protos.CTrie.CTrieProto.putResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protos.CTrie.CTrie.putResponse other) {
-        if (other == protos.CTrie.CTrie.putResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(protos.CTrie.CTrieProto.putResponse other) {
+        if (other == protos.CTrie.CTrieProto.putResponse.getDefaultInstance()) return this;
         if (other.getSerializedValueObject() != com.google.protobuf.ByteString.EMPTY) {
           setSerializedValueObject(other.getSerializedValueObject());
         }
@@ -4634,11 +4634,11 @@ public final class CTrie {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protos.CTrie.CTrie.putResponse parsedMessage = null;
+        protos.CTrie.CTrieProto.putResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protos.CTrie.CTrie.putResponse) e.getUnfinishedMessage();
+          parsedMessage = (protos.CTrie.CTrieProto.putResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -4693,12 +4693,12 @@ public final class CTrie {
     }
 
     // @@protoc_insertion_point(class_scope:putResponse)
-    private static final protos.CTrie.CTrie.putResponse DEFAULT_INSTANCE;
+    private static final protos.CTrie.CTrieProto.putResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protos.CTrie.CTrie.putResponse();
+      DEFAULT_INSTANCE = new protos.CTrie.CTrieProto.putResponse();
     }
 
-    public static protos.CTrie.CTrie.putResponse getDefaultInstance() {
+    public static protos.CTrie.CTrieProto.putResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4723,7 +4723,7 @@ public final class CTrie {
     }
 
     @java.lang.Override
-    public protos.CTrie.CTrie.putResponse getDefaultInstanceForType() {
+    public protos.CTrie.CTrieProto.putResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4804,15 +4804,15 @@ public final class CTrie {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protos.CTrie.CTrie.internal_static_removeRequest_descriptor;
+      return protos.CTrie.CTrieProto.internal_static_removeRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protos.CTrie.CTrie.internal_static_removeRequest_fieldAccessorTable
+      return protos.CTrie.CTrieProto.internal_static_removeRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protos.CTrie.CTrie.removeRequest.class, protos.CTrie.CTrie.removeRequest.Builder.class);
+              protos.CTrie.CTrieProto.removeRequest.class, protos.CTrie.CTrieProto.removeRequest.Builder.class);
     }
 
     public static final int SERIALIZEDKEYOBJECT_FIELD_NUMBER = 1;
@@ -4864,10 +4864,10 @@ public final class CTrie {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protos.CTrie.CTrie.removeRequest)) {
+      if (!(obj instanceof protos.CTrie.CTrieProto.removeRequest)) {
         return super.equals(obj);
       }
-      protos.CTrie.CTrie.removeRequest other = (protos.CTrie.CTrie.removeRequest) obj;
+      protos.CTrie.CTrieProto.removeRequest other = (protos.CTrie.CTrieProto.removeRequest) obj;
 
       boolean result = true;
       result = result && getSerializedKeyObject()
@@ -4890,69 +4890,69 @@ public final class CTrie {
       return hash;
     }
 
-    public static protos.CTrie.CTrie.removeRequest parseFrom(
+    public static protos.CTrie.CTrieProto.removeRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.removeRequest parseFrom(
+    public static protos.CTrie.CTrieProto.removeRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.removeRequest parseFrom(
+    public static protos.CTrie.CTrieProto.removeRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.removeRequest parseFrom(
+    public static protos.CTrie.CTrieProto.removeRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.removeRequest parseFrom(byte[] data)
+    public static protos.CTrie.CTrieProto.removeRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.removeRequest parseFrom(
+    public static protos.CTrie.CTrieProto.removeRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.removeRequest parseFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.removeRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.removeRequest parseFrom(
+    public static protos.CTrie.CTrieProto.removeRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.removeRequest parseDelimitedFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.removeRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.removeRequest parseDelimitedFrom(
+    public static protos.CTrie.CTrieProto.removeRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.removeRequest parseFrom(
+    public static protos.CTrie.CTrieProto.removeRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.removeRequest parseFrom(
+    public static protos.CTrie.CTrieProto.removeRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4965,7 +4965,7 @@ public final class CTrie {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protos.CTrie.CTrie.removeRequest prototype) {
+    public static Builder newBuilder(protos.CTrie.CTrieProto.removeRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -4986,21 +4986,21 @@ public final class CTrie {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:removeRequest)
-        protos.CTrie.CTrie.removeRequestOrBuilder {
+        protos.CTrie.CTrieProto.removeRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protos.CTrie.CTrie.internal_static_removeRequest_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_removeRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protos.CTrie.CTrie.internal_static_removeRequest_fieldAccessorTable
+        return protos.CTrie.CTrieProto.internal_static_removeRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protos.CTrie.CTrie.removeRequest.class, protos.CTrie.CTrie.removeRequest.Builder.class);
+                protos.CTrie.CTrieProto.removeRequest.class, protos.CTrie.CTrieProto.removeRequest.Builder.class);
       }
 
-      // Construct using protos.CTrie.CTrie.removeRequest.newBuilder()
+      // Construct using protos.CTrie.CTrieProto.removeRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -5026,17 +5026,17 @@ public final class CTrie {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protos.CTrie.CTrie.internal_static_removeRequest_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_removeRequest_descriptor;
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.removeRequest getDefaultInstanceForType() {
-        return protos.CTrie.CTrie.removeRequest.getDefaultInstance();
+      public protos.CTrie.CTrieProto.removeRequest getDefaultInstanceForType() {
+        return protos.CTrie.CTrieProto.removeRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.removeRequest build() {
-        protos.CTrie.CTrie.removeRequest result = buildPartial();
+      public protos.CTrie.CTrieProto.removeRequest build() {
+        protos.CTrie.CTrieProto.removeRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -5044,8 +5044,8 @@ public final class CTrie {
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.removeRequest buildPartial() {
-        protos.CTrie.CTrie.removeRequest result = new protos.CTrie.CTrie.removeRequest(this);
+      public protos.CTrie.CTrieProto.removeRequest buildPartial() {
+        protos.CTrie.CTrieProto.removeRequest result = new protos.CTrie.CTrieProto.removeRequest(this);
         result.serializedKeyObject_ = serializedKeyObject_;
         onBuilt();
         return result;
@@ -5085,16 +5085,16 @@ public final class CTrie {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protos.CTrie.CTrie.removeRequest) {
-          return mergeFrom((protos.CTrie.CTrie.removeRequest)other);
+        if (other instanceof protos.CTrie.CTrieProto.removeRequest) {
+          return mergeFrom((protos.CTrie.CTrieProto.removeRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protos.CTrie.CTrie.removeRequest other) {
-        if (other == protos.CTrie.CTrie.removeRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(protos.CTrie.CTrieProto.removeRequest other) {
+        if (other == protos.CTrie.CTrieProto.removeRequest.getDefaultInstance()) return this;
         if (other.getSerializedKeyObject() != com.google.protobuf.ByteString.EMPTY) {
           setSerializedKeyObject(other.getSerializedKeyObject());
         }
@@ -5113,11 +5113,11 @@ public final class CTrie {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protos.CTrie.CTrie.removeRequest parsedMessage = null;
+        protos.CTrie.CTrieProto.removeRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protos.CTrie.CTrie.removeRequest) e.getUnfinishedMessage();
+          parsedMessage = (protos.CTrie.CTrieProto.removeRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -5172,12 +5172,12 @@ public final class CTrie {
     }
 
     // @@protoc_insertion_point(class_scope:removeRequest)
-    private static final protos.CTrie.CTrie.removeRequest DEFAULT_INSTANCE;
+    private static final protos.CTrie.CTrieProto.removeRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protos.CTrie.CTrie.removeRequest();
+      DEFAULT_INSTANCE = new protos.CTrie.CTrieProto.removeRequest();
     }
 
-    public static protos.CTrie.CTrie.removeRequest getDefaultInstance() {
+    public static protos.CTrie.CTrieProto.removeRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5202,7 +5202,7 @@ public final class CTrie {
     }
 
     @java.lang.Override
-    public protos.CTrie.CTrie.removeRequest getDefaultInstanceForType() {
+    public protos.CTrie.CTrieProto.removeRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5283,15 +5283,15 @@ public final class CTrie {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protos.CTrie.CTrie.internal_static_removeResponse_descriptor;
+      return protos.CTrie.CTrieProto.internal_static_removeResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protos.CTrie.CTrie.internal_static_removeResponse_fieldAccessorTable
+      return protos.CTrie.CTrieProto.internal_static_removeResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protos.CTrie.CTrie.removeResponse.class, protos.CTrie.CTrie.removeResponse.Builder.class);
+              protos.CTrie.CTrieProto.removeResponse.class, protos.CTrie.CTrieProto.removeResponse.Builder.class);
     }
 
     public static final int SERIALIZEDVALUEOBJECT_FIELD_NUMBER = 1;
@@ -5343,10 +5343,10 @@ public final class CTrie {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protos.CTrie.CTrie.removeResponse)) {
+      if (!(obj instanceof protos.CTrie.CTrieProto.removeResponse)) {
         return super.equals(obj);
       }
-      protos.CTrie.CTrie.removeResponse other = (protos.CTrie.CTrie.removeResponse) obj;
+      protos.CTrie.CTrieProto.removeResponse other = (protos.CTrie.CTrieProto.removeResponse) obj;
 
       boolean result = true;
       result = result && getSerializedValueObject()
@@ -5369,69 +5369,69 @@ public final class CTrie {
       return hash;
     }
 
-    public static protos.CTrie.CTrie.removeResponse parseFrom(
+    public static protos.CTrie.CTrieProto.removeResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.removeResponse parseFrom(
+    public static protos.CTrie.CTrieProto.removeResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.removeResponse parseFrom(
+    public static protos.CTrie.CTrieProto.removeResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.removeResponse parseFrom(
+    public static protos.CTrie.CTrieProto.removeResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.removeResponse parseFrom(byte[] data)
+    public static protos.CTrie.CTrieProto.removeResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.removeResponse parseFrom(
+    public static protos.CTrie.CTrieProto.removeResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.removeResponse parseFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.removeResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.removeResponse parseFrom(
+    public static protos.CTrie.CTrieProto.removeResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.removeResponse parseDelimitedFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.removeResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.removeResponse parseDelimitedFrom(
+    public static protos.CTrie.CTrieProto.removeResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.removeResponse parseFrom(
+    public static protos.CTrie.CTrieProto.removeResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.removeResponse parseFrom(
+    public static protos.CTrie.CTrieProto.removeResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5444,7 +5444,7 @@ public final class CTrie {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protos.CTrie.CTrie.removeResponse prototype) {
+    public static Builder newBuilder(protos.CTrie.CTrieProto.removeResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -5465,21 +5465,21 @@ public final class CTrie {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:removeResponse)
-        protos.CTrie.CTrie.removeResponseOrBuilder {
+        protos.CTrie.CTrieProto.removeResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protos.CTrie.CTrie.internal_static_removeResponse_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_removeResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protos.CTrie.CTrie.internal_static_removeResponse_fieldAccessorTable
+        return protos.CTrie.CTrieProto.internal_static_removeResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protos.CTrie.CTrie.removeResponse.class, protos.CTrie.CTrie.removeResponse.Builder.class);
+                protos.CTrie.CTrieProto.removeResponse.class, protos.CTrie.CTrieProto.removeResponse.Builder.class);
       }
 
-      // Construct using protos.CTrie.CTrie.removeResponse.newBuilder()
+      // Construct using protos.CTrie.CTrieProto.removeResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -5505,17 +5505,17 @@ public final class CTrie {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protos.CTrie.CTrie.internal_static_removeResponse_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_removeResponse_descriptor;
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.removeResponse getDefaultInstanceForType() {
-        return protos.CTrie.CTrie.removeResponse.getDefaultInstance();
+      public protos.CTrie.CTrieProto.removeResponse getDefaultInstanceForType() {
+        return protos.CTrie.CTrieProto.removeResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.removeResponse build() {
-        protos.CTrie.CTrie.removeResponse result = buildPartial();
+      public protos.CTrie.CTrieProto.removeResponse build() {
+        protos.CTrie.CTrieProto.removeResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -5523,8 +5523,8 @@ public final class CTrie {
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.removeResponse buildPartial() {
-        protos.CTrie.CTrie.removeResponse result = new protos.CTrie.CTrie.removeResponse(this);
+      public protos.CTrie.CTrieProto.removeResponse buildPartial() {
+        protos.CTrie.CTrieProto.removeResponse result = new protos.CTrie.CTrieProto.removeResponse(this);
         result.serializedValueObject_ = serializedValueObject_;
         onBuilt();
         return result;
@@ -5564,16 +5564,16 @@ public final class CTrie {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protos.CTrie.CTrie.removeResponse) {
-          return mergeFrom((protos.CTrie.CTrie.removeResponse)other);
+        if (other instanceof protos.CTrie.CTrieProto.removeResponse) {
+          return mergeFrom((protos.CTrie.CTrieProto.removeResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protos.CTrie.CTrie.removeResponse other) {
-        if (other == protos.CTrie.CTrie.removeResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(protos.CTrie.CTrieProto.removeResponse other) {
+        if (other == protos.CTrie.CTrieProto.removeResponse.getDefaultInstance()) return this;
         if (other.getSerializedValueObject() != com.google.protobuf.ByteString.EMPTY) {
           setSerializedValueObject(other.getSerializedValueObject());
         }
@@ -5592,11 +5592,11 @@ public final class CTrie {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protos.CTrie.CTrie.removeResponse parsedMessage = null;
+        protos.CTrie.CTrieProto.removeResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protos.CTrie.CTrie.removeResponse) e.getUnfinishedMessage();
+          parsedMessage = (protos.CTrie.CTrieProto.removeResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -5651,12 +5651,12 @@ public final class CTrie {
     }
 
     // @@protoc_insertion_point(class_scope:removeResponse)
-    private static final protos.CTrie.CTrie.removeResponse DEFAULT_INSTANCE;
+    private static final protos.CTrie.CTrieProto.removeResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protos.CTrie.CTrie.removeResponse();
+      DEFAULT_INSTANCE = new protos.CTrie.CTrieProto.removeResponse();
     }
 
-    public static protos.CTrie.CTrie.removeResponse getDefaultInstance() {
+    public static protos.CTrie.CTrieProto.removeResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5681,7 +5681,7 @@ public final class CTrie {
     }
 
     @java.lang.Override
-    public protos.CTrie.CTrie.removeResponse getDefaultInstanceForType() {
+    public protos.CTrie.CTrieProto.removeResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5762,15 +5762,15 @@ public final class CTrie {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protos.CTrie.CTrie.internal_static_putAllRequest_descriptor;
+      return protos.CTrie.CTrieProto.internal_static_putAllRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protos.CTrie.CTrie.internal_static_putAllRequest_fieldAccessorTable
+      return protos.CTrie.CTrieProto.internal_static_putAllRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protos.CTrie.CTrie.putAllRequest.class, protos.CTrie.CTrie.putAllRequest.Builder.class);
+              protos.CTrie.CTrieProto.putAllRequest.class, protos.CTrie.CTrieProto.putAllRequest.Builder.class);
     }
 
     public static final int SERIALIZEDMAPOBJECT_FIELD_NUMBER = 1;
@@ -5822,10 +5822,10 @@ public final class CTrie {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protos.CTrie.CTrie.putAllRequest)) {
+      if (!(obj instanceof protos.CTrie.CTrieProto.putAllRequest)) {
         return super.equals(obj);
       }
-      protos.CTrie.CTrie.putAllRequest other = (protos.CTrie.CTrie.putAllRequest) obj;
+      protos.CTrie.CTrieProto.putAllRequest other = (protos.CTrie.CTrieProto.putAllRequest) obj;
 
       boolean result = true;
       result = result && getSerializedMapObject()
@@ -5848,69 +5848,69 @@ public final class CTrie {
       return hash;
     }
 
-    public static protos.CTrie.CTrie.putAllRequest parseFrom(
+    public static protos.CTrie.CTrieProto.putAllRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.putAllRequest parseFrom(
+    public static protos.CTrie.CTrieProto.putAllRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.putAllRequest parseFrom(
+    public static protos.CTrie.CTrieProto.putAllRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.putAllRequest parseFrom(
+    public static protos.CTrie.CTrieProto.putAllRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.putAllRequest parseFrom(byte[] data)
+    public static protos.CTrie.CTrieProto.putAllRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.putAllRequest parseFrom(
+    public static protos.CTrie.CTrieProto.putAllRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.putAllRequest parseFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.putAllRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.putAllRequest parseFrom(
+    public static protos.CTrie.CTrieProto.putAllRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.putAllRequest parseDelimitedFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.putAllRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.putAllRequest parseDelimitedFrom(
+    public static protos.CTrie.CTrieProto.putAllRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.putAllRequest parseFrom(
+    public static protos.CTrie.CTrieProto.putAllRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.putAllRequest parseFrom(
+    public static protos.CTrie.CTrieProto.putAllRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5923,7 +5923,7 @@ public final class CTrie {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protos.CTrie.CTrie.putAllRequest prototype) {
+    public static Builder newBuilder(protos.CTrie.CTrieProto.putAllRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -5944,21 +5944,21 @@ public final class CTrie {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:putAllRequest)
-        protos.CTrie.CTrie.putAllRequestOrBuilder {
+        protos.CTrie.CTrieProto.putAllRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protos.CTrie.CTrie.internal_static_putAllRequest_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_putAllRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protos.CTrie.CTrie.internal_static_putAllRequest_fieldAccessorTable
+        return protos.CTrie.CTrieProto.internal_static_putAllRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protos.CTrie.CTrie.putAllRequest.class, protos.CTrie.CTrie.putAllRequest.Builder.class);
+                protos.CTrie.CTrieProto.putAllRequest.class, protos.CTrie.CTrieProto.putAllRequest.Builder.class);
       }
 
-      // Construct using protos.CTrie.CTrie.putAllRequest.newBuilder()
+      // Construct using protos.CTrie.CTrieProto.putAllRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -5984,17 +5984,17 @@ public final class CTrie {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protos.CTrie.CTrie.internal_static_putAllRequest_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_putAllRequest_descriptor;
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.putAllRequest getDefaultInstanceForType() {
-        return protos.CTrie.CTrie.putAllRequest.getDefaultInstance();
+      public protos.CTrie.CTrieProto.putAllRequest getDefaultInstanceForType() {
+        return protos.CTrie.CTrieProto.putAllRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.putAllRequest build() {
-        protos.CTrie.CTrie.putAllRequest result = buildPartial();
+      public protos.CTrie.CTrieProto.putAllRequest build() {
+        protos.CTrie.CTrieProto.putAllRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -6002,8 +6002,8 @@ public final class CTrie {
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.putAllRequest buildPartial() {
-        protos.CTrie.CTrie.putAllRequest result = new protos.CTrie.CTrie.putAllRequest(this);
+      public protos.CTrie.CTrieProto.putAllRequest buildPartial() {
+        protos.CTrie.CTrieProto.putAllRequest result = new protos.CTrie.CTrieProto.putAllRequest(this);
         result.serializedMapObject_ = serializedMapObject_;
         onBuilt();
         return result;
@@ -6043,16 +6043,16 @@ public final class CTrie {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protos.CTrie.CTrie.putAllRequest) {
-          return mergeFrom((protos.CTrie.CTrie.putAllRequest)other);
+        if (other instanceof protos.CTrie.CTrieProto.putAllRequest) {
+          return mergeFrom((protos.CTrie.CTrieProto.putAllRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protos.CTrie.CTrie.putAllRequest other) {
-        if (other == protos.CTrie.CTrie.putAllRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(protos.CTrie.CTrieProto.putAllRequest other) {
+        if (other == protos.CTrie.CTrieProto.putAllRequest.getDefaultInstance()) return this;
         if (other.getSerializedMapObject() != com.google.protobuf.ByteString.EMPTY) {
           setSerializedMapObject(other.getSerializedMapObject());
         }
@@ -6071,11 +6071,11 @@ public final class CTrie {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protos.CTrie.CTrie.putAllRequest parsedMessage = null;
+        protos.CTrie.CTrieProto.putAllRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protos.CTrie.CTrie.putAllRequest) e.getUnfinishedMessage();
+          parsedMessage = (protos.CTrie.CTrieProto.putAllRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -6130,12 +6130,12 @@ public final class CTrie {
     }
 
     // @@protoc_insertion_point(class_scope:putAllRequest)
-    private static final protos.CTrie.CTrie.putAllRequest DEFAULT_INSTANCE;
+    private static final protos.CTrie.CTrieProto.putAllRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protos.CTrie.CTrie.putAllRequest();
+      DEFAULT_INSTANCE = new protos.CTrie.CTrieProto.putAllRequest();
     }
 
-    public static protos.CTrie.CTrie.putAllRequest getDefaultInstance() {
+    public static protos.CTrie.CTrieProto.putAllRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6160,7 +6160,7 @@ public final class CTrie {
     }
 
     @java.lang.Override
-    public protos.CTrie.CTrie.putAllRequest getDefaultInstanceForType() {
+    public protos.CTrie.CTrieProto.putAllRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6229,15 +6229,15 @@ public final class CTrie {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protos.CTrie.CTrie.internal_static_putAllResponse_descriptor;
+      return protos.CTrie.CTrieProto.internal_static_putAllResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protos.CTrie.CTrie.internal_static_putAllResponse_fieldAccessorTable
+      return protos.CTrie.CTrieProto.internal_static_putAllResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protos.CTrie.CTrie.putAllResponse.class, protos.CTrie.CTrie.putAllResponse.Builder.class);
+              protos.CTrie.CTrieProto.putAllResponse.class, protos.CTrie.CTrieProto.putAllResponse.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -6273,10 +6273,10 @@ public final class CTrie {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protos.CTrie.CTrie.putAllResponse)) {
+      if (!(obj instanceof protos.CTrie.CTrieProto.putAllResponse)) {
         return super.equals(obj);
       }
-      protos.CTrie.CTrie.putAllResponse other = (protos.CTrie.CTrie.putAllResponse) obj;
+      protos.CTrie.CTrieProto.putAllResponse other = (protos.CTrie.CTrieProto.putAllResponse) obj;
 
       boolean result = true;
       result = result && unknownFields.equals(other.unknownFields);
@@ -6295,69 +6295,69 @@ public final class CTrie {
       return hash;
     }
 
-    public static protos.CTrie.CTrie.putAllResponse parseFrom(
+    public static protos.CTrie.CTrieProto.putAllResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.putAllResponse parseFrom(
+    public static protos.CTrie.CTrieProto.putAllResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.putAllResponse parseFrom(
+    public static protos.CTrie.CTrieProto.putAllResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.putAllResponse parseFrom(
+    public static protos.CTrie.CTrieProto.putAllResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.putAllResponse parseFrom(byte[] data)
+    public static protos.CTrie.CTrieProto.putAllResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.putAllResponse parseFrom(
+    public static protos.CTrie.CTrieProto.putAllResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.putAllResponse parseFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.putAllResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.putAllResponse parseFrom(
+    public static protos.CTrie.CTrieProto.putAllResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.putAllResponse parseDelimitedFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.putAllResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.putAllResponse parseDelimitedFrom(
+    public static protos.CTrie.CTrieProto.putAllResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.putAllResponse parseFrom(
+    public static protos.CTrie.CTrieProto.putAllResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.putAllResponse parseFrom(
+    public static protos.CTrie.CTrieProto.putAllResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6370,7 +6370,7 @@ public final class CTrie {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protos.CTrie.CTrie.putAllResponse prototype) {
+    public static Builder newBuilder(protos.CTrie.CTrieProto.putAllResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -6391,21 +6391,21 @@ public final class CTrie {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:putAllResponse)
-        protos.CTrie.CTrie.putAllResponseOrBuilder {
+        protos.CTrie.CTrieProto.putAllResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protos.CTrie.CTrie.internal_static_putAllResponse_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_putAllResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protos.CTrie.CTrie.internal_static_putAllResponse_fieldAccessorTable
+        return protos.CTrie.CTrieProto.internal_static_putAllResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protos.CTrie.CTrie.putAllResponse.class, protos.CTrie.CTrie.putAllResponse.Builder.class);
+                protos.CTrie.CTrieProto.putAllResponse.class, protos.CTrie.CTrieProto.putAllResponse.Builder.class);
       }
 
-      // Construct using protos.CTrie.CTrie.putAllResponse.newBuilder()
+      // Construct using protos.CTrie.CTrieProto.putAllResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -6429,17 +6429,17 @@ public final class CTrie {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protos.CTrie.CTrie.internal_static_putAllResponse_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_putAllResponse_descriptor;
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.putAllResponse getDefaultInstanceForType() {
-        return protos.CTrie.CTrie.putAllResponse.getDefaultInstance();
+      public protos.CTrie.CTrieProto.putAllResponse getDefaultInstanceForType() {
+        return protos.CTrie.CTrieProto.putAllResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.putAllResponse build() {
-        protos.CTrie.CTrie.putAllResponse result = buildPartial();
+      public protos.CTrie.CTrieProto.putAllResponse build() {
+        protos.CTrie.CTrieProto.putAllResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -6447,8 +6447,8 @@ public final class CTrie {
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.putAllResponse buildPartial() {
-        protos.CTrie.CTrie.putAllResponse result = new protos.CTrie.CTrie.putAllResponse(this);
+      public protos.CTrie.CTrieProto.putAllResponse buildPartial() {
+        protos.CTrie.CTrieProto.putAllResponse result = new protos.CTrie.CTrieProto.putAllResponse(this);
         onBuilt();
         return result;
       }
@@ -6487,16 +6487,16 @@ public final class CTrie {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protos.CTrie.CTrie.putAllResponse) {
-          return mergeFrom((protos.CTrie.CTrie.putAllResponse)other);
+        if (other instanceof protos.CTrie.CTrieProto.putAllResponse) {
+          return mergeFrom((protos.CTrie.CTrieProto.putAllResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protos.CTrie.CTrie.putAllResponse other) {
-        if (other == protos.CTrie.CTrie.putAllResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(protos.CTrie.CTrieProto.putAllResponse other) {
+        if (other == protos.CTrie.CTrieProto.putAllResponse.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -6512,11 +6512,11 @@ public final class CTrie {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protos.CTrie.CTrie.putAllResponse parsedMessage = null;
+        protos.CTrie.CTrieProto.putAllResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protos.CTrie.CTrie.putAllResponse) e.getUnfinishedMessage();
+          parsedMessage = (protos.CTrie.CTrieProto.putAllResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -6542,12 +6542,12 @@ public final class CTrie {
     }
 
     // @@protoc_insertion_point(class_scope:putAllResponse)
-    private static final protos.CTrie.CTrie.putAllResponse DEFAULT_INSTANCE;
+    private static final protos.CTrie.CTrieProto.putAllResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protos.CTrie.CTrie.putAllResponse();
+      DEFAULT_INSTANCE = new protos.CTrie.CTrieProto.putAllResponse();
     }
 
-    public static protos.CTrie.CTrie.putAllResponse getDefaultInstance() {
+    public static protos.CTrie.CTrieProto.putAllResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6572,7 +6572,7 @@ public final class CTrie {
     }
 
     @java.lang.Override
-    public protos.CTrie.CTrie.putAllResponse getDefaultInstanceForType() {
+    public protos.CTrie.CTrieProto.putAllResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6641,15 +6641,15 @@ public final class CTrie {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protos.CTrie.CTrie.internal_static_clearRequest_descriptor;
+      return protos.CTrie.CTrieProto.internal_static_clearRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protos.CTrie.CTrie.internal_static_clearRequest_fieldAccessorTable
+      return protos.CTrie.CTrieProto.internal_static_clearRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protos.CTrie.CTrie.clearRequest.class, protos.CTrie.CTrie.clearRequest.Builder.class);
+              protos.CTrie.CTrieProto.clearRequest.class, protos.CTrie.CTrieProto.clearRequest.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -6685,10 +6685,10 @@ public final class CTrie {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protos.CTrie.CTrie.clearRequest)) {
+      if (!(obj instanceof protos.CTrie.CTrieProto.clearRequest)) {
         return super.equals(obj);
       }
-      protos.CTrie.CTrie.clearRequest other = (protos.CTrie.CTrie.clearRequest) obj;
+      protos.CTrie.CTrieProto.clearRequest other = (protos.CTrie.CTrieProto.clearRequest) obj;
 
       boolean result = true;
       result = result && unknownFields.equals(other.unknownFields);
@@ -6707,69 +6707,69 @@ public final class CTrie {
       return hash;
     }
 
-    public static protos.CTrie.CTrie.clearRequest parseFrom(
+    public static protos.CTrie.CTrieProto.clearRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.clearRequest parseFrom(
+    public static protos.CTrie.CTrieProto.clearRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.clearRequest parseFrom(
+    public static protos.CTrie.CTrieProto.clearRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.clearRequest parseFrom(
+    public static protos.CTrie.CTrieProto.clearRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.clearRequest parseFrom(byte[] data)
+    public static protos.CTrie.CTrieProto.clearRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.clearRequest parseFrom(
+    public static protos.CTrie.CTrieProto.clearRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.clearRequest parseFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.clearRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.clearRequest parseFrom(
+    public static protos.CTrie.CTrieProto.clearRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.clearRequest parseDelimitedFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.clearRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.clearRequest parseDelimitedFrom(
+    public static protos.CTrie.CTrieProto.clearRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.clearRequest parseFrom(
+    public static protos.CTrie.CTrieProto.clearRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.clearRequest parseFrom(
+    public static protos.CTrie.CTrieProto.clearRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6782,7 +6782,7 @@ public final class CTrie {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protos.CTrie.CTrie.clearRequest prototype) {
+    public static Builder newBuilder(protos.CTrie.CTrieProto.clearRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -6803,21 +6803,21 @@ public final class CTrie {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:clearRequest)
-        protos.CTrie.CTrie.clearRequestOrBuilder {
+        protos.CTrie.CTrieProto.clearRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protos.CTrie.CTrie.internal_static_clearRequest_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_clearRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protos.CTrie.CTrie.internal_static_clearRequest_fieldAccessorTable
+        return protos.CTrie.CTrieProto.internal_static_clearRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protos.CTrie.CTrie.clearRequest.class, protos.CTrie.CTrie.clearRequest.Builder.class);
+                protos.CTrie.CTrieProto.clearRequest.class, protos.CTrie.CTrieProto.clearRequest.Builder.class);
       }
 
-      // Construct using protos.CTrie.CTrie.clearRequest.newBuilder()
+      // Construct using protos.CTrie.CTrieProto.clearRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -6841,17 +6841,17 @@ public final class CTrie {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protos.CTrie.CTrie.internal_static_clearRequest_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_clearRequest_descriptor;
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.clearRequest getDefaultInstanceForType() {
-        return protos.CTrie.CTrie.clearRequest.getDefaultInstance();
+      public protos.CTrie.CTrieProto.clearRequest getDefaultInstanceForType() {
+        return protos.CTrie.CTrieProto.clearRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.clearRequest build() {
-        protos.CTrie.CTrie.clearRequest result = buildPartial();
+      public protos.CTrie.CTrieProto.clearRequest build() {
+        protos.CTrie.CTrieProto.clearRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -6859,8 +6859,8 @@ public final class CTrie {
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.clearRequest buildPartial() {
-        protos.CTrie.CTrie.clearRequest result = new protos.CTrie.CTrie.clearRequest(this);
+      public protos.CTrie.CTrieProto.clearRequest buildPartial() {
+        protos.CTrie.CTrieProto.clearRequest result = new protos.CTrie.CTrieProto.clearRequest(this);
         onBuilt();
         return result;
       }
@@ -6899,16 +6899,16 @@ public final class CTrie {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protos.CTrie.CTrie.clearRequest) {
-          return mergeFrom((protos.CTrie.CTrie.clearRequest)other);
+        if (other instanceof protos.CTrie.CTrieProto.clearRequest) {
+          return mergeFrom((protos.CTrie.CTrieProto.clearRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protos.CTrie.CTrie.clearRequest other) {
-        if (other == protos.CTrie.CTrie.clearRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(protos.CTrie.CTrieProto.clearRequest other) {
+        if (other == protos.CTrie.CTrieProto.clearRequest.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -6924,11 +6924,11 @@ public final class CTrie {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protos.CTrie.CTrie.clearRequest parsedMessage = null;
+        protos.CTrie.CTrieProto.clearRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protos.CTrie.CTrie.clearRequest) e.getUnfinishedMessage();
+          parsedMessage = (protos.CTrie.CTrieProto.clearRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -6954,12 +6954,12 @@ public final class CTrie {
     }
 
     // @@protoc_insertion_point(class_scope:clearRequest)
-    private static final protos.CTrie.CTrie.clearRequest DEFAULT_INSTANCE;
+    private static final protos.CTrie.CTrieProto.clearRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protos.CTrie.CTrie.clearRequest();
+      DEFAULT_INSTANCE = new protos.CTrie.CTrieProto.clearRequest();
     }
 
-    public static protos.CTrie.CTrie.clearRequest getDefaultInstance() {
+    public static protos.CTrie.CTrieProto.clearRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6984,7 +6984,7 @@ public final class CTrie {
     }
 
     @java.lang.Override
-    public protos.CTrie.CTrie.clearRequest getDefaultInstanceForType() {
+    public protos.CTrie.CTrieProto.clearRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -7053,15 +7053,15 @@ public final class CTrie {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protos.CTrie.CTrie.internal_static_clearResponse_descriptor;
+      return protos.CTrie.CTrieProto.internal_static_clearResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protos.CTrie.CTrie.internal_static_clearResponse_fieldAccessorTable
+      return protos.CTrie.CTrieProto.internal_static_clearResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protos.CTrie.CTrie.clearResponse.class, protos.CTrie.CTrie.clearResponse.Builder.class);
+              protos.CTrie.CTrieProto.clearResponse.class, protos.CTrie.CTrieProto.clearResponse.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -7097,10 +7097,10 @@ public final class CTrie {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protos.CTrie.CTrie.clearResponse)) {
+      if (!(obj instanceof protos.CTrie.CTrieProto.clearResponse)) {
         return super.equals(obj);
       }
-      protos.CTrie.CTrie.clearResponse other = (protos.CTrie.CTrie.clearResponse) obj;
+      protos.CTrie.CTrieProto.clearResponse other = (protos.CTrie.CTrieProto.clearResponse) obj;
 
       boolean result = true;
       result = result && unknownFields.equals(other.unknownFields);
@@ -7119,69 +7119,69 @@ public final class CTrie {
       return hash;
     }
 
-    public static protos.CTrie.CTrie.clearResponse parseFrom(
+    public static protos.CTrie.CTrieProto.clearResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.clearResponse parseFrom(
+    public static protos.CTrie.CTrieProto.clearResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.clearResponse parseFrom(
+    public static protos.CTrie.CTrieProto.clearResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.clearResponse parseFrom(
+    public static protos.CTrie.CTrieProto.clearResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.clearResponse parseFrom(byte[] data)
+    public static protos.CTrie.CTrieProto.clearResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.clearResponse parseFrom(
+    public static protos.CTrie.CTrieProto.clearResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.clearResponse parseFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.clearResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.clearResponse parseFrom(
+    public static protos.CTrie.CTrieProto.clearResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.clearResponse parseDelimitedFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.clearResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.clearResponse parseDelimitedFrom(
+    public static protos.CTrie.CTrieProto.clearResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.clearResponse parseFrom(
+    public static protos.CTrie.CTrieProto.clearResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.clearResponse parseFrom(
+    public static protos.CTrie.CTrieProto.clearResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7194,7 +7194,7 @@ public final class CTrie {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protos.CTrie.CTrie.clearResponse prototype) {
+    public static Builder newBuilder(protos.CTrie.CTrieProto.clearResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -7215,21 +7215,21 @@ public final class CTrie {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:clearResponse)
-        protos.CTrie.CTrie.clearResponseOrBuilder {
+        protos.CTrie.CTrieProto.clearResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protos.CTrie.CTrie.internal_static_clearResponse_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_clearResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protos.CTrie.CTrie.internal_static_clearResponse_fieldAccessorTable
+        return protos.CTrie.CTrieProto.internal_static_clearResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protos.CTrie.CTrie.clearResponse.class, protos.CTrie.CTrie.clearResponse.Builder.class);
+                protos.CTrie.CTrieProto.clearResponse.class, protos.CTrie.CTrieProto.clearResponse.Builder.class);
       }
 
-      // Construct using protos.CTrie.CTrie.clearResponse.newBuilder()
+      // Construct using protos.CTrie.CTrieProto.clearResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -7253,17 +7253,17 @@ public final class CTrie {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protos.CTrie.CTrie.internal_static_clearResponse_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_clearResponse_descriptor;
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.clearResponse getDefaultInstanceForType() {
-        return protos.CTrie.CTrie.clearResponse.getDefaultInstance();
+      public protos.CTrie.CTrieProto.clearResponse getDefaultInstanceForType() {
+        return protos.CTrie.CTrieProto.clearResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.clearResponse build() {
-        protos.CTrie.CTrie.clearResponse result = buildPartial();
+      public protos.CTrie.CTrieProto.clearResponse build() {
+        protos.CTrie.CTrieProto.clearResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -7271,8 +7271,8 @@ public final class CTrie {
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.clearResponse buildPartial() {
-        protos.CTrie.CTrie.clearResponse result = new protos.CTrie.CTrie.clearResponse(this);
+      public protos.CTrie.CTrieProto.clearResponse buildPartial() {
+        protos.CTrie.CTrieProto.clearResponse result = new protos.CTrie.CTrieProto.clearResponse(this);
         onBuilt();
         return result;
       }
@@ -7311,16 +7311,16 @@ public final class CTrie {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protos.CTrie.CTrie.clearResponse) {
-          return mergeFrom((protos.CTrie.CTrie.clearResponse)other);
+        if (other instanceof protos.CTrie.CTrieProto.clearResponse) {
+          return mergeFrom((protos.CTrie.CTrieProto.clearResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protos.CTrie.CTrie.clearResponse other) {
-        if (other == protos.CTrie.CTrie.clearResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(protos.CTrie.CTrieProto.clearResponse other) {
+        if (other == protos.CTrie.CTrieProto.clearResponse.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -7336,11 +7336,11 @@ public final class CTrie {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protos.CTrie.CTrie.clearResponse parsedMessage = null;
+        protos.CTrie.CTrieProto.clearResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protos.CTrie.CTrie.clearResponse) e.getUnfinishedMessage();
+          parsedMessage = (protos.CTrie.CTrieProto.clearResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -7366,12 +7366,12 @@ public final class CTrie {
     }
 
     // @@protoc_insertion_point(class_scope:clearResponse)
-    private static final protos.CTrie.CTrie.clearResponse DEFAULT_INSTANCE;
+    private static final protos.CTrie.CTrieProto.clearResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protos.CTrie.CTrie.clearResponse();
+      DEFAULT_INSTANCE = new protos.CTrie.CTrieProto.clearResponse();
     }
 
-    public static protos.CTrie.CTrie.clearResponse getDefaultInstance() {
+    public static protos.CTrie.CTrieProto.clearResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -7396,7 +7396,7 @@ public final class CTrie {
     }
 
     @java.lang.Override
-    public protos.CTrie.CTrie.clearResponse getDefaultInstanceForType() {
+    public protos.CTrie.CTrieProto.clearResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -7465,15 +7465,15 @@ public final class CTrie {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protos.CTrie.CTrie.internal_static_keySetRequest_descriptor;
+      return protos.CTrie.CTrieProto.internal_static_keySetRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protos.CTrie.CTrie.internal_static_keySetRequest_fieldAccessorTable
+      return protos.CTrie.CTrieProto.internal_static_keySetRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protos.CTrie.CTrie.keySetRequest.class, protos.CTrie.CTrie.keySetRequest.Builder.class);
+              protos.CTrie.CTrieProto.keySetRequest.class, protos.CTrie.CTrieProto.keySetRequest.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -7509,10 +7509,10 @@ public final class CTrie {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protos.CTrie.CTrie.keySetRequest)) {
+      if (!(obj instanceof protos.CTrie.CTrieProto.keySetRequest)) {
         return super.equals(obj);
       }
-      protos.CTrie.CTrie.keySetRequest other = (protos.CTrie.CTrie.keySetRequest) obj;
+      protos.CTrie.CTrieProto.keySetRequest other = (protos.CTrie.CTrieProto.keySetRequest) obj;
 
       boolean result = true;
       result = result && unknownFields.equals(other.unknownFields);
@@ -7531,69 +7531,69 @@ public final class CTrie {
       return hash;
     }
 
-    public static protos.CTrie.CTrie.keySetRequest parseFrom(
+    public static protos.CTrie.CTrieProto.keySetRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.keySetRequest parseFrom(
+    public static protos.CTrie.CTrieProto.keySetRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.keySetRequest parseFrom(
+    public static protos.CTrie.CTrieProto.keySetRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.keySetRequest parseFrom(
+    public static protos.CTrie.CTrieProto.keySetRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.keySetRequest parseFrom(byte[] data)
+    public static protos.CTrie.CTrieProto.keySetRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.keySetRequest parseFrom(
+    public static protos.CTrie.CTrieProto.keySetRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.keySetRequest parseFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.keySetRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.keySetRequest parseFrom(
+    public static protos.CTrie.CTrieProto.keySetRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.keySetRequest parseDelimitedFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.keySetRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.keySetRequest parseDelimitedFrom(
+    public static protos.CTrie.CTrieProto.keySetRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.keySetRequest parseFrom(
+    public static protos.CTrie.CTrieProto.keySetRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.keySetRequest parseFrom(
+    public static protos.CTrie.CTrieProto.keySetRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7606,7 +7606,7 @@ public final class CTrie {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protos.CTrie.CTrie.keySetRequest prototype) {
+    public static Builder newBuilder(protos.CTrie.CTrieProto.keySetRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -7627,21 +7627,21 @@ public final class CTrie {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:keySetRequest)
-        protos.CTrie.CTrie.keySetRequestOrBuilder {
+        protos.CTrie.CTrieProto.keySetRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protos.CTrie.CTrie.internal_static_keySetRequest_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_keySetRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protos.CTrie.CTrie.internal_static_keySetRequest_fieldAccessorTable
+        return protos.CTrie.CTrieProto.internal_static_keySetRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protos.CTrie.CTrie.keySetRequest.class, protos.CTrie.CTrie.keySetRequest.Builder.class);
+                protos.CTrie.CTrieProto.keySetRequest.class, protos.CTrie.CTrieProto.keySetRequest.Builder.class);
       }
 
-      // Construct using protos.CTrie.CTrie.keySetRequest.newBuilder()
+      // Construct using protos.CTrie.CTrieProto.keySetRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -7665,17 +7665,17 @@ public final class CTrie {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protos.CTrie.CTrie.internal_static_keySetRequest_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_keySetRequest_descriptor;
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.keySetRequest getDefaultInstanceForType() {
-        return protos.CTrie.CTrie.keySetRequest.getDefaultInstance();
+      public protos.CTrie.CTrieProto.keySetRequest getDefaultInstanceForType() {
+        return protos.CTrie.CTrieProto.keySetRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.keySetRequest build() {
-        protos.CTrie.CTrie.keySetRequest result = buildPartial();
+      public protos.CTrie.CTrieProto.keySetRequest build() {
+        protos.CTrie.CTrieProto.keySetRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -7683,8 +7683,8 @@ public final class CTrie {
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.keySetRequest buildPartial() {
-        protos.CTrie.CTrie.keySetRequest result = new protos.CTrie.CTrie.keySetRequest(this);
+      public protos.CTrie.CTrieProto.keySetRequest buildPartial() {
+        protos.CTrie.CTrieProto.keySetRequest result = new protos.CTrie.CTrieProto.keySetRequest(this);
         onBuilt();
         return result;
       }
@@ -7723,16 +7723,16 @@ public final class CTrie {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protos.CTrie.CTrie.keySetRequest) {
-          return mergeFrom((protos.CTrie.CTrie.keySetRequest)other);
+        if (other instanceof protos.CTrie.CTrieProto.keySetRequest) {
+          return mergeFrom((protos.CTrie.CTrieProto.keySetRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protos.CTrie.CTrie.keySetRequest other) {
-        if (other == protos.CTrie.CTrie.keySetRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(protos.CTrie.CTrieProto.keySetRequest other) {
+        if (other == protos.CTrie.CTrieProto.keySetRequest.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -7748,11 +7748,11 @@ public final class CTrie {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protos.CTrie.CTrie.keySetRequest parsedMessage = null;
+        protos.CTrie.CTrieProto.keySetRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protos.CTrie.CTrie.keySetRequest) e.getUnfinishedMessage();
+          parsedMessage = (protos.CTrie.CTrieProto.keySetRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -7778,12 +7778,12 @@ public final class CTrie {
     }
 
     // @@protoc_insertion_point(class_scope:keySetRequest)
-    private static final protos.CTrie.CTrie.keySetRequest DEFAULT_INSTANCE;
+    private static final protos.CTrie.CTrieProto.keySetRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protos.CTrie.CTrie.keySetRequest();
+      DEFAULT_INSTANCE = new protos.CTrie.CTrieProto.keySetRequest();
     }
 
-    public static protos.CTrie.CTrie.keySetRequest getDefaultInstance() {
+    public static protos.CTrie.CTrieProto.keySetRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -7808,7 +7808,7 @@ public final class CTrie {
     }
 
     @java.lang.Override
-    public protos.CTrie.CTrie.keySetRequest getDefaultInstanceForType() {
+    public protos.CTrie.CTrieProto.keySetRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -7889,15 +7889,15 @@ public final class CTrie {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protos.CTrie.CTrie.internal_static_keySetResponse_descriptor;
+      return protos.CTrie.CTrieProto.internal_static_keySetResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protos.CTrie.CTrie.internal_static_keySetResponse_fieldAccessorTable
+      return protos.CTrie.CTrieProto.internal_static_keySetResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protos.CTrie.CTrie.keySetResponse.class, protos.CTrie.CTrie.keySetResponse.Builder.class);
+              protos.CTrie.CTrieProto.keySetResponse.class, protos.CTrie.CTrieProto.keySetResponse.Builder.class);
     }
 
     public static final int SERIALIZEDSET_FIELD_NUMBER = 1;
@@ -7949,10 +7949,10 @@ public final class CTrie {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protos.CTrie.CTrie.keySetResponse)) {
+      if (!(obj instanceof protos.CTrie.CTrieProto.keySetResponse)) {
         return super.equals(obj);
       }
-      protos.CTrie.CTrie.keySetResponse other = (protos.CTrie.CTrie.keySetResponse) obj;
+      protos.CTrie.CTrieProto.keySetResponse other = (protos.CTrie.CTrieProto.keySetResponse) obj;
 
       boolean result = true;
       result = result && getSerializedSet()
@@ -7975,69 +7975,69 @@ public final class CTrie {
       return hash;
     }
 
-    public static protos.CTrie.CTrie.keySetResponse parseFrom(
+    public static protos.CTrie.CTrieProto.keySetResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.keySetResponse parseFrom(
+    public static protos.CTrie.CTrieProto.keySetResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.keySetResponse parseFrom(
+    public static protos.CTrie.CTrieProto.keySetResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.keySetResponse parseFrom(
+    public static protos.CTrie.CTrieProto.keySetResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.keySetResponse parseFrom(byte[] data)
+    public static protos.CTrie.CTrieProto.keySetResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.keySetResponse parseFrom(
+    public static protos.CTrie.CTrieProto.keySetResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.keySetResponse parseFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.keySetResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.keySetResponse parseFrom(
+    public static protos.CTrie.CTrieProto.keySetResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.keySetResponse parseDelimitedFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.keySetResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.keySetResponse parseDelimitedFrom(
+    public static protos.CTrie.CTrieProto.keySetResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.keySetResponse parseFrom(
+    public static protos.CTrie.CTrieProto.keySetResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.keySetResponse parseFrom(
+    public static protos.CTrie.CTrieProto.keySetResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8050,7 +8050,7 @@ public final class CTrie {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protos.CTrie.CTrie.keySetResponse prototype) {
+    public static Builder newBuilder(protos.CTrie.CTrieProto.keySetResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -8071,21 +8071,21 @@ public final class CTrie {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:keySetResponse)
-        protos.CTrie.CTrie.keySetResponseOrBuilder {
+        protos.CTrie.CTrieProto.keySetResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protos.CTrie.CTrie.internal_static_keySetResponse_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_keySetResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protos.CTrie.CTrie.internal_static_keySetResponse_fieldAccessorTable
+        return protos.CTrie.CTrieProto.internal_static_keySetResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protos.CTrie.CTrie.keySetResponse.class, protos.CTrie.CTrie.keySetResponse.Builder.class);
+                protos.CTrie.CTrieProto.keySetResponse.class, protos.CTrie.CTrieProto.keySetResponse.Builder.class);
       }
 
-      // Construct using protos.CTrie.CTrie.keySetResponse.newBuilder()
+      // Construct using protos.CTrie.CTrieProto.keySetResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -8111,17 +8111,17 @@ public final class CTrie {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protos.CTrie.CTrie.internal_static_keySetResponse_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_keySetResponse_descriptor;
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.keySetResponse getDefaultInstanceForType() {
-        return protos.CTrie.CTrie.keySetResponse.getDefaultInstance();
+      public protos.CTrie.CTrieProto.keySetResponse getDefaultInstanceForType() {
+        return protos.CTrie.CTrieProto.keySetResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.keySetResponse build() {
-        protos.CTrie.CTrie.keySetResponse result = buildPartial();
+      public protos.CTrie.CTrieProto.keySetResponse build() {
+        protos.CTrie.CTrieProto.keySetResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -8129,8 +8129,8 @@ public final class CTrie {
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.keySetResponse buildPartial() {
-        protos.CTrie.CTrie.keySetResponse result = new protos.CTrie.CTrie.keySetResponse(this);
+      public protos.CTrie.CTrieProto.keySetResponse buildPartial() {
+        protos.CTrie.CTrieProto.keySetResponse result = new protos.CTrie.CTrieProto.keySetResponse(this);
         result.serializedSet_ = serializedSet_;
         onBuilt();
         return result;
@@ -8170,16 +8170,16 @@ public final class CTrie {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protos.CTrie.CTrie.keySetResponse) {
-          return mergeFrom((protos.CTrie.CTrie.keySetResponse)other);
+        if (other instanceof protos.CTrie.CTrieProto.keySetResponse) {
+          return mergeFrom((protos.CTrie.CTrieProto.keySetResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protos.CTrie.CTrie.keySetResponse other) {
-        if (other == protos.CTrie.CTrie.keySetResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(protos.CTrie.CTrieProto.keySetResponse other) {
+        if (other == protos.CTrie.CTrieProto.keySetResponse.getDefaultInstance()) return this;
         if (other.getSerializedSet() != com.google.protobuf.ByteString.EMPTY) {
           setSerializedSet(other.getSerializedSet());
         }
@@ -8198,11 +8198,11 @@ public final class CTrie {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protos.CTrie.CTrie.keySetResponse parsedMessage = null;
+        protos.CTrie.CTrieProto.keySetResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protos.CTrie.CTrie.keySetResponse) e.getUnfinishedMessage();
+          parsedMessage = (protos.CTrie.CTrieProto.keySetResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -8257,12 +8257,12 @@ public final class CTrie {
     }
 
     // @@protoc_insertion_point(class_scope:keySetResponse)
-    private static final protos.CTrie.CTrie.keySetResponse DEFAULT_INSTANCE;
+    private static final protos.CTrie.CTrieProto.keySetResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protos.CTrie.CTrie.keySetResponse();
+      DEFAULT_INSTANCE = new protos.CTrie.CTrieProto.keySetResponse();
     }
 
-    public static protos.CTrie.CTrie.keySetResponse getDefaultInstance() {
+    public static protos.CTrie.CTrieProto.keySetResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -8287,7 +8287,7 @@ public final class CTrie {
     }
 
     @java.lang.Override
-    public protos.CTrie.CTrie.keySetResponse getDefaultInstanceForType() {
+    public protos.CTrie.CTrieProto.keySetResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -8356,15 +8356,15 @@ public final class CTrie {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protos.CTrie.CTrie.internal_static_valuesRequest_descriptor;
+      return protos.CTrie.CTrieProto.internal_static_valuesRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protos.CTrie.CTrie.internal_static_valuesRequest_fieldAccessorTable
+      return protos.CTrie.CTrieProto.internal_static_valuesRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protos.CTrie.CTrie.valuesRequest.class, protos.CTrie.CTrie.valuesRequest.Builder.class);
+              protos.CTrie.CTrieProto.valuesRequest.class, protos.CTrie.CTrieProto.valuesRequest.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -8400,10 +8400,10 @@ public final class CTrie {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protos.CTrie.CTrie.valuesRequest)) {
+      if (!(obj instanceof protos.CTrie.CTrieProto.valuesRequest)) {
         return super.equals(obj);
       }
-      protos.CTrie.CTrie.valuesRequest other = (protos.CTrie.CTrie.valuesRequest) obj;
+      protos.CTrie.CTrieProto.valuesRequest other = (protos.CTrie.CTrieProto.valuesRequest) obj;
 
       boolean result = true;
       result = result && unknownFields.equals(other.unknownFields);
@@ -8422,69 +8422,69 @@ public final class CTrie {
       return hash;
     }
 
-    public static protos.CTrie.CTrie.valuesRequest parseFrom(
+    public static protos.CTrie.CTrieProto.valuesRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.valuesRequest parseFrom(
+    public static protos.CTrie.CTrieProto.valuesRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.valuesRequest parseFrom(
+    public static protos.CTrie.CTrieProto.valuesRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.valuesRequest parseFrom(
+    public static protos.CTrie.CTrieProto.valuesRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.valuesRequest parseFrom(byte[] data)
+    public static protos.CTrie.CTrieProto.valuesRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.valuesRequest parseFrom(
+    public static protos.CTrie.CTrieProto.valuesRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.valuesRequest parseFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.valuesRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.valuesRequest parseFrom(
+    public static protos.CTrie.CTrieProto.valuesRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.valuesRequest parseDelimitedFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.valuesRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.valuesRequest parseDelimitedFrom(
+    public static protos.CTrie.CTrieProto.valuesRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.valuesRequest parseFrom(
+    public static protos.CTrie.CTrieProto.valuesRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.valuesRequest parseFrom(
+    public static protos.CTrie.CTrieProto.valuesRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8497,7 +8497,7 @@ public final class CTrie {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protos.CTrie.CTrie.valuesRequest prototype) {
+    public static Builder newBuilder(protos.CTrie.CTrieProto.valuesRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -8518,21 +8518,21 @@ public final class CTrie {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:valuesRequest)
-        protos.CTrie.CTrie.valuesRequestOrBuilder {
+        protos.CTrie.CTrieProto.valuesRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protos.CTrie.CTrie.internal_static_valuesRequest_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_valuesRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protos.CTrie.CTrie.internal_static_valuesRequest_fieldAccessorTable
+        return protos.CTrie.CTrieProto.internal_static_valuesRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protos.CTrie.CTrie.valuesRequest.class, protos.CTrie.CTrie.valuesRequest.Builder.class);
+                protos.CTrie.CTrieProto.valuesRequest.class, protos.CTrie.CTrieProto.valuesRequest.Builder.class);
       }
 
-      // Construct using protos.CTrie.CTrie.valuesRequest.newBuilder()
+      // Construct using protos.CTrie.CTrieProto.valuesRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -8556,17 +8556,17 @@ public final class CTrie {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protos.CTrie.CTrie.internal_static_valuesRequest_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_valuesRequest_descriptor;
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.valuesRequest getDefaultInstanceForType() {
-        return protos.CTrie.CTrie.valuesRequest.getDefaultInstance();
+      public protos.CTrie.CTrieProto.valuesRequest getDefaultInstanceForType() {
+        return protos.CTrie.CTrieProto.valuesRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.valuesRequest build() {
-        protos.CTrie.CTrie.valuesRequest result = buildPartial();
+      public protos.CTrie.CTrieProto.valuesRequest build() {
+        protos.CTrie.CTrieProto.valuesRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -8574,8 +8574,8 @@ public final class CTrie {
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.valuesRequest buildPartial() {
-        protos.CTrie.CTrie.valuesRequest result = new protos.CTrie.CTrie.valuesRequest(this);
+      public protos.CTrie.CTrieProto.valuesRequest buildPartial() {
+        protos.CTrie.CTrieProto.valuesRequest result = new protos.CTrie.CTrieProto.valuesRequest(this);
         onBuilt();
         return result;
       }
@@ -8614,16 +8614,16 @@ public final class CTrie {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protos.CTrie.CTrie.valuesRequest) {
-          return mergeFrom((protos.CTrie.CTrie.valuesRequest)other);
+        if (other instanceof protos.CTrie.CTrieProto.valuesRequest) {
+          return mergeFrom((protos.CTrie.CTrieProto.valuesRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protos.CTrie.CTrie.valuesRequest other) {
-        if (other == protos.CTrie.CTrie.valuesRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(protos.CTrie.CTrieProto.valuesRequest other) {
+        if (other == protos.CTrie.CTrieProto.valuesRequest.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -8639,11 +8639,11 @@ public final class CTrie {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protos.CTrie.CTrie.valuesRequest parsedMessage = null;
+        protos.CTrie.CTrieProto.valuesRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protos.CTrie.CTrie.valuesRequest) e.getUnfinishedMessage();
+          parsedMessage = (protos.CTrie.CTrieProto.valuesRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -8669,12 +8669,12 @@ public final class CTrie {
     }
 
     // @@protoc_insertion_point(class_scope:valuesRequest)
-    private static final protos.CTrie.CTrie.valuesRequest DEFAULT_INSTANCE;
+    private static final protos.CTrie.CTrieProto.valuesRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protos.CTrie.CTrie.valuesRequest();
+      DEFAULT_INSTANCE = new protos.CTrie.CTrieProto.valuesRequest();
     }
 
-    public static protos.CTrie.CTrie.valuesRequest getDefaultInstance() {
+    public static protos.CTrie.CTrieProto.valuesRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -8699,7 +8699,7 @@ public final class CTrie {
     }
 
     @java.lang.Override
-    public protos.CTrie.CTrie.valuesRequest getDefaultInstanceForType() {
+    public protos.CTrie.CTrieProto.valuesRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -8780,15 +8780,15 @@ public final class CTrie {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protos.CTrie.CTrie.internal_static_valuesResponse_descriptor;
+      return protos.CTrie.CTrieProto.internal_static_valuesResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protos.CTrie.CTrie.internal_static_valuesResponse_fieldAccessorTable
+      return protos.CTrie.CTrieProto.internal_static_valuesResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protos.CTrie.CTrie.valuesResponse.class, protos.CTrie.CTrie.valuesResponse.Builder.class);
+              protos.CTrie.CTrieProto.valuesResponse.class, protos.CTrie.CTrieProto.valuesResponse.Builder.class);
     }
 
     public static final int SERIALIZEDCOLLECTION_FIELD_NUMBER = 1;
@@ -8840,10 +8840,10 @@ public final class CTrie {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protos.CTrie.CTrie.valuesResponse)) {
+      if (!(obj instanceof protos.CTrie.CTrieProto.valuesResponse)) {
         return super.equals(obj);
       }
-      protos.CTrie.CTrie.valuesResponse other = (protos.CTrie.CTrie.valuesResponse) obj;
+      protos.CTrie.CTrieProto.valuesResponse other = (protos.CTrie.CTrieProto.valuesResponse) obj;
 
       boolean result = true;
       result = result && getSerializedCollection()
@@ -8866,69 +8866,69 @@ public final class CTrie {
       return hash;
     }
 
-    public static protos.CTrie.CTrie.valuesResponse parseFrom(
+    public static protos.CTrie.CTrieProto.valuesResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.valuesResponse parseFrom(
+    public static protos.CTrie.CTrieProto.valuesResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.valuesResponse parseFrom(
+    public static protos.CTrie.CTrieProto.valuesResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.valuesResponse parseFrom(
+    public static protos.CTrie.CTrieProto.valuesResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.valuesResponse parseFrom(byte[] data)
+    public static protos.CTrie.CTrieProto.valuesResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.valuesResponse parseFrom(
+    public static protos.CTrie.CTrieProto.valuesResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.valuesResponse parseFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.valuesResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.valuesResponse parseFrom(
+    public static protos.CTrie.CTrieProto.valuesResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.valuesResponse parseDelimitedFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.valuesResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.valuesResponse parseDelimitedFrom(
+    public static protos.CTrie.CTrieProto.valuesResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.valuesResponse parseFrom(
+    public static protos.CTrie.CTrieProto.valuesResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.valuesResponse parseFrom(
+    public static protos.CTrie.CTrieProto.valuesResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8941,7 +8941,7 @@ public final class CTrie {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protos.CTrie.CTrie.valuesResponse prototype) {
+    public static Builder newBuilder(protos.CTrie.CTrieProto.valuesResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -8962,21 +8962,21 @@ public final class CTrie {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:valuesResponse)
-        protos.CTrie.CTrie.valuesResponseOrBuilder {
+        protos.CTrie.CTrieProto.valuesResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protos.CTrie.CTrie.internal_static_valuesResponse_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_valuesResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protos.CTrie.CTrie.internal_static_valuesResponse_fieldAccessorTable
+        return protos.CTrie.CTrieProto.internal_static_valuesResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protos.CTrie.CTrie.valuesResponse.class, protos.CTrie.CTrie.valuesResponse.Builder.class);
+                protos.CTrie.CTrieProto.valuesResponse.class, protos.CTrie.CTrieProto.valuesResponse.Builder.class);
       }
 
-      // Construct using protos.CTrie.CTrie.valuesResponse.newBuilder()
+      // Construct using protos.CTrie.CTrieProto.valuesResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -9002,17 +9002,17 @@ public final class CTrie {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protos.CTrie.CTrie.internal_static_valuesResponse_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_valuesResponse_descriptor;
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.valuesResponse getDefaultInstanceForType() {
-        return protos.CTrie.CTrie.valuesResponse.getDefaultInstance();
+      public protos.CTrie.CTrieProto.valuesResponse getDefaultInstanceForType() {
+        return protos.CTrie.CTrieProto.valuesResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.valuesResponse build() {
-        protos.CTrie.CTrie.valuesResponse result = buildPartial();
+      public protos.CTrie.CTrieProto.valuesResponse build() {
+        protos.CTrie.CTrieProto.valuesResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -9020,8 +9020,8 @@ public final class CTrie {
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.valuesResponse buildPartial() {
-        protos.CTrie.CTrie.valuesResponse result = new protos.CTrie.CTrie.valuesResponse(this);
+      public protos.CTrie.CTrieProto.valuesResponse buildPartial() {
+        protos.CTrie.CTrieProto.valuesResponse result = new protos.CTrie.CTrieProto.valuesResponse(this);
         result.serializedCollection_ = serializedCollection_;
         onBuilt();
         return result;
@@ -9061,16 +9061,16 @@ public final class CTrie {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protos.CTrie.CTrie.valuesResponse) {
-          return mergeFrom((protos.CTrie.CTrie.valuesResponse)other);
+        if (other instanceof protos.CTrie.CTrieProto.valuesResponse) {
+          return mergeFrom((protos.CTrie.CTrieProto.valuesResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protos.CTrie.CTrie.valuesResponse other) {
-        if (other == protos.CTrie.CTrie.valuesResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(protos.CTrie.CTrieProto.valuesResponse other) {
+        if (other == protos.CTrie.CTrieProto.valuesResponse.getDefaultInstance()) return this;
         if (other.getSerializedCollection() != com.google.protobuf.ByteString.EMPTY) {
           setSerializedCollection(other.getSerializedCollection());
         }
@@ -9089,11 +9089,11 @@ public final class CTrie {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protos.CTrie.CTrie.valuesResponse parsedMessage = null;
+        protos.CTrie.CTrieProto.valuesResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protos.CTrie.CTrie.valuesResponse) e.getUnfinishedMessage();
+          parsedMessage = (protos.CTrie.CTrieProto.valuesResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -9148,12 +9148,12 @@ public final class CTrie {
     }
 
     // @@protoc_insertion_point(class_scope:valuesResponse)
-    private static final protos.CTrie.CTrie.valuesResponse DEFAULT_INSTANCE;
+    private static final protos.CTrie.CTrieProto.valuesResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protos.CTrie.CTrie.valuesResponse();
+      DEFAULT_INSTANCE = new protos.CTrie.CTrieProto.valuesResponse();
     }
 
-    public static protos.CTrie.CTrie.valuesResponse getDefaultInstance() {
+    public static protos.CTrie.CTrieProto.valuesResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -9178,7 +9178,7 @@ public final class CTrie {
     }
 
     @java.lang.Override
-    public protos.CTrie.CTrie.valuesResponse getDefaultInstanceForType() {
+    public protos.CTrie.CTrieProto.valuesResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -9247,15 +9247,15 @@ public final class CTrie {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protos.CTrie.CTrie.internal_static_entrySetRequest_descriptor;
+      return protos.CTrie.CTrieProto.internal_static_entrySetRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protos.CTrie.CTrie.internal_static_entrySetRequest_fieldAccessorTable
+      return protos.CTrie.CTrieProto.internal_static_entrySetRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protos.CTrie.CTrie.entrySetRequest.class, protos.CTrie.CTrie.entrySetRequest.Builder.class);
+              protos.CTrie.CTrieProto.entrySetRequest.class, protos.CTrie.CTrieProto.entrySetRequest.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -9291,10 +9291,10 @@ public final class CTrie {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protos.CTrie.CTrie.entrySetRequest)) {
+      if (!(obj instanceof protos.CTrie.CTrieProto.entrySetRequest)) {
         return super.equals(obj);
       }
-      protos.CTrie.CTrie.entrySetRequest other = (protos.CTrie.CTrie.entrySetRequest) obj;
+      protos.CTrie.CTrieProto.entrySetRequest other = (protos.CTrie.CTrieProto.entrySetRequest) obj;
 
       boolean result = true;
       result = result && unknownFields.equals(other.unknownFields);
@@ -9313,69 +9313,69 @@ public final class CTrie {
       return hash;
     }
 
-    public static protos.CTrie.CTrie.entrySetRequest parseFrom(
+    public static protos.CTrie.CTrieProto.entrySetRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.entrySetRequest parseFrom(
+    public static protos.CTrie.CTrieProto.entrySetRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.entrySetRequest parseFrom(
+    public static protos.CTrie.CTrieProto.entrySetRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.entrySetRequest parseFrom(
+    public static protos.CTrie.CTrieProto.entrySetRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.entrySetRequest parseFrom(byte[] data)
+    public static protos.CTrie.CTrieProto.entrySetRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.entrySetRequest parseFrom(
+    public static protos.CTrie.CTrieProto.entrySetRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.entrySetRequest parseFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.entrySetRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.entrySetRequest parseFrom(
+    public static protos.CTrie.CTrieProto.entrySetRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.entrySetRequest parseDelimitedFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.entrySetRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.entrySetRequest parseDelimitedFrom(
+    public static protos.CTrie.CTrieProto.entrySetRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.entrySetRequest parseFrom(
+    public static protos.CTrie.CTrieProto.entrySetRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.entrySetRequest parseFrom(
+    public static protos.CTrie.CTrieProto.entrySetRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -9388,7 +9388,7 @@ public final class CTrie {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protos.CTrie.CTrie.entrySetRequest prototype) {
+    public static Builder newBuilder(protos.CTrie.CTrieProto.entrySetRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -9409,21 +9409,21 @@ public final class CTrie {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:entrySetRequest)
-        protos.CTrie.CTrie.entrySetRequestOrBuilder {
+        protos.CTrie.CTrieProto.entrySetRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protos.CTrie.CTrie.internal_static_entrySetRequest_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_entrySetRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protos.CTrie.CTrie.internal_static_entrySetRequest_fieldAccessorTable
+        return protos.CTrie.CTrieProto.internal_static_entrySetRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protos.CTrie.CTrie.entrySetRequest.class, protos.CTrie.CTrie.entrySetRequest.Builder.class);
+                protos.CTrie.CTrieProto.entrySetRequest.class, protos.CTrie.CTrieProto.entrySetRequest.Builder.class);
       }
 
-      // Construct using protos.CTrie.CTrie.entrySetRequest.newBuilder()
+      // Construct using protos.CTrie.CTrieProto.entrySetRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -9447,17 +9447,17 @@ public final class CTrie {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protos.CTrie.CTrie.internal_static_entrySetRequest_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_entrySetRequest_descriptor;
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.entrySetRequest getDefaultInstanceForType() {
-        return protos.CTrie.CTrie.entrySetRequest.getDefaultInstance();
+      public protos.CTrie.CTrieProto.entrySetRequest getDefaultInstanceForType() {
+        return protos.CTrie.CTrieProto.entrySetRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.entrySetRequest build() {
-        protos.CTrie.CTrie.entrySetRequest result = buildPartial();
+      public protos.CTrie.CTrieProto.entrySetRequest build() {
+        protos.CTrie.CTrieProto.entrySetRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -9465,8 +9465,8 @@ public final class CTrie {
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.entrySetRequest buildPartial() {
-        protos.CTrie.CTrie.entrySetRequest result = new protos.CTrie.CTrie.entrySetRequest(this);
+      public protos.CTrie.CTrieProto.entrySetRequest buildPartial() {
+        protos.CTrie.CTrieProto.entrySetRequest result = new protos.CTrie.CTrieProto.entrySetRequest(this);
         onBuilt();
         return result;
       }
@@ -9505,16 +9505,16 @@ public final class CTrie {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protos.CTrie.CTrie.entrySetRequest) {
-          return mergeFrom((protos.CTrie.CTrie.entrySetRequest)other);
+        if (other instanceof protos.CTrie.CTrieProto.entrySetRequest) {
+          return mergeFrom((protos.CTrie.CTrieProto.entrySetRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protos.CTrie.CTrie.entrySetRequest other) {
-        if (other == protos.CTrie.CTrie.entrySetRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(protos.CTrie.CTrieProto.entrySetRequest other) {
+        if (other == protos.CTrie.CTrieProto.entrySetRequest.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -9530,11 +9530,11 @@ public final class CTrie {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protos.CTrie.CTrie.entrySetRequest parsedMessage = null;
+        protos.CTrie.CTrieProto.entrySetRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protos.CTrie.CTrie.entrySetRequest) e.getUnfinishedMessage();
+          parsedMessage = (protos.CTrie.CTrieProto.entrySetRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -9560,12 +9560,12 @@ public final class CTrie {
     }
 
     // @@protoc_insertion_point(class_scope:entrySetRequest)
-    private static final protos.CTrie.CTrie.entrySetRequest DEFAULT_INSTANCE;
+    private static final protos.CTrie.CTrieProto.entrySetRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protos.CTrie.CTrie.entrySetRequest();
+      DEFAULT_INSTANCE = new protos.CTrie.CTrieProto.entrySetRequest();
     }
 
-    public static protos.CTrie.CTrie.entrySetRequest getDefaultInstance() {
+    public static protos.CTrie.CTrieProto.entrySetRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -9590,7 +9590,7 @@ public final class CTrie {
     }
 
     @java.lang.Override
-    public protos.CTrie.CTrie.entrySetRequest getDefaultInstanceForType() {
+    public protos.CTrie.CTrieProto.entrySetRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -9671,15 +9671,15 @@ public final class CTrie {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return protos.CTrie.CTrie.internal_static_entrySetResponse_descriptor;
+      return protos.CTrie.CTrieProto.internal_static_entrySetResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return protos.CTrie.CTrie.internal_static_entrySetResponse_fieldAccessorTable
+      return protos.CTrie.CTrieProto.internal_static_entrySetResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              protos.CTrie.CTrie.entrySetResponse.class, protos.CTrie.CTrie.entrySetResponse.Builder.class);
+              protos.CTrie.CTrieProto.entrySetResponse.class, protos.CTrie.CTrieProto.entrySetResponse.Builder.class);
     }
 
     public static final int SERIALIZEDSET_FIELD_NUMBER = 1;
@@ -9731,10 +9731,10 @@ public final class CTrie {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof protos.CTrie.CTrie.entrySetResponse)) {
+      if (!(obj instanceof protos.CTrie.CTrieProto.entrySetResponse)) {
         return super.equals(obj);
       }
-      protos.CTrie.CTrie.entrySetResponse other = (protos.CTrie.CTrie.entrySetResponse) obj;
+      protos.CTrie.CTrieProto.entrySetResponse other = (protos.CTrie.CTrieProto.entrySetResponse) obj;
 
       boolean result = true;
       result = result && getSerializedSet()
@@ -9757,69 +9757,69 @@ public final class CTrie {
       return hash;
     }
 
-    public static protos.CTrie.CTrie.entrySetResponse parseFrom(
+    public static protos.CTrie.CTrieProto.entrySetResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.entrySetResponse parseFrom(
+    public static protos.CTrie.CTrieProto.entrySetResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.entrySetResponse parseFrom(
+    public static protos.CTrie.CTrieProto.entrySetResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.entrySetResponse parseFrom(
+    public static protos.CTrie.CTrieProto.entrySetResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.entrySetResponse parseFrom(byte[] data)
+    public static protos.CTrie.CTrieProto.entrySetResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protos.CTrie.CTrie.entrySetResponse parseFrom(
+    public static protos.CTrie.CTrieProto.entrySetResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.entrySetResponse parseFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.entrySetResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.entrySetResponse parseFrom(
+    public static protos.CTrie.CTrieProto.entrySetResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.entrySetResponse parseDelimitedFrom(java.io.InputStream input)
+    public static protos.CTrie.CTrieProto.entrySetResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.entrySetResponse parseDelimitedFrom(
+    public static protos.CTrie.CTrieProto.entrySetResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static protos.CTrie.CTrie.entrySetResponse parseFrom(
+    public static protos.CTrie.CTrieProto.entrySetResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static protos.CTrie.CTrie.entrySetResponse parseFrom(
+    public static protos.CTrie.CTrieProto.entrySetResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -9832,7 +9832,7 @@ public final class CTrie {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(protos.CTrie.CTrie.entrySetResponse prototype) {
+    public static Builder newBuilder(protos.CTrie.CTrieProto.entrySetResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -9853,21 +9853,21 @@ public final class CTrie {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:entrySetResponse)
-        protos.CTrie.CTrie.entrySetResponseOrBuilder {
+        protos.CTrie.CTrieProto.entrySetResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return protos.CTrie.CTrie.internal_static_entrySetResponse_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_entrySetResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return protos.CTrie.CTrie.internal_static_entrySetResponse_fieldAccessorTable
+        return protos.CTrie.CTrieProto.internal_static_entrySetResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                protos.CTrie.CTrie.entrySetResponse.class, protos.CTrie.CTrie.entrySetResponse.Builder.class);
+                protos.CTrie.CTrieProto.entrySetResponse.class, protos.CTrie.CTrieProto.entrySetResponse.Builder.class);
       }
 
-      // Construct using protos.CTrie.CTrie.entrySetResponse.newBuilder()
+      // Construct using protos.CTrie.CTrieProto.entrySetResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -9893,17 +9893,17 @@ public final class CTrie {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return protos.CTrie.CTrie.internal_static_entrySetResponse_descriptor;
+        return protos.CTrie.CTrieProto.internal_static_entrySetResponse_descriptor;
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.entrySetResponse getDefaultInstanceForType() {
-        return protos.CTrie.CTrie.entrySetResponse.getDefaultInstance();
+      public protos.CTrie.CTrieProto.entrySetResponse getDefaultInstanceForType() {
+        return protos.CTrie.CTrieProto.entrySetResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.entrySetResponse build() {
-        protos.CTrie.CTrie.entrySetResponse result = buildPartial();
+      public protos.CTrie.CTrieProto.entrySetResponse build() {
+        protos.CTrie.CTrieProto.entrySetResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -9911,8 +9911,8 @@ public final class CTrie {
       }
 
       @java.lang.Override
-      public protos.CTrie.CTrie.entrySetResponse buildPartial() {
-        protos.CTrie.CTrie.entrySetResponse result = new protos.CTrie.CTrie.entrySetResponse(this);
+      public protos.CTrie.CTrieProto.entrySetResponse buildPartial() {
+        protos.CTrie.CTrieProto.entrySetResponse result = new protos.CTrie.CTrieProto.entrySetResponse(this);
         result.serializedSet_ = serializedSet_;
         onBuilt();
         return result;
@@ -9952,16 +9952,16 @@ public final class CTrie {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof protos.CTrie.CTrie.entrySetResponse) {
-          return mergeFrom((protos.CTrie.CTrie.entrySetResponse)other);
+        if (other instanceof protos.CTrie.CTrieProto.entrySetResponse) {
+          return mergeFrom((protos.CTrie.CTrieProto.entrySetResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(protos.CTrie.CTrie.entrySetResponse other) {
-        if (other == protos.CTrie.CTrie.entrySetResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(protos.CTrie.CTrieProto.entrySetResponse other) {
+        if (other == protos.CTrie.CTrieProto.entrySetResponse.getDefaultInstance()) return this;
         if (other.getSerializedSet() != com.google.protobuf.ByteString.EMPTY) {
           setSerializedSet(other.getSerializedSet());
         }
@@ -9980,11 +9980,11 @@ public final class CTrie {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        protos.CTrie.CTrie.entrySetResponse parsedMessage = null;
+        protos.CTrie.CTrieProto.entrySetResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (protos.CTrie.CTrie.entrySetResponse) e.getUnfinishedMessage();
+          parsedMessage = (protos.CTrie.CTrieProto.entrySetResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -10039,12 +10039,12 @@ public final class CTrie {
     }
 
     // @@protoc_insertion_point(class_scope:entrySetResponse)
-    private static final protos.CTrie.CTrie.entrySetResponse DEFAULT_INSTANCE;
+    private static final protos.CTrie.CTrieProto.entrySetResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new protos.CTrie.CTrie.entrySetResponse();
+      DEFAULT_INSTANCE = new protos.CTrie.CTrieProto.entrySetResponse();
     }
 
-    public static protos.CTrie.CTrie.entrySetResponse getDefaultInstance() {
+    public static protos.CTrie.CTrieProto.entrySetResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -10069,7 +10069,7 @@ public final class CTrie {
     }
 
     @java.lang.Override
-    public protos.CTrie.CTrie.entrySetResponse getDefaultInstanceForType() {
+    public protos.CTrie.CTrieProto.entrySetResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -10228,7 +10228,7 @@ public final class CTrie {
       "Request\032\017.keySetResponse\"\000\022+\n\006values\022\016.v" +
       "aluesRequest\032\017.valuesResponse\"\000\0220\n\010entry" +
       "Set\022\020.entrySetRequest\032\020.entrySetRequest\"" +
-      "\000B\025\n\014protos.CTrieB\005CTrieb\006proto3"
+      "\000B\032\n\014protos.CTrieB\nCTrieProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

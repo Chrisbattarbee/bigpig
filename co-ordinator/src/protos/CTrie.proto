@@ -1,6 +1,6 @@
 syntax = 'proto3';
 option java_package = 'protos.CTrie';
-option java_outer_classname = "CTrie";
+option java_outer_classname = "CTrieProto";
 
 
 service CTrieService {
