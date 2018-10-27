@@ -1,5 +1,6 @@
 package server;
 
+import com.google.protobuf.ByteString;
 import com.romix.scala.collection.concurrent.TrieMap;
 import ctrie.*;
 import io.grpc.ServerBuilder;
@@ -112,7 +113,10 @@ public class Server extends CTrieServiceGrpc.CTrieServiceImplBase {
 
     @Override
     public void keySet(KeySetRequest request, StreamObserver<KeySetResponse> responseObserver) {
-        super.keySet(request, responseObserver);
+        ByteString serializedKeySet  = ByteStringManipulation.objectToByteString(cTrie.keySet());
+
+        responseObserver.onNext(KeySetResponse.newBuilder().setSerializedSet(serializedKeySet).build());
+        responseObserver.onCompleted();
     }
 
     @Override
