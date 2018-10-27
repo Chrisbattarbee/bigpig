@@ -32,8 +32,8 @@ public class ByteStringManipulation {
 
     public static Object byteStringToObject(ByteString byteString) {
         byte[] serializedValue = new byte[byteString.size()];
+        byteString.copyTo(serializedValue, 0);
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(serializedValue);
-
         try {
             ObjectInputStream stream = new ObjectInputStream(byteArrayInputStream);
             return stream.readObject();
