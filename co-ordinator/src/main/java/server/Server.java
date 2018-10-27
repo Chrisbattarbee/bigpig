@@ -94,12 +94,20 @@ public class Server extends CTrieServiceGrpc.CTrieServiceImplBase {
 
     @Override
     public void putAll(PutAllRequest request, StreamObserver<PutAllResponse> responseObserver) {
-        super.putAll(request, responseObserver);
+        Object deserializedMap = ByteStringManipulation.byteStringToObject(request.getSerializedMapObject());
+
+        cTrie.putAll((Map<?, ?>) deserializedMap);
+
+        responseObserver.onNext(PutAllResponse.newBuilder().build());
+        responseObserver.onCompleted();
     }
 
     @Override
     public void clear(ClearRequest request, StreamObserver<ClearResponse> responseObserver) {
-        super.clear(request, responseObserver);
+        cTrie.clear();
+
+        responseObserver.onNext(ClearResponse.newBuilder().build());
+        responseObserver.onCompleted();
     }
 
     @Override
