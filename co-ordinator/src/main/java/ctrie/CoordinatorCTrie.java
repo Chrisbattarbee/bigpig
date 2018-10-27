@@ -13,11 +13,9 @@ import static utils.ByteStringManipulation.*;
 
 public class CoordinatorCTrie<K extends Serializable, V extends Serializable> implements Map<K, V> {
 
-
     private final ManagedChannel channel;
     private final CTrieServiceGrpc.CTrieServiceBlockingStub blockingStub;
     private final CTrieServiceGrpc.CTrieServiceFutureStub futureStub;
-
 
     public CoordinatorCTrie() {
         this(ManagedChannelBuilder.forAddress(HOST_NAME, PORT_NUMBER).usePlaintext());

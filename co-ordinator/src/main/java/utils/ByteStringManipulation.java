@@ -5,6 +5,7 @@ import com.google.protobuf.ByteString;
 import java.io.*;
 
 public class ByteStringManipulation {
+
     public static final String HOST_NAME = "co-ordinator";
     public static final int PORT_NUMBER = 8080;
 
@@ -44,5 +45,4 @@ public class ByteStringManipulation {
         }
         return null;
     }
-
 }
