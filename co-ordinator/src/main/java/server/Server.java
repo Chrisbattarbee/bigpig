@@ -3,7 +3,6 @@ package server;
 import com.romix.scala.collection.concurrent.TrieMap;
 import ctrie.*;
 import io.grpc.ServerBuilder;
-import io.grpc.internal.ServerImpl;
 import io.grpc.stub.StreamObserver;
 import utils.ByteStringManipulation;
 
@@ -50,12 +49,18 @@ public class Server extends CTrieServiceGrpc.CTrieServiceImplBase {
 
     @Override
     public void containsKey(ContainsKeyRequest request, StreamObserver<ContainsKeyResponse> responseObserver) {
-        super.containsKey(request, responseObserver);
+        Object deserializedObject = ByteStringManipulation.byteStringToObject(request.getSerializedObject());
+
+        responseObserver.onNext(ContainsKeyResponse.newBuilder().setContainsKey(cTrie.containsKey(deserializedObject)).build());
+        responseObserver.onCompleted();
     }
 
     @Override
     public void containsValue(ContainsValueRequest request, StreamObserver<ContainsValueResponse> responseObserver) {
-        super.containsValue(request, responseObserver);
+        Object deserializedObject = ByteStringManipulation.byteStringToObject(request.getSerializedObject());
+
+        responseObserver.onNext(ContainsValueResponse.newBuilder().setContainsValue(cTrie.containsKey(deserializedObject)).build());
+        responseObserver.onCompleted();
     }
 
     @Override
