@@ -65,7 +65,10 @@ public class Server extends CTrieServiceGrpc.CTrieServiceImplBase {
 
     @Override
     public void get(GetRequest request, StreamObserver<GetResponse> responseObserver) {
-        super.get(request, responseObserver);
+        Object deserializedKey = ByteStringManipulation.byteStringToObject(request.getSerializedObject());
+
+        responseObserver.onNext(GetResponse.newBuilder().setSerializedObject(ByteStringManipulation.objectToByteString(cTrie.get(deserializedKey))).build());
+        responseObserver.onCompleted();
     }
 
     @Override
