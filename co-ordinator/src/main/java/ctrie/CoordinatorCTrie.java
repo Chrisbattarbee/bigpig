@@ -9,51 +9,15 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 
+import static utils.ByteStringManipulation.*;
+
 public class CoordinatorCTrie<K extends Serializable, V extends Serializable> implements Map<K, V> {
-    public static final String HOST_NAME = "co-ordinator";
-    public static final int PORT_NUMBER = 8080;
 
 
     private final ManagedChannel channel;
     private final CTrieServiceGrpc.CTrieServiceBlockingStub blockingStub;
     private final CTrieServiceGrpc.CTrieServiceFutureStub futureStub;
 
-    private static ByteString objectToByteString(Object o) {
-        ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
-
-        // Make our object writer and write our serialized object to it
-        try {
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteStream);
-            objectOutputStream.writeObject(o);
-            objectOutputStream.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        // Flush all the bytes
-        try {
-            byteStream.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return ByteString.copyFrom(byteStream.toByteArray());
-    }
-
-    private static Object byteStringToObject(ByteString byteString) {
-        byte[] serializedValue = new byte[byteString.size()];
-        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(serializedValue);
-
-        try {
-            ObjectInputStream stream = new ObjectInputStream(byteArrayInputStream);
-            return stream.readObject();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 
     public CoordinatorCTrie() {
         this(ManagedChannelBuilder.forAddress(HOST_NAME, PORT_NUMBER).usePlaintext());
