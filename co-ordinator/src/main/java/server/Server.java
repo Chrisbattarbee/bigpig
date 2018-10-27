@@ -7,6 +7,7 @@ import io.grpc.stub.StreamObserver;
 import utils.ByteStringManipulation;
 
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.Map;
 
 public class Server extends CTrieServiceGrpc.CTrieServiceImplBase {
@@ -73,7 +74,13 @@ public class Server extends CTrieServiceGrpc.CTrieServiceImplBase {
 
     @Override
     public void put(PutRequest request, StreamObserver<PutResponse> responseObserver) {
-        super.put(request, responseObserver);
+        Object deserializedKey = ByteStringManipulation.byteStringToObject(request.getSerializedKeyObject());
+        Object deserializedValue = ByteStringManipulation.byteStringToObject(request.getSerializedValueObject());
+
+        Object prevValue = cTrie.put(deserializedKey, deserializedValue);
+
+        responseObserver.onNext(PutResponse.newBuilder().setSerializedValueObject(ByteStringManipulation.objectToByteString(prevValue)).build());
+        responseObserver.onCompleted();
     }
 
     @Override
