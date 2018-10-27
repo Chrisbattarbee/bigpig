@@ -121,12 +121,18 @@ public class Server extends CTrieServiceGrpc.CTrieServiceImplBase {
 
     @Override
     public void values(ValuesRequest request, StreamObserver<ValuesResponse> responseObserver) {
-        super.values(request, responseObserver);
+        ByteString serializedCollection = ByteStringManipulation.objectToByteString(cTrie.values());
+
+        responseObserver.onNext(ValuesResponse.newBuilder().setSerializedCollection(serializedCollection).build());
+        responseObserver.onCompleted();
     }
 
     @Override
     public void entrySet(EntrySetRequest request, StreamObserver<EntrySetResponse> responseObserver) {
-        super.entrySet(request, responseObserver);
+        ByteString serializedEntrySet = ByteStringManipulation.objectToByteString(cTrie.entrySet());
+
+        responseObserver.onNext(EntrySetResponse.newBuilder().setSerializedSet(serializedEntrySet).build());
+        responseObserver.onCompleted();
     }
 
 
