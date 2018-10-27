@@ -15,7 +15,6 @@ public class CoordinatorCTrie<K extends Serializable, V extends Serializable> im
 
     private final ManagedChannel channel;
     private final CTrieServiceGrpc.CTrieServiceBlockingStub blockingStub;
-    private final CTrieServiceGrpc.CTrieServiceFutureStub futureStub;
 
     public CoordinatorCTrie() {
         this(ManagedChannelBuilder.forAddress(HOST_NAME, PORT_NUMBER).usePlaintext());
@@ -29,7 +28,6 @@ public class CoordinatorCTrie<K extends Serializable, V extends Serializable> im
         channel = channelBuilder.build();
 
         blockingStub = CTrieServiceGrpc.newBlockingStub(channel);
-        futureStub = CTrieServiceGrpc.newFutureStub(channel);
     }
 
     @Override
