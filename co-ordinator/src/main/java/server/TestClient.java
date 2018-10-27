@@ -3,8 +3,7 @@ package server;
 import ctrie.CoordinatorCTrie;
 import utils.ByteStringManipulation;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class TestClient {
     public static void main(String[] args) {
