@@ -112,6 +112,5 @@ public class CoordinatorCTrie<K extends Serializable, V extends Serializable> im
         EntrySetRequest entrySetRequest = EntrySetRequest.newBuilder().build();
         return (Set<Entry<K, V>>) byteStringToObject(blockingStub.entrySet(entrySetRequest).getSerializedSet());
     }
-
 }
 
