@@ -29,5 +29,9 @@ public class TestClient {
         System.out.println("size: " + map.size());
         System.out.println("Value associated with key 1: " + map.get(1));
         System.out.println("Value associated with key 3: " + map.get(3));
+
+        System.out.println("Clearing map");
+        map.clear();
+        System.out.println("size: " + map.size());
     }
 }
