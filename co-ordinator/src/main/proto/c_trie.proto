@@ -1,0 +1,118 @@
+syntax = 'proto3';
+option java_outer_classname = "CTrieProto";
+option java_generic_services = true;
+option java_multiple_files = true;
+
+package ctrie;
+
+service CTrieService {
+    rpc Size (SizeRequest) returns (SizeResponse) {}
+    rpc IsEmpty (IsEmptyRequest) returns (IsEmptyResponse) {}
+    rpc ContainsKey (ContainsKeyRequest) returns (ContainsKeyResponse) {}
+    rpc ContainsValue (ContainsValueRequest) returns (ContainsValueResponse) {}
+    rpc Get (GetRequest) returns (GetResponse) {}
+    rpc Put (PutRequest) returns (PutResponse) {}
+    rpc Remove (RemoveRequest) returns (RemoveResponse) {}
+    rpc PutAll (PutAllRequest) returns (PutAllResponse) {}
+    rpc Clear (ClearRequest) returns (ClearResponse) {}
+    rpc KeySet (KeySetRequest) returns (KeySetResponse) {}
+    rpc Values (ValuesRequest) returns (ValuesResponse) {}
+    rpc EntrySet (EntrySetRequest) returns (EntrySetResponse) {}
+}
+
+message SizeRequest {
+
+}
+
+message SizeResponse {
+  int32 size = 1;
+}
+
+message IsEmptyRequest {
+
+}
+
+message IsEmptyResponse {
+    bool isEmpty = 1;
+}
+
+message ContainsKeyRequest {
+    bytes serializedObject = 1;
+}
+
+message ContainsKeyResponse {
+    bool containsKey = 1;
+}
+
+message ContainsValueRequest {
+    bytes serializedObject = 1;
+}
+
+message ContainsValueResponse {
+    bool containsValue = 1;
+}
+
+message GetRequest {
+    bytes serializedObject = 1;
+}
+
+message GetResponse {
+    bytes serializedObject = 1;
+}
+
+message PutRequest {
+    bytes serializedKeyObject = 1;
+    bytes serializedValueObject = 2;
+}
+
+message PutResponse {
+    bytes serializedValueObject = 1;
+}
+
+message RemoveRequest {
+    bytes serializedKeyObject = 1;
+}
+
+message RemoveResponse {
+    bytes serializedValueObject = 1;
+}
+
+message PutAllRequest {
+    bytes serializedMapObject = 1;
+}
+
+message PutAllResponse {
+
+}
+
+message ClearRequest {
+
+}
+
+message ClearResponse {
+
+}
+
+message KeySetRequest {
+
+}
+
+message KeySetResponse {
+    bytes serializedSet = 1;
+}
+
+message ValuesRequest {
+
+}
+
+message ValuesResponse {
+    bytes serializedCollection = 1;
+}
+
+message EntrySetRequest {
+
+}
+
+message EntrySetResponse {
+    bytes serializedSet = 1;
+}
