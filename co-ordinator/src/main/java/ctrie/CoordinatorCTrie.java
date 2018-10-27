@@ -107,7 +107,6 @@ public class CoordinatorCTrie<K extends Serializable, V extends Serializable> im
     public V put(K key, V value) {
         ByteString serializedKey = objectToByteString(key);
         ByteString serializedValue = objectToByteString(value);
-
         PutRequest putRequest = PutRequest.newBuilder().setSerializedKeyObject(serializedKey).setSerializedValueObject(serializedValue).build();
         return (V) byteStringToObject(blockingStub.put(putRequest).getSerializedValueObject());
     }
@@ -115,7 +114,6 @@ public class CoordinatorCTrie<K extends Serializable, V extends Serializable> im
     @Override
     public V remove(Object key) {
         ByteString serializedKey = objectToByteString(key);
-
         RemoveRequest removeRequest = RemoveRequest.newBuilder().setSerializedKeyObject(serializedKey).build();
         return (V) byteStringToObject(blockingStub.remove(removeRequest).getSerializedValueObject());
     }
@@ -125,7 +123,6 @@ public class CoordinatorCTrie<K extends Serializable, V extends Serializable> im
     // Make sure that this map is serializable, otherwise there may be unintended consequences
     public void putAll(Map map) {
         ByteString serializedMap = objectToByteString(map);
-
         PutAllRequest putAllRequest = PutAllRequest.newBuilder().setSerializedMapObject(serializedMap).build();
         blockingStub.putAll(putAllRequest);
     }
@@ -133,29 +130,24 @@ public class CoordinatorCTrie<K extends Serializable, V extends Serializable> im
     @Override
     public void clear() {
         ClearRequest clearRequest = ClearRequest.newBuilder().build();
-
         blockingStub.clear(clearRequest);
     }
 
     @Override
     public Set keySet() {
         KeySetRequest keySetRequest = KeySetRequest.newBuilder().build();
-
         return (Set) byteStringToObject(blockingStub.keySet(keySetRequest).getSerializedSet());
     }
 
     @Override
     public Collection values() {
         ValuesRequest valuesRequest = ValuesRequest.newBuilder().build();
-
         return (Collection) byteStringToObject(blockingStub.values(valuesRequest).getSerializedCollection());
     }
 
     @Override
     public Set<Entry<K, V>> entrySet() {
-
         EntrySetRequest entrySetRequest = EntrySetRequest.newBuilder().build();
-
         return (Set<Entry<K, V>>) byteStringToObject(blockingStub.entrySet(entrySetRequest).getSerializedSet());
     }
 
