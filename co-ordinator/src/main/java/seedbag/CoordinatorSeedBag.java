@@ -33,7 +33,7 @@ public class CoordinatorSeedBag<E extends Serializable> implements Queue<E> {
     @Override
     public int size() {
         SizeRequest sizeRequest = SizeRequest.newBuilder().build();
-        return blockingStub.size(sizeRequest).getSerializedSize();
+        return blockingStub.size(sizeRequest).getSize();
     }
 
     @Override
