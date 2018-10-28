@@ -3,10 +3,9 @@ package server;
 import io.grpc.stub.StreamObserver;
 import seedbag.*;
 
-import java.util.ArrayDeque;
 import java.util.Collection;
 import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 import static utils.ByteStringManipulation.*;
 
@@ -15,12 +14,11 @@ public class SeedBagService extends SeedBagServiceGrpc.SeedBagServiceImplBase {
     private Queue<Object> queue;
 
     public SeedBagService() {
-        queue = new ArrayDeque<>();
+        queue = new ConcurrentLinkedDeque<>();
     }
 
     @Override
     public void size(SizeRequest request, StreamObserver<SizeResponse> responseObserver) {
-        System.out.println(queue.size());
         responseObserver.onNext(SizeResponse.newBuilder().setSize(queue.size()).build());
         responseObserver.onCompleted();
     }
