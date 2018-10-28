@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class CTrieService extends CTrieServiceGrpc.CTrieServiceImplBase {
 
-    private Map<Object, Object> cTrie;
+    private TrieMap<Object, Object> cTrie;
 
     public CTrieService() {
         cTrie = new TrieMap<>();

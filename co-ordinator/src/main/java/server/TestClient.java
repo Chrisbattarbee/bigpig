@@ -1,12 +1,18 @@
 package server;
 
 import ctrie.CoordinatorCTrie;
+import seedbag.CoordinatorSeedBag;
 import utils.ByteStringManipulation;
 
 import java.util.*;
 
 public class TestClient {
     public static void main(String[] args) {
+//        cTrieDiagnostics();
+        seedbagDiagnostics();
+    }
+
+    private static void cTrieDiagnostics() {
         Map map = new CoordinatorCTrie("localhost", ByteStringManipulation.PORT_NUMBER);
         System.out.println("size: " + map.size());
 
@@ -32,5 +38,30 @@ public class TestClient {
         System.out.println("Clearing map");
         map.clear();
         System.out.println("size: " + map.size());
+    }
+
+    private static void seedbagDiagnostics() {
+        CoordinatorSeedBag<Integer> bag = new CoordinatorSeedBag<>("localhost", 8080);
+        System.out.println("Size: " + bag.size());
+
+        System.out.println("Adding 5");
+        bag.add(5);
+
+        System.out.println("Adding 10");
+        bag.add(10);
+
+        System.out.println("Size: " + bag.size());
+
+        System.out.println("Popping front value");
+        System.out.println("Value: " + bag.poll());
+
+
+        System.out.println("Size: " + bag.size());
+
+        System.out.println("Clearing bag");
+        bag.clear();
+
+
+        System.out.println("Size: " + bag.size());
     }
 }
