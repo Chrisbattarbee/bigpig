@@ -3,89 +3,141 @@ package server;
 import io.grpc.stub.StreamObserver;
 import seedbag.*;
 
+import java.util.Collection;
+import java.util.concurrent.ConcurrentLinkedQueue;
+
+import static utils.ByteStringManipulation.*;
+
 public class SeedBagService extends SeedBagServiceGrpc.SeedBagServiceImplBase {
+
+    private ConcurrentLinkedQueue<Object> queue;
+
+    public SeedBagService() {
+        queue = new ConcurrentLinkedQueue<>();
+    }
+
     @Override
     public void size(SizeRequest request, StreamObserver<SizeResponse> responseObserver) {
-        super.size(request, responseObserver);
+        responseObserver.onNext(SizeResponse.newBuilder().setSize(queue.size()).build());
+        responseObserver.onCompleted();
     }
 
     @Override
     public void isEmpty(IsEmptyRequest request, StreamObserver<IsEmptyResponse> responseObserver) {
-        super.isEmpty(request, responseObserver);
+        responseObserver.onNext(IsEmptyResponse.newBuilder().setIsEmpty(queue.isEmpty()).build());
+        responseObserver.onCompleted();
     }
 
     @Override
     public void contains(ContainsRequest request, StreamObserver<ContainsResponse> responseObserver) {
-        super.contains(request, responseObserver);
+        responseObserver.onNext(ContainsResponse.newBuilder().setDoesContain(queue.contains(byteStringToObject(request.getSerializedObject()))).build());
+        responseObserver.onCompleted();
     }
 
     @Override
+    // TODO Implement this whenever I have the energy to think of an optimal solution
     public void iterator(IteratorRequest request, StreamObserver<IteratorResponse> responseObserver) {
         super.iterator(request, responseObserver);
     }
 
     @Override
     public void toArray(ToArrayRequest request, StreamObserver<ToArrayResponse> responseObserver) {
-        super.toArray(request, responseObserver);
+        responseObserver.onNext(ToArrayResponse.newBuilder().setSerializedArrayObject(objectToByteString(queue.toArray())).build());
+        responseObserver.onCompleted();
     }
 
     @Override
     public void add(AddRequest request, StreamObserver<AddResponse> responseObserver) {
-        super.add(request, responseObserver);
+        boolean result = queue.add(byteStringToObject(request.getSerializedObject()));
+
+        responseObserver.onNext(AddResponse.newBuilder().setAdded(result).build());
+        responseObserver.onCompleted();
     }
 
     @Override
     public void remove(RemoveRequest request, StreamObserver<RemoveResponse> responseObserver) {
-        super.remove(request, responseObserver);
+        boolean result = queue.remove(byteStringToObject(request.getSerializedObject()));
+
+        responseObserver.onNext(RemoveResponse.newBuilder().setRemoved(result).build());
+        responseObserver.onCompleted();
     }
 
     @Override
     public void containsAll(ContainsAllRequest request, StreamObserver<ContainsAllResponse> responseObserver) {
-        super.containsAll(request, responseObserver);
+        boolean result = queue.containsAll((Collection<?>) byteStringToObject(request.getSerializedCollection()));
+
+        responseObserver.onNext(ContainsAllResponse.newBuilder().setContainsAll(result).build());
+        responseObserver.onCompleted();
     }
 
     @Override
     public void addAll(AddAllRequest request, StreamObserver<AddAllResponse> responseObserver) {
-        super.addAll(request, responseObserver);
+        boolean result = queue.addAll((Collection<?>) byteStringToObject(request.getSerializedCollection()));
+
+        responseObserver.onNext(AddAllResponse.newBuilder().setAllAdded(result).build());
+        responseObserver.onCompleted();
     }
 
     @Override
     public void retainAll(RetainAllRequest request, StreamObserver<RetainAllResponse> responseObserver) {
-        super.retainAll(request, responseObserver);
+        boolean result = queue.retainAll((Collection<?>) byteStringToObject(request.getSerializedCollection()));
+
+        responseObserver.onNext(RetainAllResponse.newBuilder().setAllRetained(result).build());
+        responseObserver.onCompleted();
     }
 
     @Override
     public void removeAll(RemoveAllRequest request, StreamObserver<RemoveAllResponse> responseObserver) {
-        super.removeAll(request, responseObserver);
+        boolean result = queue.removeAll((Collection<?>) byteStringToObject(request.getSerializedCollection()));
+
+        responseObserver.onNext(RemoveAllResponse.newBuilder().setAllRemoved(result).build());
+        responseObserver.onCompleted();
     }
 
     @Override
     public void clear(ClearRequest request, StreamObserver<ClearResponse> responseObserver) {
-        super.clear(request, responseObserver);
+        queue.clear();
+
+        responseObserver.onNext(ClearResponse.newBuilder().build());
+        responseObserver.onCompleted();
     }
 
     @Override
     public void offer(OfferRequest request, StreamObserver<OfferResponse> responseObserver) {
-        super.offer(request, responseObserver);
+        boolean result = queue.offer(byteStringToObject(request.getSerializedObject()));
+
+        responseObserver.onNext(OfferResponse.newBuilder().setOffered(result).build());
+        responseObserver.onCompleted();
     }
 
     @Override
     public void removeNoArgs(RemoveNoArgsRequest request, StreamObserver<RemoveNoArgsResponse> responseObserver) {
-        super.removeNoArgs(request, responseObserver);
+        Object o = queue.remove();
+
+        responseObserver.onNext(RemoveNoArgsResponse.newBuilder().setSerializedObject(objectToByteString(o)).build());
+        responseObserver.onCompleted();
     }
 
     @Override
     public void poll(PollRequest request, StreamObserver<PollResponse> responseObserver) {
-        super.poll(request, responseObserver);
+        Object o = queue.poll();
+
+        responseObserver.onNext(PollResponse.newBuilder().setSerializedObject(objectToByteString(o)).build());
+        responseObserver.onCompleted();
     }
 
     @Override
     public void element(ElementRequest request, StreamObserver<ElementResponse> responseObserver) {
-        super.element(request, responseObserver);
+        Object o = queue.element();
+
+        responseObserver.onNext(ElementResponse.newBuilder().setSerializedObject(objectToByteString(o)).build());
+        responseObserver.onCompleted();
     }
 
     @Override
     public void peek(PeekRequest request, StreamObserver<PeekResponse> responseObserver) {
-        super.peek(request, responseObserver);
+        Object o = queue.peek();
+        responseObserver.onNext(PeekResponse.newBuilder().setSerializedObject(objectToByteString(o)).build());
+        responseObserver.onCompleted();
     }
 }
