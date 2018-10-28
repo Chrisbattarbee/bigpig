@@ -50,17 +50,25 @@ public class TestClient {
         System.out.println("Adding 10");
         bag.add(10);
 
+        System.out.println("Adding 1");
+        bag.add(1);
+
         System.out.println("Size: " + bag.size());
 
         System.out.println("Popping front value");
         System.out.println("Value: " + bag.poll());
 
-
         System.out.println("Size: " + bag.size());
+
+        System.out.print("ToArray: [");
+        for (Object o : bag.toArray()) {
+            System.out.print(((Integer) o).intValue() + ",");
+        }
+        System.out.println("]");
+
 
         System.out.println("Clearing bag");
         bag.clear();
-
 
         System.out.println("Size: " + bag.size());
     }
