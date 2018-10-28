@@ -8,7 +8,7 @@ package seedbag;
 service SeedBagService {
    rpc Size (SizeRequest) returns (SizeResponse) {}
    rpc IsEmpty (IsEmptyRequest) returns (IsEmptyResponse) {}
-   rpc (ContainsRequest) returns (ContainsResponse) {}
+   rpc Contains (ContainsRequest) returns (ContainsResponse) {}
    rpc Iterator (IteratorRequest) returns (IteratorResponse) {}
    rpc ToArray (ToArrayRequest) returns (ToArrayResponse) {}
    rpc Add (AddRequest) returns (AddResponse) {}
@@ -30,7 +30,7 @@ message SizeRequest {
 }
 
 message SizeResponse {
-    int size = 1;
+    int32 size = 1;
 }
 
 message IsEmptyRequest {
