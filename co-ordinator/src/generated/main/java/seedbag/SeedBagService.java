@@ -147,6 +147,30 @@ public  abstract class SeedBagService
         seedbag.PeekRequest request,
         com.google.protobuf.RpcCallback<seedbag.PeekResponse> done);
 
+    /**
+     * <code>rpc TakeN(.seedbag.TakeNRequest) returns (.seedbag.TakeNResponse);</code>
+     */
+    public abstract void takeN(
+        com.google.protobuf.RpcController controller,
+        seedbag.TakeNRequest request,
+        com.google.protobuf.RpcCallback<seedbag.TakeNResponse> done);
+
+    /**
+     * <code>rpc PollN(.seedbag.PollNRequest) returns (.seedbag.PollNResponse);</code>
+     */
+    public abstract void pollN(
+        com.google.protobuf.RpcController controller,
+        seedbag.PollNRequest request,
+        com.google.protobuf.RpcCallback<seedbag.PollNResponse> done);
+
+    /**
+     * <code>rpc AddN(.seedbag.AddNRequest) returns (.seedbag.AddNResponse);</code>
+     */
+    public abstract void addN(
+        com.google.protobuf.RpcController controller,
+        seedbag.AddNRequest request,
+        com.google.protobuf.RpcCallback<seedbag.AddNResponse> done);
+
   }
 
   public static com.google.protobuf.Service newReflectiveService(
@@ -288,6 +312,30 @@ public  abstract class SeedBagService
         impl.peek(controller, request, done);
       }
 
+      @java.lang.Override
+      public  void takeN(
+          com.google.protobuf.RpcController controller,
+          seedbag.TakeNRequest request,
+          com.google.protobuf.RpcCallback<seedbag.TakeNResponse> done) {
+        impl.takeN(controller, request, done);
+      }
+
+      @java.lang.Override
+      public  void pollN(
+          com.google.protobuf.RpcController controller,
+          seedbag.PollNRequest request,
+          com.google.protobuf.RpcCallback<seedbag.PollNResponse> done) {
+        impl.pollN(controller, request, done);
+      }
+
+      @java.lang.Override
+      public  void addN(
+          com.google.protobuf.RpcController controller,
+          seedbag.AddNRequest request,
+          com.google.protobuf.RpcCallback<seedbag.AddNResponse> done) {
+        impl.addN(controller, request, done);
+      }
+
     };
   }
 
@@ -344,6 +392,12 @@ public  abstract class SeedBagService
             return impl.element(controller, (seedbag.ElementRequest)request);
           case 16:
             return impl.peek(controller, (seedbag.PeekRequest)request);
+          case 17:
+            return impl.takeN(controller, (seedbag.TakeNRequest)request);
+          case 18:
+            return impl.pollN(controller, (seedbag.PollNRequest)request);
+          case 19:
+            return impl.addN(controller, (seedbag.AddNRequest)request);
           default:
             throw new java.lang.AssertionError("Can't get here.");
         }
@@ -392,6 +446,12 @@ public  abstract class SeedBagService
             return seedbag.ElementRequest.getDefaultInstance();
           case 16:
             return seedbag.PeekRequest.getDefaultInstance();
+          case 17:
+            return seedbag.TakeNRequest.getDefaultInstance();
+          case 18:
+            return seedbag.PollNRequest.getDefaultInstance();
+          case 19:
+            return seedbag.AddNRequest.getDefaultInstance();
           default:
             throw new java.lang.AssertionError("Can't get here.");
         }
@@ -440,6 +500,12 @@ public  abstract class SeedBagService
             return seedbag.ElementResponse.getDefaultInstance();
           case 16:
             return seedbag.PeekResponse.getDefaultInstance();
+          case 17:
+            return seedbag.TakeNResponse.getDefaultInstance();
+          case 18:
+            return seedbag.PollNResponse.getDefaultInstance();
+          case 19:
+            return seedbag.AddNResponse.getDefaultInstance();
           default:
             throw new java.lang.AssertionError("Can't get here.");
         }
@@ -584,6 +650,30 @@ public  abstract class SeedBagService
       seedbag.PeekRequest request,
       com.google.protobuf.RpcCallback<seedbag.PeekResponse> done);
 
+  /**
+   * <code>rpc TakeN(.seedbag.TakeNRequest) returns (.seedbag.TakeNResponse);</code>
+   */
+  public abstract void takeN(
+      com.google.protobuf.RpcController controller,
+      seedbag.TakeNRequest request,
+      com.google.protobuf.RpcCallback<seedbag.TakeNResponse> done);
+
+  /**
+   * <code>rpc PollN(.seedbag.PollNRequest) returns (.seedbag.PollNResponse);</code>
+   */
+  public abstract void pollN(
+      com.google.protobuf.RpcController controller,
+      seedbag.PollNRequest request,
+      com.google.protobuf.RpcCallback<seedbag.PollNResponse> done);
+
+  /**
+   * <code>rpc AddN(.seedbag.AddNRequest) returns (.seedbag.AddNResponse);</code>
+   */
+  public abstract void addN(
+      com.google.protobuf.RpcController controller,
+      seedbag.AddNRequest request,
+      com.google.protobuf.RpcCallback<seedbag.AddNResponse> done);
+
   public static final
       com.google.protobuf.Descriptors.ServiceDescriptor
       getDescriptor() {
@@ -691,6 +781,21 @@ public  abstract class SeedBagService
           com.google.protobuf.RpcUtil.<seedbag.PeekResponse>specializeCallback(
             done));
         return;
+      case 17:
+        this.takeN(controller, (seedbag.TakeNRequest)request,
+          com.google.protobuf.RpcUtil.<seedbag.TakeNResponse>specializeCallback(
+            done));
+        return;
+      case 18:
+        this.pollN(controller, (seedbag.PollNRequest)request,
+          com.google.protobuf.RpcUtil.<seedbag.PollNResponse>specializeCallback(
+            done));
+        return;
+      case 19:
+        this.addN(controller, (seedbag.AddNRequest)request,
+          com.google.protobuf.RpcUtil.<seedbag.AddNResponse>specializeCallback(
+            done));
+        return;
       default:
         throw new java.lang.AssertionError("Can't get here.");
     }
@@ -739,6 +844,12 @@ public  abstract class SeedBagService
         return seedbag.ElementRequest.getDefaultInstance();
       case 16:
         return seedbag.PeekRequest.getDefaultInstance();
+      case 17:
+        return seedbag.TakeNRequest.getDefaultInstance();
+      case 18:
+        return seedbag.PollNRequest.getDefaultInstance();
+      case 19:
+        return seedbag.AddNRequest.getDefaultInstance();
       default:
         throw new java.lang.AssertionError("Can't get here.");
     }
@@ -787,6 +898,12 @@ public  abstract class SeedBagService
         return seedbag.ElementResponse.getDefaultInstance();
       case 16:
         return seedbag.PeekResponse.getDefaultInstance();
+      case 17:
+        return seedbag.TakeNResponse.getDefaultInstance();
+      case 18:
+        return seedbag.PollNResponse.getDefaultInstance();
+      case 19:
+        return seedbag.AddNResponse.getDefaultInstance();
       default:
         throw new java.lang.AssertionError("Can't get here.");
     }
@@ -1062,6 +1179,51 @@ public  abstract class SeedBagService
           seedbag.PeekResponse.class,
           seedbag.PeekResponse.getDefaultInstance()));
     }
+
+    public  void takeN(
+        com.google.protobuf.RpcController controller,
+        seedbag.TakeNRequest request,
+        com.google.protobuf.RpcCallback<seedbag.TakeNResponse> done) {
+      channel.callMethod(
+        getDescriptor().getMethods().get(17),
+        controller,
+        request,
+        seedbag.TakeNResponse.getDefaultInstance(),
+        com.google.protobuf.RpcUtil.generalizeCallback(
+          done,
+          seedbag.TakeNResponse.class,
+          seedbag.TakeNResponse.getDefaultInstance()));
+    }
+
+    public  void pollN(
+        com.google.protobuf.RpcController controller,
+        seedbag.PollNRequest request,
+        com.google.protobuf.RpcCallback<seedbag.PollNResponse> done) {
+      channel.callMethod(
+        getDescriptor().getMethods().get(18),
+        controller,
+        request,
+        seedbag.PollNResponse.getDefaultInstance(),
+        com.google.protobuf.RpcUtil.generalizeCallback(
+          done,
+          seedbag.PollNResponse.class,
+          seedbag.PollNResponse.getDefaultInstance()));
+    }
+
+    public  void addN(
+        com.google.protobuf.RpcController controller,
+        seedbag.AddNRequest request,
+        com.google.protobuf.RpcCallback<seedbag.AddNResponse> done) {
+      channel.callMethod(
+        getDescriptor().getMethods().get(19),
+        controller,
+        request,
+        seedbag.AddNResponse.getDefaultInstance(),
+        com.google.protobuf.RpcUtil.generalizeCallback(
+          done,
+          seedbag.AddNResponse.class,
+          seedbag.AddNResponse.getDefaultInstance()));
+    }
   }
 
   public static BlockingInterface newBlockingStub(
@@ -1153,6 +1315,21 @@ public  abstract class SeedBagService
     public seedbag.PeekResponse peek(
         com.google.protobuf.RpcController controller,
         seedbag.PeekRequest request)
+        throws com.google.protobuf.ServiceException;
+
+    public seedbag.TakeNResponse takeN(
+        com.google.protobuf.RpcController controller,
+        seedbag.TakeNRequest request)
+        throws com.google.protobuf.ServiceException;
+
+    public seedbag.PollNResponse pollN(
+        com.google.protobuf.RpcController controller,
+        seedbag.PollNRequest request)
+        throws com.google.protobuf.ServiceException;
+
+    public seedbag.AddNResponse addN(
+        com.google.protobuf.RpcController controller,
+        seedbag.AddNRequest request)
         throws com.google.protobuf.ServiceException;
   }
 
@@ -1364,6 +1541,42 @@ public  abstract class SeedBagService
         controller,
         request,
         seedbag.PeekResponse.getDefaultInstance());
+    }
+
+
+    public seedbag.TakeNResponse takeN(
+        com.google.protobuf.RpcController controller,
+        seedbag.TakeNRequest request)
+        throws com.google.protobuf.ServiceException {
+      return (seedbag.TakeNResponse) channel.callBlockingMethod(
+        getDescriptor().getMethods().get(17),
+        controller,
+        request,
+        seedbag.TakeNResponse.getDefaultInstance());
+    }
+
+
+    public seedbag.PollNResponse pollN(
+        com.google.protobuf.RpcController controller,
+        seedbag.PollNRequest request)
+        throws com.google.protobuf.ServiceException {
+      return (seedbag.PollNResponse) channel.callBlockingMethod(
+        getDescriptor().getMethods().get(18),
+        controller,
+        request,
+        seedbag.PollNResponse.getDefaultInstance());
+    }
+
+
+    public seedbag.AddNResponse addN(
+        com.google.protobuf.RpcController controller,
+        seedbag.AddNRequest request)
+        throws com.google.protobuf.ServiceException {
+      return (seedbag.AddNResponse) channel.callBlockingMethod(
+        getDescriptor().getMethods().get(19),
+        controller,
+        request,
+        seedbag.AddNResponse.getDefaultInstance());
     }
 
   }

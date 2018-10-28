@@ -4,17 +4,18 @@ import io.grpc.stub.StreamObserver;
 import seedbag.*;
 
 import java.util.Collection;
-import java.util.Queue;
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ConcurrentLinkedDeque;
+import java.util.concurrent.LinkedBlockingQueue;
 
 import static utils.ByteStringManipulation.*;
 
 public class SeedBagService extends SeedBagServiceGrpc.SeedBagServiceImplBase {
 
-    private Queue<Object> queue;
+    private BatchedBlockingQueue<Object> queue;
 
     public SeedBagService() {
-        queue = new ConcurrentLinkedDeque<>();
+        queue = new BatchedBlockingQueueImpl<>(LinkedBlockingQueue::new);
     }
 
     @Override

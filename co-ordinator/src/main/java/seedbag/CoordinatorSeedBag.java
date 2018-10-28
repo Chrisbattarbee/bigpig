@@ -7,11 +7,12 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Queue;
+import java.util.concurrent.TimeUnit;
 
 
 import static utils.ByteStringManipulation.*;
 
-public class CoordinatorSeedBag<E extends Serializable> implements Queue<E> {
+public class CoordinatorSeedBag<E extends Serializable> implements BatchedBlockingQueue<E> {
 
     private final ManagedChannel channel;
     private final SeedBagServiceGrpc.SeedBagServiceBlockingStub blockingStub;
@@ -46,6 +47,16 @@ public class CoordinatorSeedBag<E extends Serializable> implements Queue<E> {
     public boolean contains(Object o) {
         ContainsRequest containsRequest = ContainsRequest.newBuilder().setSerializedObject(objectToByteString(o)).build();
         return blockingStub.contains(containsRequest).getDoesContain();
+    }
+
+    @Override
+    public int drainTo(Collection<? super E> collection) {
+        return 0;
+    }
+
+    @Override
+    public int drainTo(Collection<? super E> collection, int i) {
+        return 0;
     }
 
     @Override
@@ -114,6 +125,31 @@ public class CoordinatorSeedBag<E extends Serializable> implements Queue<E> {
     }
 
     @Override
+    public void put(E e) throws InterruptedException {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public boolean offer(E e, long l, TimeUnit timeUnit) throws InterruptedException {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public E take() throws InterruptedException {
+        return takeN(1)[0];
+    }
+
+    @Override
+    public E poll(long l, TimeUnit timeUnit) throws InterruptedException {
+        return pollN(1, l, timeUnit)[0];
+    }
+
+    @Override
+    public int remainingCapacity() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
     public E remove() {
         RemoveNoArgsRequest removeRequest = RemoveNoArgsRequest.newBuilder().build();
         return (E) byteStringToObject(blockingStub.removeNoArgs(removeRequest).getSerializedObject());
@@ -135,5 +171,24 @@ public class CoordinatorSeedBag<E extends Serializable> implements Queue<E> {
     public E peek() {
         PeekRequest peekRequest = PeekRequest.newBuilder().build();
         return (E) byteStringToObject(blockingStub.peek(peekRequest).getSerializedObject());
+    }
+
+    @Override
+    public E[] takeN(int n) {
+        TakeNRequest takeNRequest = TakeNRequest.newBuilder().setNum(n).build();
+        return (E[]) byteStringToObject(blockingStub.takeN(takeNRequest).getSerializedCollection());
+    }
+
+    @Override
+    public E[] pollN(int n, long timeout, TimeUnit unit) {
+        long millis = TimeUnit.MILLISECONDS.convert(timeout, unit);
+        PollNRequest pollNRequest = PollNRequest.newBuilder().setNum(n).setTimeout(millis).build();
+        return (E[]) byteStringToObject(blockingStub.pollN(pollNRequest).getSerializedCollection());
+    }
+
+    @Override
+    public void add(E[] items) {
+        AddNRequest addNRequest = AddNRequest.newBuilder().setSerializedCollection(objectToByteString(items)).build();
+        blockingStub.addN(addNRequest);
     }
 }
