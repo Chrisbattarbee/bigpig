@@ -1,0 +1,161 @@
+syntax = 'proto3';
+option java_outer_classname = "CTrieProto";
+option java_generic_services = true;
+option java_multiple_files = true;
+
+package seedbag;
+
+service SeedBagService {
+   rpc Size (SizeRequest) returns (SizeResponse) {}
+   rpc IsEmpty (IsEmptyRequest) returns (IsEmptyResponse) {}
+   rpc (ContainsRequest) returns (ContainsResponse) {}
+   rpc Iterator (IteratorRequest) returns (IteratorResponse) {}
+   rpc ToArray (ToArrayRequest) returns (ToArrayResponse) {}
+   rpc Add (AddRequest) returns (AddResponse) {}
+   rpc Remove (RemoveRequest) returns (RemoveResponse) {}
+   rpc ContainsAll (ContainsAllRequest) returns (ContainsAllResponse) {}
+   rpc AddAll (AddAllRequest) returns (AddAllResponse) {}
+   rpc RetainAll (RetainAllRequest) returns (RetainAllResponse) {}
+   rpc RemoveAll (RemoveAllRequest) returns (RemoveAllResponse) {}
+   rpc Clear (ClearRequest) returns (ClearResponse) {}
+   rpc Offer (OfferRequest) returns (OfferResponse) {}
+   rpc RemoveNoArgs (RemoveNoArgsRequest) returns (RemoveNoArgsResponse) {}
+   rpc Poll (PollRequest) returns (PollResponse) {}
+   rpc Element (ElementRequest) returns (ElementResponse) {}
+   rpc Peek (PeekRequest) returns (PeekResponse) {}
+}
+
+message SizeRequest {
+
+}
+
+message SizeResponse {
+    int size = 1;
+}
+
+message IsEmptyRequest {
+
+}
+
+message IsEmptyResponse {
+    bool isEmpty = 1;
+}
+
+message ContainsRequest {
+    bytes serializedObject = 1;
+}
+
+message ContainsResponse {
+    bool doesContain = 1;
+}
+
+message IteratorRequest {
+
+}
+
+message IteratorResponse {
+    bytes serializedIterator = 1;
+}
+
+message ToArrayRequest {
+
+}
+
+message ToArrayResponse {
+    bytes serializedArrayObject = 1;
+}
+
+message AddRequest {
+    bytes serializedObject = 1;
+}
+
+message AddResponse {
+    bool added = 1;
+}
+
+message RemoveRequest {
+    bytes serializedObject = 1;
+}
+
+message RemoveResponse {
+    bool removed = 1;
+}
+
+message ContainsAllRequest {
+    bytes serializedCollection = 1;
+}
+
+message ContainsAllResponse {
+    bool containsAll = 1;
+}
+
+message AddAllRequest {
+    bytes serializedCollection = 1;
+}
+
+message AddAllResponse {
+    bool allAdded = 1;
+}
+
+message RetainAllRequest {
+    bytes serializedCollection = 1;
+}
+
+message RetainAllResponse {
+    bool allRetained = 1;
+}
+
+message RemoveAllRequest {
+    bytes serializedCollection = 1;
+}
+
+message RemoveAllResponse {
+    bool allRemoved = 1;
+}
+
+message ClearRequest {
+
+}
+
+message ClearResponse {
+
+}
+
+message OfferRequest {
+    bytes serializedObject = 1;
+}
+
+message OfferResponse {
+    bool offered = 1;
+}
+
+message RemoveNoArgsRequest {
+
+}
+
+message RemoveNoArgsResponse {
+    bytes serializedObject = 1;
+}
+
+message PollRequest {
+}
+
+message PollResponse {
+    bytes serializedObject = 1;
+}
+
+message ElementRequest {
+
+}
+
+message ElementResponse {
+    bytes serializedObject = 1;
+}
+
+message PeekRequest {
+
+}
+
+message PeekResponse {
+    bytes serializedObject = 1;
+}
