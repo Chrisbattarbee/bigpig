@@ -1,8 +1,6 @@
 package seedbag;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Spliterator;
+import java.util.*;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
@@ -23,18 +21,40 @@ public class BatchedBlockingQueueImpl<T, U extends BlockingQueue<T>> implements 
     }
 
     @Override
-    public T[] takeN(int n) {
-        return null;
+    public List<T> takeN(int n) {
+        List<T> results = new ArrayList<>();
+        for(int i = 0; i < n; i++) {
+            try {
+            results.add(blockingQueue.take());
+            } catch (InterruptedException e) {
+                //TODO[gg]: log maybe
+            }
+        }
+        return results;
     }
 
     @Override
-    public T[] pollN(int n, long timeout, TimeUnit unit) {
-        return null;
+    public List<T> pollN(int n, long timeout, TimeUnit unit) {
+        List<T> results = new ArrayList<>();
+        long totalTime = 0;
+        for(int i = 0; i < n; i++) {
+            long statTime = System.nanoTime();
+            try {
+                results.add(blockingQueue.poll(timeout, unit));
+            } catch (InterruptedException e) {
+                //TODO[gg]: log maybe
+            }
+            totalTime += System.nanoTime() - statTime;
+            if(totalTime > TimeUnit.NANOSECONDS.convert(timeout, unit)) {
+                break;
+            }
+        }
+        return results;
     }
 
     @Override
     public void add(T[] items) {
-
+        Collections.addAll(blockingQueue, items);
     }
 
     @Override

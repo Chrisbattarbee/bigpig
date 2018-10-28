@@ -4,9 +4,11 @@ import io.grpc.stub.StreamObserver;
 import seedbag.*;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.TimeUnit;
 
 import static utils.ByteStringManipulation.*;
 
@@ -142,4 +144,25 @@ public class SeedBagService extends SeedBagServiceGrpc.SeedBagServiceImplBase {
         responseObserver.onNext(PeekResponse.newBuilder().setSerializedObject(objectToByteString(o)).build());
         responseObserver.onCompleted();
     }
+
+    @Override
+    public void addN(AddNRequest request, StreamObserver<AddNResponse> responseObserver) {
+        responseObserver.onNext(AddNResponse.newBuilder().build());
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void pollN(PollNRequest request, StreamObserver<PollNResponse> responseObserver) {
+        List res = queue.pollN(request.getNum(), request.getTimeout(), TimeUnit.MILLISECONDS);
+        responseObserver.onNext(PollNResponse.newBuilder().setSerializedCollection(objectToByteString(res)).build());
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void takeN(TakeNRequest request, StreamObserver<TakeNResponse> responseObserver) {
+        List res = queue.takeN(request.getNum());
+        responseObserver.onNext(TakeNResponse.newBuilder().setSerializedCollection(objectToByteString(res)).build());
+        responseObserver.onCompleted();
+    }
+
 }

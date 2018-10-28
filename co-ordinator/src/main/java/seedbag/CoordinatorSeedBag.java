@@ -6,6 +6,7 @@ import io.grpc.ManagedChannelBuilder;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.TimeUnit;
 
@@ -136,12 +137,12 @@ public class CoordinatorSeedBag<E extends Serializable> implements BatchedBlocki
 
     @Override
     public E take() throws InterruptedException {
-        return takeN(1)[0];
+        return takeN(1).get(0);
     }
 
     @Override
     public E poll(long l, TimeUnit timeUnit) throws InterruptedException {
-        return pollN(1, l, timeUnit)[0];
+        return pollN(1, l, timeUnit).get(0);
     }
 
     @Override
@@ -174,16 +175,16 @@ public class CoordinatorSeedBag<E extends Serializable> implements BatchedBlocki
     }
 
     @Override
-    public E[] takeN(int n) {
+    public List<E> takeN(int n) {
         TakeNRequest takeNRequest = TakeNRequest.newBuilder().setNum(n).build();
-        return (E[]) byteStringToObject(blockingStub.takeN(takeNRequest).getSerializedCollection());
+        return (List<E>) byteStringToObject(blockingStub.takeN(takeNRequest).getSerializedCollection());
     }
 
     @Override
-    public E[] pollN(int n, long timeout, TimeUnit unit) {
+    public List<E> pollN(int n, long timeout, TimeUnit unit) {
         long millis = TimeUnit.MILLISECONDS.convert(timeout, unit);
         PollNRequest pollNRequest = PollNRequest.newBuilder().setNum(n).setTimeout(millis).build();
-        return (E[]) byteStringToObject(blockingStub.pollN(pollNRequest).getSerializedCollection());
+        return (List<E>) byteStringToObject(blockingStub.pollN(pollNRequest).getSerializedCollection());
     }
 
     @Override
