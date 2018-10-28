@@ -1,0 +1,38 @@
+@using = jpf-jdart
+
+target=Main
+classpath=/mnt/build
+sourcepath=/mnt
+
+# method config jdart
+
+concolic.method.main=Main.main(args:String[])
+concolic.method=main
+
+# method config jpf
+
+perturb.params=main
+perturb.main.class=gov.nasa.jpf.jdart.ConcolicPerturbator
+perturb.main.method=Main.main(String[])
+
+# jpf config
+
+jvm.insn_factory.class=gov.nasa.jpf.jdart.ConcolicInstructionFactory
+peer_packages=gov.nasa.jpf.jdart.peers;
+listener=gov.nasa.jpf.jdart.ConcolicListener
+perturb.class=gov.nasa.jpf.jdart.ConcolicPerturbator
+search.multiple_errors=true
+jdart.concolic_explorer_instance=gov.nasa.jpf.jdart.ConcolicExplorer@jdart-explorer
+
+# jdart config
+
+symbolic.dp=z3
+symbolic.dp.z3.bitvectors=true
+
+# logging 
+
+log.finest=jdart
+log.info=constraints
+
+
+
