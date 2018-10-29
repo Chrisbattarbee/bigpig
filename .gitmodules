@@ -1,0 +1,3 @@
+[submodule "symbex/jdart"]
+	path = symbex/jdart
+	url = https://github.com/psycopaths/jdart.git
