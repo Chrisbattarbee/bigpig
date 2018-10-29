@@ -54,7 +54,7 @@ COPY Std.jpf          ${PROJ_DIR}
 RUN mkdir /root/.jpf
 RUN echo "jpf-core = ${PROJ_DIR}/jpf-core" >> /root/.jpf/site.properties
 RUN echo "jpf-jdart = ${PROJ_DIR}/jdart" >> /root/.jpf/site.properties
-RUN echo "extensions=\${jpf-core}" >> /root/.jpf/site.properties
+RUN echo "extensions=\${jpf-core},${jpf-jdart}" >> /root/.jpf/site.properties
 
 
 #############################################################################
