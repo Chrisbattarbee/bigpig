@@ -25,6 +25,7 @@ hs_err_pid*
 .gradle
 /build/
 !symbex/
+!symbex/z3/**
 
 # Ignore Gradle GUI config
 gradle-app.setting
