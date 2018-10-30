@@ -55,6 +55,7 @@ public class TestClient {
         System.out.println("Adding (4,4) with async putAll");
         hMap.put(4, 4);
         map.putAllAsync(hMap);
+        System.out.println("");
         System.out.println("Immediate value associated with key 4:" + map.get(4));
         try {
             Thread.sleep(2000);
