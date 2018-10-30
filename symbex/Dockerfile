@@ -7,12 +7,14 @@ MAINTAINER Ivan Kotegov <ivankotegov2@gmail.com>
 # Bootstrap java
 #############################################################################
 
-RUN yum -y update && yum -y install sudo && yum -y install wget && yum -y install ant
-RUN wget --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u191-b12/2787e4a523244c269598db4e85c51e0c/jdk-8u191-linux-x64.rpm 
-RUN sudo yum -y install jdk-8u191-linux-x64.rpm && rm -f jdk-8u191-linux-x64.rpm
- 
+RUN yum -y update && yum -y install sudo && yum -y install wget 
+RUN wget https://s3.eu-west-2.amazonaws.com/buildkite-software/java-bootstrap.sh
+RUN chmod +x java-bootstrap.sh
+RUN ./java-bootstrap.sh
+RUN rm java-bootstrap.sh
+
 # Needed for dynamic linking of java so libraries for z3 and jconst-z3
-RUN yum -y install gcc 
+RUN yum -y install gcc && yum -y install ant
 
 #############################################################################
 # Get the latest version of Symbex
