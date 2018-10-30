@@ -6,7 +6,7 @@ SHELL := /bin/bash
 all: submodules jpf-core jconstraints z3 jconstraints-z3 jdart 
 
 submodules:
-	git submodule update --recursive
+	git submodule update --init --recursive
 
 docker:
 	docker build -t symbex .
@@ -15,7 +15,7 @@ jpf-core:
 	cd jpf-core && git checkout JPF-8.0 && ant
 
 jdart:
-	cd jdart && git pull && ant
+	cd jdart && git checkout master && ant
 
 z3: 
 	wget https://github.com/Z3Prover/z3/releases/download/z3-4.4.1/z3-4.4.1-x64-ubuntu-14.04.zip
