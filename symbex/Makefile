@@ -1,9 +1,12 @@
 
 SHELL := /bin/bash
 
-.PHONY: all jpf-core jconstraints jconstraints-z3 jdart
+.PHONY: all jpf-core jconstraints jconstraints-z3 jdart submodules
 
-all: jpf-core jconstraints z3 jconstraints-z3 jdart 
+all: submodules jpf-core jconstraints z3 jconstraints-z3 jdart 
+
+submodules:
+	git submodule update --recursive
 
 docker:
 	docker build -t symbex .
