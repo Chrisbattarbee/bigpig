@@ -1,6 +1,7 @@
 package ctrie;
 
 import com.google.protobuf.ByteString;
+import com.romix.scala.collection.concurrent.TrieMap;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
@@ -11,7 +12,7 @@ import java.util.Set;
 
 import static utils.ByteStringManipulation.*;
 
-public class CoordinatorCTrie<K extends Serializable, V extends Serializable> implements Map<K, V> {
+public class CoordinatorCTrie<K extends Serializable, V extends Serializable> implements CTrieMap<K, V> {
 
     private final ManagedChannel channel;
     private final CTrieServiceGrpc.CTrieServiceBlockingStub blockingStub;
@@ -109,6 +110,12 @@ public class CoordinatorCTrie<K extends Serializable, V extends Serializable> im
     public Set<Entry<K, V>> entrySet() {
         EntrySetRequest entrySetRequest = EntrySetRequest.newBuilder().build();
         return (Set<Entry<K, V>>) byteStringToObject(blockingStub.entrySet(entrySetRequest).getSerializedSet());
+    }
+
+    @Override
+    public TrieMap<K, V> snapshot() {
+        SnapshotRequest snapshotRequest = SnapshotRequest.newBuilder().build();
+        return (TrieMap<K, V>) byteStringToObject(blockingStub.snapshot(snapshotRequest).getSerializedCTrie());
     }
 }
 

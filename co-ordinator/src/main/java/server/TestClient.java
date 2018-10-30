@@ -1,5 +1,7 @@
 package server;
 
+import com.romix.scala.collection.concurrent.TrieMap;
+import ctrie.CTrieMap;
 import ctrie.CoordinatorCTrie;
 import seedbag.CoordinatorSeedBag;
 import utils.ByteStringManipulation;
@@ -8,12 +10,12 @@ import java.util.*;
 
 public class TestClient {
     public static void main(String[] args) {
-//        cTrieDiagnostics();
+        cTrieDiagnostics();
         seedbagDiagnostics();
     }
 
     private static void cTrieDiagnostics() {
-        Map map = new CoordinatorCTrie("localhost", ByteStringManipulation.PORT_NUMBER);
+        CTrieMap map = new CoordinatorCTrie("localhost", ByteStringManipulation.PORT_NUMBER);
         System.out.println("size: " + map.size());
 
         System.out.println("Putting 1, 5 into the map");
@@ -21,6 +23,11 @@ public class TestClient {
         System.out.println("size: " + map.size());
         System.out.println("Value associated with key 1: " + map.get(1));
         System.out.println("Value associated with key 0: " + map.get(0));
+
+        System.out.println("Creating snapshot of map CTrie locally");
+        TrieMap snapshot = map.snapshot();
+        System.out.println("Snapshot value associated with key 1: " + map.get(1));
+        System.out.println("Snapshot value associated with key 0: " + map.get(0));
 
         System.out.println("Removing 1 from map");
         map.remove(1);
