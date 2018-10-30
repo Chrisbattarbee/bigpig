@@ -3,6 +3,7 @@ package server;
 import com.romix.scala.collection.concurrent.TrieMap;
 import ctrie.CTrieMap;
 import ctrie.CoordinatorCTrie;
+import seedbag.CoordinatorSeedBag;
 import utils.ByteStringManipulation;
 
 import java.util.HashMap;
@@ -12,6 +13,11 @@ import java.util.concurrent.Future;
 
 public class TestClient {
     public static void main(String[] args) {
+        cTrieDiagnostics();
+        seedbagDiagnostics();
+    }
+
+    private static void cTrieDiagnostics() {
         CTrieMap map = new CoordinatorCTrie("localhost", ByteStringManipulation.PORT_NUMBER);
         System.out.println("size: " + map.size());
 
@@ -108,5 +114,38 @@ public class TestClient {
         } else {
             System.out.println("Still waiting for async");
         }
+    }
+
+    private static void seedbagDiagnostics() {
+        CoordinatorSeedBag<Integer> bag = new CoordinatorSeedBag<>("localhost", 8080);
+        System.out.println("Size: " + bag.size());
+
+        System.out.println("Adding 5");
+        bag.add(5);
+
+        System.out.println("Adding 10");
+        bag.add(10);
+
+        System.out.println("Adding 1");
+        bag.add(1);
+
+        System.out.println("Size: " + bag.size());
+
+        System.out.println("Popping front value");
+        System.out.println("Value: " + bag.poll());
+
+        System.out.println("Size: " + bag.size());
+
+        System.out.print("ToArray: [");
+        for (Object o : bag.toArray()) {
+            System.out.print(((Integer) o).intValue() + ",");
+        }
+        System.out.println("]");
+
+
+        System.out.println("Clearing bag");
+        bag.clear();
+
+        System.out.println("Size: " + bag.size());
     }
 }
