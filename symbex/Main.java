@@ -3,8 +3,12 @@ import java.util.*;
 public class Main {
 
     // DONE
-    private static String shiftingLetters(String s, int[] shifts) {
+    public static String shiftingLetters(String s, int[] shifts) {
         int len = shifts.length;
+
+        if (len < 10) {
+          System.out.println("Ord of _ is " + (int)'_');
+        }
 
         for (int i = len - 2; i >= 0; i--) {
             shifts[i] += shifts[i + 1] % 26;
@@ -13,6 +17,9 @@ public class Main {
         char[] chars = s.toCharArray();
         for (int i = 0; i < chars.length; i++) {
             chars[i] = (char) ((chars[i] - 'a' + shifts[i]) % 26 + 'a');
+        }
+        if (chars[0] == 'a') {
+          System.out.println("First letter is a!");
         }
         return new String(chars);
     }
