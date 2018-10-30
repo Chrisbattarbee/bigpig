@@ -7,13 +7,14 @@ all: submodules jpf-core jconstraints z3 jconstraints-z3 jdart
 
 allAnyArch: submodules jpf-core jdart dockerAnyArch
 
-
 submodules:
 	git submodule update --init --recursive
-	wget https://github.com/Z3Prover/z3/releases/download/z3-4.4.1/z3-4.4.1-x64-ubuntu-14.04.zip
-	unzip z3-4.4.1-x64-ubuntu-14.04.zip
-	rm -rf z3-4.4.1-x64-ubuntu-14.04.zip
-	mv z3-4.4.1-x64-ubuntu-14.04 z3
+	if [! -d "z3" ]; then \
+	wget https://github.com/Z3Prover/z3/releases/download/z3-4.4.1/z3-4.4.1-x64-ubuntu-14.04.zip && \
+	unzip z3-4.4.1-x64-ubuntu-14.04.zip && \
+	rm -rf z3-4.4.1-x64-ubuntu-14.04.zip && \
+	mv z3-4.4.1-x64-ubuntu-14.04 z3; \
+	fi
 
 docker:
 	docker build -t symbex .
