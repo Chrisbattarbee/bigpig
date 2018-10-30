@@ -471,6 +471,43 @@ public final class CTrieServiceGrpc {
      }
      return getEntrySetMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getSnapshotMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<ctrie.SnapshotRequest,
+      ctrie.SnapshotResponse> METHOD_SNAPSHOT = getSnapshotMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<ctrie.SnapshotRequest,
+      ctrie.SnapshotResponse> getSnapshotMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<ctrie.SnapshotRequest,
+      ctrie.SnapshotResponse> getSnapshotMethod() {
+    return getSnapshotMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<ctrie.SnapshotRequest,
+      ctrie.SnapshotResponse> getSnapshotMethodHelper() {
+    io.grpc.MethodDescriptor<ctrie.SnapshotRequest, ctrie.SnapshotResponse> getSnapshotMethod;
+    if ((getSnapshotMethod = CTrieServiceGrpc.getSnapshotMethod) == null) {
+      synchronized (CTrieServiceGrpc.class) {
+        if ((getSnapshotMethod = CTrieServiceGrpc.getSnapshotMethod) == null) {
+          CTrieServiceGrpc.getSnapshotMethod = getSnapshotMethod = 
+              io.grpc.MethodDescriptor.<ctrie.SnapshotRequest, ctrie.SnapshotResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "ctrie.CTrieService", "Snapshot"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ctrie.SnapshotRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ctrie.SnapshotResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new CTrieServiceMethodDescriptorSupplier("Snapshot"))
+                  .build();
+          }
+        }
+     }
+     return getSnapshotMethod;
+  }
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -583,6 +620,13 @@ public final class CTrieServiceGrpc {
       asyncUnimplementedUnaryCall(getEntrySetMethodHelper(), responseObserver);
     }
 
+    /**
+     */
+    public void snapshot(ctrie.SnapshotRequest request,
+        io.grpc.stub.StreamObserver<ctrie.SnapshotResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getSnapshotMethodHelper(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -669,6 +713,13 @@ public final class CTrieServiceGrpc {
                 ctrie.EntrySetRequest,
                 ctrie.EntrySetResponse>(
                   this, METHODID_ENTRY_SET)))
+          .addMethod(
+            getSnapshotMethodHelper(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                ctrie.SnapshotRequest,
+                ctrie.SnapshotResponse>(
+                  this, METHODID_SNAPSHOT)))
           .build();
     }
   }
@@ -786,6 +837,14 @@ public final class CTrieServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getEntrySetMethodHelper(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void snapshot(ctrie.SnapshotRequest request,
+        io.grpc.stub.StreamObserver<ctrie.SnapshotResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getSnapshotMethodHelper(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -888,6 +947,13 @@ public final class CTrieServiceGrpc {
     public ctrie.EntrySetResponse entrySet(ctrie.EntrySetRequest request) {
       return blockingUnaryCall(
           getChannel(), getEntrySetMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public ctrie.SnapshotResponse snapshot(ctrie.SnapshotRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getSnapshotMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -1004,6 +1070,14 @@ public final class CTrieServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getEntrySetMethodHelper(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<ctrie.SnapshotResponse> snapshot(
+        ctrie.SnapshotRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getSnapshotMethodHelper(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_SIZE = 0;
@@ -1018,6 +1092,7 @@ public final class CTrieServiceGrpc {
   private static final int METHODID_KEY_SET = 9;
   private static final int METHODID_VALUES = 10;
   private static final int METHODID_ENTRY_SET = 11;
+  private static final int METHODID_SNAPSHOT = 12;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1083,6 +1158,10 @@ public final class CTrieServiceGrpc {
         case METHODID_ENTRY_SET:
           serviceImpl.entrySet((ctrie.EntrySetRequest) request,
               (io.grpc.stub.StreamObserver<ctrie.EntrySetResponse>) responseObserver);
+          break;
+        case METHODID_SNAPSHOT:
+          serviceImpl.snapshot((ctrie.SnapshotRequest) request,
+              (io.grpc.stub.StreamObserver<ctrie.SnapshotResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1157,6 +1236,7 @@ public final class CTrieServiceGrpc {
               .addMethod(getKeySetMethodHelper())
               .addMethod(getValuesMethodHelper())
               .addMethod(getEntrySetMethodHelper())
+              .addMethod(getSnapshotMethodHelper())
               .build();
         }
       }

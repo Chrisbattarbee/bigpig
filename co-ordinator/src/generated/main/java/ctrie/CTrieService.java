@@ -107,6 +107,14 @@ public  abstract class CTrieService
         ctrie.EntrySetRequest request,
         com.google.protobuf.RpcCallback<ctrie.EntrySetResponse> done);
 
+    /**
+     * <code>rpc Snapshot(.ctrie.SnapshotRequest) returns (.ctrie.SnapshotResponse);</code>
+     */
+    public abstract void snapshot(
+        com.google.protobuf.RpcController controller,
+        ctrie.SnapshotRequest request,
+        com.google.protobuf.RpcCallback<ctrie.SnapshotResponse> done);
+
   }
 
   public static com.google.protobuf.Service newReflectiveService(
@@ -208,6 +216,14 @@ public  abstract class CTrieService
         impl.entrySet(controller, request, done);
       }
 
+      @java.lang.Override
+      public  void snapshot(
+          com.google.protobuf.RpcController controller,
+          ctrie.SnapshotRequest request,
+          com.google.protobuf.RpcCallback<ctrie.SnapshotResponse> done) {
+        impl.snapshot(controller, request, done);
+      }
+
     };
   }
 
@@ -254,6 +270,8 @@ public  abstract class CTrieService
             return impl.values(controller, (ctrie.ValuesRequest)request);
           case 11:
             return impl.entrySet(controller, (ctrie.EntrySetRequest)request);
+          case 12:
+            return impl.snapshot(controller, (ctrie.SnapshotRequest)request);
           default:
             throw new java.lang.AssertionError("Can't get here.");
         }
@@ -292,6 +310,8 @@ public  abstract class CTrieService
             return ctrie.ValuesRequest.getDefaultInstance();
           case 11:
             return ctrie.EntrySetRequest.getDefaultInstance();
+          case 12:
+            return ctrie.SnapshotRequest.getDefaultInstance();
           default:
             throw new java.lang.AssertionError("Can't get here.");
         }
@@ -330,6 +350,8 @@ public  abstract class CTrieService
             return ctrie.ValuesResponse.getDefaultInstance();
           case 11:
             return ctrie.EntrySetResponse.getDefaultInstance();
+          case 12:
+            return ctrie.SnapshotResponse.getDefaultInstance();
           default:
             throw new java.lang.AssertionError("Can't get here.");
         }
@@ -434,6 +456,14 @@ public  abstract class CTrieService
       ctrie.EntrySetRequest request,
       com.google.protobuf.RpcCallback<ctrie.EntrySetResponse> done);
 
+  /**
+   * <code>rpc Snapshot(.ctrie.SnapshotRequest) returns (.ctrie.SnapshotResponse);</code>
+   */
+  public abstract void snapshot(
+      com.google.protobuf.RpcController controller,
+      ctrie.SnapshotRequest request,
+      com.google.protobuf.RpcCallback<ctrie.SnapshotResponse> done);
+
   public static final
       com.google.protobuf.Descriptors.ServiceDescriptor
       getDescriptor() {
@@ -516,6 +546,11 @@ public  abstract class CTrieService
           com.google.protobuf.RpcUtil.<ctrie.EntrySetResponse>specializeCallback(
             done));
         return;
+      case 12:
+        this.snapshot(controller, (ctrie.SnapshotRequest)request,
+          com.google.protobuf.RpcUtil.<ctrie.SnapshotResponse>specializeCallback(
+            done));
+        return;
       default:
         throw new java.lang.AssertionError("Can't get here.");
     }
@@ -554,6 +589,8 @@ public  abstract class CTrieService
         return ctrie.ValuesRequest.getDefaultInstance();
       case 11:
         return ctrie.EntrySetRequest.getDefaultInstance();
+      case 12:
+        return ctrie.SnapshotRequest.getDefaultInstance();
       default:
         throw new java.lang.AssertionError("Can't get here.");
     }
@@ -592,6 +629,8 @@ public  abstract class CTrieService
         return ctrie.ValuesResponse.getDefaultInstance();
       case 11:
         return ctrie.EntrySetResponse.getDefaultInstance();
+      case 12:
+        return ctrie.SnapshotResponse.getDefaultInstance();
       default:
         throw new java.lang.AssertionError("Can't get here.");
     }
@@ -792,6 +831,21 @@ public  abstract class CTrieService
           ctrie.EntrySetResponse.class,
           ctrie.EntrySetResponse.getDefaultInstance()));
     }
+
+    public  void snapshot(
+        com.google.protobuf.RpcController controller,
+        ctrie.SnapshotRequest request,
+        com.google.protobuf.RpcCallback<ctrie.SnapshotResponse> done) {
+      channel.callMethod(
+        getDescriptor().getMethods().get(12),
+        controller,
+        request,
+        ctrie.SnapshotResponse.getDefaultInstance(),
+        com.google.protobuf.RpcUtil.generalizeCallback(
+          done,
+          ctrie.SnapshotResponse.class,
+          ctrie.SnapshotResponse.getDefaultInstance()));
+    }
   }
 
   public static BlockingInterface newBlockingStub(
@@ -858,6 +912,11 @@ public  abstract class CTrieService
     public ctrie.EntrySetResponse entrySet(
         com.google.protobuf.RpcController controller,
         ctrie.EntrySetRequest request)
+        throws com.google.protobuf.ServiceException;
+
+    public ctrie.SnapshotResponse snapshot(
+        com.google.protobuf.RpcController controller,
+        ctrie.SnapshotRequest request)
         throws com.google.protobuf.ServiceException;
   }
 
@@ -1009,6 +1068,18 @@ public  abstract class CTrieService
         controller,
         request,
         ctrie.EntrySetResponse.getDefaultInstance());
+    }
+
+
+    public ctrie.SnapshotResponse snapshot(
+        com.google.protobuf.RpcController controller,
+        ctrie.SnapshotRequest request)
+        throws com.google.protobuf.ServiceException {
+      return (ctrie.SnapshotResponse) channel.callBlockingMethod(
+        getDescriptor().getMethods().get(12),
+        controller,
+        request,
+        ctrie.SnapshotResponse.getDefaultInstance());
     }
 
   }
