@@ -115,4 +115,11 @@ public class CTrieService extends CTrieServiceGrpc.CTrieServiceImplBase {
         responseObserver.onCompleted();
     }
 
+    @Override
+    public void snapshot(SnapshotRequest request, StreamObserver<SnapshotResponse> responseObserver) {
+        ByteString serializedSnapshot = ByteStringManipulation.objectToByteString(cTrie.snapshot());
+
+        responseObserver.onNext(SnapshotResponse.newBuilder().setSerializedCTrie(serializedSnapshot).build());
+        responseObserver.onCompleted();
+    }
 }
