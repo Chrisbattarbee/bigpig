@@ -6,7 +6,7 @@ public class Main {
     public static String shiftingLetters(String s, int[] shifts) {
         int len = shifts.length;
 
-        if (len < 10) {
+        if (shifts[0] < 10) {
           System.out.println("Ord of _ is " + (int)'_');
         }
 
@@ -18,7 +18,7 @@ public class Main {
         for (int i = 0; i < chars.length; i++) {
             chars[i] = (char) ((chars[i] - 'a' + shifts[i]) % 26 + 'a');
         }
-        if (chars[0] == 'a') {
+        if (shifts[2] == 10) {
           System.out.println("First letter is a!");
         }
         return new String(chars);
