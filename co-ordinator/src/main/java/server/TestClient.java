@@ -5,12 +5,9 @@ import ctrie.CTrieMap;
 import ctrie.CoordinatorCTrie;
 import utils.ByteStringManipulation;
 
-import java.io.Serializable;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
-
-import static java.lang.Thread.sleep;
 
 public class TestClient {
     public static void main(String[] args) {
@@ -59,6 +56,21 @@ public class TestClient {
             e.printStackTrace();
         }
 
+        System.out.println("\n Testing async putAll");
+        System.out.println("Running async putAll for (10,10), (11,11)");
+        hMap.put(10,10);
+        hMap.put(11,11);
+        map.putAllAsync(hMap);
+        System.out.println("Value at 10: " + map.get(10));
+        try {
+            System.out.println("Sleeping 0.5s");
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Value at 11: " + map.get(11));
+
+
         System.out.println("\n Async put testing:");
         System.out.println("Adding (4,4)");
         map.put(4,4);
@@ -66,6 +78,7 @@ public class TestClient {
         Future<Integer> futurePut = map.putAsync(4,4);
         checkFuture(futurePut);
         try {
+            System.out.println("Sleeping 0.5s");
             Thread.sleep(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
