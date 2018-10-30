@@ -73,11 +73,11 @@ public class CoordinatorCTrie<K extends Serializable, V extends Serializable> im
     }
 
     //Future wrapper for future get response - to convert byte string to object
-    public class FutureGetObject implements Future {
+    public class FutureForCTrieGet implements Future {
 
         private ListenableFuture<GetResponse> response;
 
-        public FutureGetObject(ListenableFuture<GetResponse> response) {
+        public FutureForCTrieGet(ListenableFuture<GetResponse> response) {
             this.response = response;
         }
 
@@ -113,7 +113,7 @@ public class CoordinatorCTrie<K extends Serializable, V extends Serializable> im
         GetRequest getRequest = GetRequest.newBuilder().setSerializedObject(serializedKey).build();
         ListenableFuture<GetResponse> response = futureStub.get(getRequest);
 
-        return new FutureGetObject(response);
+        return new FutureForCTrieGet(response);
     }
 
     @Override
@@ -125,11 +125,11 @@ public class CoordinatorCTrie<K extends Serializable, V extends Serializable> im
     }
 
     //Future wrapper for future put response - to convert byte string to object
-    public class FuturePutObject implements Future {
+    public class FutureForCTriePut implements Future {
 
         private ListenableFuture<PutResponse> response;
 
-        public FuturePutObject(ListenableFuture<PutResponse> response) {
+        public FutureForCTriePut(ListenableFuture<PutResponse> response) {
             this.response = response;
         }
 
@@ -166,7 +166,7 @@ public class CoordinatorCTrie<K extends Serializable, V extends Serializable> im
         PutRequest putRequest = PutRequest.newBuilder().setSerializedKeyObject(serializedKey).setSerializedValueObject(serializedValue).build();
 
         ListenableFuture<PutResponse> response = futureStub.put(putRequest);
-        return new FuturePutObject(response);
+        return new FutureForCTriePut(response);
 
     }
 
