@@ -5,12 +5,10 @@ import ctrie.CTrieMap;
 import ctrie.CoordinatorCTrie;
 import utils.ByteStringManipulation;
 
-import java.io.Serializable;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
-
-import static java.lang.Thread.sleep;
 
 public class TestClient {
     public static void main(String[] args) {
@@ -59,11 +57,11 @@ public class TestClient {
             e.printStackTrace();
         }
 
-        System.out.println("\n Async put testing:");
+        System.out.println("\nAsync put testing:");
         System.out.println("Adding (4,4)");
         map.put(4,4);
         System.out.println("Async replacing (4,4) with (4,999)");
-        Future<Integer> futurePut = map.putAsync(4,4);
+        Future<Integer> futurePut = map.putAsync(4,999);
         checkFuture(futurePut);
         try {
             Thread.sleep(500);
@@ -72,7 +70,7 @@ public class TestClient {
         }
         checkFuture(futurePut);
 
-        System.out.println("\n Async get testing:");
+        System.out.println("\nAsync get testing:");
         System.out.println("Async getting value associated with key 4");
         Future<Integer> futureGet = map.getAsync(4);
         checkFuture(futureGet);
