@@ -3,11 +3,16 @@ package server;
 import ctrie.CoordinatorCTrie;
 import utils.ByteStringManipulation;
 
+import java.io.Serializable;
 import java.util.*;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
+
+import static java.lang.Thread.sleep;
 
 public class TestClient {
     public static void main(String[] args) {
-        Map map = new CoordinatorCTrie("localhost", ByteStringManipulation.PORT_NUMBER);
+        CoordinatorCTrie map = new CoordinatorCTrie("localhost", ByteStringManipulation.PORT_NUMBER);
         System.out.println("size: " + map.size());
 
         System.out.println("Putting 1, 5 into the map");
@@ -32,5 +37,31 @@ public class TestClient {
         System.out.println("Clearing map");
         map.clear();
         System.out.println("size: " + map.size());
+
+        //Async testing
+
+        System.out.println("Size before putasync: " + map.size());
+        map.putAsync(2, 6);
+        System.out.println("Size after putasync: " + map.size());
+
+        System.out.println("Replacing key 2");
+        Future<Integer> replacementFuture= map.putAsync(2, 9);
+        try {
+            System.out.println("Old value at 2 was: " + replacementFuture.get());
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Adding (4,4) with async putAll");
+        hMap.put(4, 4);
+        map.putAllAsync(hMap);
+        System.out.println("Immediate value associated with key 4:" + map.get(4));
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Delayed value associated with key 4:" + map.get(4));
+
     }
 }

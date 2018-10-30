@@ -71,6 +71,49 @@ public class CoordinatorCTrie<K extends Serializable, V extends Serializable> im
         return (V) byteStringToObject(blockingStub.get(getRequest).getSerializedObject());
     }
 
+    //Future wrapper for future get response - to convert byte string to object
+    public class FutureGetObject implements Future {
+
+        private ListenableFuture<GetResponse> response;
+
+        public FutureGetObject(ListenableFuture<GetResponse> response) {
+            this.response = response;
+        }
+
+        @Override
+        public boolean cancel(boolean mayInterruptIfRunning) {
+            return response.cancel(mayInterruptIfRunning);
+        }
+
+        @Override
+        public boolean isCancelled() {
+            return response.isCancelled();
+        }
+
+        @Override
+        public boolean isDone() {
+            return response.isDone();
+        }
+
+        @Override
+        public Object get() throws InterruptedException, ExecutionException {
+            return (V) byteStringToObject(response.get().getSerializedObject());
+        }
+
+        @Override
+        public Object get(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
+            return (V) byteStringToObject(response.get(timeout, unit).getSerializedObject());
+        }
+    }
+
+    public Future<V> getAsync(Object key) {
+        ByteString serializedKey = objectToByteString(key);
+        GetRequest getRequest = GetRequest.newBuilder().setSerializedObject(serializedKey).build();
+        ListenableFuture<GetResponse> response = futureStub.get(getRequest);
+
+        return new FutureGetObject(response);
+    }
+
     @Override
     public V put(K key, V value) {
         ByteString serializedKey = objectToByteString(key);
@@ -80,11 +123,11 @@ public class CoordinatorCTrie<K extends Serializable, V extends Serializable> im
     }
 
     //Future wrapper for future put response - to convert byte string to object
-    public class FutureObject<V extends Serializable> implements Future {
+    public class FuturePutObject implements Future {
 
         private ListenableFuture<PutResponse> response;
 
-        public FutureObject(ListenableFuture<PutResponse> response) {
+        public FuturePutObject(ListenableFuture<PutResponse> response) {
             this.response = response;
         }
 
@@ -114,13 +157,13 @@ public class CoordinatorCTrie<K extends Serializable, V extends Serializable> im
         }
     }
 
-    public Future<V> asyncPut(K key, V value) {
+    public Future<V> putAsync(K key, V value) {
         ByteString serializedKey = objectToByteString(key);
         ByteString serializedValue = objectToByteString(value);
         PutRequest putRequest = PutRequest.newBuilder().setSerializedKeyObject(serializedKey).setSerializedValueObject(serializedValue).build();
 
         ListenableFuture<PutResponse> response = futureStub.put(putRequest);
-        return new FutureObject(response);
+        return new FuturePutObject(response);
 
     }
 
@@ -139,6 +182,13 @@ public class CoordinatorCTrie<K extends Serializable, V extends Serializable> im
         PutAllRequest putAllRequest = PutAllRequest.newBuilder().setSerializedMapObject(serializedMap).build();
         blockingStub.putAll(putAllRequest);
     }
+
+    public void putAllAsync(Map map) {
+        ByteString serializedMap = objectToByteString(map);
+        PutAllRequest putAllRequest = PutAllRequest.newBuilder().setSerializedMapObject(serializedMap).build();
+        futureStub.putAll(putAllRequest);
+    }
+
 
     @Override
     public void clear() {
