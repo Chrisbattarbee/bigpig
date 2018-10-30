@@ -39,7 +39,6 @@ public class TestClient {
         System.out.println("size: " + map.size());
 
         //Async testing
-
         System.out.println("Size before putasync: " + map.size());
         map.putAsync(2, 6);
         System.out.println("Size after putasync: " + map.size());
@@ -52,17 +51,41 @@ public class TestClient {
             e.printStackTrace();
         }
 
-        System.out.println("Adding (4,4) with async putAll");
-        hMap.put(4, 4);
-        map.putAllAsync(hMap);
-        System.out.println("");
-        System.out.println("Immediate value associated with key 4:" + map.get(4));
+        System.out.println("\n Async put testing:");
+        System.out.println("Adding (4,4)");
+        map.put(4,4);
+        System.out.println("Async replacing (4,4) with (4,999)");
+        Future<Integer> futurePut = map.putAsync(4,4);
+        checkFuture(futurePut);
         try {
-            Thread.sleep(2000);
+            Thread.sleep(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("Delayed value associated with key 4:" + map.get(4));
+        checkFuture(futurePut);
 
+        System.out.println("\n Async get testing:");
+        System.out.println("Async getting value associated with key 4");
+        Future<Integer> futureGet = map.getAsync(4);
+        checkFuture(futureGet);
+        try {
+            System.out.println("Sleeping 0.5s");
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        checkFuture(futureGet);
+    }
+
+    private static void checkFuture(Future<Integer> future) {
+        if(future.isDone()) {
+            try {
+                System.out.println("Async get value at 4: " + future.get());
+            } catch (InterruptedException | ExecutionException e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println("Still waiting for async");
+        }
     }
 }
