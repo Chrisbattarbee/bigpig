@@ -107,6 +107,7 @@ public class CoordinatorCTrie<K extends Serializable, V extends Serializable> im
         }
     }
 
+    @Override
     public Future<V> getAsync(Object key) {
         ByteString serializedKey = objectToByteString(key);
         GetRequest getRequest = GetRequest.newBuilder().setSerializedObject(serializedKey).build();
@@ -158,6 +159,7 @@ public class CoordinatorCTrie<K extends Serializable, V extends Serializable> im
         }
     }
 
+    @Override
     public Future<V> putAsync(K key, V value) {
         ByteString serializedKey = objectToByteString(key);
         ByteString serializedValue = objectToByteString(value);
@@ -184,6 +186,7 @@ public class CoordinatorCTrie<K extends Serializable, V extends Serializable> im
         blockingStub.putAll(putAllRequest);
     }
 
+    @Override
     public void putAllAsync(Map map) {
         ByteString serializedMap = objectToByteString(map);
         PutAllRequest putAllRequest = PutAllRequest.newBuilder().setSerializedMapObject(serializedMap).build();
