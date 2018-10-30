@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class Server extends CTrieServiceGrpc.CTrieServiceImplBase {
 
-    private Map<Object, Object> cTrie;
+    private TrieMap<Object, Object> cTrie;
     io.grpc.Server server;
 
     public Server() {
@@ -132,6 +132,14 @@ public class Server extends CTrieServiceGrpc.CTrieServiceImplBase {
         ByteString serializedEntrySet = ByteStringManipulation.objectToByteString(cTrie.entrySet());
 
         responseObserver.onNext(EntrySetResponse.newBuilder().setSerializedSet(serializedEntrySet).build());
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void snapshot(SnapshotRequest request, StreamObserver<SnapshotResponse> responseObserver) {
+        ByteString serializedCTrie = ByteStringManipulation.objectToByteString(cTrie.snapshot());
+
+        responseObserver.onNext(SnapshotResponse.newBuilder().setSerializedCTrie(serializedCTrie).build());
         responseObserver.onCompleted();
     }
 
