@@ -9,7 +9,7 @@ allAnyArch: submodules jpf-core jdart dockerAnyArch
 
 submodules:
 	git submodule update --init --recursive
-	if [! -d "z3" ]; then \
+	if [ ! -d "z3" ]; then \
 	wget https://github.com/Z3Prover/z3/releases/download/z3-4.4.1/z3-4.4.1-x64-ubuntu-14.04.zip && \
 	unzip z3-4.4.1-x64-ubuntu-14.04.zip && \
 	rm -rf z3-4.4.1-x64-ubuntu-14.04.zip && \
