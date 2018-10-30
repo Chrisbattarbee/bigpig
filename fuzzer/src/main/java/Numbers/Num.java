@@ -4,7 +4,6 @@ import jwp.extras.TestWriter;
 import jwp.fuzz.*;
 
 import java.io.FileWriter;
-import java.lang.reflect.Method;
 import java.util.*;
 import java.util.concurrent.*;
 
