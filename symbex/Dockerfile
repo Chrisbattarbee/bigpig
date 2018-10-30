@@ -14,7 +14,7 @@ RUN ./java-bootstrap.sh
 RUN rm java-bootstrap.sh
 
 # Needed for dynamic linking of java so libraries for z3 and jconst-z3
-RUN yum -y install gcc && yum -y install ant
+RUN yum -y install gcc ant
 
 #############################################################################
 # Get the latest version of Symbex
