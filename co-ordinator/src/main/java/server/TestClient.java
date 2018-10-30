@@ -12,7 +12,6 @@ import java.util.concurrent.Future;
 
 public class TestClient {
     public static void main(String[] args) {
-
         CTrieMap map = new CoordinatorCTrie("localhost", ByteStringManipulation.PORT_NUMBER);
         System.out.println("size: " + map.size());
 

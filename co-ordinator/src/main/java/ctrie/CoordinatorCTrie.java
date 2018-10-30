@@ -1,5 +1,6 @@
 package ctrie;
 
+
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.protobuf.ByteString;
 import com.romix.scala.collection.concurrent.TrieMap;
@@ -22,7 +23,6 @@ public class CoordinatorCTrie<K extends Serializable, V extends Serializable> im
     private final ManagedChannel channel;
     private final CTrieServiceGrpc.CTrieServiceBlockingStub blockingStub;
     private final CTrieServiceGrpc.CTrieServiceFutureStub futureStub;
-
 
     public CoordinatorCTrie() {
         this(ManagedChannelBuilder.forAddress(HOST_NAME, PORT_NUMBER).usePlaintext());
@@ -177,7 +177,6 @@ public class CoordinatorCTrie<K extends Serializable, V extends Serializable> im
         return (V) byteStringToObject(blockingStub.remove(removeRequest).getSerializedValueObject());
     }
 
-
     @Override
     // Make sure that this map is serializable, otherwise there may be unintended consequences
     public void putAll(Map map) {
@@ -192,7 +191,6 @@ public class CoordinatorCTrie<K extends Serializable, V extends Serializable> im
         PutAllRequest putAllRequest = PutAllRequest.newBuilder().setSerializedMapObject(serializedMap).build();
         futureStub.putAll(putAllRequest);
     }
-
 
     @Override
     public void clear() {
