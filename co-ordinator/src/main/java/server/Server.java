@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Server {
 
     private final io.grpc.Server server;
-
+  
     public Server() {
         server = ServerBuilder
                 .forPort(ByteStringManipulation.PORT_NUMBER)
@@ -32,6 +32,4 @@ public class Server {
             e.printStackTrace();
         }
     }
-
-
 }

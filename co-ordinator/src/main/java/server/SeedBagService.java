@@ -2,24 +2,19 @@ package server;
 
 import io.grpc.stub.StreamObserver;
 import seedbag.*;
-import utils.PossibleException;
 
 import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.concurrent.ArrayBlockingQueue;
+import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedDeque;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.TimeUnit;
 
 import static utils.ByteStringManipulation.*;
 
 public class SeedBagService extends SeedBagServiceGrpc.SeedBagServiceImplBase {
 
-    private BatchedBlockingQueue<Object> queue;
+    private Queue<Object> queue;
 
     public SeedBagService() {
-        queue = new BatchedBlockingQueueImpl<>(new LinkedBlockingQueue<Object>());
+        queue = new ConcurrentLinkedDeque<>();
     }
 
     @Override
@@ -144,49 +139,6 @@ public class SeedBagService extends SeedBagServiceGrpc.SeedBagServiceImplBase {
     public void peek(PeekRequest request, StreamObserver<PeekResponse> responseObserver) {
         Object o = queue.peek();
         responseObserver.onNext(PeekResponse.newBuilder().setSerializedObject(objectToByteString(o)).build());
-        responseObserver.onCompleted();
-    }
-
-    @Override
-    public void pollN(PollNRequest request, StreamObserver<PollNResponse> responseObserver) {
-        List res = queue.pollN(request.getNum(), request.getTimeout(), TimeUnit.MILLISECONDS);
-        responseObserver.onNext(PollNResponse.newBuilder().setSerializedCollection(objectToByteString(res)).build());
-        responseObserver.onCompleted();
-    }
-
-    @Override
-    public void takeN(TakeNRequest request, StreamObserver<TakeNResponse> responseObserver) {
-        List res = queue.takeN(request.getNum());
-        responseObserver.onNext(TakeNResponse.newBuilder().setSerializedCollection(objectToByteString(res)).build());
-        responseObserver.onCompleted();
-    }
-
-    @Override
-    public void offerOrPutBlocking(OfferOrPutBlockingRequest request, StreamObserver<OfferOrPutBlockingResponse> responseObserver) {
-        long timeout = request.getTimeout();
-        Object item = byteStringToObject(request.getSerializedItem());
-        InterruptedException exception = null;
-        boolean success = true;
-
-        if(timeout < 0) {
-            try {
-                queue.put(item);
-            } catch (InterruptedException e) {
-                //TODO[gg]: probably not a good idea, exposes server stack trace in client
-                exception = e;
-            }
-        } else {
-            try {
-                success = queue.offer(item, timeout, TimeUnit.MILLISECONDS);
-            } catch (InterruptedException e) {
-                //TODO[gg]: probably not a good idea, exposes server stack trace in client
-                exception = e;
-            }
-        }
-
-        PossibleException<InterruptedException> ex = new PossibleException<>(exception);
-        responseObserver.onNext(OfferOrPutBlockingResponse.newBuilder().setPossibleException(objectToByteString(ex))
-                .setSuccess(success).build());
         responseObserver.onCompleted();
     }
 }
