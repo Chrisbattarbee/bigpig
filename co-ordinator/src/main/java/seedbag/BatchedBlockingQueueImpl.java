@@ -9,7 +9,6 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
-//TODO[gg]: Technically T should implement Serializable. Currently this is not the case because we are using Object as T
 public class BatchedBlockingQueueImpl<T, U extends BlockingQueue<T>> implements BatchedBlockingQueue<T> {
 
     private U blockingQueue;
