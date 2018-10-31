@@ -17,10 +17,10 @@ submodules:
 	fi
 
 docker:
-	docker build -t symbex .
+	sudo docker build -t softengbigpig/symbex:latest .
 
 dockerAnyArch:
-	docker build -f DockerfileAnyArch -t symbex .
+	sudo docker build -f DockerfileAnyArch -t softengbigpig/symbex:latest .
 
 jpf-core:
 	cd jpf-core && git checkout JPF-8.0 && ant
