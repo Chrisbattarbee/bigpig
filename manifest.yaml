@@ -56,3 +56,42 @@ spec:
         - name: symbex
           image: softengbigpig/symbex:latest
     restartPolicy: OnFailure
+---
+apiVersion: v1
+kind: Pod
+metadata:
+    name: coordinator
+    labels:
+        app: bigpig
+        type: coordinator
+spec:
+    containers:
+        - name: coordinator
+          image: softengbigpig/coordinator:latest
+          ports:
+            - containerPort: 8080
+            - containerPort: 8081
+    restartPolicy: OnFailure
+---
+apiVersion: v1
+kind: Pod
+metadata:
+    name: test
+spec:
+    containers:
+        - name: test
+          image: softengbigpig/test:latest
+    restartPolicy: OnFailure
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: coordinatorservice
+spec:
+    ports:
+        - port: 8080
+          name: port1
+        - port: 8081
+          name: port2
+    selector:
+        type: coordinator
