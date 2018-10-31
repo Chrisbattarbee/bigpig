@@ -26,6 +26,7 @@ service SeedBagService {
    rpc TakeN (TakeNRequest) returns (TakeNResponse) {}
    rpc PollN (PollNRequest) returns (PollNResponse) {}
    rpc AddN (AddNRequest) returns (AddNResponse) {}
+   rpc OfferOrPutBlocking (OfferOrPutBlockingRequest) returns (OfferOrPutBlockingResponse) {}
 }
 
 message SizeRequest {
@@ -186,4 +187,14 @@ message AddNRequest {
 
 message AddNResponse {
     bool success = 1;
+}
+
+message OfferOrPutBlockingRequest {
+    bytes serializedItem = 1;
+    int64 timeout = 2;
+}
+
+message OfferOrPutBlockingResponse {
+    bytes possibleException = 1;
+    bool success = 2;
 }

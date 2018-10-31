@@ -767,6 +767,43 @@ public final class SeedBagServiceGrpc {
      }
      return getAddNMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getOfferOrPutBlockingMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<seedbag.OfferOrPutBlockingRequest,
+      seedbag.OfferOrPutBlockingResponse> METHOD_OFFER_OR_PUT_BLOCKING = getOfferOrPutBlockingMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<seedbag.OfferOrPutBlockingRequest,
+      seedbag.OfferOrPutBlockingResponse> getOfferOrPutBlockingMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<seedbag.OfferOrPutBlockingRequest,
+      seedbag.OfferOrPutBlockingResponse> getOfferOrPutBlockingMethod() {
+    return getOfferOrPutBlockingMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<seedbag.OfferOrPutBlockingRequest,
+      seedbag.OfferOrPutBlockingResponse> getOfferOrPutBlockingMethodHelper() {
+    io.grpc.MethodDescriptor<seedbag.OfferOrPutBlockingRequest, seedbag.OfferOrPutBlockingResponse> getOfferOrPutBlockingMethod;
+    if ((getOfferOrPutBlockingMethod = SeedBagServiceGrpc.getOfferOrPutBlockingMethod) == null) {
+      synchronized (SeedBagServiceGrpc.class) {
+        if ((getOfferOrPutBlockingMethod = SeedBagServiceGrpc.getOfferOrPutBlockingMethod) == null) {
+          SeedBagServiceGrpc.getOfferOrPutBlockingMethod = getOfferOrPutBlockingMethod = 
+              io.grpc.MethodDescriptor.<seedbag.OfferOrPutBlockingRequest, seedbag.OfferOrPutBlockingResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "seedbag.SeedBagService", "OfferOrPutBlocking"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  seedbag.OfferOrPutBlockingRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  seedbag.OfferOrPutBlockingResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new SeedBagServiceMethodDescriptorSupplier("OfferOrPutBlocking"))
+                  .build();
+          }
+        }
+     }
+     return getOfferOrPutBlockingMethod;
+  }
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -935,6 +972,13 @@ public final class SeedBagServiceGrpc {
       asyncUnimplementedUnaryCall(getAddNMethodHelper(), responseObserver);
     }
 
+    /**
+     */
+    public void offerOrPutBlocking(seedbag.OfferOrPutBlockingRequest request,
+        io.grpc.stub.StreamObserver<seedbag.OfferOrPutBlockingResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getOfferOrPutBlockingMethodHelper(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -1077,6 +1121,13 @@ public final class SeedBagServiceGrpc {
                 seedbag.AddNRequest,
                 seedbag.AddNResponse>(
                   this, METHODID_ADD_N)))
+          .addMethod(
+            getOfferOrPutBlockingMethodHelper(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                seedbag.OfferOrPutBlockingRequest,
+                seedbag.OfferOrPutBlockingResponse>(
+                  this, METHODID_OFFER_OR_PUT_BLOCKING)))
           .build();
     }
   }
@@ -1258,6 +1309,14 @@ public final class SeedBagServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getAddNMethodHelper(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void offerOrPutBlocking(seedbag.OfferOrPutBlockingRequest request,
+        io.grpc.stub.StreamObserver<seedbag.OfferOrPutBlockingResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getOfferOrPutBlockingMethodHelper(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -1416,6 +1475,13 @@ public final class SeedBagServiceGrpc {
     public seedbag.AddNResponse addN(seedbag.AddNRequest request) {
       return blockingUnaryCall(
           getChannel(), getAddNMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public seedbag.OfferOrPutBlockingResponse offerOrPutBlocking(seedbag.OfferOrPutBlockingRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getOfferOrPutBlockingMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -1596,6 +1662,14 @@ public final class SeedBagServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getAddNMethodHelper(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<seedbag.OfferOrPutBlockingResponse> offerOrPutBlocking(
+        seedbag.OfferOrPutBlockingRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getOfferOrPutBlockingMethodHelper(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_SIZE = 0;
@@ -1618,6 +1692,7 @@ public final class SeedBagServiceGrpc {
   private static final int METHODID_TAKE_N = 17;
   private static final int METHODID_POLL_N = 18;
   private static final int METHODID_ADD_N = 19;
+  private static final int METHODID_OFFER_OR_PUT_BLOCKING = 20;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1716,6 +1791,10 @@ public final class SeedBagServiceGrpc {
           serviceImpl.addN((seedbag.AddNRequest) request,
               (io.grpc.stub.StreamObserver<seedbag.AddNResponse>) responseObserver);
           break;
+        case METHODID_OFFER_OR_PUT_BLOCKING:
+          serviceImpl.offerOrPutBlocking((seedbag.OfferOrPutBlockingRequest) request,
+              (io.grpc.stub.StreamObserver<seedbag.OfferOrPutBlockingResponse>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -1797,6 +1876,7 @@ public final class SeedBagServiceGrpc {
               .addMethod(getTakeNMethodHelper())
               .addMethod(getPollNMethodHelper())
               .addMethod(getAddNMethodHelper())
+              .addMethod(getOfferOrPutBlockingMethodHelper())
               .build();
         }
       }

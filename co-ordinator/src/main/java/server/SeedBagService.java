@@ -2,8 +2,10 @@ package server;
 
 import io.grpc.stub.StreamObserver;
 import seedbag.*;
+import utils.PossibleException;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ConcurrentLinkedDeque;
@@ -146,7 +148,10 @@ public class SeedBagService extends SeedBagServiceGrpc.SeedBagServiceImplBase {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public void addN(AddNRequest request, StreamObserver<AddNResponse> responseObserver) {
+
+        Collections.addAll(queue, (Object[]) byteStringToObject(request.getSerializedCollection()));
         responseObserver.onNext(AddNResponse.newBuilder().build());
         responseObserver.onCompleted();
     }
@@ -165,4 +170,32 @@ public class SeedBagService extends SeedBagServiceGrpc.SeedBagServiceImplBase {
         responseObserver.onCompleted();
     }
 
+    @Override
+    public void offerOrPutBlocking(OfferOrPutBlockingRequest request, StreamObserver<OfferOrPutBlockingResponse> responseObserver) {
+        long timeout = request.getTimeout();
+        Object item = byteStringToObject(request.getSerializedItem());
+        InterruptedException exception = null;
+        boolean success = true;
+
+        if(timeout < 0) {
+            try {
+                queue.put(item);
+            } catch (InterruptedException e) {
+                //TODO[gg]: probably not a good idea, exposes server stack trace in client
+                exception = e;
+            }
+        } else {
+            try {
+                success = queue.offer(item, timeout, TimeUnit.MILLISECONDS);
+            } catch (InterruptedException e) {
+                //TODO[gg]: probably not a good idea, exposes server stack trace in client
+                exception = e;
+            }
+        }
+
+        PossibleException<InterruptedException> ex = new PossibleException<>(exception);
+        responseObserver.onNext(OfferOrPutBlockingResponse.newBuilder().setPossibleException(objectToByteString(ex))
+                .setSuccess(success).build());
+        responseObserver.onCompleted();
+    }
 }

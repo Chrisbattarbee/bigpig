@@ -1,7 +1,8 @@
 package utils;
 
-public class PossibleException<T extends Exception> {
+import com.sun.istack.internal.NotNull;
 
+public class PossibleException<T extends Exception> {
     private final T exception;
 
     public PossibleException(T exception) {
@@ -17,7 +18,7 @@ public class PossibleException<T extends Exception> {
     }
 
     public void throwIfException() throws T {
-        if(hasException()) {
+        if(hasException() && exception != null) {
             throw exception;
         }
     }

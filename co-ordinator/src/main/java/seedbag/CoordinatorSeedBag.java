@@ -1,7 +1,9 @@
 package seedbag;
 
+import com.sun.istack.internal.NotNull;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import utils.PossibleException;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -13,6 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 import static utils.ByteStringManipulation.*;
 
+@SuppressWarnings("unchecked")
 public class CoordinatorSeedBag<E extends Serializable> implements BatchedBlockingQueue<E> {
 
     private final ManagedChannel channel;
@@ -127,12 +130,24 @@ public class CoordinatorSeedBag<E extends Serializable> implements BatchedBlocki
 
     @Override
     public void put(E e) throws InterruptedException {
-        throw new UnsupportedOperationException();
+        OfferOrPutBlockingRequest request = OfferOrPutBlockingRequest.newBuilder().setTimeout(-1)
+                .setSerializedItem(objectToByteString(e)).build();
+
+        @SuppressWarnings("unchecked")
+        PossibleException<InterruptedException> ex = (PossibleException<InterruptedException>) byteStringToObject(blockingStub.offerOrPutBlocking(request).getPossibleException());
+
+        ex.throwIfException();
     }
 
     @Override
     public boolean offer(E e, long l, TimeUnit timeUnit) throws InterruptedException {
-        throw new UnsupportedOperationException();
+        long timeout = TimeUnit.MILLISECONDS.convert(l, timeUnit);
+        OfferOrPutBlockingRequest request = OfferOrPutBlockingRequest.newBuilder().setTimeout(timeout)
+                .setSerializedItem(objectToByteString(e)).build();
+        OfferOrPutBlockingResponse response = blockingStub.offerOrPutBlocking(request);
+        PossibleException<InterruptedException> ex =  (PossibleException<InterruptedException>) byteStringToObject(response.getPossibleException());
+        ex.throwIfException();
+        return response.getSuccess();
     }
 
     @Override
