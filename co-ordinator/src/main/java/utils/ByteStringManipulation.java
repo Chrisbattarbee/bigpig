@@ -6,7 +6,7 @@ import java.io.*;
 
 public class ByteStringManipulation {
 
-    public static final String HOST_NAME = "co-ordinator";
+    public static final String HOST_NAME = "coordinatorservice.default.svc.cluster.local";
     public static final int PORT_NUMBER = 8080;
 
     public static ByteString objectToByteString(Object o) {
