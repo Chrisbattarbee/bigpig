@@ -214,6 +214,16 @@ public final class CTrieProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_seedbag_AddNResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_seedbag_OfferOrPutBlockingRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_seedbag_OfferOrPutBlockingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_seedbag_OfferOrPutBlockingResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_seedbag_OfferOrPutBlockingResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -259,39 +269,45 @@ public final class CTrieProto {
       "\017\n\007timeout\030\002 \001(\003\"-\n\rPollNResponse\022\034\n\024ser" +
       "ializedCollection\030\001 \001(\014\"+\n\013AddNRequest\022\034" +
       "\n\024serializedCollection\030\001 \001(\014\"\037\n\014AddNResp" +
-      "onse\022\017\n\007success\030\001 \001(\0102\357\t\n\016SeedBagService" +
-      "\0225\n\004Size\022\024.seedbag.SizeRequest\032\025.seedbag" +
-      ".SizeResponse\"\000\022>\n\007IsEmpty\022\027.seedbag.IsE" +
-      "mptyRequest\032\030.seedbag.IsEmptyResponse\"\000\022" +
-      "A\n\010Contains\022\030.seedbag.ContainsRequest\032\031." +
-      "seedbag.ContainsResponse\"\000\022A\n\010Iterator\022\030" +
-      ".seedbag.IteratorRequest\032\031.seedbag.Itera" +
-      "torResponse\"\000\022>\n\007ToArray\022\027.seedbag.ToArr" +
-      "ayRequest\032\030.seedbag.ToArrayResponse\"\000\0222\n" +
-      "\003Add\022\023.seedbag.AddRequest\032\024.seedbag.AddR" +
-      "esponse\"\000\022;\n\006Remove\022\026.seedbag.RemoveRequ" +
-      "est\032\027.seedbag.RemoveResponse\"\000\022J\n\013Contai" +
-      "nsAll\022\033.seedbag.ContainsAllRequest\032\034.see" +
-      "dbag.ContainsAllResponse\"\000\022;\n\006AddAll\022\026.s" +
-      "eedbag.AddAllRequest\032\027.seedbag.AddAllRes" +
-      "ponse\"\000\022D\n\tRetainAll\022\031.seedbag.RetainAll" +
-      "Request\032\032.seedbag.RetainAllResponse\"\000\022D\n" +
-      "\tRemoveAll\022\031.seedbag.RemoveAllRequest\032\032." +
-      "seedbag.RemoveAllResponse\"\000\0228\n\005Clear\022\025.s" +
-      "eedbag.ClearRequest\032\026.seedbag.ClearRespo" +
-      "nse\"\000\0228\n\005Offer\022\025.seedbag.OfferRequest\032\026." +
-      "seedbag.OfferResponse\"\000\022M\n\014RemoveNoArgs\022" +
-      "\034.seedbag.RemoveNoArgsRequest\032\035.seedbag." +
-      "RemoveNoArgsResponse\"\000\0225\n\004Poll\022\024.seedbag" +
-      ".PollRequest\032\025.seedbag.PollResponse\"\000\022>\n" +
-      "\007Element\022\027.seedbag.ElementRequest\032\030.seed" +
-      "bag.ElementResponse\"\000\0225\n\004Peek\022\024.seedbag." +
-      "PeekRequest\032\025.seedbag.PeekResponse\"\000\0228\n\005" +
-      "TakeN\022\025.seedbag.TakeNRequest\032\026.seedbag.T" +
-      "akeNResponse\"\000\0228\n\005PollN\022\025.seedbag.PollNR" +
-      "equest\032\026.seedbag.PollNResponse\"\000\0225\n\004AddN" +
-      "\022\024.seedbag.AddNRequest\032\025.seedbag.AddNRes" +
-      "ponse\"\000B\021B\nCTrieProtoP\001\210\001\001b\006proto3"
+      "onse\022\017\n\007success\030\001 \001(\010\"D\n\031OfferOrPutBlock" +
+      "ingRequest\022\026\n\016serializedItem\030\001 \001(\014\022\017\n\007ti" +
+      "meout\030\002 \001(\003\"H\n\032OfferOrPutBlockingRespons" +
+      "e\022\031\n\021possibleException\030\001 \001(\014\022\017\n\007success\030" +
+      "\002 \001(\0102\320\n\n\016SeedBagService\0225\n\004Size\022\024.seedb" +
+      "ag.SizeRequest\032\025.seedbag.SizeResponse\"\000\022" +
+      ">\n\007IsEmpty\022\027.seedbag.IsEmptyRequest\032\030.se" +
+      "edbag.IsEmptyResponse\"\000\022A\n\010Contains\022\030.se" +
+      "edbag.ContainsRequest\032\031.seedbag.Contains" +
+      "Response\"\000\022A\n\010Iterator\022\030.seedbag.Iterato" +
+      "rRequest\032\031.seedbag.IteratorResponse\"\000\022>\n" +
+      "\007ToArray\022\027.seedbag.ToArrayRequest\032\030.seed" +
+      "bag.ToArrayResponse\"\000\0222\n\003Add\022\023.seedbag.A" +
+      "ddRequest\032\024.seedbag.AddResponse\"\000\022;\n\006Rem" +
+      "ove\022\026.seedbag.RemoveRequest\032\027.seedbag.Re" +
+      "moveResponse\"\000\022J\n\013ContainsAll\022\033.seedbag." +
+      "ContainsAllRequest\032\034.seedbag.ContainsAll" +
+      "Response\"\000\022;\n\006AddAll\022\026.seedbag.AddAllReq" +
+      "uest\032\027.seedbag.AddAllResponse\"\000\022D\n\tRetai" +
+      "nAll\022\031.seedbag.RetainAllRequest\032\032.seedba" +
+      "g.RetainAllResponse\"\000\022D\n\tRemoveAll\022\031.see" +
+      "dbag.RemoveAllRequest\032\032.seedbag.RemoveAl" +
+      "lResponse\"\000\0228\n\005Clear\022\025.seedbag.ClearRequ" +
+      "est\032\026.seedbag.ClearResponse\"\000\0228\n\005Offer\022\025" +
+      ".seedbag.OfferRequest\032\026.seedbag.OfferRes" +
+      "ponse\"\000\022M\n\014RemoveNoArgs\022\034.seedbag.Remove" +
+      "NoArgsRequest\032\035.seedbag.RemoveNoArgsResp" +
+      "onse\"\000\0225\n\004Poll\022\024.seedbag.PollRequest\032\025.s" +
+      "eedbag.PollResponse\"\000\022>\n\007Element\022\027.seedb" +
+      "ag.ElementRequest\032\030.seedbag.ElementRespo" +
+      "nse\"\000\0225\n\004Peek\022\024.seedbag.PeekRequest\032\025.se" +
+      "edbag.PeekResponse\"\000\0228\n\005TakeN\022\025.seedbag." +
+      "TakeNRequest\032\026.seedbag.TakeNResponse\"\000\0228" +
+      "\n\005PollN\022\025.seedbag.PollNRequest\032\026.seedbag" +
+      ".PollNResponse\"\000\0225\n\004AddN\022\024.seedbag.AddNR" +
+      "equest\032\025.seedbag.AddNResponse\"\000\022_\n\022Offer" +
+      "OrPutBlocking\022\".seedbag.OfferOrPutBlocki" +
+      "ngRequest\032#.seedbag.OfferOrPutBlockingRe" +
+      "sponse\"\000B\021B\nCTrieProtoP\001\210\001\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -545,6 +561,18 @@ public final class CTrieProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_seedbag_AddNResponse_descriptor,
         new java.lang.String[] { "Success", });
+    internal_static_seedbag_OfferOrPutBlockingRequest_descriptor =
+      getDescriptor().getMessageTypes().get(40);
+    internal_static_seedbag_OfferOrPutBlockingRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_seedbag_OfferOrPutBlockingRequest_descriptor,
+        new java.lang.String[] { "SerializedItem", "Timeout", });
+    internal_static_seedbag_OfferOrPutBlockingResponse_descriptor =
+      getDescriptor().getMessageTypes().get(41);
+    internal_static_seedbag_OfferOrPutBlockingResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_seedbag_OfferOrPutBlockingResponse_descriptor,
+        new java.lang.String[] { "PossibleException", "Success", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

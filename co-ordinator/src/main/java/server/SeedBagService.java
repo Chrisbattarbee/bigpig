@@ -1,12 +1,15 @@
 package server;
 
 import io.grpc.stub.StreamObserver;
+import com.google.protobuf.ByteString;
 import seedbag.*;
 
 import java.util.Collection;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.TimeUnit;
+import java.util.function.*;
 
 import static utils.ByteStringManipulation.*;
 
@@ -142,4 +145,34 @@ public class SeedBagService extends SeedBagServiceGrpc.SeedBagServiceImplBase {
         responseObserver.onNext(PeekResponse.newBuilder().setSerializedObject(objectToByteString(o)).build());
         responseObserver.onCompleted();
     }
+
+
+    @Override
+    public void offerOrPutBlocking(OfferOrPutBlockingRequest request, StreamObserver<OfferOrPutBlockingResponse> responseObserver) {
+        long timeout = request.getTimeout();
+        Object item = byteStringToObject(request.getSerializedItem());
+        InterruptedException exception = null;
+
+        if(timeout < 0) {
+            try {
+                queue.put(item);
+            } catch (InterruptedException e) {
+                //TODO[gg]: probably not a good idea, exposes server stack trace in client
+                exception = e;
+            }
+        } else {
+            try {
+                queue.offer(item, timeout, TimeUnit.MILLISECONDS);
+            } catch (InterruptedException e) {
+                //TODO[gg]: probably not a good idea, exposes server stack trace in client
+                exception = e;
+            }
+        }
+
+        ByteString result = serializeException(exception);
+
+        responseObserver.onNext(OfferOrPutBlockingResponse.newBuilder().setPossibleException(result).build());
+        responseObserver.onCompleted();
+    }
+
 }

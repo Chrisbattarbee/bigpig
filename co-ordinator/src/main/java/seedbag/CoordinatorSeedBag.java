@@ -126,12 +126,24 @@ public class CoordinatorSeedBag<E extends Serializable> implements BatchedBlocki
 
     @Override
     public void put(E e) throws InterruptedException {
-        throw new UnsupportedOperationException();
+        OfferOrPutBlockingRequest request = OfferOrPutBlockingRequest.newBuilder().setTimeout(-1)
+                .setSerializedItem(objectToByteString(e)).build();
+        Exception ex = deserializeException(blockingStub.offerOrPutBlocking(request).getPossibleException());
+        if(ex != null) {
+            throw (InterruptedException) e;
+        }
     }
 
     @Override
     public boolean offer(E e, long l, TimeUnit timeUnit) throws InterruptedException {
-        throw new UnsupportedOperationException();
+        long timeout = TimeUnit.MILLISECONDS.convert(l, timeUnit);
+        OfferOrPutBlockingRequest request = OfferOrPutBlockingRequest.newBuilder().setTimeout(timeout)
+                .setSerializedItem(objectToByteString(e)).build();
+        Exception ex = deserializeException(blockingStub.offerOrPutBlocking(request).getPossibleException());
+        if(ex != null) {
+            throw (InterruptedException) e;
+        }
+        return true;
     }
 
     @Override

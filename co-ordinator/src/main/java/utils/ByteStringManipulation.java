@@ -45,4 +45,26 @@ public class ByteStringManipulation {
         }
         return null;
     }
+
+    public static ByteString serializeException(Exception ex) {
+        byte exceptionFlag = ex != null ? (byte) 1 : 0;
+        byte[] exceptionBytes = new byte[1];
+        if(ex != null) {
+            byte[] serializedException = objectToByteString(ex).toByteArray();
+            int len = serializedException.length;
+            exceptionBytes = new byte[len + 1];
+            System.arraycopy(serializedException, 0, exceptionBytes, 1, len);
+        }
+        exceptionBytes[0] = exceptionFlag;
+        return ByteString.copyFrom(exceptionBytes);
+    }
+
+    public static Exception deserializeException(ByteString bytes) {
+        boolean isException = bytes.byteAt(0) != 0;
+        if(isException) {
+            Exception ex = (Exception) byteStringToObject(bytes.substring(1));
+            return ex;
+        }
+        return null;
+    }
 }

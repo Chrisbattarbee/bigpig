@@ -171,6 +171,14 @@ public  abstract class SeedBagService
         seedbag.AddNRequest request,
         com.google.protobuf.RpcCallback<seedbag.AddNResponse> done);
 
+    /**
+     * <code>rpc OfferOrPutBlocking(.seedbag.OfferOrPutBlockingRequest) returns (.seedbag.OfferOrPutBlockingResponse);</code>
+     */
+    public abstract void offerOrPutBlocking(
+        com.google.protobuf.RpcController controller,
+        seedbag.OfferOrPutBlockingRequest request,
+        com.google.protobuf.RpcCallback<seedbag.OfferOrPutBlockingResponse> done);
+
   }
 
   public static com.google.protobuf.Service newReflectiveService(
@@ -336,6 +344,14 @@ public  abstract class SeedBagService
         impl.addN(controller, request, done);
       }
 
+      @java.lang.Override
+      public  void offerOrPutBlocking(
+          com.google.protobuf.RpcController controller,
+          seedbag.OfferOrPutBlockingRequest request,
+          com.google.protobuf.RpcCallback<seedbag.OfferOrPutBlockingResponse> done) {
+        impl.offerOrPutBlocking(controller, request, done);
+      }
+
     };
   }
 
@@ -398,6 +414,8 @@ public  abstract class SeedBagService
             return impl.pollN(controller, (seedbag.PollNRequest)request);
           case 19:
             return impl.addN(controller, (seedbag.AddNRequest)request);
+          case 20:
+            return impl.offerOrPutBlocking(controller, (seedbag.OfferOrPutBlockingRequest)request);
           default:
             throw new java.lang.AssertionError("Can't get here.");
         }
@@ -452,6 +470,8 @@ public  abstract class SeedBagService
             return seedbag.PollNRequest.getDefaultInstance();
           case 19:
             return seedbag.AddNRequest.getDefaultInstance();
+          case 20:
+            return seedbag.OfferOrPutBlockingRequest.getDefaultInstance();
           default:
             throw new java.lang.AssertionError("Can't get here.");
         }
@@ -506,6 +526,8 @@ public  abstract class SeedBagService
             return seedbag.PollNResponse.getDefaultInstance();
           case 19:
             return seedbag.AddNResponse.getDefaultInstance();
+          case 20:
+            return seedbag.OfferOrPutBlockingResponse.getDefaultInstance();
           default:
             throw new java.lang.AssertionError("Can't get here.");
         }
@@ -674,6 +696,14 @@ public  abstract class SeedBagService
       seedbag.AddNRequest request,
       com.google.protobuf.RpcCallback<seedbag.AddNResponse> done);
 
+  /**
+   * <code>rpc OfferOrPutBlocking(.seedbag.OfferOrPutBlockingRequest) returns (.seedbag.OfferOrPutBlockingResponse);</code>
+   */
+  public abstract void offerOrPutBlocking(
+      com.google.protobuf.RpcController controller,
+      seedbag.OfferOrPutBlockingRequest request,
+      com.google.protobuf.RpcCallback<seedbag.OfferOrPutBlockingResponse> done);
+
   public static final
       com.google.protobuf.Descriptors.ServiceDescriptor
       getDescriptor() {
@@ -796,6 +826,11 @@ public  abstract class SeedBagService
           com.google.protobuf.RpcUtil.<seedbag.AddNResponse>specializeCallback(
             done));
         return;
+      case 20:
+        this.offerOrPutBlocking(controller, (seedbag.OfferOrPutBlockingRequest)request,
+          com.google.protobuf.RpcUtil.<seedbag.OfferOrPutBlockingResponse>specializeCallback(
+            done));
+        return;
       default:
         throw new java.lang.AssertionError("Can't get here.");
     }
@@ -850,6 +885,8 @@ public  abstract class SeedBagService
         return seedbag.PollNRequest.getDefaultInstance();
       case 19:
         return seedbag.AddNRequest.getDefaultInstance();
+      case 20:
+        return seedbag.OfferOrPutBlockingRequest.getDefaultInstance();
       default:
         throw new java.lang.AssertionError("Can't get here.");
     }
@@ -904,6 +941,8 @@ public  abstract class SeedBagService
         return seedbag.PollNResponse.getDefaultInstance();
       case 19:
         return seedbag.AddNResponse.getDefaultInstance();
+      case 20:
+        return seedbag.OfferOrPutBlockingResponse.getDefaultInstance();
       default:
         throw new java.lang.AssertionError("Can't get here.");
     }
@@ -1224,6 +1263,21 @@ public  abstract class SeedBagService
           seedbag.AddNResponse.class,
           seedbag.AddNResponse.getDefaultInstance()));
     }
+
+    public  void offerOrPutBlocking(
+        com.google.protobuf.RpcController controller,
+        seedbag.OfferOrPutBlockingRequest request,
+        com.google.protobuf.RpcCallback<seedbag.OfferOrPutBlockingResponse> done) {
+      channel.callMethod(
+        getDescriptor().getMethods().get(20),
+        controller,
+        request,
+        seedbag.OfferOrPutBlockingResponse.getDefaultInstance(),
+        com.google.protobuf.RpcUtil.generalizeCallback(
+          done,
+          seedbag.OfferOrPutBlockingResponse.class,
+          seedbag.OfferOrPutBlockingResponse.getDefaultInstance()));
+    }
   }
 
   public static BlockingInterface newBlockingStub(
@@ -1330,6 +1384,11 @@ public  abstract class SeedBagService
     public seedbag.AddNResponse addN(
         com.google.protobuf.RpcController controller,
         seedbag.AddNRequest request)
+        throws com.google.protobuf.ServiceException;
+
+    public seedbag.OfferOrPutBlockingResponse offerOrPutBlocking(
+        com.google.protobuf.RpcController controller,
+        seedbag.OfferOrPutBlockingRequest request)
         throws com.google.protobuf.ServiceException;
   }
 
@@ -1577,6 +1636,18 @@ public  abstract class SeedBagService
         controller,
         request,
         seedbag.AddNResponse.getDefaultInstance());
+    }
+
+
+    public seedbag.OfferOrPutBlockingResponse offerOrPutBlocking(
+        com.google.protobuf.RpcController controller,
+        seedbag.OfferOrPutBlockingRequest request)
+        throws com.google.protobuf.ServiceException {
+      return (seedbag.OfferOrPutBlockingResponse) channel.callBlockingMethod(
+        getDescriptor().getMethods().get(20),
+        controller,
+        request,
+        seedbag.OfferOrPutBlockingResponse.getDefaultInstance());
     }
 
   }
