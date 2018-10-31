@@ -205,16 +205,6 @@ public final class CTrieProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_seedbag_PollNResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_seedbag_AddNRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_seedbag_AddNRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_seedbag_AddNResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_seedbag_AddNResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_seedbag_OfferOrPutBlockingRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -267,47 +257,44 @@ public final class CTrieProto {
       "\001(\005\"-\n\rTakeNResponse\022\034\n\024serializedCollec" +
       "tion\030\001 \001(\014\",\n\014PollNRequest\022\013\n\003num\030\001 \001(\005\022" +
       "\017\n\007timeout\030\002 \001(\003\"-\n\rPollNResponse\022\034\n\024ser" +
-      "ializedCollection\030\001 \001(\014\"+\n\013AddNRequest\022\034" +
-      "\n\024serializedCollection\030\001 \001(\014\"\037\n\014AddNResp" +
-      "onse\022\017\n\007success\030\001 \001(\010\"D\n\031OfferOrPutBlock" +
-      "ingRequest\022\026\n\016serializedItem\030\001 \001(\014\022\017\n\007ti" +
-      "meout\030\002 \001(\003\"H\n\032OfferOrPutBlockingRespons" +
-      "e\022\031\n\021possibleException\030\001 \001(\014\022\017\n\007success\030" +
-      "\002 \001(\0102\320\n\n\016SeedBagService\0225\n\004Size\022\024.seedb" +
-      "ag.SizeRequest\032\025.seedbag.SizeResponse\"\000\022" +
-      ">\n\007IsEmpty\022\027.seedbag.IsEmptyRequest\032\030.se" +
-      "edbag.IsEmptyResponse\"\000\022A\n\010Contains\022\030.se" +
-      "edbag.ContainsRequest\032\031.seedbag.Contains" +
-      "Response\"\000\022A\n\010Iterator\022\030.seedbag.Iterato" +
-      "rRequest\032\031.seedbag.IteratorResponse\"\000\022>\n" +
-      "\007ToArray\022\027.seedbag.ToArrayRequest\032\030.seed" +
-      "bag.ToArrayResponse\"\000\0222\n\003Add\022\023.seedbag.A" +
-      "ddRequest\032\024.seedbag.AddResponse\"\000\022;\n\006Rem" +
-      "ove\022\026.seedbag.RemoveRequest\032\027.seedbag.Re" +
-      "moveResponse\"\000\022J\n\013ContainsAll\022\033.seedbag." +
-      "ContainsAllRequest\032\034.seedbag.ContainsAll" +
-      "Response\"\000\022;\n\006AddAll\022\026.seedbag.AddAllReq" +
-      "uest\032\027.seedbag.AddAllResponse\"\000\022D\n\tRetai" +
-      "nAll\022\031.seedbag.RetainAllRequest\032\032.seedba" +
-      "g.RetainAllResponse\"\000\022D\n\tRemoveAll\022\031.see" +
-      "dbag.RemoveAllRequest\032\032.seedbag.RemoveAl" +
-      "lResponse\"\000\0228\n\005Clear\022\025.seedbag.ClearRequ" +
-      "est\032\026.seedbag.ClearResponse\"\000\0228\n\005Offer\022\025" +
-      ".seedbag.OfferRequest\032\026.seedbag.OfferRes" +
-      "ponse\"\000\022M\n\014RemoveNoArgs\022\034.seedbag.Remove" +
-      "NoArgsRequest\032\035.seedbag.RemoveNoArgsResp" +
-      "onse\"\000\0225\n\004Poll\022\024.seedbag.PollRequest\032\025.s" +
-      "eedbag.PollResponse\"\000\022>\n\007Element\022\027.seedb" +
-      "ag.ElementRequest\032\030.seedbag.ElementRespo" +
-      "nse\"\000\0225\n\004Peek\022\024.seedbag.PeekRequest\032\025.se" +
-      "edbag.PeekResponse\"\000\0228\n\005TakeN\022\025.seedbag." +
-      "TakeNRequest\032\026.seedbag.TakeNResponse\"\000\0228" +
-      "\n\005PollN\022\025.seedbag.PollNRequest\032\026.seedbag" +
-      ".PollNResponse\"\000\0225\n\004AddN\022\024.seedbag.AddNR" +
-      "equest\032\025.seedbag.AddNResponse\"\000\022_\n\022Offer" +
-      "OrPutBlocking\022\".seedbag.OfferOrPutBlocki" +
-      "ngRequest\032#.seedbag.OfferOrPutBlockingRe" +
-      "sponse\"\000B\021B\nCTrieProtoP\001\210\001\001b\006proto3"
+      "ializedCollection\030\001 \001(\014\"D\n\031OfferOrPutBlo" +
+      "ckingRequest\022\026\n\016serializedItem\030\001 \001(\014\022\017\n\007" +
+      "timeout\030\002 \001(\003\"H\n\032OfferOrPutBlockingRespo" +
+      "nse\022\031\n\021possibleException\030\001 \001(\014\022\017\n\007succes" +
+      "s\030\002 \001(\0102\231\n\n\016SeedBagService\0225\n\004Size\022\024.see" +
+      "dbag.SizeRequest\032\025.seedbag.SizeResponse\"" +
+      "\000\022>\n\007IsEmpty\022\027.seedbag.IsEmptyRequest\032\030." +
+      "seedbag.IsEmptyResponse\"\000\022A\n\010Contains\022\030." +
+      "seedbag.ContainsRequest\032\031.seedbag.Contai" +
+      "nsResponse\"\000\022A\n\010Iterator\022\030.seedbag.Itera" +
+      "torRequest\032\031.seedbag.IteratorResponse\"\000\022" +
+      ">\n\007ToArray\022\027.seedbag.ToArrayRequest\032\030.se" +
+      "edbag.ToArrayResponse\"\000\0222\n\003Add\022\023.seedbag" +
+      ".AddRequest\032\024.seedbag.AddResponse\"\000\022;\n\006R" +
+      "emove\022\026.seedbag.RemoveRequest\032\027.seedbag." +
+      "RemoveResponse\"\000\022J\n\013ContainsAll\022\033.seedba" +
+      "g.ContainsAllRequest\032\034.seedbag.ContainsA" +
+      "llResponse\"\000\022;\n\006AddAll\022\026.seedbag.AddAllR" +
+      "equest\032\027.seedbag.AddAllResponse\"\000\022D\n\tRet" +
+      "ainAll\022\031.seedbag.RetainAllRequest\032\032.seed" +
+      "bag.RetainAllResponse\"\000\022D\n\tRemoveAll\022\031.s" +
+      "eedbag.RemoveAllRequest\032\032.seedbag.Remove" +
+      "AllResponse\"\000\0228\n\005Clear\022\025.seedbag.ClearRe" +
+      "quest\032\026.seedbag.ClearResponse\"\000\0228\n\005Offer" +
+      "\022\025.seedbag.OfferRequest\032\026.seedbag.OfferR" +
+      "esponse\"\000\022M\n\014RemoveNoArgs\022\034.seedbag.Remo" +
+      "veNoArgsRequest\032\035.seedbag.RemoveNoArgsRe" +
+      "sponse\"\000\0225\n\004Poll\022\024.seedbag.PollRequest\032\025" +
+      ".seedbag.PollResponse\"\000\022>\n\007Element\022\027.see" +
+      "dbag.ElementRequest\032\030.seedbag.ElementRes" +
+      "ponse\"\000\0225\n\004Peek\022\024.seedbag.PeekRequest\032\025." +
+      "seedbag.PeekResponse\"\000\0228\n\005TakeN\022\025.seedba" +
+      "g.TakeNRequest\032\026.seedbag.TakeNResponse\"\000" +
+      "\0228\n\005PollN\022\025.seedbag.PollNRequest\032\026.seedb" +
+      "ag.PollNResponse\"\000\022_\n\022OfferOrPutBlocking" +
+      "\022\".seedbag.OfferOrPutBlockingRequest\032#.s" +
+      "eedbag.OfferOrPutBlockingResponse\"\000B\021B\nC" +
+      "TrieProtoP\001\210\001\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -549,26 +536,14 @@ public final class CTrieProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_seedbag_PollNResponse_descriptor,
         new java.lang.String[] { "SerializedCollection", });
-    internal_static_seedbag_AddNRequest_descriptor =
-      getDescriptor().getMessageTypes().get(38);
-    internal_static_seedbag_AddNRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_seedbag_AddNRequest_descriptor,
-        new java.lang.String[] { "SerializedCollection", });
-    internal_static_seedbag_AddNResponse_descriptor =
-      getDescriptor().getMessageTypes().get(39);
-    internal_static_seedbag_AddNResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_seedbag_AddNResponse_descriptor,
-        new java.lang.String[] { "Success", });
     internal_static_seedbag_OfferOrPutBlockingRequest_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_seedbag_OfferOrPutBlockingRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_seedbag_OfferOrPutBlockingRequest_descriptor,
         new java.lang.String[] { "SerializedItem", "Timeout", });
     internal_static_seedbag_OfferOrPutBlockingResponse_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_seedbag_OfferOrPutBlockingResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_seedbag_OfferOrPutBlockingResponse_descriptor,

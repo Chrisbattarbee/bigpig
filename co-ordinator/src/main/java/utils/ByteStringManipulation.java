@@ -1,7 +1,6 @@
 package utils;
 
 import com.google.protobuf.ByteString;
-import com.sun.istack.internal.NotNull;
 
 import java.io.*;
 
@@ -39,9 +38,7 @@ public class ByteStringManipulation {
         try {
             ObjectInputStream stream = new ObjectInputStream(byteArrayInputStream);
             return stream.readObject();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return null;

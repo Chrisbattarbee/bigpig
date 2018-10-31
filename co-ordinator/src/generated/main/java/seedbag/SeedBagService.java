@@ -164,14 +164,6 @@ public  abstract class SeedBagService
         com.google.protobuf.RpcCallback<seedbag.PollNResponse> done);
 
     /**
-     * <code>rpc AddN(.seedbag.AddNRequest) returns (.seedbag.AddNResponse);</code>
-     */
-    public abstract void addN(
-        com.google.protobuf.RpcController controller,
-        seedbag.AddNRequest request,
-        com.google.protobuf.RpcCallback<seedbag.AddNResponse> done);
-
-    /**
      * <code>rpc OfferOrPutBlocking(.seedbag.OfferOrPutBlockingRequest) returns (.seedbag.OfferOrPutBlockingResponse);</code>
      */
     public abstract void offerOrPutBlocking(
@@ -337,14 +329,6 @@ public  abstract class SeedBagService
       }
 
       @java.lang.Override
-      public  void addN(
-          com.google.protobuf.RpcController controller,
-          seedbag.AddNRequest request,
-          com.google.protobuf.RpcCallback<seedbag.AddNResponse> done) {
-        impl.addN(controller, request, done);
-      }
-
-      @java.lang.Override
       public  void offerOrPutBlocking(
           com.google.protobuf.RpcController controller,
           seedbag.OfferOrPutBlockingRequest request,
@@ -413,8 +397,6 @@ public  abstract class SeedBagService
           case 18:
             return impl.pollN(controller, (seedbag.PollNRequest)request);
           case 19:
-            return impl.addN(controller, (seedbag.AddNRequest)request);
-          case 20:
             return impl.offerOrPutBlocking(controller, (seedbag.OfferOrPutBlockingRequest)request);
           default:
             throw new java.lang.AssertionError("Can't get here.");
@@ -469,8 +451,6 @@ public  abstract class SeedBagService
           case 18:
             return seedbag.PollNRequest.getDefaultInstance();
           case 19:
-            return seedbag.AddNRequest.getDefaultInstance();
-          case 20:
             return seedbag.OfferOrPutBlockingRequest.getDefaultInstance();
           default:
             throw new java.lang.AssertionError("Can't get here.");
@@ -525,8 +505,6 @@ public  abstract class SeedBagService
           case 18:
             return seedbag.PollNResponse.getDefaultInstance();
           case 19:
-            return seedbag.AddNResponse.getDefaultInstance();
-          case 20:
             return seedbag.OfferOrPutBlockingResponse.getDefaultInstance();
           default:
             throw new java.lang.AssertionError("Can't get here.");
@@ -689,14 +667,6 @@ public  abstract class SeedBagService
       com.google.protobuf.RpcCallback<seedbag.PollNResponse> done);
 
   /**
-   * <code>rpc AddN(.seedbag.AddNRequest) returns (.seedbag.AddNResponse);</code>
-   */
-  public abstract void addN(
-      com.google.protobuf.RpcController controller,
-      seedbag.AddNRequest request,
-      com.google.protobuf.RpcCallback<seedbag.AddNResponse> done);
-
-  /**
    * <code>rpc OfferOrPutBlocking(.seedbag.OfferOrPutBlockingRequest) returns (.seedbag.OfferOrPutBlockingResponse);</code>
    */
   public abstract void offerOrPutBlocking(
@@ -822,11 +792,6 @@ public  abstract class SeedBagService
             done));
         return;
       case 19:
-        this.addN(controller, (seedbag.AddNRequest)request,
-          com.google.protobuf.RpcUtil.<seedbag.AddNResponse>specializeCallback(
-            done));
-        return;
-      case 20:
         this.offerOrPutBlocking(controller, (seedbag.OfferOrPutBlockingRequest)request,
           com.google.protobuf.RpcUtil.<seedbag.OfferOrPutBlockingResponse>specializeCallback(
             done));
@@ -884,8 +849,6 @@ public  abstract class SeedBagService
       case 18:
         return seedbag.PollNRequest.getDefaultInstance();
       case 19:
-        return seedbag.AddNRequest.getDefaultInstance();
-      case 20:
         return seedbag.OfferOrPutBlockingRequest.getDefaultInstance();
       default:
         throw new java.lang.AssertionError("Can't get here.");
@@ -940,8 +903,6 @@ public  abstract class SeedBagService
       case 18:
         return seedbag.PollNResponse.getDefaultInstance();
       case 19:
-        return seedbag.AddNResponse.getDefaultInstance();
-      case 20:
         return seedbag.OfferOrPutBlockingResponse.getDefaultInstance();
       default:
         throw new java.lang.AssertionError("Can't get here.");
@@ -1249,27 +1210,12 @@ public  abstract class SeedBagService
           seedbag.PollNResponse.getDefaultInstance()));
     }
 
-    public  void addN(
-        com.google.protobuf.RpcController controller,
-        seedbag.AddNRequest request,
-        com.google.protobuf.RpcCallback<seedbag.AddNResponse> done) {
-      channel.callMethod(
-        getDescriptor().getMethods().get(19),
-        controller,
-        request,
-        seedbag.AddNResponse.getDefaultInstance(),
-        com.google.protobuf.RpcUtil.generalizeCallback(
-          done,
-          seedbag.AddNResponse.class,
-          seedbag.AddNResponse.getDefaultInstance()));
-    }
-
     public  void offerOrPutBlocking(
         com.google.protobuf.RpcController controller,
         seedbag.OfferOrPutBlockingRequest request,
         com.google.protobuf.RpcCallback<seedbag.OfferOrPutBlockingResponse> done) {
       channel.callMethod(
-        getDescriptor().getMethods().get(20),
+        getDescriptor().getMethods().get(19),
         controller,
         request,
         seedbag.OfferOrPutBlockingResponse.getDefaultInstance(),
@@ -1379,11 +1325,6 @@ public  abstract class SeedBagService
     public seedbag.PollNResponse pollN(
         com.google.protobuf.RpcController controller,
         seedbag.PollNRequest request)
-        throws com.google.protobuf.ServiceException;
-
-    public seedbag.AddNResponse addN(
-        com.google.protobuf.RpcController controller,
-        seedbag.AddNRequest request)
         throws com.google.protobuf.ServiceException;
 
     public seedbag.OfferOrPutBlockingResponse offerOrPutBlocking(
@@ -1627,24 +1568,12 @@ public  abstract class SeedBagService
     }
 
 
-    public seedbag.AddNResponse addN(
-        com.google.protobuf.RpcController controller,
-        seedbag.AddNRequest request)
-        throws com.google.protobuf.ServiceException {
-      return (seedbag.AddNResponse) channel.callBlockingMethod(
-        getDescriptor().getMethods().get(19),
-        controller,
-        request,
-        seedbag.AddNResponse.getDefaultInstance());
-    }
-
-
     public seedbag.OfferOrPutBlockingResponse offerOrPutBlocking(
         com.google.protobuf.RpcController controller,
         seedbag.OfferOrPutBlockingRequest request)
         throws com.google.protobuf.ServiceException {
       return (seedbag.OfferOrPutBlockingResponse) channel.callBlockingMethod(
-        getDescriptor().getMethods().get(20),
+        getDescriptor().getMethods().get(19),
         controller,
         request,
         seedbag.OfferOrPutBlockingResponse.getDefaultInstance());

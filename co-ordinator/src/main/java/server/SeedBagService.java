@@ -19,7 +19,7 @@ public class SeedBagService extends SeedBagServiceGrpc.SeedBagServiceImplBase {
     private BatchedBlockingQueue<Object> queue;
 
     public SeedBagService() {
-        queue = new BatchedBlockingQueueImpl<>(LinkedBlockingQueue::new);
+        queue = new BatchedBlockingQueueImpl<>(new LinkedBlockingQueue<Object>());
     }
 
     @Override
@@ -144,15 +144,6 @@ public class SeedBagService extends SeedBagServiceGrpc.SeedBagServiceImplBase {
     public void peek(PeekRequest request, StreamObserver<PeekResponse> responseObserver) {
         Object o = queue.peek();
         responseObserver.onNext(PeekResponse.newBuilder().setSerializedObject(objectToByteString(o)).build());
-        responseObserver.onCompleted();
-    }
-
-    @Override
-    @SuppressWarnings("unchecked")
-    public void addN(AddNRequest request, StreamObserver<AddNResponse> responseObserver) {
-
-        Collections.addAll(queue, (Object[]) byteStringToObject(request.getSerializedCollection()));
-        responseObserver.onNext(AddNResponse.newBuilder().build());
         responseObserver.onCompleted();
     }
 
