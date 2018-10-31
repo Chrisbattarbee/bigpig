@@ -25,7 +25,6 @@ service SeedBagService {
    rpc Peek (PeekRequest) returns (PeekResponse) {}
    rpc TakeN (TakeNRequest) returns (TakeNResponse) {}
    rpc PollN (PollNRequest) returns (PollNResponse) {}
-   rpc AddN (AddNRequest) returns (AddNResponse) {}
    rpc OfferOrPutBlocking (OfferOrPutBlockingRequest) returns (OfferOrPutBlockingResponse) {}
 }
 
@@ -179,14 +178,6 @@ message PollNRequest {
 
 message PollNResponse {
     bytes serializedCollection = 1;
-}
-
-message AddNRequest {
-    bytes serializedCollection = 1;
-}
-
-message AddNResponse {
-    bool success = 1;
 }
 
 message OfferOrPutBlockingRequest {

@@ -1,5 +1,6 @@
 package seedbag;
 
+import java.io.Serializable;
 import java.util.*;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeUnit;
@@ -8,12 +9,13 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
+//TODO[gg]: Technically T should implement Serializable. Currently this is not the case because we are using Object as T
 public class BatchedBlockingQueueImpl<T, U extends BlockingQueue<T>> implements BatchedBlockingQueue<T> {
 
     private U blockingQueue;
 
-    public BatchedBlockingQueueImpl(Supplier<? extends U> ctor) {
-        blockingQueue = ctor.get();
+    public BatchedBlockingQueueImpl(U blockingQueue) {
+        this.blockingQueue = blockingQueue;
     }
 
     public U getUnderlyingStructure() {
@@ -27,6 +29,7 @@ public class BatchedBlockingQueueImpl<T, U extends BlockingQueue<T>> implements 
             try {
             results.add(blockingQueue.take());
             } catch (InterruptedException e) {
+                e.printStackTrace();
                 //TODO[gg]: log maybe
             }
         }
@@ -34,14 +37,17 @@ public class BatchedBlockingQueueImpl<T, U extends BlockingQueue<T>> implements 
     }
 
     @Override
+    //Last returned element might be null if poll fails.
     public List<T> pollN(int n, long timeout, TimeUnit unit) {
         List<T> results = new ArrayList<>();
         long totalTime = 0;
+        long nanoTimeout = TimeUnit.NANOSECONDS.convert(timeout, unit);
         for(int i = 0; i < n; i++) {
             long statTime = System.nanoTime();
             try {
-                results.add(blockingQueue.poll(timeout, unit));
+                results.add(blockingQueue.poll(nanoTimeout - totalTime, TimeUnit.NANOSECONDS));
             } catch (InterruptedException e) {
+               e.printStackTrace();
                 //TODO[gg]: log maybe
             }
             totalTime += System.nanoTime() - statTime;
@@ -50,11 +56,6 @@ public class BatchedBlockingQueueImpl<T, U extends BlockingQueue<T>> implements 
             }
         }
         return results;
-    }
-
-    @Override
-    public void add(T[] items) {
-        Collections.addAll(blockingQueue, items);
     }
 
     @Override

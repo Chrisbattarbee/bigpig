@@ -1,8 +1,8 @@
 package utils;
 
-import com.sun.istack.internal.NotNull;
+import java.io.Serializable;
 
-public class PossibleException<T extends Exception> {
+public class PossibleException<T extends Exception> implements Serializable {
     private final T exception;
 
     public PossibleException(T exception) {
@@ -18,7 +18,7 @@ public class PossibleException<T extends Exception> {
     }
 
     public void throwIfException() throws T {
-        if(hasException() && exception != null) {
+        if(hasException()) {
             throw exception;
         }
     }

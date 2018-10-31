@@ -1,6 +1,5 @@
 package seedbag;
 
-import com.sun.istack.internal.NotNull;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import utils.PossibleException;
@@ -202,9 +201,4 @@ public class CoordinatorSeedBag<E extends Serializable> implements BatchedBlocki
         return (List<E>) byteStringToObject(blockingStub.pollN(pollNRequest).getSerializedCollection());
     }
 
-    @Override
-    public void add(E[] items) {
-        AddNRequest addNRequest = AddNRequest.newBuilder().setSerializedCollection(objectToByteString(items)).build();
-        blockingStub.addN(addNRequest);
-    }
 }

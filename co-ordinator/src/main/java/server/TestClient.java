@@ -5,9 +5,10 @@ import seedbag.CoordinatorSeedBag;
 import utils.ByteStringManipulation;
 
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class TestClient {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 //        cTrieDiagnostics();
         seedbagDiagnostics();
     }
@@ -40,7 +41,7 @@ public class TestClient {
         System.out.println("size: " + map.size());
     }
 
-    private static void seedbagDiagnostics() {
+    private static void seedbagDiagnostics() throws InterruptedException {
         CoordinatorSeedBag<Integer> bag = new CoordinatorSeedBag<>("localhost", 8080);
         System.out.println("Size: " + bag.size());
 
@@ -71,5 +72,12 @@ public class TestClient {
         bag.clear();
 
         System.out.println("Size: " + bag.size());
+        bag.put(12);
+        Collections.addAll(bag, 1, 2, 3, 4, 5, 6);
+        List<Integer> result = bag.takeN(5);
+        List<Integer> resultPoll = bag.pollN(5, 5, TimeUnit.SECONDS);
+        System.out.println(Arrays.toString(result.toArray()));
+        System.out.println(Arrays.toString(resultPoll.toArray()));
+        System.out.println(bag.size());
     }
 }
