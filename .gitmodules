@@ -1,0 +1,12 @@
+[submodule "symbex/jdart"]
+	path = symbex/jdart
+	url = https://github.com/MeKot/jdart.git
+[submodule "symbex/jpf-core"]
+	path = symbex/jpf-core
+	url = https://github.com/javapathfinder/jpf-core.git
+[submodule "symbex/jconstraints-z3"]
+	path = symbex/jconstraints-z3
+	url = https://github.com/psycopaths/jconstraints-z3.git
+[submodule "symbex/jconstraints"]
+	path = symbex/jconstraints
+	url = https://github.com/psycopaths/jconstraints.git

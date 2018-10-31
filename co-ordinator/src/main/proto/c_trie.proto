@@ -18,6 +18,7 @@ service CTrieService {
     rpc KeySet (KeySetRequest) returns (KeySetResponse) {}
     rpc Values (ValuesRequest) returns (ValuesResponse) {}
     rpc EntrySet (EntrySetRequest) returns (EntrySetResponse) {}
+    rpc Snapshot (SnapshotRequest) returns (SnapshotResponse) {}
 }
 
 message SizeRequest {
@@ -115,4 +116,12 @@ message EntrySetRequest {
 
 message EntrySetResponse {
     bytes serializedSet = 1;
+}
+
+message SnapshotRequest {
+
+}
+
+message SnapshotResponse {
+    bytes serializedCTrie  = 1;
 }
