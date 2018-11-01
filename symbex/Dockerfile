@@ -13,8 +13,12 @@ RUN chmod +x java-bootstrap.sh
 RUN ./java-bootstrap.sh
 RUN rm java-bootstrap.sh
 
+RUN wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+RUN sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+RUN yum -y install apache-maven && yum -y install which
+
 # Needed for dynamic linking of java so libraries for z3 and jconst-z3
-RUN yum -y install gcc ant
+RUN yum -y install gcc ant make git
 
 #############################################################################
 # Get the latest version of Symbex
@@ -39,6 +43,7 @@ RUN  chmod +x ${PROJ_DIR}/entrypoint.sh
 COPY Std.jpf          ${PROJ_DIR}
 COPY Main.java        ${PROJ_DIR}
 
+
 #############################################################################
 # JPF-Core configs
 #############################################################################
@@ -49,6 +54,8 @@ RUN echo "jpf-core = ${PROJ_DIR}/jpf-core" >> /root/.jpf/site.properties
 RUN echo "jpf-jdart = ${PROJ_DIR}/jdart" >> /root/.jpf/site.properties
 RUN echo "extensions=\${jpf-core},${jpf-jdart}" >> /root/.jpf/site.properties
 
+COPY Makefile ${PROJ_DIR}
+RUN cd ${PROJ_DIR} && make
 
 #############################################################################
 # Getting the project that will be inspected
