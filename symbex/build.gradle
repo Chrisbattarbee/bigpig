@@ -7,47 +7,61 @@
 
 
 task compile {
-  group = "Symbex build"
+  group = "Full symbex build"
 }
 
-task submodules(type: Exec) {
-  commandLine 'git submodule update --init --recursive'
+task submodules(type:Exec) {
+  description 'Updates (and inits) git submodules'
+    commandLine 'git', 'submodule', 'update', '--init', '--recursive'
+    group 'Build Setup'
 }
 
 task core(type: Exec) {
-  commandLine 'cd jdart && git checkout master && ant'
+  description 'Builds JPF-Core version 8.0'
+    commandLine 'cd jpf-core && git checkout JPF-8.0 && ant'
+    outputs.dir("jpf-core/build")
+    group 'JPF-Core'
 }
 
 task jconstraints(type: Exec) {
-  commandLine 'cd jconstraints && git checkout jconstraints-0.9.1 && mvn install'
+  description 'Builds JConstraints interface and publishes it into the local artifactory'
+    commandLine 'cd', 'jconstraints', '&&', 'git', 'checkout', 'jconstraints-0.9.1', '&&', 'mvn', 'install'
+    group 'Jconstraints'
 }
 
 task z3(type: Exec) {
+  description 'Downloads and installs an ubuntu-compiled Z3 v-4.4.1'
   File z3 = new File('z3.zip')
-  if (!z3.exists()) {
-    new URL('https://github.com/Z3Prover/z3/releases/download/z3-4.4.1/z3-4.4.1-x64-ubuntu-14.04.zip').withInputStream{ i -> z3.withOutputStream{ it << i }}
-  }
-  commandLine 'unzip z3.zip'
-  commandLine 'cd z3/bin && mvn install:install-file -Dfile=com.microsoft.z3.jar -DgroupId=com.microsoft -DartifactId=z3 -Dversion=4.4.1 -Dpackaging=jar'
-  commandLine 'export LD_LIBRARY_PATH=`pwd`/z3/bin:LD_LIBRARY_PATH'
+    if (!z3.exists()) {
+      new URL('https://github.com/Z3Prover/z3/releases/download/z3-4.4.1/z3-4.4.1-x64-ubuntu-14.04.zip').withInputStream{ i -> z3.withOutputStream{ it << i }}
+    }
+    commandLine 'unzip', 'z3.zip'
+    commandLine 'cd', 'z3/bin', '&&', 'mvn', 'install:install-file', '-Dfile=com.microsoft.z3.jar', '-DgroupId=com.microsoft', '-DartifactId=z3', '-Dversion=4.4.1', '-Dpackaging=jar'
+    commandLine 'export', 'LD_LIBRARY_PATH=`pwd`/z3/bin:LD_LIBRARY_PATH'
+    commandLine 'rm', '-rf', 'z3.zip'
+    group 'JConstraints'
 }
 
 task jdart(type: Exec) {
-  commandLine 'cd jdart && git checkout master && ant'
+  description 'Builds Jdart'
+    commandLine 'cd', 'jdart', '&&', 'git', 'checkout', 'master', '&&', 'ant'
+    group 'JDart'
 }
 
 task jconstraintsZ3(type: Exec) {
-  commandLine 'cd jconstraints-z3 && git checkout jconstraints-z3-0.9.0 && mvn install'
+  description 'Builds JConstraints-Z3 interface for the Z3 solver'
+  commandLine 'cd', 'jconstraints-z3', '&&', 'git', 'checkout', 'jconstraints-z3-0.9.0', '&&', 'mvn', 'install'
+  group 'JConstraints'
 }
 
 task make(type: Exec) {
   commandLine 'make'
 }
 
-compile.dependsOn make
-//compile.dependsOn submodules
-//compile.dependsOn core
-//compile.dependsOn jconstraints
-//compile.dependsOn z3
-//compile.dependsOn jconstraintsZ3
-//compile.dependsOn jdart
+//compile.dependsOn make
+compile.dependsOn submodules
+compile.dependsOn core
+compile.dependsOn jconstraints
+compile.dependsOn z3
+compile.dependsOn jconstraintsZ3
+compile.dependsOn jdart
