@@ -656,6 +656,117 @@ public final class SeedBagServiceGrpc {
      }
      return getPeekMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getTakeNMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<seedbag.TakeNRequest,
+      seedbag.TakeNResponse> METHOD_TAKE_N = getTakeNMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<seedbag.TakeNRequest,
+      seedbag.TakeNResponse> getTakeNMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<seedbag.TakeNRequest,
+      seedbag.TakeNResponse> getTakeNMethod() {
+    return getTakeNMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<seedbag.TakeNRequest,
+      seedbag.TakeNResponse> getTakeNMethodHelper() {
+    io.grpc.MethodDescriptor<seedbag.TakeNRequest, seedbag.TakeNResponse> getTakeNMethod;
+    if ((getTakeNMethod = SeedBagServiceGrpc.getTakeNMethod) == null) {
+      synchronized (SeedBagServiceGrpc.class) {
+        if ((getTakeNMethod = SeedBagServiceGrpc.getTakeNMethod) == null) {
+          SeedBagServiceGrpc.getTakeNMethod = getTakeNMethod = 
+              io.grpc.MethodDescriptor.<seedbag.TakeNRequest, seedbag.TakeNResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "seedbag.SeedBagService", "TakeN"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  seedbag.TakeNRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  seedbag.TakeNResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new SeedBagServiceMethodDescriptorSupplier("TakeN"))
+                  .build();
+          }
+        }
+     }
+     return getTakeNMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getPollNMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<seedbag.PollNRequest,
+      seedbag.PollNResponse> METHOD_POLL_N = getPollNMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<seedbag.PollNRequest,
+      seedbag.PollNResponse> getPollNMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<seedbag.PollNRequest,
+      seedbag.PollNResponse> getPollNMethod() {
+    return getPollNMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<seedbag.PollNRequest,
+      seedbag.PollNResponse> getPollNMethodHelper() {
+    io.grpc.MethodDescriptor<seedbag.PollNRequest, seedbag.PollNResponse> getPollNMethod;
+    if ((getPollNMethod = SeedBagServiceGrpc.getPollNMethod) == null) {
+      synchronized (SeedBagServiceGrpc.class) {
+        if ((getPollNMethod = SeedBagServiceGrpc.getPollNMethod) == null) {
+          SeedBagServiceGrpc.getPollNMethod = getPollNMethod = 
+              io.grpc.MethodDescriptor.<seedbag.PollNRequest, seedbag.PollNResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "seedbag.SeedBagService", "PollN"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  seedbag.PollNRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  seedbag.PollNResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new SeedBagServiceMethodDescriptorSupplier("PollN"))
+                  .build();
+          }
+        }
+     }
+     return getPollNMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getOfferOrPutBlockingMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<seedbag.OfferOrPutBlockingRequest,
+      seedbag.OfferOrPutBlockingResponse> METHOD_OFFER_OR_PUT_BLOCKING = getOfferOrPutBlockingMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<seedbag.OfferOrPutBlockingRequest,
+      seedbag.OfferOrPutBlockingResponse> getOfferOrPutBlockingMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<seedbag.OfferOrPutBlockingRequest,
+      seedbag.OfferOrPutBlockingResponse> getOfferOrPutBlockingMethod() {
+    return getOfferOrPutBlockingMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<seedbag.OfferOrPutBlockingRequest,
+      seedbag.OfferOrPutBlockingResponse> getOfferOrPutBlockingMethodHelper() {
+    io.grpc.MethodDescriptor<seedbag.OfferOrPutBlockingRequest, seedbag.OfferOrPutBlockingResponse> getOfferOrPutBlockingMethod;
+    if ((getOfferOrPutBlockingMethod = SeedBagServiceGrpc.getOfferOrPutBlockingMethod) == null) {
+      synchronized (SeedBagServiceGrpc.class) {
+        if ((getOfferOrPutBlockingMethod = SeedBagServiceGrpc.getOfferOrPutBlockingMethod) == null) {
+          SeedBagServiceGrpc.getOfferOrPutBlockingMethod = getOfferOrPutBlockingMethod = 
+              io.grpc.MethodDescriptor.<seedbag.OfferOrPutBlockingRequest, seedbag.OfferOrPutBlockingResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "seedbag.SeedBagService", "OfferOrPutBlocking"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  seedbag.OfferOrPutBlockingRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  seedbag.OfferOrPutBlockingResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new SeedBagServiceMethodDescriptorSupplier("OfferOrPutBlocking"))
+                  .build();
+          }
+        }
+     }
+     return getOfferOrPutBlockingMethod;
+  }
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -803,6 +914,27 @@ public final class SeedBagServiceGrpc {
       asyncUnimplementedUnaryCall(getPeekMethodHelper(), responseObserver);
     }
 
+    /**
+     */
+    public void takeN(seedbag.TakeNRequest request,
+        io.grpc.stub.StreamObserver<seedbag.TakeNResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getTakeNMethodHelper(), responseObserver);
+    }
+
+    /**
+     */
+    public void pollN(seedbag.PollNRequest request,
+        io.grpc.stub.StreamObserver<seedbag.PollNResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPollNMethodHelper(), responseObserver);
+    }
+
+    /**
+     */
+    public void offerOrPutBlocking(seedbag.OfferOrPutBlockingRequest request,
+        io.grpc.stub.StreamObserver<seedbag.OfferOrPutBlockingResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getOfferOrPutBlockingMethodHelper(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -924,6 +1056,27 @@ public final class SeedBagServiceGrpc {
                 seedbag.PeekRequest,
                 seedbag.PeekResponse>(
                   this, METHODID_PEEK)))
+          .addMethod(
+            getTakeNMethodHelper(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                seedbag.TakeNRequest,
+                seedbag.TakeNResponse>(
+                  this, METHODID_TAKE_N)))
+          .addMethod(
+            getPollNMethodHelper(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                seedbag.PollNRequest,
+                seedbag.PollNResponse>(
+                  this, METHODID_POLL_N)))
+          .addMethod(
+            getOfferOrPutBlockingMethodHelper(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                seedbag.OfferOrPutBlockingRequest,
+                seedbag.OfferOrPutBlockingResponse>(
+                  this, METHODID_OFFER_OR_PUT_BLOCKING)))
           .build();
     }
   }
@@ -1081,6 +1234,30 @@ public final class SeedBagServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getPeekMethodHelper(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void takeN(seedbag.TakeNRequest request,
+        io.grpc.stub.StreamObserver<seedbag.TakeNResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getTakeNMethodHelper(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void pollN(seedbag.PollNRequest request,
+        io.grpc.stub.StreamObserver<seedbag.PollNResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPollNMethodHelper(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void offerOrPutBlocking(seedbag.OfferOrPutBlockingRequest request,
+        io.grpc.stub.StreamObserver<seedbag.OfferOrPutBlockingResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getOfferOrPutBlockingMethodHelper(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -1218,6 +1395,27 @@ public final class SeedBagServiceGrpc {
     public seedbag.PeekResponse peek(seedbag.PeekRequest request) {
       return blockingUnaryCall(
           getChannel(), getPeekMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public seedbag.TakeNResponse takeN(seedbag.TakeNRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getTakeNMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public seedbag.PollNResponse pollN(seedbag.PollNRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPollNMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public seedbag.OfferOrPutBlockingResponse offerOrPutBlocking(seedbag.OfferOrPutBlockingRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getOfferOrPutBlockingMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -1374,6 +1572,30 @@ public final class SeedBagServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getPeekMethodHelper(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<seedbag.TakeNResponse> takeN(
+        seedbag.TakeNRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getTakeNMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<seedbag.PollNResponse> pollN(
+        seedbag.PollNRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPollNMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<seedbag.OfferOrPutBlockingResponse> offerOrPutBlocking(
+        seedbag.OfferOrPutBlockingRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getOfferOrPutBlockingMethodHelper(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_SIZE = 0;
@@ -1393,6 +1615,9 @@ public final class SeedBagServiceGrpc {
   private static final int METHODID_POLL = 14;
   private static final int METHODID_ELEMENT = 15;
   private static final int METHODID_PEEK = 16;
+  private static final int METHODID_TAKE_N = 17;
+  private static final int METHODID_POLL_N = 18;
+  private static final int METHODID_OFFER_OR_PUT_BLOCKING = 19;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1479,6 +1704,18 @@ public final class SeedBagServiceGrpc {
           serviceImpl.peek((seedbag.PeekRequest) request,
               (io.grpc.stub.StreamObserver<seedbag.PeekResponse>) responseObserver);
           break;
+        case METHODID_TAKE_N:
+          serviceImpl.takeN((seedbag.TakeNRequest) request,
+              (io.grpc.stub.StreamObserver<seedbag.TakeNResponse>) responseObserver);
+          break;
+        case METHODID_POLL_N:
+          serviceImpl.pollN((seedbag.PollNRequest) request,
+              (io.grpc.stub.StreamObserver<seedbag.PollNResponse>) responseObserver);
+          break;
+        case METHODID_OFFER_OR_PUT_BLOCKING:
+          serviceImpl.offerOrPutBlocking((seedbag.OfferOrPutBlockingRequest) request,
+              (io.grpc.stub.StreamObserver<seedbag.OfferOrPutBlockingResponse>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -1557,6 +1794,9 @@ public final class SeedBagServiceGrpc {
               .addMethod(getPollMethodHelper())
               .addMethod(getElementMethodHelper())
               .addMethod(getPeekMethodHelper())
+              .addMethod(getTakeNMethodHelper())
+              .addMethod(getPollNMethodHelper())
+              .addMethod(getOfferOrPutBlockingMethodHelper())
               .build();
         }
       }

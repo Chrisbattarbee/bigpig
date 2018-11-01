@@ -2,16 +2,19 @@ package seedbag;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import utils.PossibleException;
 
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.Queue;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 
 import static utils.ByteStringManipulation.*;
 
-public class CoordinatorSeedBag<E extends Serializable> implements Queue<E> {
+@SuppressWarnings("unchecked")
+public class CoordinatorSeedBag<E extends Serializable> implements BatchedBlockingQueue<E> {
 
     private final ManagedChannel channel;
     private final SeedBagServiceGrpc.SeedBagServiceBlockingStub blockingStub;
@@ -46,6 +49,18 @@ public class CoordinatorSeedBag<E extends Serializable> implements Queue<E> {
     public boolean contains(Object o) {
         ContainsRequest containsRequest = ContainsRequest.newBuilder().setSerializedObject(objectToByteString(o)).build();
         return blockingStub.contains(containsRequest).getDoesContain();
+    }
+
+    //TODO[gg]: Implement
+    @Override
+    public int drainTo(Collection<? super E> collection) {
+        throw new UnsupportedOperationException("Not Implemented");
+    }
+
+    //TODO[gg]: Implement
+    @Override
+    public int drainTo(Collection<? super E> collection, int i) {
+        throw new UnsupportedOperationException("Not Implemented");
     }
 
     @Override
@@ -114,6 +129,44 @@ public class CoordinatorSeedBag<E extends Serializable> implements Queue<E> {
     }
 
     @Override
+    public void put(E e) throws InterruptedException {
+        OfferOrPutBlockingRequest request = OfferOrPutBlockingRequest.newBuilder().setTimeout(-1)
+                .setSerializedItem(objectToByteString(e)).build();
+
+        @SuppressWarnings("unchecked")
+        PossibleException<InterruptedException> ex = (PossibleException<InterruptedException>) byteStringToObject(blockingStub.offerOrPutBlocking(request).getPossibleException());
+
+        ex.throwIfException();
+    }
+
+    @Override
+    public boolean offer(E e, long l, TimeUnit timeUnit) throws InterruptedException {
+        long timeout = TimeUnit.MILLISECONDS.convert(l, timeUnit);
+        OfferOrPutBlockingRequest request = OfferOrPutBlockingRequest.newBuilder().setTimeout(timeout)
+                .setSerializedItem(objectToByteString(e)).build();
+        OfferOrPutBlockingResponse response = blockingStub.offerOrPutBlocking(request);
+        PossibleException<InterruptedException> ex =  (PossibleException<InterruptedException>) byteStringToObject(response.getPossibleException());
+        ex.throwIfException();
+        return response.getSuccess();
+    }
+
+    @Override
+    public E take() throws InterruptedException {
+        return takeN(1).get(0);
+    }
+
+    @Override
+    public E poll(long l, TimeUnit timeUnit) throws InterruptedException {
+        return pollN(1, l, timeUnit).get(0);
+    }
+
+    //TODO[gg]: Implement
+    @Override
+    public int remainingCapacity() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
     public E remove() {
         RemoveNoArgsRequest removeRequest = RemoveNoArgsRequest.newBuilder().build();
         return (E) byteStringToObject(blockingStub.removeNoArgs(removeRequest).getSerializedObject());
@@ -136,4 +189,18 @@ public class CoordinatorSeedBag<E extends Serializable> implements Queue<E> {
         PeekRequest peekRequest = PeekRequest.newBuilder().build();
         return (E) byteStringToObject(blockingStub.peek(peekRequest).getSerializedObject());
     }
+
+    @Override
+    public List<E> takeN(int n) {
+        TakeNRequest takeNRequest = TakeNRequest.newBuilder().setNum(n).build();
+        return (List<E>) byteStringToObject(blockingStub.takeN(takeNRequest).getSerializedCollection());
+    }
+
+    @Override
+    public List<E> pollN(int n, long timeout, TimeUnit unit) {
+        long millis = TimeUnit.MILLISECONDS.convert(timeout, unit);
+        PollNRequest pollNRequest = PollNRequest.newBuilder().setNum(n).setTimeout(millis).build();
+        return (List<E>) byteStringToObject(blockingStub.pollN(pollNRequest).getSerializedCollection());
+    }
+
 }

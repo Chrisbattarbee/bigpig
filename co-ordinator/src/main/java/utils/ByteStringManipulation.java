@@ -38,9 +38,7 @@ public class ByteStringManipulation {
         try {
             ObjectInputStream stream = new ObjectInputStream(byteArrayInputStream);
             return stream.readObject();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return null;

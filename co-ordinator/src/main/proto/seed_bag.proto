@@ -23,6 +23,9 @@ service SeedBagService {
    rpc Poll (PollRequest) returns (PollResponse) {}
    rpc Element (ElementRequest) returns (ElementResponse) {}
    rpc Peek (PeekRequest) returns (PeekResponse) {}
+   rpc TakeN (TakeNRequest) returns (TakeNResponse) {}
+   rpc PollN (PollNRequest) returns (PollNResponse) {}
+   rpc OfferOrPutBlocking (OfferOrPutBlockingRequest) returns (OfferOrPutBlockingResponse) {}
 }
 
 message SizeRequest {
@@ -158,4 +161,31 @@ message PeekRequest {
 
 message PeekResponse {
     bytes serializedObject = 1;
+}
+
+message TakeNRequest {
+    int32 num = 1;
+}
+
+message TakeNResponse {
+    bytes serializedCollection = 1;
+}
+
+message PollNRequest {
+    int32 num = 1;
+    int64 timeout = 2;
+}
+
+message PollNResponse {
+    bytes serializedCollection = 1;
+}
+
+message OfferOrPutBlockingRequest {
+    bytes serializedItem = 1;
+    int64 timeout = 2;
+}
+
+message OfferOrPutBlockingResponse {
+    bytes possibleException = 1;
+    bool success = 2;
 }
