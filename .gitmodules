@@ -7,3 +7,6 @@
 [submodule "symbex/jconstraints"]
 	path = symbex/jconstraints
 	url = https://github.com/psycopaths/jconstraints.git
+[submodule "symbex/jdart"]
+	path = symbex/jdart
+	url = git@github.com:MeKot/jdart.git
