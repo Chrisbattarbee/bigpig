@@ -1,0 +1,94 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+    name: sharedstorage
+    labels:
+        usage: sharedstorage
+spec:
+    capacity: 
+        storage: 1Gi
+    accessModes:
+        - ReadWriteMany
+    persistentVolumeReclaimPolicy: Retain
+    azureFile:
+        secretName: azure-secret
+        shareName: storage
+        readOnly: false
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+    name: sharedstorage
+    annotations:
+        volume.beta.kubernetes.io/storage-class: ""
+spec:
+    accessModes:
+        - ReadWriteMany
+    resources:
+        requests:
+            storage: 0.1Gi
+    selector:
+        matchLabels:
+            usage: sharedstorage
+---
+apiVersion: v1
+kind: Pod
+metadata:
+    name: fuzzer
+    labels:
+        app: bigpig
+        type: fuzzer
+spec:
+    containers:
+        - name: fuzzer
+          image: softengbigpig/fuzzer:latest
+    restartPolicy: OnFailure
+---
+apiVersion: v1
+kind: Pod
+metadata:
+    name: symbex
+    labels:
+        app: bigpig
+        type: symbex
+spec:
+    containers:
+        - name: symbex
+          image: softengbigpig/symbex:latest
+    restartPolicy: OnFailure
+---
+apiVersion: v1
+kind: Pod
+metadata:
+    name: coordinator
+    labels:
+        app: bigpig
+        type: coordinator
+spec:
+    containers:
+        - name: coordinator
+          image: softengbigpig/coordinator:latest
+          ports:
+            - containerPort: 8080
+    restartPolicy: OnFailure
+---
+apiVersion: v1
+kind: Pod
+metadata:
+    name: test
+spec:
+    containers:
+        - name: test
+          image: softengbigpig/test:latest
+    restartPolicy: OnFailure
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: coordinatorservice
+spec:
+    ports:
+        - port: 8080
+          name: port1
+    selector:
+        type: coordinator
