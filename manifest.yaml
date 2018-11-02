@@ -31,18 +31,27 @@ spec:
         matchLabels:
             usage: sharedstorage
 ---
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-    name: fuzzer
+    name: fuzzer-deployment
     labels:
         app: bigpig
-        type: fuzzer
 spec:
-    containers:
-        - name: fuzzer
-          image: softengbigpig/fuzzer:latest
-    restartPolicy: OnFailure
+    replicas: 1
+    selector:
+        matchLabels:
+            app: bigpig
+            type: fuzzer
+    template:
+        metadata:
+            labels:
+                app: bigpig
+                type: fuzzer
+        spec:
+            containers:
+                - name: fuzzer
+                  image: softengbigpig/fuzzer:latest
 ---
 apiVersion: v1
 kind: Pod
