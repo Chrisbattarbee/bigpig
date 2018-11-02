@@ -16,6 +16,19 @@ spec:
         readOnly: false
 ---
 apiVersion: v1
+kind: Service
+metadata:
+    name: bigpigexternalloadbalancer
+spec:
+    loadBalancerIP: 51.140.177.7
+    type: LoadBalancer
+    ports:
+    - port: 80
+      targetPort: 80
+    selector:
+        type: symbex
+---
+apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
     name: sharedstorage
@@ -64,6 +77,8 @@ spec:
     containers:
         - name: symbex
           image: softengbigpig/symbex:latest
+          ports:
+          - containerPort: 80
     restartPolicy: OnFailure
 ---
 apiVersion: v1
