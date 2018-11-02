@@ -119,6 +119,14 @@ public class TestClient {
     private static void seedbagDiagnostics() {
         CoordinatorSeedBag<Integer> bag = new CoordinatorSeedBag<>("localhost", 8080);
         System.out.println("Size: " + bag.size());
+        bag.add(3);
+        bag.add(4);
+        bag.add(17);
+        bag.add(121);
+        bag.add(9);
+        bag.add(62);
+
+        System.out.println("Size: " + bag.size());
         /*
         System.out.println("Adding 5");
         bag.add(5);
