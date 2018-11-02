@@ -22,7 +22,8 @@ report.console.property_violation=
 
 jdart.configs.all_fields_symbolic.symbolic.include=this.*
 
-classpath=/home/admin/IdeaProjects/bigpig/symbex/cp
+# classpath=/home/admin/IdeaProjects/bigpig/symbex/cp
+classpath=/mnt/build
 
 target=Main
 
