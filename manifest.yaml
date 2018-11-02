@@ -65,6 +65,7 @@ spec:
             containers:
                 - name: fuzzer
                   image: softengbigpig/fuzzer:latest
+                  imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Pod
@@ -79,6 +80,7 @@ spec:
           image: softengbigpig/symbex:latest
           ports:
           - containerPort: 80
+          imagePullPolicy: Always
     restartPolicy: OnFailure
 ---
 apiVersion: v1
@@ -94,6 +96,7 @@ spec:
           image: softengbigpig/coordinator:latest
           ports:
             - containerPort: 8080
+          imagePullPolicy: Always
     restartPolicy: OnFailure
 ---
 apiVersion: v1
@@ -104,6 +107,7 @@ spec:
     containers:
         - name: test
           image: softengbigpig/test:latest
+          imagePullPolicy: Always
     restartPolicy: OnFailure
 ---
 apiVersion: v1
