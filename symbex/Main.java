@@ -30,6 +30,13 @@ public class Main {
         if(s == 121) {
             return "121";
         }
+        if(s == 62) {
+            return "62";
+        }
+        if(s == 17) {
+            return "17";
+        }
+
         return Integer.toString(s);
     }
 

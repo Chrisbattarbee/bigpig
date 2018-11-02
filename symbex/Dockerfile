@@ -7,11 +7,14 @@ MAINTAINER Ivan Kotegov <ivankotegov2@gmail.com>
 # Bootstrap java
 #############################################################################
 
-RUN yum -y update && yum -y install sudo && yum -y install wget 
+RUN yum -y update && yum -y install sudo && yum -y install wget python3
 RUN wget https://s3.eu-west-2.amazonaws.com/buildkite-software/java-bootstrap.sh
 RUN chmod +x java-bootstrap.sh
 RUN ./java-bootstrap.sh
 RUN rm java-bootstrap.sh
+RUN wget https://bootstrap.pypa.io/get-pip.py 
+RUN python get-pip.py && rm -rf get-pip.py
+RUN pip3 install flask flask_restful
 
 #############################################################################
 # Get the latest version of Symbex
@@ -55,10 +58,5 @@ RUN mkdir /mnt/build
 
 COPY server.py ${PROJ_DIR}
 RUN chmod +x ${PROJ_DIR}/server.py
-
-RUN yum install -y python3 
-RUN wget https://bootstrap.pypa.io/get-pip.py 
-RUN python get-pip.py && rm -rf get-pip.py
-RUN pip3 install flask flask_restful
 
 ENTRYPOINT .${PROJ_DIR}/server.py
