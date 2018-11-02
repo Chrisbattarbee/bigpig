@@ -13,7 +13,7 @@ import java.util.concurrent.Future;
 
 public class TestClient {
     public static void main(String[] args) {
-        cTrieDiagnostics();
+     //   cTrieDiagnostics();
         seedbagDiagnostics();
     }
 
@@ -119,7 +119,7 @@ public class TestClient {
     private static void seedbagDiagnostics() {
         CoordinatorSeedBag<Integer> bag = new CoordinatorSeedBag<>("localhost", 8080);
         System.out.println("Size: " + bag.size());
-
+        /*
         System.out.println("Adding 5");
         bag.add(5);
 
@@ -146,6 +146,6 @@ public class TestClient {
         System.out.println("Clearing bag");
         bag.clear();
 
-        System.out.println("Size: " + bag.size());
+        System.out.println("Size: " + bag.size()); */
     }
 }

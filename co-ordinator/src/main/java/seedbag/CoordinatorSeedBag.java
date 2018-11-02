@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.TimeUnit;
 import java.util.Queue;
+import java.util.concurrent.TimeUnit;
 
 
 import static utils.ByteStringManipulation.*;
@@ -53,14 +54,16 @@ public class CoordinatorSeedBag<E extends Serializable> implements BatchedBlocki
         return blockingStub.contains(containsRequest).getDoesContain();
     }
 
+    //TODO[gg]: Implement
     @Override
     public int drainTo(Collection<? super E> collection) {
-        return 0;
+        throw new UnsupportedOperationException("Not Implemented");
     }
 
+    //TODO[gg]: Implement
     @Override
     public int drainTo(Collection<? super E> collection, int i) {
-        return 0;
+        throw new UnsupportedOperationException("Not Implemented");
     }
 
     @Override
@@ -160,6 +163,7 @@ public class CoordinatorSeedBag<E extends Serializable> implements BatchedBlocki
         return pollN(1, l, timeUnit).get(0);
     }
 
+    //TODO[gg]: Implement
     @Override
     public int remainingCapacity() {
         throw new UnsupportedOperationException();
