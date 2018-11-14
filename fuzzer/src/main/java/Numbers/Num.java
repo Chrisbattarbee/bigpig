@@ -1,5 +1,7 @@
 package Numbers;
 
+import ctrie.CTrieMap;
+import ctrie.CoordinatorCTrie;
 import jwp.extras.TestWriter;
 import jwp.fuzz.*;
 import seedbag.CoordinatorSeedBag;
@@ -36,12 +38,19 @@ public class Num {
     public static void main(String[] args) throws Exception {
 
         //CoordinatorSeedBag<Integer> seedbag = new CoordinatorSeedBag<Integer>("coordinatorservice.default.svc.cluster.local", 8080);
-        CoordinatorSeedBag<Integer> seedbag = new CoordinatorSeedBag<Integer>("localhost", 8080);
 
+        //CoordinatorSeedBag<Integer> seedbag = new CoordinatorSeedBag<Integer>("localhost", 8080);
+        CoordinatorCTrie<String, Integer> ctrie = new CoordinatorCTrie<>("localhost", 8080);
         //List<Integer> seeds = seedbag.takeN(4);
         List<Integer> seeds = new ArrayList<>();
+        seeds.add(3);
+        seeds.add(4);
+        seeds.add(17);
+        seeds.add(9);
+        seeds.add(121);
+        seeds.add(62);
         for(int i = 0; i < 6; i++) {
-            seeds.add(seedbag.poll());
+            //seeds.add(seedbag.poll());
         }
         TestWriter testWriter = new TestWriter.JUnit4(new TestWriter.Config("Numbers.NumTest"));
 
@@ -82,7 +91,8 @@ public class Num {
                 // Let the fuzzer know to fuzz the isNum method
                         method(Num.class.getDeclaredMethod( "toString", Integer.class)).
                 // We need to give the fuzzer a parameter provider. Here, we just use the suggested one.
-                          params(ParamProvider.singleInteger(seeds.stream())).
+                          params(ParamProvider.suggested(Integer.class)).
+                        //params(ParamProvider.singleInteger(seeds.stream())).
                //         params(provider).
                 // Let's print out the parameter and result of each unique path
                         onEachResult(res -> {
@@ -91,6 +101,10 @@ public class Num {
                     //System.out.println(Arrays.toString(Arrays.stream(res.branchHits).map((b) -> Integer.toString(b.branchHash).concat(" ").concat(Integer.toString(b.hitCount))).toArray()));
                     // Synchronized to prevent stdout overwrites
                     if (seenPathHashes.add(hash)) synchronized (Num.class) {
+                        System.out.println(res.pathString);
+                        String s2 = res.pathString.substring(0, res.pathString.length() - 1) + "0";
+                        ctrie.put(res.pathString, 1);
+                        ctrie.put(s2, 1);
                         System.out.printf("Unique path for param '%s': %s\n", res.params[0],
                                 res.exception == null ? res.result : res.exception);
                         try {
