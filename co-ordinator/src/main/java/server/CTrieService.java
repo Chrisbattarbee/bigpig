@@ -141,21 +141,28 @@ public class CTrieService extends CTrieServiceGrpc.CTrieServiceImplBase {
     @Override
     // N is rounded up to the nearest multiple of 5
     public void getNextNPaths(GetNextNPathsRequest request, StreamObserver<GetNextNPathsResponse> responseObserver) {
+        if (this.cTrie.size() == 0 || this.cTrie.size() == this.solvedPaths.size()) {
+            responseObserver.onNext(GetNextNPathsResponse.newBuilder().setSerializedPathCollection(ByteStringManipulation.objectToByteString(new HashSet<>())).build());
+            responseObserver.onCompleted();
+            return;
+        }
+        Set<Object> returnSet = new HashSet<>();
 
-        System.out.println(this.cTrie.size());
-
-        if (this.cTrie.size() == 0) {
-            System.out.println("Hello");
-            responseObserver.onNext(GetNextNPathsResponse.newBuilder().setSerializedPathCollection(ByteStringManipulation.objectToByteString(new HashSet<>(this.cTrie.keySet()))).build());
+        // Add everything that we can if there aren't greater than N entries
+        if (cTrie.size() - request.getN() <= solvedPaths.size()) {
+            for (Object o : cTrie.keySet()) {
+                addAllPermutations(returnSet, (String) o);
+            }
+            solvedPaths.addAll(returnSet);
+            responseObserver.onNext(GetNextNPathsResponse.newBuilder().setSerializedPathCollection(ByteStringManipulation.objectToByteString(returnSet)).build());
             responseObserver.onCompleted();
             return;
         }
 
-        Set<Object> returnSet = new HashSet<>();
 
-        AtomicReference<Iterator<Map.Entry<Object, Object>>> iterator = new AtomicReference<>(cTrie.iterator());
-
+        // Randomly find the start node
         int advanceBy = random.nextInt(cTrie.size());
+        AtomicReference<Iterator<Map.Entry<Object, Object>>> iterator = new AtomicReference<>(cTrie.iterator());
         IntStream.range(0, advanceBy).forEach(x -> {
             if (!iterator.get().hasNext()) {
                 iterator.set(cTrie.iterator());
@@ -163,26 +170,49 @@ public class CTrieService extends CTrieServiceGrpc.CTrieServiceImplBase {
             iterator.get().next();
         });
 
+        // Probabalistically find the next added node
         while (returnSet.size() < request.getN()) {
             if (!iterator.get().hasNext()) {
                 iterator.set(cTrie.iterator());
             }
 
             Map.Entry<Object, Object> entry = iterator.get().next();
-            System.out.println(totalNumberOfHits.get());
             if (random.nextInt(totalNumberOfHits.get()) >= (Integer) entry.getValue()) {
                 String str = (String)entry.getKey();
-
-                returnSet.add(str.substring(0, str.length() - 1) + "0");
-                returnSet.add(str.substring(0, str.length() - 1) + "1");
-                returnSet.add(str.substring(0, str.length() - 1) + "00");
-                returnSet.add(str.substring(0, str.length() - 1) + "01");
-                returnSet.add(str.substring(0, str.length() - 1) + "11");
+                addAllPermutations(returnSet, str);
             }
         }
 
         solvedPaths.addAll(returnSet);
         responseObserver.onNext(GetNextNPathsResponse.newBuilder().setSerializedPathCollection(ByteStringManipulation.objectToByteString(returnSet)).build());
         responseObserver.onCompleted();
+    }
+
+    private void addAllPermutations(Set<Object> returnSet, String str) {
+        String addStr;
+        addStr = str.substring(0, str.length() - 1) + "0";
+        if (!solvedPaths.contains(addStr)) {
+            returnSet.add(addStr);
+        }
+        addStr = str.substring(0, str.length() - 1) + "1";
+        if (!solvedPaths.contains(addStr)) {
+            returnSet.add(addStr);
+        }
+        addStr = str.substring(0, str.length() - 1) + "00";
+        if (!solvedPaths.contains(addStr)) {
+            returnSet.add(addStr);
+        }
+        addStr = str.substring(0, str.length() - 1) + "01";
+        if (!solvedPaths.contains(addStr)) {
+            returnSet.add(addStr);
+        }
+        addStr = str.substring(0, str.length() - 1) + "10";
+        if (!solvedPaths.contains(addStr)) {
+            returnSet.add(addStr);
+        }
+        addStr = str.substring(0, str.length() - 1) + "11";
+        if (!solvedPaths.contains(addStr)) {
+            returnSet.add(addStr);
+        }
     }
 }
