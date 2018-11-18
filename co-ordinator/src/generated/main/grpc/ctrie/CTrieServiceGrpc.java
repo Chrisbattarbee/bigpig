@@ -508,6 +508,43 @@ public final class CTrieServiceGrpc {
      }
      return getSnapshotMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetNextNPathsMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<ctrie.GetNextNPathsRequest,
+      ctrie.GetNextNPathsResponse> METHOD_GET_NEXT_NPATHS = getGetNextNPathsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<ctrie.GetNextNPathsRequest,
+      ctrie.GetNextNPathsResponse> getGetNextNPathsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<ctrie.GetNextNPathsRequest,
+      ctrie.GetNextNPathsResponse> getGetNextNPathsMethod() {
+    return getGetNextNPathsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<ctrie.GetNextNPathsRequest,
+      ctrie.GetNextNPathsResponse> getGetNextNPathsMethodHelper() {
+    io.grpc.MethodDescriptor<ctrie.GetNextNPathsRequest, ctrie.GetNextNPathsResponse> getGetNextNPathsMethod;
+    if ((getGetNextNPathsMethod = CTrieServiceGrpc.getGetNextNPathsMethod) == null) {
+      synchronized (CTrieServiceGrpc.class) {
+        if ((getGetNextNPathsMethod = CTrieServiceGrpc.getGetNextNPathsMethod) == null) {
+          CTrieServiceGrpc.getGetNextNPathsMethod = getGetNextNPathsMethod = 
+              io.grpc.MethodDescriptor.<ctrie.GetNextNPathsRequest, ctrie.GetNextNPathsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "ctrie.CTrieService", "GetNextNPaths"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ctrie.GetNextNPathsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ctrie.GetNextNPathsResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new CTrieServiceMethodDescriptorSupplier("GetNextNPaths"))
+                  .build();
+          }
+        }
+     }
+     return getGetNextNPathsMethod;
+  }
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -627,6 +664,13 @@ public final class CTrieServiceGrpc {
       asyncUnimplementedUnaryCall(getSnapshotMethodHelper(), responseObserver);
     }
 
+    /**
+     */
+    public void getNextNPaths(ctrie.GetNextNPathsRequest request,
+        io.grpc.stub.StreamObserver<ctrie.GetNextNPathsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetNextNPathsMethodHelper(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -720,6 +764,13 @@ public final class CTrieServiceGrpc {
                 ctrie.SnapshotRequest,
                 ctrie.SnapshotResponse>(
                   this, METHODID_SNAPSHOT)))
+          .addMethod(
+            getGetNextNPathsMethodHelper(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                ctrie.GetNextNPathsRequest,
+                ctrie.GetNextNPathsResponse>(
+                  this, METHODID_GET_NEXT_NPATHS)))
           .build();
     }
   }
@@ -845,6 +896,14 @@ public final class CTrieServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getSnapshotMethodHelper(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getNextNPaths(ctrie.GetNextNPathsRequest request,
+        io.grpc.stub.StreamObserver<ctrie.GetNextNPathsResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetNextNPathsMethodHelper(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -954,6 +1013,13 @@ public final class CTrieServiceGrpc {
     public ctrie.SnapshotResponse snapshot(ctrie.SnapshotRequest request) {
       return blockingUnaryCall(
           getChannel(), getSnapshotMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public ctrie.GetNextNPathsResponse getNextNPaths(ctrie.GetNextNPathsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetNextNPathsMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -1078,6 +1144,14 @@ public final class CTrieServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getSnapshotMethodHelper(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<ctrie.GetNextNPathsResponse> getNextNPaths(
+        ctrie.GetNextNPathsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetNextNPathsMethodHelper(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_SIZE = 0;
@@ -1093,6 +1167,7 @@ public final class CTrieServiceGrpc {
   private static final int METHODID_VALUES = 10;
   private static final int METHODID_ENTRY_SET = 11;
   private static final int METHODID_SNAPSHOT = 12;
+  private static final int METHODID_GET_NEXT_NPATHS = 13;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1162,6 +1237,10 @@ public final class CTrieServiceGrpc {
         case METHODID_SNAPSHOT:
           serviceImpl.snapshot((ctrie.SnapshotRequest) request,
               (io.grpc.stub.StreamObserver<ctrie.SnapshotResponse>) responseObserver);
+          break;
+        case METHODID_GET_NEXT_NPATHS:
+          serviceImpl.getNextNPaths((ctrie.GetNextNPathsRequest) request,
+              (io.grpc.stub.StreamObserver<ctrie.GetNextNPathsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1237,6 +1316,7 @@ public final class CTrieServiceGrpc {
               .addMethod(getValuesMethodHelper())
               .addMethod(getEntrySetMethodHelper())
               .addMethod(getSnapshotMethodHelper())
+              .addMethod(getGetNextNPathsMethodHelper())
               .build();
         }
       }

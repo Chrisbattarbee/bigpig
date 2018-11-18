@@ -115,6 +115,14 @@ public  abstract class CTrieService
         ctrie.SnapshotRequest request,
         com.google.protobuf.RpcCallback<ctrie.SnapshotResponse> done);
 
+    /**
+     * <code>rpc GetNextNPaths(.ctrie.GetNextNPathsRequest) returns (.ctrie.GetNextNPathsResponse);</code>
+     */
+    public abstract void getNextNPaths(
+        com.google.protobuf.RpcController controller,
+        ctrie.GetNextNPathsRequest request,
+        com.google.protobuf.RpcCallback<ctrie.GetNextNPathsResponse> done);
+
   }
 
   public static com.google.protobuf.Service newReflectiveService(
@@ -224,6 +232,14 @@ public  abstract class CTrieService
         impl.snapshot(controller, request, done);
       }
 
+      @java.lang.Override
+      public  void getNextNPaths(
+          com.google.protobuf.RpcController controller,
+          ctrie.GetNextNPathsRequest request,
+          com.google.protobuf.RpcCallback<ctrie.GetNextNPathsResponse> done) {
+        impl.getNextNPaths(controller, request, done);
+      }
+
     };
   }
 
@@ -272,6 +288,8 @@ public  abstract class CTrieService
             return impl.entrySet(controller, (ctrie.EntrySetRequest)request);
           case 12:
             return impl.snapshot(controller, (ctrie.SnapshotRequest)request);
+          case 13:
+            return impl.getNextNPaths(controller, (ctrie.GetNextNPathsRequest)request);
           default:
             throw new java.lang.AssertionError("Can't get here.");
         }
@@ -312,6 +330,8 @@ public  abstract class CTrieService
             return ctrie.EntrySetRequest.getDefaultInstance();
           case 12:
             return ctrie.SnapshotRequest.getDefaultInstance();
+          case 13:
+            return ctrie.GetNextNPathsRequest.getDefaultInstance();
           default:
             throw new java.lang.AssertionError("Can't get here.");
         }
@@ -352,6 +372,8 @@ public  abstract class CTrieService
             return ctrie.EntrySetResponse.getDefaultInstance();
           case 12:
             return ctrie.SnapshotResponse.getDefaultInstance();
+          case 13:
+            return ctrie.GetNextNPathsResponse.getDefaultInstance();
           default:
             throw new java.lang.AssertionError("Can't get here.");
         }
@@ -464,6 +486,14 @@ public  abstract class CTrieService
       ctrie.SnapshotRequest request,
       com.google.protobuf.RpcCallback<ctrie.SnapshotResponse> done);
 
+  /**
+   * <code>rpc GetNextNPaths(.ctrie.GetNextNPathsRequest) returns (.ctrie.GetNextNPathsResponse);</code>
+   */
+  public abstract void getNextNPaths(
+      com.google.protobuf.RpcController controller,
+      ctrie.GetNextNPathsRequest request,
+      com.google.protobuf.RpcCallback<ctrie.GetNextNPathsResponse> done);
+
   public static final
       com.google.protobuf.Descriptors.ServiceDescriptor
       getDescriptor() {
@@ -551,6 +581,11 @@ public  abstract class CTrieService
           com.google.protobuf.RpcUtil.<ctrie.SnapshotResponse>specializeCallback(
             done));
         return;
+      case 13:
+        this.getNextNPaths(controller, (ctrie.GetNextNPathsRequest)request,
+          com.google.protobuf.RpcUtil.<ctrie.GetNextNPathsResponse>specializeCallback(
+            done));
+        return;
       default:
         throw new java.lang.AssertionError("Can't get here.");
     }
@@ -591,6 +626,8 @@ public  abstract class CTrieService
         return ctrie.EntrySetRequest.getDefaultInstance();
       case 12:
         return ctrie.SnapshotRequest.getDefaultInstance();
+      case 13:
+        return ctrie.GetNextNPathsRequest.getDefaultInstance();
       default:
         throw new java.lang.AssertionError("Can't get here.");
     }
@@ -631,6 +668,8 @@ public  abstract class CTrieService
         return ctrie.EntrySetResponse.getDefaultInstance();
       case 12:
         return ctrie.SnapshotResponse.getDefaultInstance();
+      case 13:
+        return ctrie.GetNextNPathsResponse.getDefaultInstance();
       default:
         throw new java.lang.AssertionError("Can't get here.");
     }
@@ -846,6 +885,21 @@ public  abstract class CTrieService
           ctrie.SnapshotResponse.class,
           ctrie.SnapshotResponse.getDefaultInstance()));
     }
+
+    public  void getNextNPaths(
+        com.google.protobuf.RpcController controller,
+        ctrie.GetNextNPathsRequest request,
+        com.google.protobuf.RpcCallback<ctrie.GetNextNPathsResponse> done) {
+      channel.callMethod(
+        getDescriptor().getMethods().get(13),
+        controller,
+        request,
+        ctrie.GetNextNPathsResponse.getDefaultInstance(),
+        com.google.protobuf.RpcUtil.generalizeCallback(
+          done,
+          ctrie.GetNextNPathsResponse.class,
+          ctrie.GetNextNPathsResponse.getDefaultInstance()));
+    }
   }
 
   public static BlockingInterface newBlockingStub(
@@ -917,6 +971,11 @@ public  abstract class CTrieService
     public ctrie.SnapshotResponse snapshot(
         com.google.protobuf.RpcController controller,
         ctrie.SnapshotRequest request)
+        throws com.google.protobuf.ServiceException;
+
+    public ctrie.GetNextNPathsResponse getNextNPaths(
+        com.google.protobuf.RpcController controller,
+        ctrie.GetNextNPathsRequest request)
         throws com.google.protobuf.ServiceException;
   }
 
@@ -1080,6 +1139,18 @@ public  abstract class CTrieService
         controller,
         request,
         ctrie.SnapshotResponse.getDefaultInstance());
+    }
+
+
+    public ctrie.GetNextNPathsResponse getNextNPaths(
+        com.google.protobuf.RpcController controller,
+        ctrie.GetNextNPathsRequest request)
+        throws com.google.protobuf.ServiceException {
+      return (ctrie.GetNextNPathsResponse) channel.callBlockingMethod(
+        getDescriptor().getMethods().get(13),
+        controller,
+        request,
+        ctrie.GetNextNPathsResponse.getDefaultInstance());
     }
 
   }

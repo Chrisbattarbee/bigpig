@@ -6,14 +6,21 @@ import ctrie.*;
 import io.grpc.stub.StreamObserver;
 import utils.ByteStringManipulation;
 
-import java.util.Map;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.IntStream;
 
 public class CTrieService extends CTrieServiceGrpc.CTrieServiceImplBase {
 
     private TrieMap<Object, Object> cTrie;
+    private AtomicInteger totalNumberOfHits;
+    private final Random random;
 
     public CTrieService() {
         cTrie = new TrieMap<>();
+        totalNumberOfHits = new AtomicInteger(0);
+        random = new Random();
     }
 
     @Override
@@ -54,8 +61,12 @@ public class CTrieService extends CTrieServiceGrpc.CTrieServiceImplBase {
 
     @Override
     public void put(PutRequest request, StreamObserver<PutResponse> responseObserver) {
+        this.totalNumberOfHits.incrementAndGet();
+
         Object deserializedKey = ByteStringManipulation.byteStringToObject(request.getSerializedKeyObject());
         Object deserializedValue = ByteStringManipulation.byteStringToObject(request.getSerializedValueObject());
+
+        System.out.println("Putting (" + deserializedKey + ", " + deserializedValue + ") into the CTrie");
 
         Object prevValue = cTrie.put(deserializedKey, deserializedValue);
 
@@ -77,6 +88,8 @@ public class CTrieService extends CTrieServiceGrpc.CTrieServiceImplBase {
     public void putAll(PutAllRequest request, StreamObserver<PutAllResponse> responseObserver) {
         Object deserializedMap = ByteStringManipulation.byteStringToObject(request.getSerializedMapObject());
 
+        this.totalNumberOfHits.addAndGet(((Map<?, ?>)deserializedMap).size());
+
         cTrie.putAll((Map<?, ?>) deserializedMap);
 
         responseObserver.onNext(PutAllResponse.newBuilder().build());
@@ -93,7 +106,7 @@ public class CTrieService extends CTrieServiceGrpc.CTrieServiceImplBase {
 
     @Override
     public void keySet(KeySetRequest request, StreamObserver<KeySetResponse> responseObserver) {
-        ByteString serializedKeySet  = ByteStringManipulation.objectToByteString(cTrie.keySet());
+        ByteString serializedKeySet = ByteStringManipulation.objectToByteString(cTrie.keySet());
 
         responseObserver.onNext(KeySetResponse.newBuilder().setSerializedSet(serializedKeySet).build());
         responseObserver.onCompleted();
@@ -120,6 +133,59 @@ public class CTrieService extends CTrieServiceGrpc.CTrieServiceImplBase {
         ByteString serializedSnapshot = ByteStringManipulation.objectToByteString(cTrie.snapshot());
 
         responseObserver.onNext(SnapshotResponse.newBuilder().setSerializedCTrie(serializedSnapshot).build());
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    // N is rounded up to the nearest multiple of 5
+    public void getNextNPaths(GetNextNPathsRequest request, StreamObserver<GetNextNPathsResponse> responseObserver) {
+
+        System.out.println(this.cTrie.size());
+
+        if (this.cTrie.size() == 0) {
+            System.out.println("Hello");
+            responseObserver.onNext(GetNextNPathsResponse.newBuilder().setSerializedPathCollection(ByteStringManipulation.objectToByteString(new HashSet<>(this.cTrie.keySet()))).build());
+            responseObserver.onCompleted();
+            return;
+        }
+
+        Set<Object> returnSet = new HashSet<>();
+
+        AtomicReference<Iterator<Map.Entry<Object, Object>>> iterator = new AtomicReference<>(cTrie.iterator());
+
+        int advanceBy = random.nextInt(cTrie.size());
+        IntStream.range(0, advanceBy).forEach(x -> {
+            if (!iterator.get().hasNext()) {
+                iterator.set(cTrie.iterator());
+            }
+            iterator.get().next();
+        });
+
+        while (returnSet.size() < request.getN()) {
+            if (!iterator.get().hasNext()) {
+                iterator.set(cTrie.iterator());
+            }
+
+            Map.Entry<Object, Object> entry = iterator.get().next();
+            System.out.println(totalNumberOfHits.get());
+            if (random.nextInt(totalNumberOfHits.get()) >= (Integer) entry.getValue()) {
+                String str = (String)entry.getKey();
+
+                returnSet.add(str.substring(0, str.length() - 1) + "0");
+                returnSet.add(str.substring(0, str.length() - 1) + "1");
+                returnSet.add(str.substring(0, str.length() - 1) + "00");
+                returnSet.add(str.substring(0, str.length() - 1) + "01");
+                returnSet.add(str.substring(0, str.length() - 1) + "11");
+            }
+        }
+
+        System.out.println("RETURN SET");
+        for (Object x : returnSet) {
+            System.out.println(x.toString());
+        }
+        System.out.println("RETURN SET END");
+
+        responseObserver.onNext(GetNextNPathsResponse.newBuilder().setSerializedPathCollection(ByteStringManipulation.objectToByteString(returnSet)).build());
         responseObserver.onCompleted();
     }
 }

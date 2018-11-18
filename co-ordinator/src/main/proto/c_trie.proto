@@ -19,6 +19,7 @@ service CTrieService {
     rpc Values (ValuesRequest) returns (ValuesResponse) {}
     rpc EntrySet (EntrySetRequest) returns (EntrySetResponse) {}
     rpc Snapshot (SnapshotRequest) returns (SnapshotResponse) {}
+    rpc GetNextNPaths (GetNextNPathsRequest) returns (GetNextNPathsResponse) {}
 }
 
 message SizeRequest {
@@ -124,4 +125,12 @@ message SnapshotRequest {
 
 message SnapshotResponse {
     bytes serializedCTrie  = 1;
+}
+
+message GetNextNPathsRequest {
+    int32 n = 1;
+}
+
+message GetNextNPathsResponse {
+    bytes SerializedPathCollection = 1;
 }

@@ -144,6 +144,16 @@ public final class CTrieProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ctrie_SnapshotResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ctrie_GetNextNPathsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ctrie_GetNextNPathsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ctrie_GetNextNPathsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ctrie_GetNextNPathsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -176,28 +186,32 @@ public final class CTrieProto {
       "serializedCollection\030\001 \001(\014\"\021\n\017EntrySetRe" +
       "quest\")\n\020EntrySetResponse\022\025\n\rserializedS" +
       "et\030\001 \001(\014\"\021\n\017SnapshotRequest\"+\n\020SnapshotR" +
-      "esponse\022\027\n\017serializedCTrie\030\001 \001(\0142\213\006\n\014CTr" +
-      "ieService\0221\n\004Size\022\022.ctrie.SizeRequest\032\023." +
-      "ctrie.SizeResponse\"\000\022:\n\007IsEmpty\022\025.ctrie." +
-      "IsEmptyRequest\032\026.ctrie.IsEmptyResponse\"\000" +
-      "\022F\n\013ContainsKey\022\031.ctrie.ContainsKeyReque" +
-      "st\032\032.ctrie.ContainsKeyResponse\"\000\022L\n\rCont" +
-      "ainsValue\022\033.ctrie.ContainsValueRequest\032\034" +
-      ".ctrie.ContainsValueResponse\"\000\022.\n\003Get\022\021." +
-      "ctrie.GetRequest\032\022.ctrie.GetResponse\"\000\022." +
-      "\n\003Put\022\021.ctrie.PutRequest\032\022.ctrie.PutResp" +
-      "onse\"\000\0227\n\006Remove\022\024.ctrie.RemoveRequest\032\025" +
-      ".ctrie.RemoveResponse\"\000\0227\n\006PutAll\022\024.ctri" +
-      "e.PutAllRequest\032\025.ctrie.PutAllResponse\"\000" +
-      "\0224\n\005Clear\022\023.ctrie.ClearRequest\032\024.ctrie.C" +
-      "learResponse\"\000\0227\n\006KeySet\022\024.ctrie.KeySetR" +
-      "equest\032\025.ctrie.KeySetResponse\"\000\0227\n\006Value" +
-      "s\022\024.ctrie.ValuesRequest\032\025.ctrie.ValuesRe" +
-      "sponse\"\000\022=\n\010EntrySet\022\026.ctrie.EntrySetReq" +
-      "uest\032\027.ctrie.EntrySetResponse\"\000\022=\n\010Snaps" +
-      "hot\022\026.ctrie.SnapshotRequest\032\027.ctrie.Snap" +
-      "shotResponse\"\000B\021B\nCTrieProtoP\001\210\001\001b\006proto" +
-      "3"
+      "esponse\022\027\n\017serializedCTrie\030\001 \001(\014\"!\n\024GetN" +
+      "extNPathsRequest\022\t\n\001n\030\001 \001(\005\"9\n\025GetNextNP" +
+      "athsResponse\022 \n\030SerializedPathCollection" +
+      "\030\001 \001(\0142\331\006\n\014CTrieService\0221\n\004Size\022\022.ctrie." +
+      "SizeRequest\032\023.ctrie.SizeResponse\"\000\022:\n\007Is" +
+      "Empty\022\025.ctrie.IsEmptyRequest\032\026.ctrie.IsE" +
+      "mptyResponse\"\000\022F\n\013ContainsKey\022\031.ctrie.Co" +
+      "ntainsKeyRequest\032\032.ctrie.ContainsKeyResp" +
+      "onse\"\000\022L\n\rContainsValue\022\033.ctrie.Contains" +
+      "ValueRequest\032\034.ctrie.ContainsValueRespon" +
+      "se\"\000\022.\n\003Get\022\021.ctrie.GetRequest\032\022.ctrie.G" +
+      "etResponse\"\000\022.\n\003Put\022\021.ctrie.PutRequest\032\022" +
+      ".ctrie.PutResponse\"\000\0227\n\006Remove\022\024.ctrie.R" +
+      "emoveRequest\032\025.ctrie.RemoveResponse\"\000\0227\n" +
+      "\006PutAll\022\024.ctrie.PutAllRequest\032\025.ctrie.Pu" +
+      "tAllResponse\"\000\0224\n\005Clear\022\023.ctrie.ClearReq" +
+      "uest\032\024.ctrie.ClearResponse\"\000\0227\n\006KeySet\022\024" +
+      ".ctrie.KeySetRequest\032\025.ctrie.KeySetRespo" +
+      "nse\"\000\0227\n\006Values\022\024.ctrie.ValuesRequest\032\025." +
+      "ctrie.ValuesResponse\"\000\022=\n\010EntrySet\022\026.ctr" +
+      "ie.EntrySetRequest\032\027.ctrie.EntrySetRespo" +
+      "nse\"\000\022=\n\010Snapshot\022\026.ctrie.SnapshotReques" +
+      "t\032\027.ctrie.SnapshotResponse\"\000\022L\n\rGetNextN" +
+      "Paths\022\033.ctrie.GetNextNPathsRequest\032\034.ctr" +
+      "ie.GetNextNPathsResponse\"\000B\021B\nCTrieProto" +
+      "P\001\210\001\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -367,6 +381,18 @@ public final class CTrieProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ctrie_SnapshotResponse_descriptor,
         new java.lang.String[] { "SerializedCTrie", });
+    internal_static_ctrie_GetNextNPathsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_ctrie_GetNextNPathsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ctrie_GetNextNPathsRequest_descriptor,
+        new java.lang.String[] { "N", });
+    internal_static_ctrie_GetNextNPathsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(27);
+    internal_static_ctrie_GetNextNPathsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ctrie_GetNextNPathsResponse_descriptor,
+        new java.lang.String[] { "SerializedPathCollection", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

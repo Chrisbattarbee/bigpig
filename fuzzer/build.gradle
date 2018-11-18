@@ -20,9 +20,9 @@ mainClassName = 'Numbers.Num'
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    compile 'com.github.ggavriil:javan-warty-pig:gg-testing-SNAPSHOT'
     compile 'com.squareup:javapoet:1.11.1'
     compile name: 'grpc_server_bundle'
+    compile 'com.github.Chrisbattarbee:javan-warty-pig:cb-testing-SNAPSHOT'
 }
 
 run.doFirst {

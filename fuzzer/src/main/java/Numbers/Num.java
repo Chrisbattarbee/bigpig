@@ -7,10 +7,8 @@ import jwp.fuzz.*;
 import seedbag.CoordinatorSeedBag;
 
 import java.io.*;
-import java.nio.ByteBuffer;
 import java.util.*;
 import java.util.concurrent.*;
-import java.util.stream.Stream;
 
 public class Num {
 
@@ -39,8 +37,12 @@ public class Num {
 
         //CoordinatorSeedBag<Integer> seedbag = new CoordinatorSeedBag<Integer>("coordinatorservice.default.svc.cluster.local", 8080);
 
-        //CoordinatorSeedBag<Integer> seedbag = new CoordinatorSeedBag<Integer>("localhost", 8080);
+        CoordinatorSeedBag<HashMap<String, Integer>> seedbag = new CoordinatorSeedBag<>("localhost", 8080);
         CoordinatorCTrie<String, Integer> ctrie = new CoordinatorCTrie<>("localhost", 8080);
+        ctrie.put("0", 1);
+        ctrie.put("1", 1);
+        ctrie.put("00", 1);
+        ctrie.put("01", 1);
         //List<Integer> seeds = seedbag.takeN(4);
         List<Integer> seeds = new ArrayList<>();
         seeds.add(3);
@@ -55,7 +57,7 @@ public class Num {
         TestWriter testWriter = new TestWriter.JUnit4(new TestWriter.Config("Numbers.NumTest"));
 
         // Keep track of unique paths
-        Set<Integer> seenPathHashes = Collections.newSetFromMap(new ConcurrentHashMap<>());
+        Set<Integer> seenPathHashes = new HashSet<>();
         final List<byte[]> pal = new ArrayList<>();
         //pal.add(objectToBytes((Object) Integer.valueOf(3)));
         //pal.add(objectToBytes((Object) Integer.valueOf(4)));
@@ -66,10 +68,10 @@ public class Num {
         //pal.add(objectToBytes((Object) Integer.valueOf(19)));
         //pal.add(objectToBytes((Object) Integer.valueOf(60)));
 
-        ByteArrayParamGenerator.Config bagConfig = ByteArrayParamGenerator.Config.builder().inputQueueCreator((c) -> {
-            ArrayList<ByteArrayParamGenerator.TestCase> q = new ArrayList<>();
-            q.add(new ByteArrayParamGenerator.TestCase(objectToBytes(Integer.valueOf(4))));
-            q.add(new ByteArrayParamGenerator.TestCase(objectToBytes(Integer.valueOf(3))));
+//        ByteArrayParamGenerator.Config bagConfig = ByteArrayParamGenerator.Config.builder().inputQueueCreator((c) -> {
+//            ArrayList<ByteArrayParamGenerator.TestCase> q = new ArrayList<>();
+//            q.add(new ByteArrayParamGenerator.TestCase(objectToBytes(Integer.valueOf(4))));
+//            q.add(new ByteArrayParamGenerator.TestCase(objectToBytes(Integer.valueOf(3))));
             //q.add(new ByteArrayParamGenerator.TestCase(ByteBuffer.allocate(4).putInt(121).array()));
             //q.add(new ByteArrayParamGenerator.TestCase(ByteBuffer.allocate(4).putInt(3).array()));
             //q.add(new ByteArrayParamGenerator.TestCase(ByteBuffer.allocate(4).putInt(4).array()));
@@ -81,39 +83,20 @@ public class Num {
             //q.add(121);
             //q.add(19);
             //q.add(60);
-            return new ByteArrayParamGenerator.InputQueue.ListBacked(q, c.hasher);
-        }).build();
+//            return new ByteArrayParamGenerator.InputQueue.ListBacked(q, c.hasher);
+//        }).build();
 
-        ParamProvider provider = new ParamProvider.Suggested(ByteArrayParamGenerator.suggested(byte[].class, bagConfig));
+//        ParamProvider provider = new ParamProvider.Suggested(ByteArrayParamGenerator.suggested(byte[].class, bagConfig));
         // Create a fuzzer from configuration (which is created with a builder)
         Fuzzer fuzzer = new Fuzzer(Fuzzer.Config.builder().
                         invoker(new Invoker.WithExecutorService(Executors.newFixedThreadPool(/*Runtime.getRuntime().availableProcessors()))*/1))).
                 // Let the fuzzer know to fuzz the isNum method
-                        method(Num.class.getDeclaredMethod( "toString", Integer.class)).
+                        method(Num.class.getDeclaredMethod( "toString", int.class)).
                 // We need to give the fuzzer a parameter provider. Here, we just use the suggested one.
-                          params(ParamProvider.suggested(Integer.class)).
-                        //params(ParamProvider.singleInteger(seeds.stream())).
+                          params(new ParamProviderSuggested(seenPathHashes, ctrie, seedbag, ParamGenerator.suggested(Integer.class))).
+//                          params(new SeedbagParamProvider(seedbag, ParamProvider.suggested(Integer.class))).
                //         params(provider).
-                // Let's print out the parameter and result of each unique path
-                        onEachResult(res -> {
-                    // Create hash sans hit counts
-                    int hash = BranchHit.Hasher.WITHOUT_HIT_COUNTS.hash(res.branchHits);
-                    //System.out.println(Arrays.toString(Arrays.stream(res.branchHits).map((b) -> Integer.toString(b.branchHash).concat(" ").concat(Integer.toString(b.hitCount))).toArray()));
-                    // Synchronized to prevent stdout overwrites
-                    if (seenPathHashes.add(hash)) synchronized (Num.class) {
-                        System.out.println(res.pathString);
-                        String s2 = res.pathString.substring(0, res.pathString.length() - 1) + "0";
-                        ctrie.put(res.pathString, 1);
-                        ctrie.put(s2, 1);
-                        System.out.printf("Unique path for param '%s': %s\n", res.params[0],
-                                res.exception == null ? res.result : res.exception);
-                        try {
-                            //testWriter.append(res);
-                        } catch (Throwable throwable) {
-                            throwable.printStackTrace();
-                        }
-                    }
-                }).
+
                 // Build the configuration
                         build()
         );
@@ -133,9 +116,9 @@ public class Num {
         }
     }
 
-    public static String toString(Integer s) {
-        if(s == 3) {
-            return "3";
+    public static String toString(int s) {
+        if(s == 153) {
+            return "153";
         }
         if(s == 4) {
             return "4";
