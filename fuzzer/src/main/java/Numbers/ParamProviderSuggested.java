@@ -7,13 +7,14 @@ import jwp.fuzz.ParamGenerator;
 import jwp.fuzz.ParamProvider;
 import seedbag.CoordinatorSeedBag;
 
+import java.io.ObjectStreamClass;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 
 public class ParamProviderSuggested extends ParamProvider.Suggested {
 
-    public ParamProviderSuggested(Set<Integer> seenPathHashes, CoordinatorCTrie<String, Integer> cTrie, CoordinatorSeedBag seedBag, ParamGenerator... paramGenerators) {
+    public ParamProviderSuggested(Set<Integer> seenPathHashes, CoordinatorCTrie<String, Integer> cTrie, CoordinatorSeedBag<Object[]> seedBag, ParamGenerator... paramGenerators) {
         super(paramGenerators);
         this.seedBag = seedBag;
         this.seenPathHashes = seenPathHashes;
@@ -22,12 +23,7 @@ public class ParamProviderSuggested extends ParamProvider.Suggested {
         Thread thread = new Thread(() -> {
             while (true) {
                 if (next == null) {
-                    HashMap<String, Integer> hashMap = (HashMap<String, Integer>) seedBag.poll();
-                    if (hashMap != null) {
-//                        System.out.println("here");
-                        next = hashMap.get("s");
-//                        System.out.println("next is" + next);
-                    }
+                    next = seedBag.poll();
                 }
                 try {
                     Thread.sleep(100);
@@ -42,7 +38,7 @@ public class ParamProviderSuggested extends ParamProvider.Suggested {
     private Set<Integer> seenPathHashes;
     private CoordinatorSeedBag seedBag;
     private CoordinatorCTrie<String, Integer> cTrie;
-    private Object next = null;
+    private Object[] next = null;
 
     @Override
     public void onResult(ExecutionResult res) {
@@ -75,15 +71,12 @@ public class ParamProviderSuggested extends ParamProvider.Suggested {
             public Object[] next() {
                 while (true) {
                     if (next != null) {
-                        Object[] obj = new Object[1];
-                        obj[0] = next;
+                        Object[] obj = next;
                         next = null;
-//                            System.out.println("Returning " + obj[0]);
                         return obj;
                     }
                     if (superIterator.hasNext()) {
                         Object[] obj = superIterator.next();
-//                            System.out.println("Returning " + obj[0]);
                         return obj;
                     }
                 }

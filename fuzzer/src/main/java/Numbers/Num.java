@@ -37,7 +37,7 @@ public class Num {
 
         //CoordinatorSeedBag<Integer> seedbag = new CoordinatorSeedBag<Integer>("coordinatorservice.default.svc.cluster.local", 8080);
 
-        CoordinatorSeedBag<HashMap<String, Integer>> seedbag = new CoordinatorSeedBag<>("localhost", 8080);
+        CoordinatorSeedBag<Object[]> seedbag = new CoordinatorSeedBag<>("localhost", 8080);
         CoordinatorCTrie<String, Integer> ctrie = new CoordinatorCTrie<>("localhost", 8080);
         ctrie.put("0", 1);
         ctrie.put("1", 1);
