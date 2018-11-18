@@ -14,6 +14,7 @@ import java.util.stream.IntStream;
 public class CTrieService extends CTrieServiceGrpc.CTrieServiceImplBase {
 
     private TrieMap<Object, Object> cTrie;
+    private final Set<Object> solvedPaths;
     private AtomicInteger totalNumberOfHits;
     private final Random random;
 
@@ -21,6 +22,7 @@ public class CTrieService extends CTrieServiceGrpc.CTrieServiceImplBase {
         cTrie = new TrieMap<>();
         totalNumberOfHits = new AtomicInteger(0);
         random = new Random();
+        solvedPaths = new HashSet<>();
     }
 
     @Override
@@ -179,12 +181,7 @@ public class CTrieService extends CTrieServiceGrpc.CTrieServiceImplBase {
             }
         }
 
-        System.out.println("RETURN SET");
-        for (Object x : returnSet) {
-            System.out.println(x.toString());
-        }
-        System.out.println("RETURN SET END");
-
+        solvedPaths.addAll(returnSet);
         responseObserver.onNext(GetNextNPathsResponse.newBuilder().setSerializedPathCollection(ByteStringManipulation.objectToByteString(returnSet)).build());
         responseObserver.onCompleted();
     }
