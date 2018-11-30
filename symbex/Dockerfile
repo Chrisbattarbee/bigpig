@@ -67,5 +67,4 @@ COPY jdart/           ${PROJ_DIR}/jdart
 RUN cd jdart && ant
 
 COPY DockerfileInner ${PROJ_DIR}/Dockerfile
-RUN systemctl start docker.service
-RUN docker build -t softengbigpig/symbex:latest .
+CMD docker build -t softengbigpig/symbex:latest . && docker push softengbigpig/symbex:latest
