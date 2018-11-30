@@ -35,7 +35,7 @@ public class FuzzingUtils {
         for(int i = 0; i < generators.length; i++) {
             final int cur = i;
             ByteArrayParamGenerator.Config config = ByteArrayParamGenerator.Config.builder()
-                    .externlParamSupplier(() -> supplier.getParamValueOrNull(cur)).build();
+                    .externalParamSupplier(() -> supplier.getParamValueOrNull(cur)).build();
             generators[i] = ByteArrayParamGenerator.suggested(byte[].class, config);
         }
         return new ParamProvider.Suggested(generators);
