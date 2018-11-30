@@ -1,0 +1,5 @@
+
+jpf-core = ${user.home}/IdeaProjects/bigpig/symbex/jpf-core
+jpf-jdart = ${user.home}/IdeaProjects/bigpig/symbex/jdart
+
+extensions=${jpf-core},${jpf-jdart}
