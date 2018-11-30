@@ -93,7 +93,7 @@ public class Num {
                 // Let the fuzzer know to fuzz the isNum method
                         method(Num.class.getDeclaredMethod( "toString", int.class)).
                 // We need to give the fuzzer a parameter provider. Here, we just use the suggested one.
-                          params(new ParamProviderSuggested(seenPathHashes, ctrie, seedbag, ParamGenerator.suggested(Integer.class))).
+                      //    params(new ParamProviderSuggested(seenPathHashes, ctrie, seedbag, ParamGenerator.suggested(Integer.class))).
 //                          params(new SeedbagParamProvider(seedbag, ParamProvider.suggested(Integer.class))).
                //         params(provider).
 

@@ -178,7 +178,6 @@ public class CoordinatorCTrie<K extends Serializable, V extends Serializable> im
         ByteString serializedKey = objectToByteString(key);
         ByteString serializedValue = objectToByteString(value);
         PutRequest putRequest = PutRequest.newBuilder().setSerializedKeyObject(serializedKey).setSerializedValueObject(serializedValue).build();
-
         ListenableFuture<PutResponse> response = futureStub.put(putRequest);
         return new FuturePutObject(response);
 

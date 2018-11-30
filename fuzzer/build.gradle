@@ -16,13 +16,18 @@ repositories {
    }
 }
 
-mainClassName = 'Numbers.Num'
+mainClassName = 'Experimental.ApacheMathSimplexFuzz'
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile 'com.squareup:javapoet:1.11.1'
     compile name: 'grpc_server_bundle'
-    compile 'com.github.Chrisbattarbee:javan-warty-pig:cb-testing-SNAPSHOT'
+    compile name: 'commons-math3-3.6.1'
+    compile name: 'agent-0.1.0'
+    compile name: 'fuzz-0.1.0'
+    compile name: 'extras-0.1.0'
+ //   compile 'com.github.ggavriil:javan-warty-pig:gg-zero-bits-SNAPSHOT'
+    compile group: 'org.json', name: 'json', version: '20180813'
 }
 
 run.doFirst {

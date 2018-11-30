@@ -11,7 +11,7 @@ import java.io.ObjectStreamClass;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
-
+/*
 public class ParamProviderSuggested extends ParamProvider.Suggested {
 
     public ParamProviderSuggested(Set<Integer> seenPathHashes, CoordinatorCTrie<String, Integer> cTrie, CoordinatorSeedBag<Object[]> seedBag, ParamGenerator... paramGenerators) {
@@ -84,3 +84,4 @@ public class ParamProviderSuggested extends ParamProvider.Suggested {
         };
     }
 }
+*/
