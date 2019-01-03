@@ -27,6 +27,7 @@ dependencies {
     compile name: 'fuzz-0.1.0'
     compile name: 'extras-0.1.0'
  //   compile 'com.github.ggavriil:javan-warty-pig:gg-zero-bits-SNAPSHOT'
+    compile 'com.github.Chrisbattarbee:javan-warty-pig:cb-testing-SNAPSHOT'
     compile group: 'org.json', name: 'json', version: '20180813'
 }
 

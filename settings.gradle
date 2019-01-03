@@ -1,3 +1,4 @@
 rootProject.name = 'bigpig'
 include 'fuzzer'
 include 'co-ordinator'
+include 'symbex'
