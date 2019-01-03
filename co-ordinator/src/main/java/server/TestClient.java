@@ -13,8 +13,18 @@ import java.util.concurrent.Future;
 
 public class TestClient {
     public static void main(String[] args) {
-        cTrieDiagnostics();
-        seedbagDiagnostics();
+
+        CTrieMap<String, Integer> map = new CoordinatorCTrie<>("localhost", ByteStringManipulation.PORT_NUMBER);
+        map.put("1", 0);
+        map.put("0", 0);
+        map.put("01", 0);
+        map.put("0001", 0);
+        map.put("00001", 0);
+        map.put("00000", 0);
+
+        System.out.println(new CoordinatorSeedBag<>("localhost", 8080).size());
+     //   cTrieDiagnostics();
+        //seedbagDiagnostics();
     }
 
     private static void cTrieDiagnostics() {
@@ -119,7 +129,15 @@ public class TestClient {
     private static void seedbagDiagnostics() {
         CoordinatorSeedBag<Integer> bag = new CoordinatorSeedBag<>("localhost", 8080);
         System.out.println("Size: " + bag.size());
+        bag.add(3);
+        bag.add(4);
+        bag.add(17);
+        bag.add(121);
+        bag.add(9);
+        bag.add(62);
 
+        System.out.println("Size: " + bag.size());
+        /*
         System.out.println("Adding 5");
         bag.add(5);
 
@@ -146,6 +164,6 @@ public class TestClient {
         System.out.println("Clearing bag");
         bag.clear();
 
-        System.out.println("Size: " + bag.size());
+        System.out.println("Size: " + bag.size()); */
     }
 }

@@ -6,14 +6,23 @@ import ctrie.*;
 import io.grpc.stub.StreamObserver;
 import utils.ByteStringManipulation;
 
-import java.util.Map;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.IntStream;
 
 public class CTrieService extends CTrieServiceGrpc.CTrieServiceImplBase {
 
     private TrieMap<Object, Object> cTrie;
+    private final Set<Object> solvedPaths;
+    private AtomicInteger totalNumberOfHits;
+    private final Random random;
 
     public CTrieService() {
         cTrie = new TrieMap<>();
+        totalNumberOfHits = new AtomicInteger(0);
+        random = new Random();
+        solvedPaths = new HashSet<>();
     }
 
     @Override
@@ -54,8 +63,12 @@ public class CTrieService extends CTrieServiceGrpc.CTrieServiceImplBase {
 
     @Override
     public void put(PutRequest request, StreamObserver<PutResponse> responseObserver) {
+        this.totalNumberOfHits.incrementAndGet();
+
         Object deserializedKey = ByteStringManipulation.byteStringToObject(request.getSerializedKeyObject());
         Object deserializedValue = ByteStringManipulation.byteStringToObject(request.getSerializedValueObject());
+
+        System.out.println("Putting (" + deserializedKey + ", " + deserializedValue + ") into the CTrie");
 
         Object prevValue = cTrie.put(deserializedKey, deserializedValue);
 
@@ -77,6 +90,8 @@ public class CTrieService extends CTrieServiceGrpc.CTrieServiceImplBase {
     public void putAll(PutAllRequest request, StreamObserver<PutAllResponse> responseObserver) {
         Object deserializedMap = ByteStringManipulation.byteStringToObject(request.getSerializedMapObject());
 
+        this.totalNumberOfHits.addAndGet(((Map<?, ?>)deserializedMap).size());
+
         cTrie.putAll((Map<?, ?>) deserializedMap);
 
         responseObserver.onNext(PutAllResponse.newBuilder().build());
@@ -93,7 +108,7 @@ public class CTrieService extends CTrieServiceGrpc.CTrieServiceImplBase {
 
     @Override
     public void keySet(KeySetRequest request, StreamObserver<KeySetResponse> responseObserver) {
-        ByteString serializedKeySet  = ByteStringManipulation.objectToByteString(cTrie.keySet());
+        ByteString serializedKeySet = ByteStringManipulation.objectToByteString(cTrie.keySet());
 
         responseObserver.onNext(KeySetResponse.newBuilder().setSerializedSet(serializedKeySet).build());
         responseObserver.onCompleted();
@@ -121,5 +136,83 @@ public class CTrieService extends CTrieServiceGrpc.CTrieServiceImplBase {
 
         responseObserver.onNext(SnapshotResponse.newBuilder().setSerializedCTrie(serializedSnapshot).build());
         responseObserver.onCompleted();
+    }
+
+    @Override
+    // N is rounded up to the nearest multiple of 5
+    public void getNextNPaths(GetNextNPathsRequest request, StreamObserver<GetNextNPathsResponse> responseObserver) {
+        if (this.cTrie.size() == 0 || this.cTrie.size() == this.solvedPaths.size()) {
+            responseObserver.onNext(GetNextNPathsResponse.newBuilder().setSerializedPathCollection(ByteStringManipulation.objectToByteString(new HashSet<>())).build());
+            responseObserver.onCompleted();
+            return;
+        }
+        Set<Object> returnSet = new HashSet<>();
+
+        // Add everything that we can if there aren't greater than N entries
+        if (cTrie.size() - request.getN() <= solvedPaths.size()) {
+            for (Object o : cTrie.keySet()) {
+                addAllPermutations(returnSet, (String) o);
+            }
+            solvedPaths.addAll(returnSet);
+            responseObserver.onNext(GetNextNPathsResponse.newBuilder().setSerializedPathCollection(ByteStringManipulation.objectToByteString(returnSet)).build());
+            responseObserver.onCompleted();
+            return;
+        }
+
+
+        // Randomly find the start node
+        int advanceBy = random.nextInt(cTrie.size());
+        AtomicReference<Iterator<Map.Entry<Object, Object>>> iterator = new AtomicReference<>(cTrie.iterator());
+        IntStream.range(0, advanceBy).forEach(x -> {
+            if (!iterator.get().hasNext()) {
+                iterator.set(cTrie.iterator());
+            }
+            iterator.get().next();
+        });
+
+        // Probabalistically find the next added node
+        while (returnSet.size() < request.getN()) {
+            if (!iterator.get().hasNext()) {
+                iterator.set(cTrie.iterator());
+            }
+
+            Map.Entry<Object, Object> entry = iterator.get().next();
+            if (random.nextInt(totalNumberOfHits.get()) >= (Integer) entry.getValue()) {
+                String str = (String)entry.getKey();
+                addAllPermutations(returnSet, str);
+            }
+        }
+
+        solvedPaths.addAll(returnSet);
+        responseObserver.onNext(GetNextNPathsResponse.newBuilder().setSerializedPathCollection(ByteStringManipulation.objectToByteString(returnSet)).build());
+        responseObserver.onCompleted();
+    }
+
+    private void addAllPermutations(Set<Object> returnSet, String str) {
+        String addStr;
+        addStr = str.substring(0, str.length() - 1) + "0";
+        if (!solvedPaths.contains(addStr)) {
+            returnSet.add(addStr);
+        }
+        addStr = str.substring(0, str.length() - 1) + "1";
+        if (!solvedPaths.contains(addStr)) {
+            returnSet.add(addStr);
+        }
+        addStr = str.substring(0, str.length() - 1) + "00";
+        if (!solvedPaths.contains(addStr)) {
+            returnSet.add(addStr);
+        }
+        addStr = str.substring(0, str.length() - 1) + "01";
+        if (!solvedPaths.contains(addStr)) {
+            returnSet.add(addStr);
+        }
+        addStr = str.substring(0, str.length() - 1) + "10";
+        if (!solvedPaths.contains(addStr)) {
+            returnSet.add(addStr);
+        }
+        addStr = str.substring(0, str.length() - 1) + "11";
+        if (!solvedPaths.contains(addStr)) {
+            returnSet.add(addStr);
+        }
     }
 }

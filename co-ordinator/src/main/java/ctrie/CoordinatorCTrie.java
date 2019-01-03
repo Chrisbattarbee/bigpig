@@ -6,10 +6,12 @@ import com.google.protobuf.ByteString;
 import com.romix.scala.collection.concurrent.TrieMap;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import utils.ByteStringManipulation;
 
 import java.io.*;
 import java.util.Collection;
 import java.util.Map;
+import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
@@ -114,6 +116,18 @@ public class CoordinatorCTrie<K extends Serializable, V extends Serializable> im
         ListenableFuture<GetResponse> response = futureStub.get(getRequest);
 
         return new FutureGetObject(response);
+    }
+
+    @Override
+    public V getOrDefault(Object key, V defaultValue) {
+        V v = get(key);
+        return v == null ? defaultValue : v;
+    }
+
+    @Override
+    public Set<K> getNextNPaths(int size) {
+        GetNextNPathsRequest getNextNPathsRequest = GetNextNPathsRequest.newBuilder().setN(size).build();
+        return (Set<K>) ByteStringManipulation.byteStringToObject(blockingStub.getNextNPaths(getNextNPathsRequest).getSerializedPathCollection());
     }
 
     @Override
