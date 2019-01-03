@@ -3,19 +3,23 @@ package server;
 import io.grpc.stub.StreamObserver;
 import seedbag.*;
 
+
+import java.util.*;
+import java.util.concurrent.BlockingQueue;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedDeque;
+import java.util.concurrent.LinkedBlockingDeque;
 
 import static utils.ByteStringManipulation.*;
 
 public class SeedBagService extends SeedBagServiceGrpc.SeedBagServiceImplBase {
 
-    private Queue<Object> queue;
+    private BatchedBlockingQueue<Object> queue;
 
     public SeedBagService() {
-        queue = new ConcurrentLinkedDeque<>();
+        queue = new BatchedBlockingQueueImpl<>(new LinkedBlockingDeque<>());
     }
 
     @Override
@@ -143,5 +147,19 @@ public class SeedBagService extends SeedBagServiceGrpc.SeedBagServiceImplBase {
         responseObserver.onCompleted();
     }
 
+    @Override
+    public void takeN(TakeNRequest request, StreamObserver<TakeNResponse> responseObserver) {
+        List<Object> o = new ArrayList<Object>();
+        for(int i = 0; i < request.getNum(); i++) {
+            try {
+                o.add(queue.take());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        //TODO[gg]: Figure out how to do this properly (onNext)
+        responseObserver.onNext(TakeNResponse.newBuilder().setSerializedCollection(objectToByteString(o)).build());
+        responseObserver.onCompleted();
+    }
 
 }

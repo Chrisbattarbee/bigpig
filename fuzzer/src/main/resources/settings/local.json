@@ -1,0 +1,6 @@
+{
+  "ctrieHostname": "localhost",
+  "ctriePort": 8080,
+  "seedbagHostname": "localhost",
+  "seedbagPort": 8080
+}
