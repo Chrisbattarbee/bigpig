@@ -22,7 +22,7 @@ import static Experimental.ApacheMathTest.LPTest;
 import static Settings.FuzzerSettings.settings;
 
 public class BigFooFuzz {
-        private static final boolean useSeedbagAndCTrie = false;
+        private static final boolean useSeedbagAndCTrie = true;
         private static int byteArrToInt(byte[] bytes) {
             return ByteBuffer.wrap(bytes).getInt();
         }
@@ -63,8 +63,8 @@ public class BigFooFuzz {
             //MethodInfo methodInfo = MethodInfo.fromJsonFile("/home/ggavriil/Programming/bigpig-extra/method.json");
             boolean[] suggested = new boolean[]{ useSuggested, useSuggested, useSuggested, useSuggested };
             ParamProvider paramProvider = FuzzingUtils.getParamProvider(methodInfo, seeds, suggested);
-            Method declaredMethod = useSuggested ? BigFoo.class.getDeclaredMethod("foo", int.class, int.class, int.class)
-                    : BigFoo.class.getDeclaredMethod("fooByte", byte[].class, byte[].class, byte[].class);
+            Method declaredMethod = useSuggested ? ApacheMathTest.class.getDeclaredMethod("foo", int.class, int.class, int.class)
+                    : ApacheMathTest.class.getDeclaredMethod("fooByte", byte[].class, byte[].class, byte[].class);
             Function<Object, Integer> outParser = useSuggested ? BigFooFuzz::objNoOp : BigFooFuzz::objByteArrToInt;
             /*
             ParamProvider paramProvider = FuzzingUtils.getParamProviderWithExternal(methodInfo, new RemoteParamSupplier(methodInfo, () -> {
@@ -107,7 +107,7 @@ public class BigFooFuzz {
                             build()
             );
             // Just run it for 5 seconds
-            fuzzer.fuzzFor(10, TimeUnit.SECONDS);
+            fuzzer.fuzzFor(5, TimeUnit.SECONDS);
         }
 
         public static void main(String[] args) throws Throwable {
@@ -135,14 +135,19 @@ public class BigFooFuzz {
             */
 
             //TODO: Maybe get this as an argument
-            Duration timeout = Duration.ofSeconds(20);
+            Duration timeout = Duration.ofSeconds(60);
 
             //System.out.printf("Test:\n %f (Should be 7.7)\n", LPTest(4, 1, 3, -6));
 
             long startTime = System.nanoTime();
 
             while(System.nanoTime() - startTime < timeout.toNanos()) {
-                Object[] seedArr = useSeedbagAndCTrie ? seedBag.take() : new Object[]{0, 0, 0};
+                Object[] seedArr = useSeedbagAndCTrie ? seedBag.poll() : new Object[]{0, 0, 0};
+                if (seedArr == null) {
+                    seedArr = new Object[]{0, 0, 0};
+                }
+
+                System.out.println(Arrays.deepToString(seedArr));
                 Object[][] newSeed = new Object[][]{ new Object[] {seedArr[0]}, new Object[]{seedArr[1]}, new Object[]{seedArr[2]} };
                 fuzzWithConfig(newSeed, false);
             }

@@ -113,7 +113,7 @@ public class ApacheMathSimplexFuzz {
                             build()
             );
             // Just run it for 5 seconds
-            fuzzer.fuzzFor(10, TimeUnit.SECONDS);
+            fuzzer.fuzzFor(120, TimeUnit.SECONDS);
         }
 
         public static void main(String[] args) throws Throwable {
@@ -143,7 +143,7 @@ public class ApacheMathSimplexFuzz {
             //TODO: Maybe get this as an argument
             Duration timeout = Duration.ofSeconds(20);
 
-            System.out.printf("Test:\n %f (Should be 7.7)\n", LPTest(4, 1, 3, -6));
+//            System.out.printf("Test:\n %f (Should be 7.7)\n", LPTest(4, 1, 3, -6));
 
             long startTime = System.nanoTime();
 

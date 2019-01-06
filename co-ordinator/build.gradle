@@ -78,6 +78,7 @@ task fatJar(type: Jar) {
                 'Implementation-Version': version,
                 'Main-Class': 'server.Main'
     }
+    
     archiveName = "grpc_server_bundle.jar"
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar

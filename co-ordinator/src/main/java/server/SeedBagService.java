@@ -55,8 +55,8 @@ public class SeedBagService extends SeedBagServiceGrpc.SeedBagServiceImplBase {
     @Override
     public void add(AddRequest request, StreamObserver<AddResponse> responseObserver) {
         boolean result = queue.add(byteStringToObject(request.getSerializedObject()));
-        System.out.println("Adding " + byteStringToObject(request.getSerializedObject()));
-//        System.out.printf("Adding %s\n", Arrays.toString((Object[]) byteStringToObject(request.getSerializedObject())));
+//        System.out.println("Adding " + byteStringToObject(request.getSerializedObject()));
+        System.out.printf("Adding %s\n", Arrays.toString((Object[]) byteStringToObject(request.getSerializedObject())));
         responseObserver.onNext(AddResponse.newBuilder().setAdded(result).build());
         responseObserver.onCompleted();
     }
