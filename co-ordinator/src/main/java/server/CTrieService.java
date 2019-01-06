@@ -190,27 +190,27 @@ public class CTrieService extends CTrieServiceGrpc.CTrieServiceImplBase {
 
     private void addAllPermutations(Set<Object> returnSet, String str) {
         String addStr;
-        addStr = str.substring(0, str.length() - 1) + "0";
+        addStr = str.length() != 0 ? str.substring(0, str.length() - 1) + "0" : "0";
         if (!solvedPaths.contains(addStr)) {
             returnSet.add(addStr);
         }
-        addStr = str.substring(0, str.length() - 1) + "1";
+        addStr = str.length() != 0 ? str.substring(0, str.length() - 1) + "1" : "1";
         if (!solvedPaths.contains(addStr)) {
             returnSet.add(addStr);
         }
-        addStr = str.substring(0, str.length() - 1) + "00";
+        addStr = str.length() != 0 ? str.substring(0, str.length() - 1) + "00" : "00";
         if (!solvedPaths.contains(addStr)) {
             returnSet.add(addStr);
         }
-        addStr = str.substring(0, str.length() - 1) + "01";
+        addStr = str.length() != 0 ? str.substring(0, str.length() - 1) + "01" : "01";
         if (!solvedPaths.contains(addStr)) {
             returnSet.add(addStr);
         }
-        addStr = str.substring(0, str.length() - 1) + "10";
+        addStr = str.length() != 0 ? str.substring(0, str.length() - 1) + "10" : "10";
         if (!solvedPaths.contains(addStr)) {
             returnSet.add(addStr);
         }
-        addStr = str.substring(0, str.length() - 1) + "11";
+        addStr = str.length() != 0 ? str.substring(0, str.length() - 1) + "11" : "11";
         if (!solvedPaths.contains(addStr)) {
             returnSet.add(addStr);
         }

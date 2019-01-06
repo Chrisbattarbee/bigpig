@@ -47,4 +47,8 @@ public class ApacheMathTest {
             return result.getValue();
 
         }
+
+    public static void main(String[] args) {
+        LPTestByte(intToByteArr(0),intToByteArr(0),intToByteArr(0),intToByteArr(0));
+    }
 }

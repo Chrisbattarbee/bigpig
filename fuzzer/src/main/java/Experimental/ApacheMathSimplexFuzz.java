@@ -27,7 +27,7 @@ import static Experimental.ApacheMathTest.LPTest;
 import static Settings.FuzzerSettings.*;
 
 public class ApacheMathSimplexFuzz {
-        private static final boolean useSeedbagAndCTrie = false;
+        private static final boolean useSeedbagAndCTrie = true;
         private static int byteArrToInt(byte[] bytes) {
             return ByteBuffer.wrap(bytes).getInt();
         }
@@ -148,7 +148,15 @@ public class ApacheMathSimplexFuzz {
             long startTime = System.nanoTime();
 
             while(System.nanoTime() - startTime < timeout.toNanos()) {
-                Object[] seedArr = useSeedbagAndCTrie ? seedBag.take() : new Object[]{0, 0, 0, 0};
+                Object[] seedArr;
+                if (useSeedbagAndCTrie) {
+                    seedArr = seedBag.poll();
+                    if (seedArr == null) {
+                        seedArr = new Object[]{0, 0, 0, 0};
+                    }
+                } else {
+                    seedArr = new Object[]{0, 0, 0, 0};
+                }
                 Object[][] newSeed = new Object[][]{ new Object[] {seedArr[0]}, new Object[]{seedArr[1]}, new Object[]{seedArr[2]}, new Object[]{seedArr[3]} };
                 fuzzWithConfig(newSeed, false);
             }
