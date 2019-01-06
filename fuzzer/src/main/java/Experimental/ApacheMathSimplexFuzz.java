@@ -15,6 +15,8 @@ import seedbag.CoordinatorSeedBag;
 import java.lang.reflect.Method;
 import java.nio.ByteBuffer;
 import java.sql.SQLOutput;
+import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
@@ -29,6 +31,8 @@ public class ApacheMathSimplexFuzz {
         private static int byteArrToInt(byte[] bytes) {
             return ByteBuffer.wrap(bytes).getInt();
         }
+
+        private static final ConcurrentHashMap<String, Byte> allPaths = new ConcurrentHashMap<>();
 
         private static byte[] intToByteArr(int num) {
             ByteBuffer buf = ByteBuffer.allocate(4);
@@ -99,6 +103,7 @@ public class ApacheMathSimplexFuzz {
                                     e.printStackTrace();
                                 }
                             }
+                            allPaths.put(res.pathString, (byte) 0);
                             System.out.printf("Unique path for params '%d %d %d %d': %s\n", outParser.apply(res.params[0]),
                                     outParser.apply(res.params[1]), outParser.apply(res.params[2]),
                                     outParser.apply(res.params[3]), res.exception == null ? res.result : res.exception);
@@ -108,7 +113,7 @@ public class ApacheMathSimplexFuzz {
                             build()
             );
             // Just run it for 5 seconds
-            fuzzer.fuzzFor(300, TimeUnit.SECONDS);
+            fuzzer.fuzzFor(10, TimeUnit.SECONDS);
         }
 
         public static void main(String[] args) throws Throwable {
@@ -134,11 +139,20 @@ public class ApacheMathSimplexFuzz {
                 System.out.println("---------------------------------------------------------------------------");
             }
             */
+
+            //TODO: Maybe get this as an argument
+            Duration timeout = Duration.ofSeconds(20);
+
             System.out.printf("Test:\n %f (Should be 7.7)\n", LPTest(4, 1, 3, -6));
-            while(true) {
+
+            long startTime = System.nanoTime();
+
+            while(System.nanoTime() - startTime < timeout.toNanos()) {
                 Object[] seedArr = useSeedbagAndCTrie ? seedBag.take() : new Object[]{0, 0, 0, 0};
                 Object[][] newSeed = new Object[][]{ new Object[] {seedArr[0]}, new Object[]{seedArr[1]}, new Object[]{seedArr[2]}, new Object[]{seedArr[3]} };
                 fuzzWithConfig(newSeed, false);
             }
+
+            System.out.printf("Total number of paths: %d\n", allPaths.size());
         }
 }
