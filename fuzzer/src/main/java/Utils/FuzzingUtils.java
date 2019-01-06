@@ -5,6 +5,7 @@ import jwp.fuzz.ParamGenerator;
 import jwp.fuzz.ParamProvider;
 import jwp.fuzz.SeedContainer;
 
+import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.Dictionary;
 import java.util.Hashtable;
@@ -47,7 +48,17 @@ public class FuzzingUtils {
             case INT:
                 int[] intSeeds = new int[vals.length];
                 for (int i = 0; i < intSeeds.length; i++) {
-                    intSeeds[i] = (int) vals[i];
+                    try {
+                        intSeeds[i] = (int) vals[i];
+                    } catch (ClassCastException e)
+                    {
+                        byte[] bytes = new byte[4];
+                        for(int j = 0;  j < 4; j++) {
+                            bytes[j] = (byte) ((Object[])vals[i])[j];
+                        }
+                        int res = ByteBuffer.wrap(bytes).getInt();
+                        intSeeds[i] = res;
+                    }
                 }
                 return new ProcessedParam(Arrays.stream(intSeeds).mapToObj(IntParam::new).collect(Collectors.toList()),
                         new SeedContainer(intSeeds), ptypeToClass.get(type));
