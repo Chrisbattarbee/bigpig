@@ -10,12 +10,13 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class MethodInfo {
-    private final String name;
+    private final String methodName;
     private final ParamInfo[] params;
     private final PrimitiveType returnType;
+    private final String className;
 
-    public String getName() {
-        return name;
+    public String getMethodName() {
+        return methodName;
     }
 
     public ParamInfo[] getParams() {
@@ -26,10 +27,11 @@ public class MethodInfo {
         return returnType;
     }
 
-    public MethodInfo(String name, ParamInfo[] params, PrimitiveType returnType) {
-        this.name = name;
+    public MethodInfo(String methodName, ParamInfo[] params, PrimitiveType returnType, String className) {
+        this.methodName = methodName;
         this.params = params;
         this.returnType = returnType;
+        this.className = className;
     }
 
     public static MethodInfo fromJsonFile(String path) throws IOException {
@@ -39,17 +41,18 @@ public class MethodInfo {
     public static MethodInfo fromJsonFile(String path, Charset encoding) throws IOException {
         String jsonString = new String(Files.readAllBytes(Paths.get(path)), encoding);
         JSONObject jObj = new JSONObject(jsonString);
-        String methodName = jObj.getString("name");
+        String methodName = jObj.getString("methodName");
+        String className = jObj.getString("className");
         JSONArray params = jObj.getJSONArray("params");
         ParamInfo[] methodParams = new ParamInfo[params.length()];
         for (int i = 0; i < params.length(); i++) {
             JSONObject obj = params.getJSONObject(i);
-            String name = obj.getString("name");
+            String name = obj.getString("methodName");
             PrimitiveType type = PrimitiveType.valueOf(obj.getString("type").toUpperCase());
             methodParams[i] = new ParamInfo(name, type);
         }
         PrimitiveType returnType = PrimitiveType.valueOf(jObj.getString("returnType").toUpperCase());
-        return new MethodInfo(methodName, methodParams, returnType);
+        return new MethodInfo(methodName, methodParams, returnType, className);
     }
 
     public static class ParamInfo {
