@@ -98,9 +98,9 @@ public class BigFooFuzz {
                                 }
                             }
                             allPaths.put(res.pathString, (byte) 0);
-                            System.out.printf("Unique path for params '%d %d %d': %s\n", outParser.apply(res.params[0]),
-                                    outParser.apply(res.params[1]), outParser.apply(res.params[2]),
-                                    res.exception == null ? res.result : res.exception);
+//                            System.out.printf("Unique path for params '%d %d %d': %s\n", outParser.apply(res.params[0]),
+//                                    outParser.apply(res.params[1]), outParser.apply(res.params[2]),
+//                                    res.exception == null ? res.result : res.exception);
                         }
                     }).
                     // Build the configuration

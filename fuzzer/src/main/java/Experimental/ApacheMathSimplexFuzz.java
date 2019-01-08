@@ -104,9 +104,9 @@ public class ApacheMathSimplexFuzz {
                                 }
                             }
                             allPaths.put(res.pathString, (byte) 0);
-                            System.out.printf("Unique path for params '%d %d %d %d': %s\n", outParser.apply(res.params[0]),
-                                    outParser.apply(res.params[1]), outParser.apply(res.params[2]),
-                                    outParser.apply(res.params[3]), res.exception == null ? res.result : res.exception);
+//                            System.out.printf("Unique path for params '%d %d %d %d': %s\n", outParser.apply(res.params[0]),
+//                                    outParser.apply(res.params[1]), outParser.apply(res.params[2]),
+//                                    outParser.apply(res.params[3]), res.exception == null ? res.result : res.exception);
                         }
                     }).
                     // Build the configuration
@@ -120,11 +120,11 @@ public class ApacheMathSimplexFuzz {
 
             if(useSeedbagAndCTrie) {
                 try {
-                    System.out.printf("%s:%d", settings().ctrieHostname, (int) settings().ctriePort);
+//                    System.out.printf("%s:%d", settings().ctrieHostname, (int) settings().ctriePort);
                     seedBag = new CoordinatorSeedBag<>(settings().seedbagHostname, (int) settings().seedbagPort);
                     ctrie = new CoordinatorCTrie<>(settings().ctrieHostname, (int) settings().ctriePort);
                 } catch (Exception e) {
-                    System.out.println("Couldn't initialise CTrie and Seedbag");
+//                    System.out.println("Couldn't initialise CTrie and Seedbag");
                     e.printStackTrace();
                     seedBag = null;
                     ctrie = null;
