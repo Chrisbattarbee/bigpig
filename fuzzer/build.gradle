@@ -41,7 +41,7 @@ jar {
     manifest {
         attributes  'Implementation-Title': 'Gradle Quickstart',
                     'Implementation-Version': version,
-                    'Main-Class': 'Numbers.Num'
+                    'Main-Class': 'Experimental.BigFooFuzz'
     }
 }
 
@@ -51,7 +51,7 @@ task fatJar(type: Jar) {
     manifest {
         attributes 'Implementation-Title': 'Gradle Jar File Example',
                 'Implementation-Version': version,
-                'Main-Class': 'Numbers.Num'
+                'Main-Class': 'Experimental.BigFooFuzz'
     }
     archiveName = "fuzzer-bigboi.jar"
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }

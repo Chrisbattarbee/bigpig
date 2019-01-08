@@ -107,18 +107,18 @@ public class BigFooFuzz {
                             build()
             );
             // Just run it for 5 seconds
-            fuzzer.fuzzFor(5, TimeUnit.SECONDS);
+            fuzzer.fuzzFor(12, TimeUnit.SECONDS);
         }
 
         public static void main(String[] args) throws Throwable {
 
             if(useSeedbagAndCTrie) {
                 try {
-                    System.out.printf("%s:%d", settings().ctrieHostname, (int) settings().ctriePort);
+//                    System.out.printf("%s:%d", settings().ctrieHostname, (int) settings().ctriePort);
                     seedBag = new CoordinatorSeedBag<>(settings().seedbagHostname, (int) settings().seedbagPort);
                     ctrie = new CoordinatorCTrie<>(settings().ctrieHostname, (int) settings().ctriePort);
                 } catch (Exception e) {
-                    System.out.println("Couldn't initialise CTrie and Seedbag");
+//                    System.out.println("Couldn't initialise CTrie and Seedbag");
                     e.printStackTrace();
                     seedBag = null;
                     ctrie = null;
@@ -135,7 +135,8 @@ public class BigFooFuzz {
             */
 
             //TODO: Maybe get this as an argument
-            Duration timeout = Duration.ofSeconds(60);
+            int seconds = Integer.parseInt(args[0]);
+            Duration timeout = Duration.ofSeconds(seconds);
 
             //System.out.printf("Test:\n %f (Should be 7.7)\n", LPTest(4, 1, 3, -6));
 
@@ -147,7 +148,7 @@ public class BigFooFuzz {
                     seedArr = new Object[]{0, 0, 0};
                 }
 
-                System.out.println(Arrays.deepToString(seedArr));
+//                System.out.println(Arrays.deepToString(seedArr));
                 Object[][] newSeed = new Object[][]{ new Object[] {seedArr[0]}, new Object[]{seedArr[1]}, new Object[]{seedArr[2]} };
                 fuzzWithConfig(newSeed, false);
             }

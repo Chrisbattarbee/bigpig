@@ -17,7 +17,7 @@ public class FuzzerSettings {
                 path = "/settings/remote.json";
             }
         } catch (Exception e) {
-            System.out.println("ENV is not remote: " + e.getMessage());
+//            System.out.println("ENV is not remote: " + e.getMessage());
         }
         InputStream file = getClass().getResourceAsStream(path);
         byte[] bytes = new byte[file.available()];

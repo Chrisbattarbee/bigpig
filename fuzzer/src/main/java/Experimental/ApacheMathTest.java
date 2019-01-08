@@ -112,22 +112,54 @@ public class ApacheMathTest {
     }
 
     public static int foo(int n, int m, int x) {
-        if (n == 123) {
-            return 1000;
-        }
-        for (int z = 0; z < 3; z++) {
-            if (n < m) {
-                x *= n;
-            } else {
-                x += 1;
+        // Fuzzer doesn't get in here
+        if (x == -456290) {
+            for (int y = 0; y < 10; y ++) {
+                if (n < 0 || m - n > 0) {
+                    if (m < 0) {
+                        return 12;
+                    }
+                    m += Math.sin((double) m);
+                }
+                m *= n;
+                if (m % 3671 == 3) {
+                    return m;
+                }
             }
-            if (x % 3931 == 0) {
-                return x;
-            }
-            n += 1;
         }
+
+        if (Math.sin(Math.cos(Math.tan(n) + 11)) < Math.tan(Math.cos(Math.sin(m)))) {
+            return 15;
+        }
+
+        // Decent number of ifs for fuzzer
         return 0;
     }
+
+//
+//
+//    public static int foo(int n, int m, int x) {
+//
+//        // Fuzzer doesn't get in here
+//        if (x == -456290) {
+//            for (int y = 0; y < 10; y ++) {
+//                if (n < 0 || n << m > 0) {
+//                    if (m < 0) {
+//                        return 12;
+//                    }
+//                    return 5;
+//                }
+//                if (m > 0) {
+//                    return m;
+//                }
+//                m *= n;
+//                n += 1;
+//            }
+////        }
+//
+//        // Decent number of ifs for fuzzer
+//        return 0;
+//    }
 
     public static void main(String[] args) {
         foo(0, 0, 0);
