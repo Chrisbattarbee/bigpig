@@ -25,7 +25,7 @@ import static Experimental.ApacheMathTest.LPTest;
 import static Settings.FuzzerSettings.settings;
 
 public class BigFooFuzz {
-    private static final boolean useSeedbagAndCTrie = true;
+    private static final boolean useSeedbagAndCTrie = false;
 
     private static int byteArrToInt(byte[] bytes) {
         return ByteBuffer.wrap(bytes).getInt();
@@ -112,7 +112,6 @@ public class BigFooFuzz {
                         build()
         );
         // Just run it for 5 seconds
-        System.out.println("FUZZING");
         fuzzer.fuzzFor(12, TimeUnit.SECONDS);
     }
 
@@ -178,5 +177,6 @@ public class BigFooFuzz {
         mainExecutor.awaitTermination(timeout.toNanos(), TimeUnit.NANOSECONDS);
         fuzzExecutor.shutdownNow();
         System.out.printf("Total number of paths: %d\n", allPaths.size());
+        System.exit(0); // I am a nasty person
     }
 }
