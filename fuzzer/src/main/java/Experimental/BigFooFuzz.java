@@ -4,21 +4,22 @@ import Utils.FuzzingUtils;
 import Utils.MethodInfo;
 import ctrie.CoordinatorCTrie;
 import jwp.fuzz.*;
+import org.mockito.cglib.core.Local;
 import seedbag.CoordinatorSeedBag;
 
 import java.lang.reflect.Method;
 import java.nio.ByteBuffer;
 import java.time.Duration;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.TimeUnit;
+import java.time.LocalDateTime;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
-import static Experimental.ApacheMathTest.LPTest;
 import static Settings.FuzzerSettings.settings;
 
 public class BigFooFuzz {
@@ -110,48 +111,210 @@ public class BigFooFuzz {
             fuzzer.fuzzFor(12, TimeUnit.SECONDS);
         }
 
-        public static void main(String[] args) throws Throwable {
 
-            if(useSeedbagAndCTrie) {
+        private static Fuzzer.Config getConfig(Object[][] seeds, boolean useSuggested, Set<Integer> seenPathHashes) throws NoSuchMethodException {
+            boolean[] suggested = new boolean[]{ useSuggested, useSuggested, useSuggested, useSuggested };
+            ParamProvider paramProvider = FuzzingUtils.getParamProvider(methodInfo, seeds, suggested);
+            Method declaredMethod = useSuggested ? ApacheMathTest.class.getDeclaredMethod("foo", int.class, int.class, int.class)
+                    : ApacheMathTest.class.getDeclaredMethod("fooByte", byte[].class, byte[].class, byte[].class);
+            Function<Object, Integer> outParser = useSuggested ? BigFooFuzz::objNoOp : BigFooFuzz::objByteArrToInt;
+            return Fuzzer.Config.builder().
+                    // Let the fuzzer know to fuzz the isNum method
+                            method(declaredMethod).
+                    // We need to give the fuzzer a parameter provider. Here, we just use the suggested one.
+                            params(paramProvider).
+
+                    // Let's print out the parameter and result of each unique path
+                            onEachResult(res -> {
+                        // Create hash sans hit counts
+                        int hash = BranchHit.Hasher.WITHOUT_HIT_COUNTS.hash(res.branchHits);
+                        // Synchronized to prevent stdout overwrites
+                        if (seenPathHashes.add(hash)) synchronized (BigFooFuzz.class) {
+                            if(useSeedbagAndCTrie) {
+                                try {
+                                    ctrie.putAsync(res.pathString, ctrie.getOrDefault(res.pathString, 0) + 1);
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                            allPaths.put(res.pathString, (byte) 0);
+//                            System.out.printf("Unique path for params '%d %d %d': %s\n", outParser.apply(res.params[0]),
+//                                    outParser.apply(res.params[1]), outParser.apply(res.params[2]),
+//                                    res.exception == null ? res.result : res.exception);
+                        }
+                    }).
+                    // Build the configuration
+                            build();
+        }
+
+        private abstract static class FuzzerInstance implements Runnable {
+            private final Fuzzer.Config fuzzerConfig;
+            private LocalDateTime timeStarted;
+            private final Set<Integer> seenPathHashes = Collections.newSetFromMap(new ConcurrentHashMap<>());
+
+            public AtomicBoolean getStopper() {
+                return stopper;
+            }
+
+            private final AtomicBoolean stopper = new AtomicBoolean();
+
+            public FuzzerInstance(Function<Set<Integer>, Fuzzer.Config> fuzzerConfig) {
+                this.fuzzerConfig = fuzzerConfig.apply(seenPathHashes);
+            }
+
+            public Fuzzer.Config getFuzzerConfig() {
+                return fuzzerConfig;
+            }
+
+            public LocalDateTime getTimeStarted() {
+                return timeStarted;
+            }
+
+            public void stop() {
+                stopper.set(true);
+            }
+
+            public abstract boolean isSeeded();
+
+        }
+
+        private static class UnseededFuzzerInstance extends FuzzerInstance {
+
+            public UnseededFuzzerInstance() {
+                super((s) -> {
+                    try {
+                        return getConfig(new Object[][]{{0}, {0}, {0}}, false, s);
+                    } catch (NoSuchMethodException e) {
+                        e.printStackTrace();
+                    }
+                });
+            }
+
+            @Override
+            public boolean isSeeded() {
+                return false;
+            }
+
+            @Override
+            public void run() {
+                super.timeStarted = LocalDateTime.now();
+                Fuzzer fuzzer = new Fuzzer(super.getFuzzerConfig());
                 try {
-//                    System.out.printf("%s:%d", settings().ctrieHostname, (int) settings().ctriePort);
-                    seedBag = new CoordinatorSeedBag<>(settings().seedbagHostname, (int) settings().seedbagPort);
-                    ctrie = new CoordinatorCTrie<>(settings().ctrieHostname, (int) settings().ctriePort);
-                } catch (Exception e) {
-//                    System.out.println("Couldn't initialise CTrie and Seedbag");
-                    e.printStackTrace();
-                    seedBag = null;
-                    ctrie = null;
+                    fuzzer.fuzz(super.getStopper());
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
                 }
             }
-            /*
-            List<Object[][]> seeds = new ArrayList<>();
-            seeds.add(new Object[][]{ new Object[] {4}, new Object[]{1}, new Object[]{3}, new Object[]{-6} });
-            seeds.add(new Object[][]{ new Object[] {12}, new Object[]{7}, new Object[]{-1}, new Object[]{-6} });
-            for(int i = 0; i < 2; i++) {
-                fuzzWithConfig(seeds.get(i));
-                System.out.println("---------------------------------------------------------------------------");
+        }
+
+        private static class SeededFuzzerInstance extends FuzzerInstance {
+            private final ExecutorService executor;
+            private final Object[][] seeds;
+
+            private SeededFuzzerInstance(Object[][] seeds, ExecutorService executor) {
+                super((s) -> {
+                    try {
+                        return getConfig(seeds, false, s);
+                    } catch (NoSuchMethodException e) {
+                        e.printStackTrace();
+                    }
+                });
+                this.executor = executor;
+                this.seeds = seeds;
             }
-            */
 
-            //TODO: Maybe get this as an argument
-            int seconds = Integer.parseInt(args[0]);
-            Duration timeout = Duration.ofSeconds(seconds);
+            @Override
+            public boolean isSeeded() {
+                return true;
+            }
 
-            //System.out.printf("Test:\n %f (Should be 7.7)\n", LPTest(4, 1, 3, -6));
+            @Override
+            public void run() {
+                super.timeStarted = LocalDateTime.now();
+                //TODO How to pause a thread?
+            }
+        }
 
-            long startTime = System.nanoTime();
+        private static void fuzz() throws Throwable {
 
-            while(System.nanoTime() - startTime < timeout.toNanos()) {
+            while(true) {
                 Object[] seedArr = useSeedbagAndCTrie ? seedBag.poll() : new Object[]{0, 0, 0};
                 if (seedArr == null) {
                     seedArr = new Object[]{0, 0, 0};
                 }
 
-//                System.out.println(Arrays.deepToString(seedArr));
                 Object[][] newSeed = new Object[][]{ new Object[] {seedArr[0]}, new Object[]{seedArr[1]}, new Object[]{seedArr[2]} };
                 fuzzWithConfig(newSeed, false);
             }
+        }
+
+        public static void main(String[] args) throws Throwable {
+
+            if(useSeedbagAndCTrie) {
+                try {
+                    seedBag = new CoordinatorSeedBag<>(settings().seedbagHostname, (int) settings().seedbagPort);
+                    ctrie = new CoordinatorCTrie<>(settings().ctrieHostname, (int) settings().ctriePort);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    seedBag = null;
+                    ctrie = null;
+                }
+            }
+
+            Supplier<Fuzzer> defaultUnseededFuzzerSuppleir = null;
+
+            int numInstances = Runtime.getRuntime().availableProcessors() - 1;
+            AtomicInteger seededFuzzersCount = new AtomicInteger(0);
+
+            PriorityBlockingQueue<FuzzerInstance> unseededFuzzers = new PriorityBlockingQueue<>(10, Comparator.comparing(FuzzerInstance::getTimeStarted));
+
+            IntStream.range(0, numInstances).forEach((i) -> unseededFuzzers.add(new FuzzerInstance(null, null, null, null)));
+
+            Function getNewSeed = () -> {
+                try {
+                    Object[] seed = seedBag.take();
+                    FuzzerInstance oldestUnseededFuzzer = unseededFuzzers.poll();
+                    if(oldestUnseededFuzzer != null) {
+                        oldestUnseededFuzzer.stop();
+                    }
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+            };
+
+
+            int seconds = Integer.valueOf(args[0]);
+
+            Duration timeout = Duration.ofSeconds(seconds);
+
+            ExecutorService mainExecutor = Executors.newSingleThreadExecutor();
+
+            mainExecutor.submit(() -> {
+                ExecutorService executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors() - 1);
+
+                for(int i = 0; i < Runtime.getRuntime().availableProcessors() - 1; i++) {
+                    executor.submit(() -> {
+                        try {
+                            fuzz();
+                        } catch (Throwable throwable) {
+                            throwable.printStackTrace();
+                        }
+                    });
+                }
+
+                executor.shutdown(); //TODO
+                try {
+                    executor.awaitTermination(timeout.getNano(), TimeUnit.NANOSECONDS);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            });
+
+            mainExecutor.shutdown();
+            mainExecutor.awaitTermination(timeout.getNano(), TimeUnit.NANOSECONDS);
+
 
             System.out.printf("Total number of paths: %d\n", allPaths.size());
         }
