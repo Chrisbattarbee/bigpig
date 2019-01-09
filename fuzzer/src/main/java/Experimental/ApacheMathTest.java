@@ -140,26 +140,11 @@ public class ApacheMathTest {
         return 0;
     }
 
-    private static int knapSack(int W, int wt[], int val[], int n) {
-        int i, w;
-        int rv[][] = new int[n + 1][W + 1];    //rv means return value
-
-        // Build table rv[][] in bottom up manner
-        for (i = 0; i <= n; i++) {
-            for (w = 0; w <= W; w++) {
-                if (i == 0 || w == 0)
-                    rv[i][w] = 0;
-                else if (wt[i - 1] <= w)
-                    rv[i][w] = Math.max(val[i - 1] + rv[i - 1][w - wt[i - 1]], rv[i - 1][w]);
-                else
-                    rv[i][w] = rv[i - 1][w];
-            }
-        }
-
-        return rv[n][W];
+    public static int networkFlowByte(byte[] source, byte[] sink) {
+        return networkFlow(byteArrToInt(source), byteArrToInt(sink));
     }
 
-    private static int networkFlow(int source, int sink) {
+    public static int networkFlow(int source, int sink) {
         final int INF = 987654321;
         int V = 6; // edges
         int[][] capacity, flow;
@@ -198,51 +183,9 @@ public class ApacheMathTest {
                 flow[p][parent.get(p)] -= amount;
             }
             totalFlow += amount;
-            printer += sb.reverse() + " / max flow : " + totalFlow;
-            System.out.println(printer);
         }
 
         return totalFlow;
-    }
-
-    private static int getMax(int arr[], int n) {
-        int mx = arr[0];
-        for (int i = 1; i < n; i++)
-            if (arr[i] > mx)
-                mx = arr[i];
-        return mx;
-    }
-
-    private static void countSort(int arr[], int n, int exp)
-    {
-        int output[] = new int[n];
-        int i;
-        int count[] = new int[10];
-        Arrays.fill(count,0);
-
-        for (i = 0; i < n; i++)
-            count[ (arr[i]/exp)%10 ]++;
-
-        for (i = 1; i < 10; i++)
-            count[i] += count[i - 1];
-
-        for (i = n - 1; i >= 0; i--)
-        {
-            output[count[ (arr[i]/exp)%10 ] - 1] = arr[i];
-            count[ (arr[i]/exp)%10 ]--;
-        }
-
-        for (i = 0; i < n; i++)
-            arr[i] = output[i];
-    }
-
-    private static void radixsort(int arr[], int n) {
-
-        int m = getMax(arr, n);
-
-
-        for (int exp = 1; m/exp > 0; exp *= 10)
-            countSort(arr, n, exp);
     }
 
     public static void findPrimesTillN(int n) {
@@ -283,8 +226,8 @@ public class ApacheMathTest {
 
         return num1;
     }
-    
+
     public static void main(String[] args) {
-        foo(0, 0, 0);
+        networkFlow(0, 0);
     }
 }

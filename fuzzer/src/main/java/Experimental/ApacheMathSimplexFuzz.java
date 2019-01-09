@@ -23,7 +23,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import static Experimental.ApacheMathTest.LPTest;
 import static Settings.FuzzerSettings.*;
 
 public class ApacheMathSimplexFuzz {
@@ -49,12 +48,10 @@ public class ApacheMathSimplexFuzz {
 
         private static CoordinatorCTrie<String, Integer> ctrie;
         private static CoordinatorSeedBag<Object[]> seedBag;
-        private static final MethodInfo methodInfo = new MethodInfo("LPTest",
-                new MethodInfo.ParamInfo[]{new MethodInfo.ParamInfo("a", MethodInfo.PrimitiveType.INT),
-                                           new MethodInfo.ParamInfo("b", MethodInfo.PrimitiveType.INT),
-                                           new MethodInfo.ParamInfo("c", MethodInfo.PrimitiveType.INT),
-                                           new MethodInfo.ParamInfo("ep", MethodInfo.PrimitiveType.INT)},
-                MethodInfo.PrimitiveType.INT, "ApacheMathTest");
+        private static final MethodInfo methodInfo = new MethodInfo("networkFlow",
+                new MethodInfo.ParamInfo[]{new MethodInfo.ParamInfo("source", MethodInfo.PrimitiveType.INT),
+                                           new MethodInfo.ParamInfo("sink", MethodInfo.PrimitiveType.INT)},
+                                            MethodInfo.PrimitiveType.INT, "ApacheMathTest");
         //TODO[gg]: Make this take some kind of config class
         private static int objByteArrToInt(Object obj) {
             byte[] arr = (byte[]) obj;
@@ -69,7 +66,7 @@ public class ApacheMathSimplexFuzz {
             //MethodInfo methodInfo = MethodInfo.fromJsonFile("/home/ggavriil/Programming/bigpig-extra/method.json");
             boolean[] suggested = new boolean[]{ useSuggested, useSuggested, useSuggested, useSuggested };
             ParamProvider paramProvider = FuzzingUtils.getParamProvider(methodInfo, seeds, suggested);
-            Method declaredMethod = useSuggested ? ApacheMathTest.class.getDeclaredMethod("LPTest", int.class, int.class, int.class, int.class)
+            Method declaredMethod = useSuggested ? ApacheMathTest.class.getDeclaredMethod("networkFlow", int.class, int.class)
                     : ApacheMathTest.class.getDeclaredMethod("LPTestByte", byte[].class, byte[].class, byte[].class, byte[].class);
             Function<Object, Integer> outParser = useSuggested ? ApacheMathSimplexFuzz::objNoOp : ApacheMathSimplexFuzz::objByteArrToInt;
             /*
@@ -158,7 +155,7 @@ public class ApacheMathSimplexFuzz {
                     seedArr = new Object[]{0, 0, 0, 0};
                 }
                 Object[][] newSeed = new Object[][]{ new Object[] {seedArr[0]}, new Object[]{seedArr[1]}, new Object[]{seedArr[2]}, new Object[]{seedArr[3]} };
-                fuzzWithConfig(newSeed, false);
+                fuzzWithConfig(newSeed, true);
             }
 
             System.out.printf("Total number of paths: %d\n", allPaths.size());

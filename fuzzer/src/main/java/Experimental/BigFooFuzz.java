@@ -48,11 +48,10 @@ public class BigFooFuzz {
 
     private static CoordinatorCTrie<String, Integer> ctrie;
     private static CoordinatorSeedBag<Object[]> seedBag;
-    private static final MethodInfo methodInfo = new MethodInfo("foo",
-            new MethodInfo.ParamInfo[]{new MethodInfo.ParamInfo("n", MethodInfo.PrimitiveType.INT),
-                    new MethodInfo.ParamInfo("m", MethodInfo.PrimitiveType.INT),
-                    new MethodInfo.ParamInfo("x", MethodInfo.PrimitiveType.INT)},
-            MethodInfo.PrimitiveType.INT, "BigFoo");
+    private static final MethodInfo methodInfo = new MethodInfo("networkFlow",
+            new MethodInfo.ParamInfo[]{new MethodInfo.ParamInfo("source", MethodInfo.PrimitiveType.INT),
+                    new MethodInfo.ParamInfo("sink", MethodInfo.PrimitiveType.INT)},
+            MethodInfo.PrimitiveType.INT, "ApacheMathTest");
 
     //TODO[gg]: Make this take some kind of config class
     private static int objByteArrToInt(Object obj) {
@@ -65,11 +64,10 @@ public class BigFooFuzz {
     }
 
     public static void fuzzWithConfig(Object[][] seeds, boolean useSuggested) throws Throwable {
-        //MethodInfo methodInfo = MethodInfo.fromJsonFile("/home/ggavriil/Programming/bigpig-extra/method.json");
         boolean[] suggested = new boolean[]{useSuggested, useSuggested, useSuggested, useSuggested};
         ParamProvider paramProvider = FuzzingUtils.getParamProvider(methodInfo, seeds, suggested);
-        Method declaredMethod = useSuggested ? ApacheMathTest.class.getDeclaredMethod("foo", int.class, int.class, int.class)
-                : ApacheMathTest.class.getDeclaredMethod("fooByte", byte[].class, byte[].class, byte[].class);
+        Method declaredMethod = useSuggested ? ApacheMathTest.class.getDeclaredMethod("networkFlow", int.class, int.class)
+                : ApacheMathTest.class.getDeclaredMethod("networkFlowByte", byte[].class, byte[].class);
         Function<Object, Integer> outParser = useSuggested ? BigFooFuzz::objNoOp : BigFooFuzz::objByteArrToInt;
             /*
             ParamProvider paramProvider = FuzzingUtils.getParamProviderWithExternal(methodInfo, new RemoteParamSupplier(methodInfo, () -> {
@@ -153,12 +151,12 @@ public class BigFooFuzz {
         mainExecutor.submit(() -> {
             IntStream.range(0, numThreads).forEach((i) -> fuzzExecutor.submit(() -> {
                 while(!Thread.interrupted()) {
-                    Object[] seedArr = useSeedbagAndCTrie ? seedBag.poll() : new Object[]{0, 0, 0};
+                    Object[] seedArr = useSeedbagAndCTrie ? seedBag.poll() : new Object[]{0, 0};
                     if (seedArr == null) {
-                        seedArr = new Object[]{0, 0, 0};
+                        seedArr = new Object[]{0, 0};
                     }
 
-                    Object[][] newSeed = new Object[][]{new Object[]{seedArr[0]}, new Object[]{seedArr[1]}, new Object[]{seedArr[2]}};
+                    Object[][] newSeed = new Object[][]{new Object[]{seedArr[0]}, new Object[]{seedArr[1]}};
                     try {
                         fuzzWithConfig(newSeed, false);
                     } catch (Throwable throwable) {
