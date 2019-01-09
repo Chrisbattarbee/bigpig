@@ -17,12 +17,16 @@ import java.lang.reflect.Method;
 import java.nio.ByteBuffer;
 import java.text.NumberFormat;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Vector;
 
 public class ApacheMathTest {
 
     public static double LPTestByte(byte[] a, byte[] b, byte[] c, byte[] ep) {
         return LPTest(byteArrToInt(a), byteArrToInt(b), byteArrToInt(c), byteArrToInt(ep));
     }
+
     public static double LPTest(int a, int b, int c, int ep) {
         double eps = 0d;
         System.out.println("here1");
@@ -114,7 +118,7 @@ public class ApacheMathTest {
     public static int foo(int n, int m, int x) {
         // Fuzzer doesn't get in here
         if (x == -456290) {
-            for (int y = 0; y < 10; y ++) {
+            for (int y = 0; y < 10; y++) {
                 if (n < 0 || m - n > 0) {
                     if (m < 0) {
                         return 12;
@@ -136,31 +140,150 @@ public class ApacheMathTest {
         return 0;
     }
 
-//
-//
-//    public static int foo(int n, int m, int x) {
-//
-//        // Fuzzer doesn't get in here
-//        if (x == -456290) {
-//            for (int y = 0; y < 10; y ++) {
-//                if (n < 0 || n << m > 0) {
-//                    if (m < 0) {
-//                        return 12;
-//                    }
-//                    return 5;
-//                }
-//                if (m > 0) {
-//                    return m;
-//                }
-//                m *= n;
-//                n += 1;
-//            }
-////        }
-//
-//        // Decent number of ifs for fuzzer
-//        return 0;
-//    }
+    private static int knapSack(int W, int wt[], int val[], int n) {
+        int i, w;
+        int rv[][] = new int[n + 1][W + 1];    //rv means return value
 
+        // Build table rv[][] in bottom up manner
+        for (i = 0; i <= n; i++) {
+            for (w = 0; w <= W; w++) {
+                if (i == 0 || w == 0)
+                    rv[i][w] = 0;
+                else if (wt[i - 1] <= w)
+                    rv[i][w] = Math.max(val[i - 1] + rv[i - 1][w - wt[i - 1]], rv[i - 1][w]);
+                else
+                    rv[i][w] = rv[i - 1][w];
+            }
+        }
+
+        return rv[n][W];
+    }
+
+    private static int networkFlow(int source, int sink) {
+        final int INF = 987654321;
+        int V = 6; // edges
+        int[][] capacity, flow;
+        flow = new int[V][V];
+        capacity = new int[V][V];
+        int totalFlow = 0;
+        while (true) {
+            Vector<Integer> parent = new Vector<>(V);
+            for (int i = 0; i < V; i++)
+                parent.add(-1);
+            Queue<Integer> q = new LinkedList<>();
+            parent.set(source, source);
+            q.add(source);
+            while (!q.isEmpty() && parent.get(sink) == -1) {
+                int here = q.peek();
+                q.poll();
+                for (int there = 0; there < V; ++there)
+                    if (capacity[here][there] - flow[here][there] > 0 && parent.get(there) == -1) {
+                        q.add(there);
+                        parent.set(there, here);
+                    }
+            }
+            if (parent.get(sink) == -1)
+                break;
+
+            int amount = INF;
+            String printer = "path : ";
+            StringBuilder sb = new StringBuilder();
+            for (int p = sink; p != source; p = parent.get(p)) {
+                amount = Math.min(capacity[parent.get(p)][p] - flow[parent.get(p)][p], amount);
+                sb.append(p + "-");
+            }
+            sb.append(source);
+            for (int p = sink; p != source; p = parent.get(p)) {
+                flow[parent.get(p)][p] += amount;
+                flow[p][parent.get(p)] -= amount;
+            }
+            totalFlow += amount;
+            printer += sb.reverse() + " / max flow : " + totalFlow;
+            System.out.println(printer);
+        }
+
+        return totalFlow;
+    }
+
+    private static int getMax(int arr[], int n) {
+        int mx = arr[0];
+        for (int i = 1; i < n; i++)
+            if (arr[i] > mx)
+                mx = arr[i];
+        return mx;
+    }
+
+    private static void countSort(int arr[], int n, int exp)
+    {
+        int output[] = new int[n];
+        int i;
+        int count[] = new int[10];
+        Arrays.fill(count,0);
+
+        for (i = 0; i < n; i++)
+            count[ (arr[i]/exp)%10 ]++;
+
+        for (i = 1; i < 10; i++)
+            count[i] += count[i - 1];
+
+        for (i = n - 1; i >= 0; i--)
+        {
+            output[count[ (arr[i]/exp)%10 ] - 1] = arr[i];
+            count[ (arr[i]/exp)%10 ]--;
+        }
+
+        for (i = 0; i < n; i++)
+            arr[i] = output[i];
+    }
+
+    private static void radixsort(int arr[], int n) {
+
+        int m = getMax(arr, n);
+
+
+        for (int exp = 1; m/exp > 0; exp *= 10)
+            countSort(arr, n, exp);
+    }
+
+    public static void findPrimesTillN(int n) {
+        int[] arr = new int[n+1];
+
+        for (int i=0;i<=n;i++) {
+            arr[i] = 1;
+        }
+
+        arr[0] = arr[1] = 0;
+
+        for (int i=2;i<=Math.sqrt(n);i++) {
+            if (arr[i] == 1) {
+                for (int j=2;i*j <= n;j++) {
+                    arr[i*j] = 0;
+                }
+            }
+        }
+
+        for (int i=0;i<n+1;i++) {
+            if (arr[i] == 1) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+
+    public static int gcd(int num1, int num2) {
+
+        if (num1 == 0)
+            return num2;
+
+        while (num2 != 0) {
+            if (num1 > num2)
+                num1 -= num2;
+            else
+                num2 -= num1;
+        }
+
+        return num1;
+    }
+    
     public static void main(String[] args) {
         foo(0, 0, 0);
     }
