@@ -16,7 +16,7 @@ repositories {
    }
 }
 
-mainClassName = 'Experimental.BigFooFuzz'
+mainClassName = 'Experimental.TestGeneration'
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
@@ -26,7 +26,7 @@ dependencies {
 //    compile name: 'agent-0.1.0'
 //    compile name: 'fuzz-0.1.0'
 //    compile name: 'extras-0.1.0'
-    compile 'com.github.ggavriil:javan-warty-pig:gg-bmark-SNAPSHOT'
+    compile 'com.github.ggavriil:javan-warty-pig:gg-test-writer-SNAPSHOT'
 //    compile 'com.github.Chrisbattarbee:javan-warty-pig:cb-testing-SNAPSHOT'
     compile group: 'org.json', name: 'json', version: '20180813'
 }
@@ -41,7 +41,7 @@ jar {
     manifest {
         attributes  'Implementation-Title': 'Gradle Quickstart',
                     'Implementation-Version': version,
-                    'Main-Class': 'Experimental.BigFooFuzz'
+                    'Main-Class': 'Experimental.TestGeneration'
     }
 }
 
@@ -51,7 +51,7 @@ task fatJar(type: Jar) {
     manifest {
         attributes 'Implementation-Title': 'Gradle Jar File Example',
                 'Implementation-Version': version,
-                'Main-Class': 'Experimental.BigFooFuzz'
+                'Main-Class': 'Experimental.TestGeneration'
     }
     archiveName = "fuzzer-bigboi.jar"
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
